@@ -83,7 +83,16 @@ export function ekaniFlow() {
 </div>`;
 }
 
-export const ILLUSTRATIONS = { floorplan, ekaniflow: ekaniFlow, speakers: speakerLayout };
+export function revivalSheet() {
+  const rows = [["Dialogue clarity", "Hard to follow at normal volume"], ["Bass", "Boomy at the sofa, thin at the back"], ["Picture", "Brightness, colour, screen fit"], ["Controls", "Too many remotes"], ["Room comfort", "Smells, stuffiness, eye irritation"], ["Equipment", "Receiver, speakers, display, wiring"]];
+  return `<div class="sheet" role="img" aria-label="Example Cinema Revival checklist: dialogue, bass, picture, controls, room comfort and equipment">
+  <div class="sheet-head"><span class="flow-k">Revival checklist</span><span class="sheet-no">Example</span></div>
+  <ol>${rows.map(([k, v]) => `<li><span class="box" aria-hidden="true"></span><div><b>${k}</b><span>${v}</span></div></li>`).join("")}</ol>
+  <p class="flow-note">What we look at on a revival consultation.</p>
+</div>`;
+}
+
+export const ILLUSTRATIONS = { floorplan, ekaniflow: ekaniFlow, speakers: speakerLayout, revival: revivalSheet };
 
 // 24×24 line icons
 const I = (d) => `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
@@ -95,6 +104,11 @@ export const ICONS = {
   globe: I('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/>'),
   gate: I('<path d="M3 21V7l4-3 4 3v14M13 21V7l4-3 4 3v14M3 11h8M13 11h8M3 16h8M13 16h8"/>'),
   check: I('<path d="m5 12 4.5 4.5L19 7"/>'),
+  chat: I('<path d="M4 5h16v10H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/>'),
+  dial: I('<circle cx="12" cy="12" r="8"/><path d="M12 12l4-3M12 4v2M20 12h-2M12 20v-2M4 12h2"/>'),
+  air: I('<path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7"/>'),
+  remote: I('<rect x="8" y="2.5" width="8" height="19" rx="2.5"/><circle cx="12" cy="7" r="1.6"/><path d="M10.5 12h3M10.5 15h3M10.5 18h3"/>'),
+  plan: I('<path d="M4 4h16v16H4z"/><path d="M4 12h7V4M11 12v8M15 12h5"/>'),
   arrow: I('<path d="M5 12h14M13 6l6 6-6 6"/>'),
   shield: I('<path d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/>'),
 };

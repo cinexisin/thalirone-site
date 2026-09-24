@@ -14,7 +14,7 @@ export const SITE = {
   email: "hello@thalirone.com",
   hours: "Mon–Sat, 10 am – 7 pm",
   description:
-    "Thalir Innovations designs smart homes and home cinemas in Bengaluru, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
+    "Thalir Innovations designs smart homes and home cinemas in Bengaluru, revives existing home theatres, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
   social: [
     // filled in as accounts go live: ["Instagram", "https://instagram.com/thalirone"]
   ],
@@ -30,6 +30,7 @@ export const CATEGORIES = [
       pitch: "KNX automation for lighting, air-conditioning, curtains and scenes, plus home cinemas measured and calibrated for your room.",
       bullets: ["Designed and programmed in ETS6", "Scenes: Welcome, Away, Bedtime, Movie", "Home cinema with REW-measured calibration", "Site survey first, written quote after"],
     },
+    composerHint: "e.g. 4-bedroom villa, new build, lights + AC + curtains",
     cta: { label: "Request a site survey", wa: "Hi Thalir Innovations! I'd like a smart home site survey.\nMy area: \nHome type (villa / apartment): \nWhat I'd like to automate: " },
     page: {
       title: "Smart Home & Cinema in Bengaluru",
@@ -59,6 +60,7 @@ export const CATEGORIES = [
         title: "Measured, not guessed",
         body: "A great room is designed before it's bought. We plan the seating and speaker layout, including Dolby Atmos height channels, then install and measure the finished room with a calibrated microphone and REW. Speaker levels, distances and crossovers are set from those measurements, not by ear.",
         points: ["Room and seating plan", "Speaker layout, including Atmos", "Supply and installation", "REW measurement and calibration"],
+        link: ["/cinema-revival/", "Already have a theatre? See Cinema Revival"],
       },
       process: [
         ["Site survey", "We visit, understand how your family lives and check the wiring and rooms."],
@@ -79,6 +81,48 @@ export const CATEGORIES = [
     },
   },
   {
+    slug: "cinema-revival",
+    name: "Cinema Revival",
+    label: "For existing home theatres",
+    illustration: "revival",
+    card: {
+      pitch: "Get more from the home theatre you already own: consultation, enhancement, advanced calibration, and help with unwanted smells and eye irritation in the room.",
+      bullets: ["Consultation on your room and equipment", "Enhancement plan around your budget", "Advanced calibration scoped to your system", "Find and fix causes of smells and eye irritation"],
+    },
+    composerHint: "e.g. 12×16 ft theatre, 5.1 system, dialogue is hard to hear",
+    cta: { label: "Book a revival consultation", wa: "Hi Thalir Innovations! I'd like a Home Cinema Revival consultation.\nMy location: \nWhat I want to improve (sound / picture / controls / room comfort): " },
+    page: {
+      title: "Home Cinema Revival in Bengaluru",
+      metaDescription: "Home Cinema Revival for existing home theatres in Bengaluru: consultation, theatre enhancement, advanced calibration, and help with unwanted smells and eye irritation in the room. Book on WhatsApp.",
+      eyebrow: "Home Cinema Revival · Bengaluru",
+      h1: "Rediscover your home theatre.",
+      lede: "Get more from the theatre you already own. We look at the sound, the picture, the controls and how comfortable the room is to sit in, then agree a practical plan to put it right.",
+      featuresTitle: "What Cinema Revival covers",
+      features: [
+        ["chat", "Consultation", "We review your room, your current equipment and how you watch, and focus on the changes that matter most to you."],
+        ["spark", "Theatre enhancement", "Hard-to-follow dialogue, uneven bass, a disappointing picture or awkward controls: we plan improvements around your equipment and budget."],
+        ["dial", "Advanced calibration", "Calibration scoped to your receiver or processor, your speakers and your display, and to how you like to watch."],
+        ["air", "Smells & eye irritation", "We help find and fix the causes within the theatre, so the room is comfortable to spend an evening in."],
+        ["remote", "Controls & automation", "Simpler everyday controls, with automation that works with the equipment you have."],
+        ["plan", "New home theatres", "Planning a new room? Consultation, design and installation all start with a plan."],
+      ],
+      processTitle: "How a revival works",
+      process: [
+        ["Share your setup", "Send your location, room size, equipment and a few photos of the room on WhatsApp."],
+        ["Consultation", "We discuss what you want to improve and what's practical for your room."],
+        ["Scope & charges agreed", "We confirm the work, the charges and a visit date with you before anything is scheduled."],
+        ["Visit & service", "Our team visits and carries out the agreed work."],
+      ],
+      faq: [
+        ["Do you only work on theatres you installed?", "No. Cinema Revival is for any existing home theatre. Tell us what equipment you have and we'll discuss what's possible."],
+        ["What does advanced calibration include?", "It's scoped to your system. Share your receiver or processor model, speaker setup and display, and we'll explain the calibration that suits it."],
+        ["Can you help with smells and eye irritation?", "We look for causes within the theatre room itself and discuss the work needed to put them right. We don't diagnose health conditions; if irritation continues, please see a doctor."],
+        ["Do you visit outside Bengaluru?", "Yes, by prior confirmation. Visit and travel charges depend on the location and are agreed with you before anything is scheduled."],
+        ["How much does it cost?", "It depends on the room and the work involved. We agree the scope and charges with you before any visit is booked."],
+      ],
+    },
+  },
+  {
     slug: "business-software",
     name: "Business Software",
     label: "For your business",
@@ -87,6 +131,7 @@ export const CATEGORIES = [
       pitch: "EKANI, the WhatsApp-first CRM for Indian businesses: WhatsApp enquiries become leads, GST quotes, projects, service jobs and invoices.",
       bullets: ["Shared WhatsApp inbox, leads created automatically", "GST quotes and invoices with UPI QR", "Projects, service & AMC, inventory, finance", "Pay only for the modules you use"],
     },
+    composerHint: "e.g. interior firm, 6 people, leads come on WhatsApp",
     cta: { label: "Get an EKANI demo", wa: "Hi Thalir Innovations! I'd like a demo of EKANI CRM.\nMy business: \nTeam size: " },
     page: {
       title: "EKANI — WhatsApp-first CRM for Indian businesses",

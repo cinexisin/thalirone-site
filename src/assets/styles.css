@@ -80,9 +80,9 @@ p{margin:0}
 .contact-line b{color:var(--ink);font-weight:700}
 
 /* category panels */
-.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:22px}
 .cat{display:grid;grid-template-rows:auto 1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
-.cat-art{background:var(--cream);padding:18px;display:grid;place-items:center;min-height:250px;border-bottom:1px solid var(--line)}
+.cat-art{background:var(--cream);padding:16px;display:grid;place-items:center;min-height:230px;border-bottom:1px solid var(--line)}
 .cat-art .illo{width:100%;max-width:440px;height:auto}
 .cat-body{padding:26px;display:grid;gap:14px;align-content:start}
 .ticks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
@@ -131,6 +131,17 @@ p{margin:0}
 .flow-step .nums{display:grid;gap:2px;font-variant-numeric:tabular-nums}
 .flow-step.paid{border-color:var(--leaf);background:var(--leaf-soft)}
 .flow-note{grid-column:1/-1;font-size:.78rem;color:var(--muted)}
+
+/* revival checklist */
+.sheet{width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:10px;font-size:.88rem}
+.sheet-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--gold);padding-bottom:8px}
+.sheet-no{font-family:var(--display);font-weight:600;font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.sheet ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.sheet li{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start}
+.sheet li .box{width:16px;height:16px;border:2px solid var(--gold);border-radius:4px;margin-top:3px}
+.sheet li div{display:grid;line-height:1.35}
+.sheet li b{font-family:var(--display);font-weight:700;color:var(--green);font-size:.9rem}
+.sheet li span{color:var(--muted);font-size:.84rem}
 
 /* brands */
 .brand-groups{display:grid;gap:18px}

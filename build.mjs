@@ -114,6 +114,7 @@ ${body}
 
 // ---------- shared blocks ----------
 function composer(preselect = "") {
+  const hint = CATEGORIES.find((c) => c.slug === preselect)?.composerHint ?? CATEGORIES[0].composerHint ?? "";
   const opts = CATEGORIES.map((c) => `<option value="${esc(c.name)}"${preselect === c.slug ? " selected" : ""}>${esc(c.name)}</option>`).join("");
   return `<form class="composer" id="composer" data-wa="${SITE.whatsapp}" novalidate>
   <div class="row">
@@ -121,7 +122,7 @@ function composer(preselect = "") {
     <label for="c-area">Area / city<input id="c-area" name="area" autocomplete="address-level2" placeholder="e.g. Whitefield, Bengaluru"></label>
   </div>
   <label for="c-topic">I'm interested in<select id="c-topic" name="topic">${opts}<option value="Something else">Something else</option></select></label>
-  <label for="c-msg">Tell us a little<textarea id="c-msg" name="msg" placeholder="e.g. 4-bedroom villa, new build, lights + AC + curtains"></textarea></label>
+  <label for="c-msg">Tell us a little<textarea id="c-msg" name="msg" placeholder="${esc(hint)}"></textarea></label>
   <button class="btn" type="submit">${WA_ICON}<span>Continue on WhatsApp</span></button>
   <p class="fine">This opens WhatsApp with your message ready to send to ${esc(SITE.whatsappDisplay)}. Nothing is sent until you press send.</p>
 </form>`;
@@ -148,12 +149,15 @@ const faqBlock = (items) => `<div class="faq">${items.map(([q, a]) => `<details>
 
 // ---------- pages ----------
 function home() {
-  const [a, b] = CATEGORIES;
+  const bySlug = (slug) => CATEGORIES.find((c) => c.slug === slug);
+  const a = bySlug("smart-home-cinema") ?? CATEGORIES[0];
+  const b = bySlug("business-software") ?? CATEGORIES[1];
+  const rv = bySlug("cinema-revival");
   const cards = CATEGORIES.map((c) => `<article class="cat">
     <div class="cat-art">${ILLUSTRATIONS[c.illustration]?.() || ""}</div>
     <div class="cat-body">
       <span class="eyebrow">${esc(c.label)}</span>
-      <h3 style="font-size:1.6rem">${esc(c.name)}</h3>
+      <h3 style="font-size:1.5rem">${esc(c.name)}</h3>
       <p class="muted">${esc(c.card.pitch)}</p>
       <ul class="ticks">${c.card.bullets.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>
       <div class="cat-foot">${waBtn(c.cta.wa, c.cta.label, "sm")}<a class="link-arrow" href="${catUrl(c)}">Explore ${esc(c.name)} ${ICONS.arrow}</a></div>
@@ -166,8 +170,9 @@ function home() {
     <div class="hero-copy">
       <span class="eyebrow">Bengaluru · India</span>
       <h1>Technology that grows with you.</h1>
-      <p class="lede">We design smart homes and home cinemas, and we build EKANI, the WhatsApp-first CRM for Indian businesses. Engineering for your home and your business, from one team.</p>
+      <p class="lede">We design smart homes and home cinemas, bring existing home theatres back to their best, and build EKANI, the WhatsApp-first CRM for Indian businesses. One team, engineering for your home and your business.</p>
       <div class="btns">${waBtn(a.cta.wa, a.cta.label)}${waBtn(b.cta.wa, b.cta.label, "ghost")}</div>
+      ${rv ? `<a class="link-arrow" href="${catUrl(rv)}">Already have a home theatre? ${esc(rv.name)} ${ICONS.arrow}</a>` : ""}
       <p class="contact-line"><span>WhatsApp <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span></p>
     </div>
     <div class="hero-art" aria-hidden="true">
@@ -178,7 +183,7 @@ function home() {
 </section>
 <section class="band cream" aria-labelledby="cats-h">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">What we do</span><h2 id="cats-h">Two businesses, one standard of work</h2></div>
+    <div class="sec-head"><span class="eyebrow">What we do</span><h2 id="cats-h">One standard of work, for your home and your business</h2></div>
     <div class="cats">${cards}</div>
   </div>
 </section>
@@ -239,11 +244,11 @@ function categoryPage(c, pricing) {
   if (p.cinema) s += `
 <section class="band cream" aria-labelledby="cin-h"><div class="wrap split">
   <div class="art">${speakerLayout()}</div>
-  <div class="copy"><span class="eyebrow">${esc(p.cinema.eyebrow)}</span><h2 id="cin-h">${esc(p.cinema.title)}</h2><p class="muted">${esc(p.cinema.body)}</p><ul class="ticks">${p.cinema.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul></div>
+  <div class="copy"><span class="eyebrow">${esc(p.cinema.eyebrow)}</span><h2 id="cin-h">${esc(p.cinema.title)}</h2><p class="muted">${esc(p.cinema.body)}</p><ul class="ticks">${p.cinema.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>${p.cinema.link ? `<a class="link-arrow" href="${p.cinema.link[0]}">${esc(p.cinema.link[1])} ${ICONS.arrow}</a>` : ""}</div>
 </div></section>`;
   if (p.process) s += `
 <section class="band" aria-labelledby="pr-h"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">How a project runs</span><h2 id="pr-h">From first visit to handover</h2></div>
+  <div class="sec-head"><span class="eyebrow">How it works</span><h2 id="pr-h">${esc(p.processTitle || "From first visit to handover")}</h2></div>
   <ol class="steps">${p.process.map(([h, t]) => `<li><h3>${esc(h)}</h3><p>${esc(t)}</p></li>`).join("")}</ol>
 </div></section>`;
   if (p.brands) s += `
