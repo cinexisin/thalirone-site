@@ -9,12 +9,15 @@ export const SITE = {
   url: "https://thalirone.com",
   tagline: "Technology that grows with you.",
   city: "Bengaluru",
+  // Where we take projects (owner, 24 Sep 2026). Based in Bengaluru.
+  states: ["Karnataka", "Tamil Nadu", "Andhra Pradesh", "Telangana"],
+  serviceArea: "Karnataka, Tamil Nadu, Andhra Pradesh and Telangana",
   whatsapp: "919513636657",          // official WhatsApp API number (Gupshup) → EKANI inbox
   whatsappDisplay: "+91 95136 36657",
   email: "hello@thalirone.com",
   hours: "Mon–Sat, 10 am – 7 pm",
   description:
-    "Thalir Innovations designs smart homes and home cinemas in Bengaluru, revives existing home theatres, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
+    "Thalir Innovations designs smart homes and home cinemas and revives existing home theatres across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
   social: [
     // filled in as accounts go live: ["Instagram", "https://instagram.com/thalirone"]
   ],
@@ -33,9 +36,9 @@ export const CATEGORIES = [
     composerHint: "e.g. 4-bedroom villa, new build, lights + AC + curtains",
     cta: { label: "Request a site survey", wa: "Hi Thalir Innovations! I'd like a smart home site survey.\nMy area: \nHome type (villa / apartment): \nWhat I'd like to automate: " },
     page: {
-      title: "Smart Home & Cinema in Bengaluru",
-      metaDescription: "KNX smart home design and programming in Bengaluru: lighting, air-conditioning, curtains and scenes, plus home cinemas measured and calibrated with REW. Request a site survey.",
-      eyebrow: "Smart Home & Cinema · Bengaluru",
+      title: "Smart Home & Cinema in Karnataka, Tamil Nadu, Andhra Pradesh & Telangana",
+      metaDescription: "KNX smart home design and programming across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana: lighting, air-conditioning, curtains and scenes, plus home cinemas measured and calibrated with REW. Request a site survey.",
+      eyebrow: "Smart Home & Cinema",
       h1: "A home that answers to you.",
       lede: "We design, install and program smart homes on KNX: lighting, air-conditioning, curtains and scenes that work from the wall, your phone or a single touch. And we build home cinemas that are measured and calibrated for the room they sit in.",
       featuresTitle: "What we automate",
@@ -74,7 +77,7 @@ export const CATEGORIES = [
       },
       faq: [
         ["Do you work on existing homes, or only new builds?", "Both. KNX is easiest to plan during construction or a renovation. For a finished home, we check the wiring on the site survey and tell you honestly what's practical."],
-        ["Which areas do you serve?", "Bengaluru. Projects outside Bengaluru are possible on request."],
+        ["Which areas do you serve?", "Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. We're based in Bengaluru; for sites outside Bengaluru, any travel charges are agreed with you before the visit."],
         ["How much does a smart home cost?", "It depends on the number of rooms, the devices and the brands you choose. After the site survey you get a written quote with every item listed."],
         ["Can I control it from my phone?", "Yes. Along with wall keypads we set up phone control and secure remote access. Everyday switching keeps working locally even when the internet is down."],
       ],
@@ -92,9 +95,9 @@ export const CATEGORIES = [
     composerHint: "e.g. 12×16 ft theatre, 5.1 system, dialogue is hard to hear",
     cta: { label: "Book a revival consultation", wa: "Hi Thalir Innovations! I'd like a Home Cinema Revival consultation.\nMy location: \nWhat I want to improve (sound / picture / controls / room comfort): " },
     page: {
-      title: "Home Cinema Revival in Bengaluru",
-      metaDescription: "Home Cinema Revival for existing home theatres in Bengaluru: consultation, theatre enhancement, advanced calibration, and help with unwanted smells and eye irritation in the room. Book on WhatsApp.",
-      eyebrow: "Home Cinema Revival · Bengaluru",
+      title: "Home Cinema Revival in Karnataka, Tamil Nadu, Andhra Pradesh & Telangana",
+      metaDescription: "Home Cinema Revival for existing home theatres across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana: consultation, theatre enhancement, advanced calibration, and help with unwanted smells and eye irritation in the room. Book on WhatsApp.",
+      eyebrow: "Home Cinema Revival",
       h1: "Rediscover your home theatre.",
       lede: "Get more from the theatre you already own. We look at the sound, the picture, the controls and how comfortable the room is to sit in, then agree a practical plan to put it right.",
       featuresTitle: "What Cinema Revival covers",
@@ -117,7 +120,7 @@ export const CATEGORIES = [
         ["Do you only work on theatres you installed?", "No. Cinema Revival is for any existing home theatre. Tell us what equipment you have and we'll discuss what's possible."],
         ["What does advanced calibration include?", "It's scoped to your system. Share your receiver or processor model, speaker setup and display, and we'll explain the calibration that suits it."],
         ["Can you help with smells and eye irritation?", "We look for causes within the theatre room itself and discuss the work needed to put them right. We don't diagnose health conditions; if irritation continues, please see a doctor."],
-        ["Do you visit outside Bengaluru?", "Yes, by prior confirmation. Visit and travel charges depend on the location and are agreed with you before anything is scheduled."],
+        ["Which areas do you cover?", "Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. We're based in Bengaluru; for visits outside Bengaluru, travel charges depend on the location and are agreed with you before anything is scheduled."],
         ["How much does it cost?", "It depends on the room and the work involved. We agree the scope and charges with you before any visit is booked."],
       ],
     },

@@ -42,7 +42,7 @@ async function ekaniPricing() {
 
 // ---------- layout ----------
 function layout({ path, title, description, body, current }) {
-  const full = path === "/" ? `${SITE.name}: smart homes, home cinema & EKANI CRM · Bengaluru` : `${title} · ${SITE.name}`;
+  const full = path === "/" ? `${SITE.name}: smart homes, home cinema & EKANI CRM · Karnataka, Tamil Nadu, AP & Telangana` : `${title} · ${SITE.name}`;
   const nav = CATEGORIES.map((c) => `<a href="${catUrl(c)}"${current === c.slug ? ' aria-current="page"' : ""}>${esc(c.name)}</a>`).join("") +
     `<a href="/contact/"${current === "contact" ? ' aria-current="page"' : ""}>Contact</a>`;
   const ld = {
@@ -50,6 +50,7 @@ function layout({ path, title, description, body, current }) {
     logo: SITE.url + "/assets/img/icon-512.png", email: SITE.email,
     contactPoint: [{ "@type": "ContactPoint", telephone: "+91-95136-36657", contactType: "sales", areaServed: "IN" }],
     address: { "@type": "PostalAddress", addressLocality: SITE.city, addressRegion: "Karnataka", addressCountry: "IN" },
+    areaServed: SITE.states.map((name) => ({ "@type": "State", name })),
     sameAs: SITE.social.map(([, u]) => u),
   };
   return `<!doctype html>
@@ -94,7 +95,7 @@ ${body}
     <div class="cols">
       <div style="display:grid;gap:14px;align-content:start">
         <img src="/assets/img/logo.png" alt="${esc(SITE.name)}" width="409" height="54" loading="lazy">
-        <p class="muted">${esc(SITE.tagline)} ${esc(SITE.city)}, India.</p>
+        <p class="muted">${esc(SITE.tagline)} Based in ${esc(SITE.city)}, serving ${esc(SITE.serviceArea)}.</p>
       </div>
       <div><h3>What we do</h3><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/contact/">Contact</a></li></ul></div>
       <div><h3>Talk to us</h3><ul>
@@ -119,7 +120,7 @@ function composer(preselect = "") {
   return `<form class="composer" id="composer" data-wa="${SITE.whatsapp}" novalidate>
   <div class="row">
     <label for="c-name">Your name<input id="c-name" name="name" autocomplete="name" required></label>
-    <label for="c-area">Area / city<input id="c-area" name="area" autocomplete="address-level2" placeholder="e.g. Whitefield, Bengaluru"></label>
+    <label for="c-area">Area / city<input id="c-area" name="area" autocomplete="address-level2" placeholder="e.g. Whitefield, Bengaluru or Coimbatore"></label>
   </div>
   <label for="c-topic">I'm interested in<select id="c-topic" name="topic">${opts}<option value="Something else">Something else</option></select></label>
   <label for="c-msg">Tell us a little<textarea id="c-msg" name="msg" placeholder="${esc(hint)}"></textarea></label>
@@ -138,6 +139,7 @@ function reachBand(preselect) {
         <dt>WhatsApp</dt><dd><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(SITE.whatsappDisplay)}</a></dd>
         <dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd>
         <dt>Hours</dt><dd>${esc(SITE.hours)}</dd>
+        <dt>We cover</dt><dd>${esc(SITE.states.join(", "))}</dd>
         <dt>Based in</dt><dd>${esc(SITE.city)}, Karnataka</dd>
       </dl>
     </div>
@@ -168,7 +170,7 @@ function home() {
 <section class="hero">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow">Bengaluru · India</span>
+      <span class="eyebrow">${esc(SITE.states.join(" · "))}</span>
       <h1>Technology that grows with you.</h1>
       <p class="lede">We design smart homes and home cinemas, bring existing home theatres back to their best, and build EKANI, the WhatsApp-first CRM for Indian businesses. One team, engineering for your home and your business.</p>
       <div class="btns">${waBtn(a.cta.wa, a.cta.label)}${waBtn(b.cta.wa, b.cta.label, "ghost")}</div>
@@ -212,7 +214,7 @@ function categoryPage(c, pricing) {
       <h1>${esc(p.h1)}</h1>
       <p class="lede">${esc(p.lede)}</p>
       <div class="btns">${waBtn(c.cta.wa, c.cta.label)}${p.pricingUrl ? `<a class="btn ghost" href="${p.pricingUrl}" target="_blank" rel="noopener">See pricing</a>` : ""}</div>
-      ${p.signInUrl ? `<p class="contact-line"><span>Already a customer? <a href="${p.signInUrl}" target="_blank" rel="noopener">Sign in to EKANI</a></span></p>` : `<p class="contact-line"><span>WhatsApp <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span></p>`}
+      ${p.signInUrl ? `<p class="contact-line"><span>Already a customer? <a href="${p.signInUrl}" target="_blank" rel="noopener">Sign in to EKANI</a></span></p>` : `<p class="contact-line"><span>WhatsApp <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span><span>Serving ${esc(SITE.serviceArea)}</span></p>`}
     </div>
     <div class="hero-art">${art}</div>
   </div>
