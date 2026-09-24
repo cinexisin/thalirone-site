@@ -1,0 +1,40 @@
+[
+  {
+    "page": "home",
+    "pageURL": "http://127.0.0.1:4610/",
+    "version": "13.5.0",
+    "fetchTime": "2026-09-24T09:52:05.318Z",
+    "mode": "mobile",
+    "throttling": "simulate",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "CLS": 0,
+    "LCPms": 2481.4244,
+    "bytesExcludingFonts": 208885,
+    "totalBytes": 294383
+  },
+  {
+    "page": "smart-home",
+    "pageURL": "http://127.0.0.1:4610/smart-home-cinema/",
+    "version": "13.5.0",
+    "fetchTime": "2026-09-24T09:52:15.940Z",
+    "mode": "mobile",
+    "throttling": "simulate",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "CLS": 0,
+    "LCPms": 2406.32701498579,
+    "bytesExcludingFonts": 176397,
+    "totalBytes": 261895
+  }
+]

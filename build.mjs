@@ -2,54 +2,155 @@
 // Builds thalirone.com into ./docs (served by GitHub Pages). Zero dependencies.
 //   node build.mjs            → build (fetches live EKANI prices, falls back if offline)
 //   node build.mjs --offline  → skip the pricing fetch
-import { mkdir, writeFile, copyFile, rm, readdir } from "node:fs/promises";
+import {
+  mkdir,
+  writeFile,
+  copyFile,
+  rm,
+  readdir,
+  readFile,
+} from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { SITE, CATEGORIES, EKANI_PRICING_FALLBACK } from "./src/config.mjs";
-import { ILLUSTRATIONS, ICONS, WA_ICON, TRACE, speakerLayout } from "./src/illustrations.mjs";
+import {
+  SITE,
+  CATEGORIES,
+  EKANI_PRICING_FALLBACK,
+  UI,
+  COPY,
+} from "./src/config.mjs";
+import {
+  ILLUSTRATIONS,
+  ICONS,
+  WA_ICON,
+  TRACE,
+  speakerLayout,
+} from "./src/illustrations.mjs";
+
+import { SCENES, livingScene, cinemaScene } from "./src/scenes.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, "docs");
 const YEAR = new Date().getFullYear();
-const VERSION = Date.now().toString(36);
+const VERSION = createHash("sha256")
+  .update(await readFile(join(ROOT, "src/assets/styles.css")))
+  .update(await readFile(join(ROOT, "src/assets/main.js")))
+  .digest("hex")
+  .slice(0, 10);
 
 // ---------- helpers ----------
-const esc = (s = "") => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const esc = (s = "") =>
+  String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 const inr = (n) => "₹" + Number(n).toLocaleString("en-IN");
-const wa = (text) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
-const WA_GENERAL = "Hi Thalir Innovations! I have an enquiry.";
-const waBtn = (text, label, cls = "") => `<a class="btn ${cls}" href="${esc(wa(text))}" target="_blank" rel="noopener">${WA_ICON}<span>${esc(label)}</span></a>`;
+const wa = (text) =>
+  `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
+const WA_GENERAL = UI.generalEnquiry;
+const waBtn = (text, label, cls = "") =>
+  `<a class="btn ${cls}" href="${esc(wa(text))}" target="_blank" rel="noopener">${WA_ICON}<span>${esc(label)}</span></a>`;
 const catUrl = (c) => `/${c.slug}/`;
+const logo = (lazy = false) => `<picture>
+  <source type="image/webp" srcset="/assets/img/logo-172.webp 172w, /assets/img/logo-344.webp 344w, /assets/img/logo-516.webp 516w" sizes="(max-width: 768px) 151px, 172px">
+  <source type="image/avif" srcset="/assets/img/logo-172.avif 172w, /assets/img/logo-344.avif 344w, /assets/img/logo-516.avif 516w" sizes="(max-width: 768px) 151px, 172px">
+  <img src="/assets/img/logo.png" alt="${esc(SITE.name)}" width="172" height="64" ${lazy ? 'loading="lazy"' : 'fetchpriority="high"'}>
+</picture>`;
+function mobileAction(current) {
+  const c = CATEGORIES.find((c) => c.slug === current) || CATEGORIES[0];
+  return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></aside>`;
+}
+function heroDemo(u) {
+  return `<div class="home-demo" data-demo>
+    <div class="demo-top"><span class="eyebrow">${esc(UI.demoLabel)}</span><span class="example-tag">${esc(UI.example)}</span></div>
+    <div class="demo-room">${livingScene(undefined, { layout: "wide", eager: true })}<div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div></div>
+    <div class="demo-conversation" role="group" aria-label="${esc(u.chatSub)}">
+      <div class="demo-chat-title">${ICONS.chat}<strong>${esc(u.chatTitle)}</strong><span>${esc(u.chatSub)}</span></div>
+      <div class="demo-messages">${u.chat
+        .slice(0, 4)
+        .map(
+          ([who, t], i) =>
+            `<div class="demo-slot"><p class="msg ${who}" data-message="${i}">${esc(t)}</p><span class="typing" aria-hidden="true"><i></i><i></i><i></i></span></div>`,
+        )
+        .join("")}</div>
+    </div>
+    <div class="demo-bottom"><p>${esc(u.chatNote)}</p><button class="replay" type="button" hidden>${esc(UI.replay)} ${ICONS.arrow}</button></div>
+  </div>`;
+}
 
 // ---------- EKANI pricing (live feed → fallback) ----------
 async function ekaniPricing() {
-  if (process.argv.includes("--offline")) return { ...EKANI_PRICING_FALLBACK, live: false };
+  if (process.argv.includes("--offline"))
+    return { ...EKANI_PRICING_FALLBACK, live: false };
   try {
-    const r = await fetch("https://api.ekanicrm.com/v1/public/pricing", { signal: AbortSignal.timeout(10000) });
+    const r = await fetch("https://api.ekanicrm.com/v1/public/pricing", {
+      signal: AbortSignal.timeout(10000),
+    });
     if (!r.ok) throw new Error("HTTP " + r.status);
     const j = await r.json();
     // Business modules only: the personal "Money" products are never shown as business prices.
-    const mods = (j.modules || []).filter((m) => m.active !== false && !/money/i.test(m.key + " " + m.label));
+    const mods = (j.modules || []).filter(
+      (m) => m.active !== false && !/money/i.test(m.key + " " + m.label),
+    );
     if (!mods.length) throw new Error("no modules");
-    const modules = mods.map((m) => [m.label, m.tagline, m.monthlyInr, m.originalMonthlyInr]);
-    const bundleFrom = Math.min(...(j.bundle?.tiers || []).map((t) => t.monthlyInr));
-    return { modules, moduleFrom: Math.min(...mods.map((m) => m.monthlyInr)), bundleFrom, live: true };
+    const modules = mods.map((m) => [
+      m.label,
+      m.tagline,
+      m.monthlyInr,
+      m.originalMonthlyInr,
+    ]);
+    const bundleFrom = Math.min(
+      ...(j.bundle?.tiers || []).map((t) => t.monthlyInr),
+    );
+    return {
+      modules,
+      moduleFrom: Math.min(...mods.map((m) => m.monthlyInr)),
+      bundleFrom,
+      live: true,
+    };
   } catch (e) {
-    console.warn("! EKANI pricing feed unavailable (" + e.message + "), using fallback");
+    console.warn(
+      "! EKANI pricing feed unavailable (" + e.message + "), using fallback",
+    );
     return { ...EKANI_PRICING_FALLBACK, live: false };
   }
 }
 
 // ---------- layout ----------
 function layout({ path, title, description, body, current }) {
-  const full = path === "/" ? `${SITE.name}: smart homes, home cinema & EKANI CRM · Karnataka, Tamil Nadu, AP & Telangana` : `${title} · ${SITE.name}`;
-  const nav = CATEGORIES.map((c) => `<a href="${catUrl(c)}"${current === c.slug ? ' aria-current="page"' : ""}>${esc(c.name)}</a>`).join("") +
-    `<a href="/contact/"${current === "contact" ? ' aria-current="page"' : ""}>Contact</a>`;
+  const full =
+    path === "/"
+      ? `${SITE.name}: ${COPY.homeMetaSuffix}`
+      : `${title} · ${SITE.name}`;
+  const nav =
+    CATEGORIES.map(
+      (c) =>
+        `<a href="${catUrl(c)}"${current === c.slug ? ' aria-current="page"' : ""}>${esc(c.name)}</a>`,
+    ).join("") +
+    `<a href="/contact/"${current === "contact" ? ' aria-current="page"' : ""}>${esc(COPY.contact)}</a>`;
   const ld = {
-    "@context": "https://schema.org", "@type": "Organization", name: SITE.name, url: SITE.url,
-    logo: SITE.url + "/assets/img/icon-512.png", email: SITE.email,
-    contactPoint: [{ "@type": "ContactPoint", telephone: "+91-95136-36657", contactType: "sales", areaServed: "IN" }],
-    address: { "@type": "PostalAddress", addressLocality: SITE.city, addressRegion: "Karnataka", addressCountry: "IN" },
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.name,
+    url: SITE.url,
+    logo: SITE.url + "/assets/img/icon-512.png",
+    email: SITE.email,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+91-95136-36657",
+        contactType: "sales",
+        areaServed: "IN",
+      },
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: SITE.city,
+      addressRegion: "Karnataka",
+      addressCountry: "IN",
+    },
     areaServed: SITE.states.map((name) => ({ "@type": "State", name })),
     sameAs: SITE.social.map(([, u]) => u),
   };
@@ -57,7 +158,7 @@ function layout({ path, title, description, body, current }) {
 <html lang="en-IN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(full)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${SITE.url}${path}">
@@ -72,42 +173,42 @@ function layout({ path, title, description, body, current }) {
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/assets/img/favicon-48.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<link rel="preload" href="/assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/styles.css?v=${VERSION}">
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
+<body class="${path === "/" ? "home-page" : current || "utility-page"}">
+<a class="skip" href="#main">${esc(COPY.skip)}</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="/" aria-label="${esc(SITE.name)} home"><img src="/assets/img/logo.png" alt="${esc(SITE.name)}" width="349" height="46"></a>
-    <nav class="nav" aria-label="Main">${nav}${waBtn(WA_GENERAL, "WhatsApp us", "sm head-cta")}</nav>
-    <details class="menu"><summary>Menu</summary><div class="menu-panel">${nav}${waBtn(WA_GENERAL, "WhatsApp us")}</div></details>
+    <a class="brand" href="/" aria-label="${esc(SITE.name)} home">${logo()}</a>
+    <nav class="nav" aria-label="${esc(UI.mainNav)}">${nav}${waBtn(WA_GENERAL, UI.whatsapp, "sm head-cta")}</nav>
+    <details class="menu"><summary aria-controls="mobile-panel" data-open-label="${esc(UI.menu)}" data-close-label="${esc(UI.closeMenu)}"><span>${esc(UI.menu)}</span><span class="menu-icon" aria-hidden="true"></span></summary><nav id="mobile-panel" class="menu-panel" aria-label="${esc(UI.mobileNav)}">${nav}${waBtn(WA_GENERAL, UI.whatsapp)}</nav></details>
   </div>
 </header>
-<main id="main">
+<main id="main" tabindex="-1">
 ${body}
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <div class="cols">
       <div style="display:grid;gap:14px;align-content:start">
-        <img src="/assets/img/logo.png" alt="${esc(SITE.name)}" width="409" height="54" loading="lazy">
-        <p class="muted">${esc(SITE.tagline)} Based in ${esc(SITE.city)}, serving ${esc(SITE.serviceArea)}.</p>
+        ${logo(true)}
+        <p class="muted">${esc(SITE.tagline)} ${esc(COPY.footerBased)} ${esc(SITE.city)}, ${esc(COPY.footerServing)} ${esc(SITE.serviceArea)}.</p>
       </div>
-      <div><h3>What we do</h3><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/contact/">Contact</a></li></ul></div>
-      <div><h3>Talk to us</h3><ul>
-        <li><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">WhatsApp ${esc(SITE.whatsappDisplay)}</a></li>
+      <div><h3>${esc(COPY.whatWeDo)}</h3><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
+      <div><h3>${esc(COPY.talk)}</h3><ul>
+        <li><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></li>
         <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
         <li class="muted">${esc(SITE.hours)}</li>
         ${SITE.social.map(([n, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a></li>`).join("")}
       </ul></div>
     </div>
-    <div class="legal"><span>© ${YEAR} ${esc(SITE.name)} · ${esc(SITE.city)}</span><a href="/privacy/">Privacy</a></div>
+    <div class="legal"><span>© ${YEAR} ${esc(SITE.name)} · ${esc(SITE.city)}</span><a href="/privacy/">${esc(COPY.privacy)}</a></div>
   </div>
 </footer>
+${mobileAction(current)}
 <script src="/assets/main.js?v=${VERSION}" defer></script>
 </body>
 </html>`;
@@ -115,32 +216,40 @@ ${body}
 
 // ---------- shared blocks ----------
 function composer(preselect = "") {
-  const hint = CATEGORIES.find((c) => c.slug === preselect)?.composerHint ?? CATEGORIES[0].composerHint ?? "";
-  const opts = CATEGORIES.map((c) => `<option value="${esc(c.name)}"${preselect === c.slug ? " selected" : ""}>${esc(c.name)}</option>`).join("");
-  return `<form class="composer" id="composer" data-wa="${SITE.whatsapp}" novalidate>
+  const hint =
+    CATEGORIES.find((c) => c.slug === preselect)?.composerHint ??
+    CATEGORIES[0].composerHint ??
+    "";
+  const opts = CATEGORIES.map(
+    (c) =>
+      `<option value="${esc(c.name)}" data-hint="${esc(c.composerHint)}"${preselect === c.slug ? " selected" : ""}>${esc(c.name)}</option>`,
+  ).join("");
+  return `<noscript><p class="no-script">${esc(UI.noScript)} ${waBtn(WA_GENERAL, UI.whatsapp)}</p></noscript>
+  <form class="composer" id="composer" data-wa="${SITE.whatsapp}" data-greeting="${esc(UI.formGreeting)}" data-name-prefix="${esc(UI.namePrefix)}" data-area-prefix="${esc(UI.areaPrefix)}" data-topic-prefix="${esc(UI.topicPrefix)}" hidden novalidate>
   <div class="row">
-    <label for="c-name">Your name<input id="c-name" name="name" autocomplete="name" required></label>
-    <label for="c-area">Area / city<input id="c-area" name="area" autocomplete="address-level2" placeholder="e.g. Whitefield, Bengaluru or Coimbatore"></label>
+    <label for="c-name">${esc(UI.nameLabel)}<input id="c-name" name="name" autocomplete="name" maxlength="120" required aria-describedby="name-error"><span class="field-error" id="name-error" hidden>${esc(UI.nameError)}</span></label>
+    <label for="c-area">${esc(UI.areaLabel)}<input id="c-area" name="area" autocomplete="address-level2" maxlength="200" placeholder="${esc(UI.areaPlaceholder)}"></label>
   </div>
-  <label for="c-topic">I'm interested in<select id="c-topic" name="topic">${opts}<option value="Something else">Something else</option></select></label>
-  <label for="c-msg">Tell us a little<textarea id="c-msg" name="msg" placeholder="${esc(hint)}"></textarea></label>
-  <button class="btn" type="submit">${WA_ICON}<span>Continue on WhatsApp</span></button>
-  <p class="fine">This opens WhatsApp with your message ready to send to ${esc(SITE.whatsappDisplay)}. Nothing is sent until you press send.</p>
+  <label for="c-topic">${esc(UI.topicLabel)}<select id="c-topic" name="topic">${opts}<option value="${esc(UI.otherTopic)}">${esc(UI.otherTopic)}</option></select></label>
+  <label for="c-msg">${esc(UI.messageLabel)}<textarea id="c-msg" name="msg" maxlength="3000" placeholder="${esc(hint)}"></textarea></label>
+  <button class="btn" type="submit">${WA_ICON}<span>${esc(UI.continue)}</span></button>
+  <p class="fine">${esc(UI.formNote)} ${esc(SITE.whatsappDisplay)}${esc(UI.formNoteEnd)}</p>
+  <div class="form-result" hidden><p role="status">${esc(UI.handoff)}</p><a class="link-arrow" href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(UI.openMessage)} ${ICONS.arrow}</a></div>
 </form>`;
 }
 function reachBand(preselect) {
   return `<section class="reach band" id="contact" aria-labelledby="reach-h">
   <div class="wrap">
     <div class="copy">
-      <span class="eyebrow">Talk to us</span>
-      <h2 id="reach-h">Tell us what you're planning.</h2>
-      <p>Message us on WhatsApp and our team replies. No call centre, no forms that vanish.</p>
+      <span class="eyebrow">${esc(COPY.talk)}</span>
+      <h2 id="reach-h">${esc(COPY.reachTitle)}</h2>
+      <p>${esc(COPY.reachIntro)}</p>
       <dl>
-        <dt>WhatsApp</dt><dd><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(SITE.whatsappDisplay)}</a></dd>
-        <dt>Email</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd>
-        <dt>Hours</dt><dd>${esc(SITE.hours)}</dd>
-        <dt>We cover</dt><dd>${esc(SITE.states.join(", "))}</dd>
-        <dt>Based in</dt><dd>${esc(SITE.city)}, Karnataka</dd>
+        <dt>${esc(COPY.whatsapp)}</dt><dd><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(SITE.whatsappDisplay)}</a></dd>
+        <dt>${esc(COPY.email)}</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd>
+        <dt>${esc(COPY.hours)}</dt><dd>${esc(SITE.hours)}</dd>
+        <dt>${esc(COPY.cover)}</dt><dd>${esc(SITE.states.join(", "))}</dd>
+        <dt>${esc(COPY.based)}</dt><dd>${esc(SITE.city)}, Karnataka</dd>
       </dl>
     </div>
     ${composer(preselect)}
@@ -149,78 +258,86 @@ function reachBand(preselect) {
 }
 function uspBlock(u, { compact = false, link = null } = {}) {
   if (!u) return "";
-  const chat = `<div class="chatdemo" role="img" aria-label="${esc(u.chatLabel)}">
+  const chat = compact
+    ? `<div class="usp-proof"><ul class="ticks">${u.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul></div>`
+    : `<div class="chatdemo" role="img" aria-label="${esc(u.chatLabel)}">
     <div class="chat-head">${WA_ICON}<span>${esc(u.chatTitle)}</span><span class="chat-sub">${esc(u.chatSub)}</span></div>
     <div class="chat-body">${u.chat.map(([who, t]) => `<p class="msg ${who === "me" ? "me" : "home"}">${esc(t)}</p>`).join("")}</div>
     <p class="flow-note">${esc(u.chatNote)}</p>
   </div>`;
   const groups = (compact ? u.groups.slice(0, 8) : u.groups)
-    .map(([h, items]) => `<div class="cap"><h3>${esc(h)}</h3><ul>${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`)
+    .map(
+      ([h, items], i) =>
+        `<div class="cap">${ICONS[["bulb", "snow", "curtain", "spark", "gate", "shield", "remote", "plan"][i]] || ICONS.check}<h3>${esc(h)}</h3><ul>${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`,
+    )
     .join("");
-  return `<section class="band usp" aria-labelledby="usp-h"><div class="wrap">
+  return `<section class="band usp" id="chat-control" aria-labelledby="usp-h"><div class="wrap">
   <div class="usp-top">
-    <div class="copy"><span class="eyebrow">${esc(u.eyebrow)}</span><h2 id="usp-h">${esc(u.title)}</h2><p class="lede">${esc(u.lede)}</p>
-      <ul class="ticks">${u.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>
+    <div class="copy"><span class="eyebrow">${esc(u.eyebrow)}</span><h2 id="usp-h">${esc(compact ? u.groupsTitle : u.title)}</h2><p class="lede">${esc(u.lede)}</p>
+      ${compact ? "" : `<ul class="ticks">${u.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>`}
       ${link ? `<a class="link-arrow" href="${link[0]}">${esc(link[1])} ${ICONS.arrow}</a>` : ""}
     </div>
     ${chat}
   </div>
-  <div class="sec-head" style="margin-top:clamp(36px,5vw,56px)"><h3 class="caps-title">${esc(u.groupsTitle)}</h3></div>
+  ${compact ? '<div class="caps-space"></div>' : `<div class="sec-head" style="margin-top:clamp(36px,5vw,56px)"><h3 class="caps-title">${esc(u.groupsTitle)}</h3></div>`}
   <div class="caps">${groups}</div>
   ${u.footnote ? `<p class="muted usp-foot">${esc(u.footnote)}</p>` : ""}
 </div></section>`;
 }
 
-const faqBlock = (items) => `<div class="faq">${items.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div>`;
+const faqBlock = (items) =>
+  `<div class="faq">${items.map(([q, a]) => `<details><summary>${esc(q)}</summary><div class="faq-answer"><p>${esc(a)}</p></div></details>`).join("")}</div>`;
 
 // ---------- pages ----------
 function home() {
   const bySlug = (slug) => CATEGORIES.find((c) => c.slug === slug);
   const a = bySlug("smart-home-cinema") ?? CATEGORIES[0];
-  const b = bySlug("business-software") ?? CATEGORIES[1];
   const rv = bySlug("cinema-revival");
-  const cards = CATEGORIES.map((c) => `<article class="cat">
-    <div class="cat-art">${ILLUSTRATIONS[c.illustration]?.() || ""}</div>
+  const cards = CATEGORIES.map(
+    (
+      c,
+      i,
+    ) => `<article class="cat"><span class="cat-index" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
+    <div class="cat-art">${SCENES[c.illustration]?.() || ILLUSTRATIONS[c.illustration]?.() || ""}</div>
     <div class="cat-body">
       <span class="eyebrow">${esc(c.label)}</span>
       <h3 style="font-size:1.5rem">${esc(c.name)}</h3>
       <p class="muted">${esc(c.card.pitch)}</p>
       <ul class="ticks">${c.card.bullets.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>
-      <div class="cat-foot">${waBtn(c.cta.wa, c.cta.label, "sm")}<a class="link-arrow" href="${catUrl(c)}">Explore ${esc(c.name)} ${ICONS.arrow}</a></div>
+      <div class="cat-foot">${waBtn(c.cta.wa, c.cta.label, "sm")}<a class="link-arrow" href="${catUrl(c)}">${esc(UI.explore)} ${esc(c.name)} ${ICONS.arrow}</a></div>
     </div>
-  </article>`).join("");
+  </article>`,
+  ).join("");
   const sh = CATEGORIES.find((c) => c.slug === "smart-home-cinema");
   return `
-<section class="hero">
+<section class="hero visual-hero">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow">${esc(SITE.states.join(" · "))}</span>
-      <h1>Technology that grows with you.</h1>
-      <p class="lede">We design smart homes and home cinemas, bring existing home theatres back to their best, and build EKANI, the WhatsApp-first CRM for Indian businesses. One team, engineering for your home and your business.</p>
-      <div class="btns">${waBtn(a.cta.wa, a.cta.label)}${waBtn(b.cta.wa, b.cta.label, "ghost")}</div>
-      ${rv ? `<a class="link-arrow" href="${catUrl(rv)}">Already have a home theatre? ${esc(rv.name)} ${ICONS.arrow}</a>` : ""}
-      <p class="contact-line"><span>WhatsApp <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span></p>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="plate a">${ILLUSTRATIONS.floorplan()}</div>
-      <div class="plate b">${ILLUSTRATIONS.ekaniflow()}</div>
+      <span class="eyebrow">${esc(UI.heroEyebrow)}</span>
+      <h1>${esc(UI.heroTitle[0])} <span>${esc(UI.heroTitle[1])}</span></h1>
+      <p class="lede">${esc(UI.heroLede)}</p>
+      <div class="btns">${waBtn(a.cta.wa, a.cta.label)}<a class="link-arrow" href="#chat-control">${esc(UI.heroDetail)} ${ICONS.arrow}</a></div>
+      ${rv ? `<a class="link-arrow" href="${catUrl(rv)}">${esc(COPY.alreadyTheatre)} ${esc(rv.name)} ${ICONS.arrow}</a>` : ""}
+      <p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span></p>
     </div>
   </div>
+  <div class="visual-stage wrap">${a.page.usp ? heroDemo(a.page.usp) : `<div class="hero-art">${ILLUSTRATIONS[a.illustration]?.() || ""}</div>`}</div>
 </section>
-${sh?.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), "See everything your home can do"] }) : ""}
-<section class="band cream" aria-labelledby="cats-h">
+<div class="service-strip"><div class="wrap"><p>${esc(SITE.serviceArea)}</p><div>${CATEGORIES.map((c) => `<a href="${catUrl(c)}">${esc(c.name)} ${ICONS.arrow}</a>`).join("")}</div></div></div>
+<section class="band cream service-gallery" aria-labelledby="cats-h">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">What we do</span><h2 id="cats-h">One standard of work, for your home and your business</h2></div>
+    <div class="sec-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div>
     <div class="cats">${cards}</div>
   </div>
 </section>
+${sh?.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}
 <section class="band" aria-labelledby="why-h">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Why Thalir</span><h2 id="why-h">Engineered properly, explained plainly</h2></div>
+    <div class="sec-head"><span class="eyebrow">${esc(COPY.why)}</span><h2 id="why-h">${esc(COPY.whyTitle)}</h2></div>
     <div class="why">
-      <div><h3>Programmed, not just installed</h3><p>We design and program KNX systems in ETS6, and we measure cinema rooms with REW before we tune them.</p></div>
-      <div><h3>We build our own software</h3><p>EKANI is built by our team in Bengaluru, so you talk to the people who make it, not a reseller.</p></div>
-      <div><h3>Reach us on WhatsApp</h3><p>Enquiries, quotes and support all happen where you already are, with no call-centre queue.</p></div>
+      <div><h3>${esc(COPY.why1)}</h3><p>${esc(COPY.why1Body)}</p></div>
+      <div><h3>${esc(COPY.why2)}</h3><p>${esc(COPY.why2Body)}</p></div>
+      <div><h3>${esc(COPY.why3)}</h3><p>${esc(COPY.why3Body)}</p></div>
     </div>
   </div>
 </section>
@@ -230,7 +347,21 @@ ${reachBand()}`;
 
 function categoryPage(c, pricing) {
   const p = c.page;
-  const art = c.illustration === "ekaniflow" ? `<div class="plate a" style="width:100%">${ILLUSTRATIONS.ekaniflow()}</div>` : `<div class="plate a" style="width:100%">${ILLUSTRATIONS[c.illustration]()}</div>`;
+  const art = `<div class="plate a scene-plate">${SCENES[c.illustration]?.(undefined, { layout: "hero", eager: true }) || ILLUSTRATIONS[c.illustration]?.() || ""}</div>`;
+  const sections = [
+    ...(p.features || c.slug === "business-software"
+      ? [["features", UI.features]]
+      : []),
+    ...(c.slug === "business-software"
+      ? [
+          ["pricing", UI.pricing],
+          ["how-it-works", UI.how],
+        ]
+      : p.process
+        ? [["how-it-works", UI.how]]
+        : []),
+    ...(p.faq ? [["faq", UI.faq]] : []),
+  ];
   let s = `
 <section class="hero page-hero">
   <div class="wrap">
@@ -238,55 +369,67 @@ function categoryPage(c, pricing) {
       <span class="eyebrow">${esc(p.eyebrow)}</span>
       <h1>${esc(p.h1)}</h1>
       <p class="lede">${esc(p.lede)}</p>
-      <div class="btns">${waBtn(c.cta.wa, c.cta.label)}${p.pricingUrl ? `<a class="btn ghost" href="${p.pricingUrl}" target="_blank" rel="noopener">See pricing</a>` : ""}</div>
-      ${p.signInUrl ? `<p class="contact-line"><span>Already a customer? <a href="${p.signInUrl}" target="_blank" rel="noopener">Sign in to EKANI</a></span></p>` : `<p class="contact-line"><span>WhatsApp <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span><span>Serving ${esc(SITE.serviceArea)}</span></p>`}
+      <div class="btns">${waBtn(c.cta.wa, c.cta.label)}${p.pricingUrl ? `<a class="btn ghost" href="${p.pricingUrl}" target="_blank" rel="noopener">${esc(COPY.seePricing)}</a>` : ""}</div>
+      ${p.signInUrl ? `<p class="contact-line"><span>${esc(COPY.alreadyCustomer)} <a href="${p.signInUrl}" target="_blank" rel="noopener">${esc(COPY.signIn)}</a></span></p>` : `<p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span><span>${esc(COPY.serving)} ${esc(SITE.serviceArea)}</span></p>`}
     </div>
     <div class="hero-art">${art}</div>
   </div>
-</section>`;
+</section>
+<nav class="page-nav" aria-label="${esc(UI.pageNav)}"><div class="wrap">${sections.map(([id, label]) => `<a href="#${id}">${esc(label)}</a>`).join("")}<a class="page-nav-cta" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></div></nav>`;
+  if (c.illustration === "revival")
+    s += `<section class="revival-detail band"><div class="wrap split"><div class="art">${speakerLayout()}</div>${ILLUSTRATIONS.revival()}</div></section>`;
   if (p.usp) s += uspBlock(p.usp);
-  if (p.features) s += `
-<section class="band cream" aria-labelledby="f-h"><div class="wrap">
+  if (p.features)
+    s += `
+<section class="band cream" id="features" aria-labelledby="f-h"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">${esc(c.name)}</span><h2 id="f-h">${esc(p.featuresTitle)}</h2></div>
   <div class="features">${p.features.map(([ic, h, t]) => `<div class="feature">${ICONS[ic] || ""}<h3>${esc(h)}</h3><p>${esc(t)}</p></div>`).join("")}</div>
 </div></section>`;
-  if (c.slug === "business-software") s += `
-<section class="band cream" aria-labelledby="m-h"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">EKANI modules</span><h2 id="m-h">${esc(p.featuresTitle)}</h2><p class="muted">Each module includes up to 3 users. Or get every module with EKANI One.</p></div>
-  <div class="modules">${pricing.modules.map(([n, t, price, orig]) => `<div class="module"><h3>${esc(n)}</h3><p>${esc(t)}</p><span class="price">${inr(price)}/month${orig && orig > price ? `<s>${inr(orig)}</s>` : ""}</span></div>`).join("")}</div>
-  <div class="price-note"><span class="big">EKANI One, every module: from ${inr(pricing.bundleFrom)}/month</span><span class="muted">Prices as listed on <a href="${p.pricingUrl}" target="_blank" rel="noopener">ekanicrm.com/pricing</a>. Yearly plans cost 10× the monthly price.</span></div>
+  if (c.slug === "business-software")
+    s += `
+<section class="band cream pricing" id="features" aria-labelledby="m-h"><div class="wrap">
+  <div class="sec-head" id="pricing"><span class="eyebrow">${esc(UI.moduleEyebrow)}</span><h2 id="m-h">${esc(p.featuresTitle)}</h2><p class="muted">${esc(UI.moduleNote)}</p></div>
+  <div class="bundle"><div>${ICONS.plan}<span class="eyebrow">${esc(UI.bundleNote)}</span><h3>${esc(UI.bundleTitle)}</h3></div><p class="bundle-price"><span>${esc(UI.from)}</span> ${inr(pricing.bundleFrom)}<small>${esc(UI.month)}</small></p>${waBtn(c.cta.wa, c.cta.label)}</div>
+  <div class="modules">${pricing.modules.map(([n, t, price, orig], i) => `<div class="module">${ICONS[["chat", "globe", "plan", "spark", "dial", "gate", "curtain", "shield", "remote", "bulb"][i % 10]]}<h3>${esc(n)}</h3><p>${esc(t)}</p><span class="price">${inr(price)}<small>${esc(UI.month)}</small>${orig && orig > price ? `<s>${inr(orig)}</s>` : ""}</span></div>`).join("")}</div>
+  <p class="price-note">${esc(UI.pricingSource)} <a href="${p.pricingUrl}" target="_blank" rel="noopener">${esc(UI.pricingSourceLabel)}</a>. ${esc(UI.annualNote)}</p>
 </div></section>
+<section class="band workflow" id="how-it-works" aria-labelledby="workflow-h"><div class="wrap"><div class="sec-head"><span class="eyebrow">${esc(UI.how)}</span><h2 id="workflow-h">${esc(p.h1)}</h2></div>${ILLUSTRATIONS.ekaniflow()}</div></section>
 <section class="band" aria-labelledby="who-h"><div class="wrap split">
-  <div class="copy"><span class="eyebrow">Built for</span><h2 id="who-h">Businesses that sell on WhatsApp</h2><p class="muted">Trades and service businesses that quote, install and maintain, with a team in the field.</p><div class="pill-row">${p.audience.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div></div>
-  <div class="copy"><span class="eyebrow">Languages</span><h3>The bot, reminders and voice notes work in ten languages</h3><div class="pill-row">${p.languages.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div><p class="muted" style="font-size:.92rem">Web screens are in English.</p></div>
+  <div class="copy"><span class="eyebrow">${esc(COPY.builtFor)}</span><h2 id="who-h">${esc(COPY.audienceTitle)}</h2><p class="muted">${esc(COPY.audienceBody)}</p><div class="pill-row">${p.audience.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div></div>
+  <div class="copy"><span class="eyebrow">${esc(COPY.languages)}</span><h3>${esc(COPY.languagesTitle)}</h3><div class="pill-row">${p.languages.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div><p class="muted" style="font-size:.92rem">${esc(COPY.webLanguage)}</p></div>
 </div></section>
 <section class="band cream tight" aria-labelledby="t-h"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Your data</span><h2 id="t-h">Kept separate and protected</h2></div>
+  <div class="sec-head"><span class="eyebrow">${esc(COPY.data)}</span><h2 id="t-h">${esc(COPY.dataTitle)}</h2></div>
   <ul class="ticks" style="max-width:46rem">${p.trust.map(([x]) => `<li>${ICONS.shield}<span>${esc(x)}</span></li>`).join("")}</ul>
 </div></section>`;
-  if (p.spotlight) s += `
+  if (p.spotlight)
+    s += `
 <section class="band" aria-labelledby="sp-h"><div class="wrap split">
   <div class="copy"><span class="eyebrow">${esc(p.spotlight.eyebrow)}</span><h2 id="sp-h">${esc(p.spotlight.title)}</h2>${p.spotlight.body.map((x) => `<p class="muted">${esc(x)}</p>`).join("")}</div>
   <div class="art">${ILLUSTRATIONS.floorplan()}</div>
 </div></section>`;
-  if (p.cinema) s += `
+  if (p.cinema)
+    s += `
 <section class="band cream" aria-labelledby="cin-h"><div class="wrap split">
-  <div class="art">${speakerLayout()}</div>
+  <div class="cinema-art"><div class="scene-plate">${cinemaScene(undefined, { layout: "detail" })}</div><details class="diagram-detail"><summary>${esc(UI.exampleCinema)}</summary>${speakerLayout()}</details></div>
   <div class="copy"><span class="eyebrow">${esc(p.cinema.eyebrow)}</span><h2 id="cin-h">${esc(p.cinema.title)}</h2><p class="muted">${esc(p.cinema.body)}</p><ul class="ticks">${p.cinema.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>${p.cinema.link ? `<a class="link-arrow" href="${p.cinema.link[0]}">${esc(p.cinema.link[1])} ${ICONS.arrow}</a>` : ""}</div>
 </div></section>`;
-  if (p.process) s += `
-<section class="band" aria-labelledby="pr-h"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">How it works</span><h2 id="pr-h">${esc(p.processTitle || "From first visit to handover")}</h2></div>
+  if (p.process)
+    s += `
+<section class="band process" id="how-it-works" aria-labelledby="pr-h"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">${esc(COPY.how)}</span><h2 id="pr-h">${esc(p.processTitle || COPY.processTitle)}</h2></div>
   <ol class="steps">${p.process.map(([h, t]) => `<li><h3>${esc(h)}</h3><p>${esc(t)}</p></li>`).join("")}</ol>
 </div></section>`;
-  if (p.brands) s += `
+  if (p.brands)
+    s += `
 <section class="band cream tight" aria-labelledby="br-h"><div class="wrap">
   <div class="sec-head"><h2 id="br-h" style="font-size:1.4rem">${esc(p.brands.title)}</h2></div>
   <div class="brand-groups">${p.brands.groups.map(([k, list]) => `<div class="row"><span class="k">${esc(k)}</span>${list.map((n) => `<span class="brand-name">${esc(n)}</span>`).join("")}</div>`).join("")}</div>
 </div></section>`;
-  if (p.faq) s += `
-<section class="band" aria-labelledby="faq-h"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Questions</span><h2 id="faq-h">What people ask us</h2></div>
+  if (p.faq)
+    s += `
+<section class="band faq-section" id="faq" aria-labelledby="faq-h"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">${esc(COPY.questions)}</span><h2 id="faq-h">${esc(COPY.questionsTitle)}</h2></div>
   ${faqBlock(p.faq)}
 </div></section>`;
   return s + reachBand(c.slug);
@@ -295,34 +438,34 @@ function categoryPage(c, pricing) {
 function contactPage() {
   return `
 <section class="hero page-hero" style="padding-bottom:24px"><div class="wrap" style="grid-template-columns:1fr">
-  <div class="hero-copy"><span class="eyebrow">Contact</span><h1>Let's talk.</h1><p class="lede">The fastest way to reach us is WhatsApp. Tell us a little about your home or business and we'll take it from there.</p></div>
+  <div class="hero-copy"><span class="eyebrow">${esc(COPY.contact)}</span><h1>${esc(COPY.contactTitle)}</h1><p class="lede">${esc(COPY.contactIntro)}</p></div>
 </div></section>
 ${reachBand()}`;
 }
 
 function privacyPage() {
-  return `<section class="band"><div class="wrap prose">
-  <span class="eyebrow">Privacy</span>
-  <h1 style="font-size:2.2rem">How we handle your information</h1>
-  <p class="muted">Last updated ${new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</p>
-  <h2>This website</h2>
-  <p>thalirone.com doesn't use cookies, analytics or advertising trackers. Fonts load from Google Fonts, which sees your IP address like any web request. The contact form doesn't send anything to us by itself. It prepares a WhatsApp message on your device, and nothing is sent unless you press send in WhatsApp.</p>
-  <h2>When you message us</h2>
-  <p>Messages you send to ${esc(SITE.whatsappDisplay)} reach us through WhatsApp (Meta) and our messaging provider, and are recorded in our customer system so our team can reply and follow up. We use your name, number, area and what you tell us only to answer your enquiry, prepare quotes and serve you as a customer.</p>
-  <h2>Sharing</h2>
-  <p>We don't sell your information. We share it only with the service providers we need to run our business, such as WhatsApp and our messaging provider, or when the law requires it.</p>
-  <h2>Your choices</h2>
-  <p>To see, correct or delete what we hold about you, email <a href="mailto:${SITE.email}">${SITE.email}</a> or message us on WhatsApp. If you ask us to stop messaging you, we will.</p>
-  <h2>Contact</h2>
-  <p>${esc(SITE.name)}, ${esc(SITE.city)}, Karnataka, India · <a href="mailto:${SITE.email}">${SITE.email}</a></p>
+  return `<section class="band privacy"><div class="wrap prose">
+  <span class="eyebrow">${esc(COPY.privacy)}</span>
+  <h1 style="font-size:2.2rem">${esc(COPY.privacyTitle)}</h1>
+  <p class="muted">${esc(COPY.lastUpdated)} ${new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</p>
+  <h2>${esc(COPY.privacySite)}</h2>
+  <p>${esc(UI.privacyWebsite)}</p>
+  <h2>${esc(COPY.privacyMessage)}</h2>
+  <p>${esc(COPY.privacyMessagePrefix)} ${esc(SITE.whatsappDisplay)} ${esc(COPY.privacyMessageBody)}</p>
+  <h2>${esc(COPY.privacyShare)}</h2>
+  <p>${esc(COPY.privacySharing)}</p>
+  <h2>${esc(COPY.privacyChoices)}</h2>
+  <p>${esc(COPY.privacyChoicesPrefix)} <a href="mailto:${SITE.email}">${SITE.email}</a> ${esc(COPY.privacyChoicesBody)}</p>
+  <h2>${esc(COPY.contact)}</h2>
+  <p>${esc(SITE.name)}, ${esc(SITE.city)}, ${esc(COPY.location)} · <a href="mailto:${SITE.email}">${SITE.email}</a></p>
 </div></section>`;
 }
 
 function notFound() {
-  return `<section class="band"><div class="wrap" style="display:grid;gap:18px;justify-items:start">
-  <span class="eyebrow">404</span><h1>This page isn't here.</h1>
-  <p class="lede">The link may be old. Here's where to go instead:</p>
-  <div class="btns"><a class="btn" href="/">Home</a>${CATEGORIES.map((c) => `<a class="btn ghost" href="${catUrl(c)}">${esc(c.name)}</a>`).join("")}</div>
+  return `<section class="band not-found"><div class="wrap" style="display:grid;gap:18px;justify-items:start">${TRACE}
+  <span class="eyebrow">${esc(COPY.notFoundNumber)}</span><h1>${esc(COPY.notFoundTitle)}</h1>
+  <p class="lede">${esc(COPY.notFoundBody)}</p>
+  <div class="btns"><a class="btn" href="/">${esc(COPY.home)}</a>${CATEGORIES.map((c) => `<a class="btn ghost" href="${catUrl(c)}">${esc(c.name)}</a>`).join("")}</div>
 </div></section>`;
 }
 
@@ -330,7 +473,7 @@ function notFound() {
 async function page(path, file, args) {
   const dest = join(OUT, file);
   await mkdir(dirname(dest), { recursive: true });
-  await writeFile(dest, layout({ path, ...args }));
+  await writeFile(dest, layout({ path, ...args }).replace(/[ \t]+$/gm, ""));
   console.log("  " + file);
 }
 async function copyDir(src, dst) {
@@ -343,20 +486,50 @@ async function copyDir(src, dst) {
 }
 
 const pricing = await ekaniPricing();
-console.log(`EKANI pricing: ${pricing.live ? "live feed" : "fallback"} · modules from ${inr(pricing.moduleFrom)} · One from ${inr(pricing.bundleFrom)}`);
+console.log(
+  `EKANI pricing: ${pricing.live ? "live feed" : "fallback"} · modules from ${inr(pricing.moduleFrom)} · One from ${inr(pricing.bundleFrom)}`,
+);
 await rm(OUT, { recursive: true, force: true });
 await copyDir(join(ROOT, "src/assets"), join(OUT, "assets"));
-await page("/", "index.html", { title: SITE.name, description: SITE.description, body: home() });
+await page("/", "index.html", {
+  title: SITE.name,
+  description: SITE.description,
+  body: home(),
+});
 for (const c of CATEGORIES) {
-  await page(catUrl(c), `${c.slug}/index.html`, { title: c.page.title, description: c.page.metaDescription, body: categoryPage(c, pricing), current: c.slug });
+  await page(catUrl(c), `${c.slug}/index.html`, {
+    title: c.page.title,
+    description: c.page.metaDescription,
+    body: categoryPage(c, pricing),
+    current: c.slug,
+  });
 }
-await page("/contact/", "contact/index.html", { title: "Contact", description: `WhatsApp ${SITE.whatsappDisplay} or email ${SITE.email}. ${SITE.name}, ${SITE.city}.`, body: contactPage(), current: "contact" });
-await page("/privacy/", "privacy/index.html", { title: "Privacy", description: `How ${SITE.name} handles your information.`, body: privacyPage() });
-await page("/404.html", "404.html", { title: "Page not found", description: SITE.description, body: notFound() });
+await page("/contact/", "contact/index.html", {
+  title: COPY.contact,
+  description: `WhatsApp ${SITE.whatsappDisplay} or email ${SITE.email}. ${SITE.name}, ${SITE.city}.`,
+  body: contactPage(),
+  current: "contact",
+});
+await page("/privacy/", "privacy/index.html", {
+  title: COPY.privacy,
+  description: `How ${SITE.name} handles your information.`,
+  body: privacyPage(),
+});
+await page("/404.html", "404.html", {
+  title: COPY.notFoundMeta,
+  description: SITE.description,
+  body: notFound(),
+});
 
 const urls = ["/", ...CATEGORIES.map(catUrl), "/contact/", "/privacy/"];
-await writeFile(join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE.url}${u}</loc></url>`).join("\n")}\n</urlset>\n`);
-await writeFile(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE.url}/sitemap.xml\n`);
+await writeFile(
+  join(OUT, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE.url}${u}</loc></url>`).join("\n")}\n</urlset>\n`,
+);
+await writeFile(
+  join(OUT, "robots.txt"),
+  `User-agent: *\nAllow: /\nSitemap: ${SITE.url}/sitemap.xml\n`,
+);
 await writeFile(join(OUT, "CNAME"), SITE.domain + "\n");
 await writeFile(join(OUT, ".nojekyll"), "");
 console.log("built → docs/");
