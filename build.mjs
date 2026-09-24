@@ -147,6 +147,30 @@ function reachBand(preselect) {
   </div>
 </section>`;
 }
+function uspBlock(u, { compact = false, link = null } = {}) {
+  if (!u) return "";
+  const chat = `<div class="chatdemo" role="img" aria-label="${esc(u.chatLabel)}">
+    <div class="chat-head">${WA_ICON}<span>${esc(u.chatTitle)}</span><span class="chat-sub">${esc(u.chatSub)}</span></div>
+    <div class="chat-body">${u.chat.map(([who, t]) => `<p class="msg ${who === "me" ? "me" : "home"}">${esc(t)}</p>`).join("")}</div>
+    <p class="flow-note">${esc(u.chatNote)}</p>
+  </div>`;
+  const groups = (compact ? u.groups.slice(0, 8) : u.groups)
+    .map(([h, items]) => `<div class="cap"><h3>${esc(h)}</h3><ul>${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`)
+    .join("");
+  return `<section class="band usp" aria-labelledby="usp-h"><div class="wrap">
+  <div class="usp-top">
+    <div class="copy"><span class="eyebrow">${esc(u.eyebrow)}</span><h2 id="usp-h">${esc(u.title)}</h2><p class="lede">${esc(u.lede)}</p>
+      <ul class="ticks">${u.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>
+      ${link ? `<a class="link-arrow" href="${link[0]}">${esc(link[1])} ${ICONS.arrow}</a>` : ""}
+    </div>
+    ${chat}
+  </div>
+  <div class="sec-head" style="margin-top:clamp(36px,5vw,56px)"><h3 class="caps-title">${esc(u.groupsTitle)}</h3></div>
+  <div class="caps">${groups}</div>
+  ${u.footnote ? `<p class="muted usp-foot">${esc(u.footnote)}</p>` : ""}
+</div></section>`;
+}
+
 const faqBlock = (items) => `<div class="faq">${items.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div>`;
 
 // ---------- pages ----------
@@ -183,6 +207,7 @@ function home() {
     </div>
   </div>
 </section>
+${sh?.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), "See everything your home can do"] }) : ""}
 <section class="band cream" aria-labelledby="cats-h">
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">What we do</span><h2 id="cats-h">One standard of work, for your home and your business</h2></div>
@@ -219,6 +244,7 @@ function categoryPage(c, pricing) {
     <div class="hero-art">${art}</div>
   </div>
 </section>`;
+  if (p.usp) s += uspBlock(p.usp);
   if (p.features) s += `
 <section class="band cream" aria-labelledby="f-h"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">${esc(c.name)}</span><h2 id="f-h">${esc(p.featuresTitle)}</h2></div>
