@@ -19,6 +19,7 @@ import {
   EKANI_PRICING_FALLBACK,
   UI,
   COPY,
+  ART_COPY,
 } from "./src/config.mjs";
 import {
   ILLUSTRATIONS,
@@ -26,8 +27,9 @@ import {
   WA_ICON,
   TRACE,
   speakerLayout,
-  chatRoom,
 } from "./src/illustrations.mjs";
+
+import { SCENES, livingScene, cinemaScene } from "./src/scenes.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, "docs");
@@ -64,8 +66,8 @@ function mobileAction(current) {
 function heroDemo(u) {
   return `<div class="home-demo" data-demo>
     <div class="demo-top"><span class="eyebrow">${esc(UI.demoLabel)}</span><span class="example-tag">${esc(UI.example)}</span></div>
-    <div class="demo-room">${chatRoom(esc(UI.exampleRoom))}<div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div></div>
-    <div class="demo-conversation" aria-label="${esc(u.chatSub)}">
+    <div class="demo-room">${livingScene(UI.exampleRoom)}<div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div></div>
+    <div class="demo-conversation" role="group" aria-label="${esc(u.chatSub)}">
       <div class="demo-chat-title">${ICONS.chat}<strong>${esc(u.chatTitle)}</strong><span>${esc(u.chatSub)}</span></div>
       <div class="demo-messages">${u.chat
         .slice(0, 4)
@@ -297,7 +299,7 @@ function home() {
       c,
       i,
     ) => `<article class="cat"><span class="cat-index" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
-    <div class="cat-art">${ILLUSTRATIONS[c.illustration]?.() || ""}</div>
+    <div class="cat-art">${SCENES[c.illustration]?.() || ILLUSTRATIONS[c.illustration]?.() || ""}<span class="art-label">${esc(ART_COPY.concept)}</span></div>
     <div class="cat-body">
       <span class="eyebrow">${esc(c.label)}</span>
       <h3 style="font-size:1.5rem">${esc(c.name)}</h3>
@@ -309,7 +311,7 @@ function home() {
   ).join("");
   const sh = CATEGORIES.find((c) => c.slug === "smart-home-cinema");
   return `
-<section class="hero">
+<section class="hero visual-hero">
   <div class="wrap">
     <div class="hero-copy">
       <span class="eyebrow">${esc(UI.heroEyebrow)}</span>
@@ -319,17 +321,17 @@ function home() {
       ${rv ? `<a class="link-arrow" href="${catUrl(rv)}">${esc(COPY.alreadyTheatre)} ${esc(rv.name)} ${ICONS.arrow}</a>` : ""}
       <p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span></p>
     </div>
-    ${a.page.usp ? heroDemo(a.page.usp) : `<div class="hero-art">${ILLUSTRATIONS[a.illustration]?.() || ""}</div>`}
   </div>
+  <div class="visual-stage wrap">${a.page.usp ? heroDemo(a.page.usp) : `<div class="hero-art">${ILLUSTRATIONS[a.illustration]?.() || ""}</div>`}</div>
 </section>
 <div class="service-strip"><div class="wrap"><p>${esc(SITE.serviceArea)}</p><div>${CATEGORIES.map((c) => `<a href="${catUrl(c)}">${esc(c.name)} ${ICONS.arrow}</a>`).join("")}</div></div></div>
-${sh?.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}
-<section class="band cream" aria-labelledby="cats-h">
+<section class="band cream service-gallery" aria-labelledby="cats-h">
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div>
     <div class="cats">${cards}</div>
   </div>
 </section>
+${sh?.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}
 <section class="band" aria-labelledby="why-h">
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">${esc(COPY.why)}</span><h2 id="why-h">${esc(COPY.whyTitle)}</h2></div>
@@ -346,7 +348,7 @@ ${reachBand()}`;
 
 function categoryPage(c, pricing) {
   const p = c.page;
-  const art = `<div class="plate a">${c.illustration === "floorplan" ? `<span class="drawing-label">${esc(UI.examplePlan)}</span>` : ""}${ILLUSTRATIONS[c.illustration]?.() || ""}</div>`;
+  const art = `<div class="plate a scene-plate">${SCENES[c.illustration]?.() || ILLUSTRATIONS[c.illustration]?.() || ""}<span class="art-label">${esc(ART_COPY.concept)}</span></div>`;
   const sections = [
     ...(p.features || c.slug === "business-software"
       ? [["features", UI.features]]
@@ -375,6 +377,8 @@ function categoryPage(c, pricing) {
   </div>
 </section>
 <nav class="page-nav" aria-label="${esc(UI.pageNav)}"><div class="wrap">${sections.map(([id, label]) => `<a href="#${id}">${esc(label)}</a>`).join("")}<a class="page-nav-cta" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></div></nav>`;
+  if (c.illustration === "revival")
+    s += `<section class="revival-detail band"><div class="wrap split"><div class="art">${speakerLayout()}</div>${ILLUSTRATIONS.revival()}</div></section>`;
   if (p.usp) s += uspBlock(p.usp);
   if (p.features)
     s += `
@@ -408,7 +412,7 @@ function categoryPage(c, pricing) {
   if (p.cinema)
     s += `
 <section class="band cream" aria-labelledby="cin-h"><div class="wrap split">
-  <div class="art"><span class="drawing-label">${esc(UI.exampleCinema)}</span>${speakerLayout()}</div>
+  <div class="cinema-art"><div class="scene-plate">${cinemaScene()}<span class="art-label">${esc(ART_COPY.concept)}</span></div><details class="diagram-detail"><summary>${esc(UI.exampleCinema)}</summary>${speakerLayout()}</details></div>
   <div class="copy"><span class="eyebrow">${esc(p.cinema.eyebrow)}</span><h2 id="cin-h">${esc(p.cinema.title)}</h2><p class="muted">${esc(p.cinema.body)}</p><ul class="ticks">${p.cinema.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>${p.cinema.link ? `<a class="link-arrow" href="${p.cinema.link[0]}">${esc(p.cinema.link[1])} ${ICONS.arrow}</a>` : ""}</div>
 </div></section>`;
   if (p.process)

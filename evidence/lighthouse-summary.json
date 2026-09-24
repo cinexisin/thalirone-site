@@ -3,36 +3,38 @@
     "page": "home",
     "pageURL": "http://127.0.0.1:4610/",
     "version": "13.5.0",
-    "fetchTime": "2026-09-24T09:00:41.815Z",
+    "fetchTime": "2026-09-24T09:34:30.591Z",
     "mode": "mobile",
     "throttling": "simulate",
     "scores": {
-      "performance": 98,
+      "performance": 97,
       "accessibility": 100,
       "best-practices": 100,
-      "seo": 100
+      "seo": 100,
+      "agentic-browsing": 100
     },
     "CLS": 0,
-    "LCPms": 2253.8958,
-    "bytesExcludingFonts": 136288,
-    "totalBytes": 221786
+    "LCPms": 2404.0802000000003,
+    "bytesExcludingFonts": 174400,
+    "totalBytes": 259898
   },
   {
     "page": "smart-home",
     "pageURL": "http://127.0.0.1:4610/smart-home-cinema/",
     "version": "13.5.0",
-    "fetchTime": "2026-09-24T09:01:34.911Z",
+    "fetchTime": "2026-09-24T09:34:42.399Z",
     "mode": "mobile",
     "throttling": "simulate",
     "scores": {
       "performance": 98,
       "accessibility": 100,
       "best-practices": 100,
-      "seo": 100
+      "seo": 100,
+      "agentic-browsing": 100
     },
     "CLS": 0,
-    "LCPms": 2403.5769,
-    "bytesExcludingFonts": 140335,
-    "totalBytes": 225833
+    "LCPms": 2404.2639,
+    "bytesExcludingFonts": 165506,
+    "totalBytes": 251004
   }
 ]

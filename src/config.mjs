@@ -685,3 +685,18 @@ export const DRAWING = {
     ["Equipment", "Receiver, speakers, display, wiring"],
   ],
 };
+
+// Captions for original concept illustrations. No scene represents a client project.
+export const ART_COPY = {
+  homeAlt:
+    "Example illustration of a living room with lighting, curtains and air-conditioning",
+  cinemaAlt:
+    "Example illustration of a home cinema with a screen, speakers and tiered seating",
+  businessAlt:
+    "Example illustration of a WhatsApp enquiry becoming a lead, quote, invoice and payment in EKANI",
+  concept: "Example illustration",
+  example: "Example",
+  ekani: "EKANI",
+  workflow: "WhatsApp → Lead → Invoice",
+  enquiryLines: ["Hi, need a quote for", "3 split ACs in", "Whitefield"],
+};

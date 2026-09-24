@@ -3,7 +3,7 @@
 Baseline: `1afd7865b9b9af111af67660124cc7cb4a91cdb7`. All evidence is outside the deployed `docs/` tree.
 
 - `screenshots/before/` and `screenshots/after/`: all seven pages, full page at 390 × 844 and 1280 × 900 CSS viewports, DPR 1, reduced motion; mobile screenshots use device emulation. Fourteen images per state.
-- `lighthouse-*.report.html` / `.json`: full mobile Lighthouse 13.5.0 reports, Chrome 153 on native arm64 Node; default simulated mobile throttling, fresh profile, uncompressed Python server at localhost. Both priority pages: **98 Performance / 100 Accessibility / 100 Best Practices / 100 SEO; CLS 0**.
+- `lighthouse-*.report.html` / `.json`: full mobile Lighthouse 13.5.0 reports, Chrome 153 on native arm64 Node; default simulated mobile throttling, fresh profile, uncompressed Python server at localhost. Home: **97 Performance**; Smart Home & Cinema: **98 Performance**. Both: **100 Accessibility / 100 Best Practices / 100 SEO; CLS 0**.
 - `lighthouse-summary.json`: scores, timestamps, LCP, transferred bytes and font exclusion.
 - `audit.json`: 42 layout/target checks, 14 axe scans, 14 JS-off page checks, keyboard/menu/form/motion/footer interactions. No automated WCAG 2.2 AA violations found. This does not substitute for future testing with users of assistive technology.
 - `network-audit.json`: uncached page sizes, console/resource errors and external requests for all seven pages.

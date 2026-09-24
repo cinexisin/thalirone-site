@@ -41,7 +41,8 @@ Use a native arm64 Node on Apple Silicon for Lighthouse. `THALIR_QA_URL` can poi
 
 ## Assets and interface copy
 
-- `UI`, `COPY`, and `DRAWING` in `src/config.mjs` hold interface labels and existing shared/illustrative copy. Category facts and enquiry messages remain in `CATEGORIES`.
+- `UI`, `COPY`, `DRAWING`, and `ART_COPY` in `src/config.mjs` hold interface labels and shared/illustrative copy. Category facts and enquiry messages remain in `CATEGORIES`.
+- `src/scenes.mjs` contains original SVG illustrations of a living room, cinema and enquiry workflow. They are labelled examples; technical diagrams remain in `src/illustrations.mjs`. No scene represents a client project or a real EKANI product screenshot.
 - `cta.shortLabel` is optional; a new category falls back to its full `cta.label` in the mobile action bar and page navigation.
 - Latin variable WOFF2 subsets of Montserrat and Nunito Sans are self-hosted. Their SIL Open Font License files are included in `src/assets/fonts/`. No font service is contacted by a visitor's browser.
 - Lossless WebP and AVIF derivatives at 172/344/516px were resized from the unchanged `thalir-logo-full.png`. WebP is preferred because these lossless logo files are smaller. The original PNG remains the fallback. Regeneration is an optional offline asset preparation step, not part of the build.

@@ -1,11 +1,14 @@
-# Make the home-control idea visible and the enquiry path effortless
+# Bring home control, cinema and EKANI to life with original illustrations
 
 The original site explained the services but hid the WhatsApp-control idea below a busy hero. This change puts the existing “Run your home from WhatsApp or Telegram” message first, illustrates a command and its confirming response, and gives phone visitors a persistent, page-specific route to enquire.
 
-The design uses the original logo, warm light backgrounds, deep green typography, gold circuit details and drawn examples. Larger service layouts, open capability groups, a numbered process, native FAQs and a distinct EKANI pricing section give each page a clearer hierarchy. No new business claims, testimonials or project photography were introduced.
+Original, richly shaded vector illustrations give each service a visual identity: a furnished living room with responsive lighting, a tiered home cinema, and a phone-to-laptop enquiry workflow. The home page pairs oversized typography with a panoramic room and layered chat, then introduces the three services through an illustrated gallery. Category pages use large scene compositions, with technical drawings retained in the detail sections. Mobile compositions preserve both the artwork and readable messages.
+
+The original logo, green/gold palette and light backgrounds remain. Open capability groups, a numbered process, native FAQs and a distinct EKANI pricing section give the detailed content a clearer hierarchy. These are explicitly labelled examples, not client projects or EKANI product screenshots. No stock photography, generated raster scenes, new business claims or testimonials were introduced.
 
 ## Implementation
 
+- Three original SVG scene compositions in `src/scenes.mjs`, shared by the home service gallery and category pages. No image library, external media requests or extra runtime JavaScript. Config-driven category fallbacks remain supported.
 - A fully visible server-rendered example plays once: typing → message → lights respond. Optional replay; reduced-motion and JS-off states remain complete and readable.
 - Sticky mobile WhatsApp action with config-driven secondary enquiry; safe-area padding, footer clearance, no phone-call button.
 - Keyboard-safe mobile menu: smooth opening/closing, focus containment, Escape restoration, close on navigation, `aria-expanded`, and native no-JS fallback. Skip link moves focus to the main content.
@@ -34,8 +37,8 @@ Measured on the generated site with Lighthouse 13.5.0, Chrome 153, native arm64 
 
 | Page | Performance | Accessibility | Best Practices | SEO | CLS | Transfer excluding fonts |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `/` | 98 | 100 | 100 | 100 | 0 | 136,288 bytes |
-| `/smart-home-cinema/` | 98 | 100 | 100 | 100 | 0 | 140,335 bytes |
+| `/` | 97 | 100 | 100 | 100 | 0 | 174,400 bytes |
+| `/smart-home-cinema/` | 98 | 100 | 100 | 100 | 0 | 165,506 bytes |
 
 Client JS: **2,183 bytes gzipped**, below 15 KB. All page transfers are below 350 KB excluding fonts. Both required pages have CLS **0.000**.
 
@@ -62,6 +65,8 @@ Client JS: **2,183 bytes gzipped**, below 15 KB. All page transfers are below 35
 | Short enquiry actions | “Site survey”, “Revival consultation”, “EKANI demo”. The full CTA labels and prefilled messages are unchanged. |
 | Example visual | “WhatsApp / Telegram”, “Example”, “Living room”, “3 lights on”, “Lights off”, “Replay example”. Existing chat messages are reused verbatim. |
 | Drawing labels / accessible description | “Example floor plan”, “Example speaker layout”, “Example room: living room lights respond to the chat command”. |
+| Rich illustration captions / alt text | “Example illustration”; “Example illustration of a living room with lighting, curtains and air-conditioning”; “Example illustration of a home cinema with a screen, speakers and tiered seating”; “Example illustration of a WhatsApp enquiry becoming a lead, quote, invoice and payment in EKANI”. |
+| Illustrated EKANI workflow | “WhatsApp → Lead → Invoice”; the existing enquiry is reflowed into “Hi, need a quote for” / “3 split ACs in” / “Whitefield”. “Example”, “EKANI”, the lead, quote, invoice and payment labels, Priya S., Whitefield, example amount and item description are reused from the existing labelled workflow. |
 | Composer error | “Please enter your name to prepare your message.” |
 | Composer handoff | “Your message is ready. Review it in WhatsApp, then press send.”; “Open prepared message”. |
 | No-JS composer fallback | “To enquire without JavaScript, use the WhatsApp link. The message composer needs JavaScript.” |
@@ -69,7 +74,7 @@ Client JS: **2,183 bytes gzipped**, below 15 KB. All page transfers are below 35
 | EKANI flow section | Existing “How it works” and “Run your business from WhatsApp.” reused above the existing, labelled example workflow. |
 | Privacy font sentence | “Fonts load from Google Fonts, which sees your IP address like any web request.” → “Fonts are hosted on this website; no font requests are sent to Google Fonts.” |
 
-`COPY` and `DRAWING` centralize existing template and illustration wording without rewriting it. The original form field labels, “Name: ” / “Area: ” / “Interested in: ” prefixes, “Hi Thalir Innovations!” greeting, metadata and all other existing text retain their wording.
+`COPY` and `DRAWING` centralize existing template and illustration wording without rewriting it; `ART_COPY` holds the illustration captions and accessible descriptions listed above. The original form field labels, “Name: ” / “Area: ” / “Interested in: ” prefixes, “Hi Thalir Innovations!” greeting, metadata and all other existing text retain their wording.
 
 ## Asks for Claude Code
 
