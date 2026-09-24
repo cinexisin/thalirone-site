@@ -40,6 +40,23 @@ for (const path of [
   });
   await page.goto(base + "/" + path, { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Include media that loads further down the page in the transfer budget.
+  const height = await page.evaluate(
+    () => document.documentElement.scrollHeight,
+  );
+  for (let y = 0; y < height; y += 600) {
+    await page.evaluate((top) => scrollTo({ top, behavior: "instant" }), y);
+    await page.waitForTimeout(60);
+  }
+  await page.evaluate(() =>
+    Promise.all(
+      [...document.images].map((img) => {
+        img.loading = "eager";
+        return img.decode();
+      }),
+    ),
+  );
+  await page.waitForLoadState("networkidle");
   const weight = await page.evaluate(() => {
     const resources = [
       ...performance.getEntriesByType("navigation"),

@@ -42,7 +42,8 @@ Use a native arm64 Node on Apple Silicon for Lighthouse. `THALIR_QA_URL` can poi
 ## Assets and interface copy
 
 - `UI`, `COPY`, `DRAWING`, and `ART_COPY` in `src/config.mjs` hold interface labels and shared/illustrative copy. Category facts and enquiry messages remain in `CATEGORIES`.
-- `src/scenes.mjs` contains original SVG illustrations of a living room, cinema and enquiry workflow. They are labelled examples; technical diagrams remain in `src/illustrations.mjs`. No scene represents a client project or a real EKANI product screenshot.
+- `src/scenes.mjs` renders responsive, locally hosted photographic concepts from `src/assets/media/`. Every placement is labelled “AI-generated concept”; technical diagrams remain in `src/illustrations.mjs`. No image represents an actual customer, employee, completed project or EKANI product screenshot. The owner's latest photographic direction supersedes the earlier drawing-only choice for this task; the scoped exception, originals and exact prompts are recorded in `evidence/image-generation/`.
+- Images use AVIF with WebP fallbacks at 480/768/1200/1536px. `scripts/prepare-media.mjs` is an optional asset preparation tool using Sharp installed outside the repo. Site builds use only the prepared files and have no dependencies.
 - `cta.shortLabel` is optional; a new category falls back to its full `cta.label` in the mobile action bar and page navigation.
 - Latin variable WOFF2 subsets of Montserrat and Nunito Sans are self-hosted. Their SIL Open Font License files are included in `src/assets/fonts/`. No font service is contacted by a visitor's browser.
 - Lossless WebP and AVIF derivatives at 172/344/516px were resized from the unchanged `thalir-logo-full.png`. WebP is preferred because these lossless logo files are smaller. The original PNG remains the fallback. Regeneration is an optional offline asset preparation step, not part of the build.

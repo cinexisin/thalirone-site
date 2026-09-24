@@ -3025,3 +3025,104 @@ body {
     font-size: 0.55rem;
   }
 }
+
+/* Natural photographic concepts, with explicit provenance and responsive crops. */
+.visual-stage .demo-room {
+  position: relative;
+}
+.photo-scene {
+  position: relative;
+  overflow: hidden;
+  background: #e4e1d4;
+  isolation: isolate;
+}
+.photo-scene picture,
+.photo-scene img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.photo-scene img {
+  object-fit: cover;
+  object-position: 43% 50%;
+}
+.scene-cinema img {
+  object-position: 40% 50%;
+}
+.scene-business img {
+  object-position: 50% 45%;
+}
+.photo-credit {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 2;
+  padding: 6px 9px;
+  border-radius: 4px;
+  color: #244432;
+  background: #fffef5;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1.3;
+}
+.visual-stage .photo-credit {
+  bottom: 78px;
+  left: 26px;
+}
+.visual-stage .photo-scene img {
+  transition: filter 0.35s ease;
+  object-position: 43% 50%;
+}
+.home-demo.lights-off .photo-scene img {
+  filter: brightness(0.83) saturate(0.95);
+}
+.photo-light {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 45% 18%, #ffe8aa22, transparent 19%);
+  mix-blend-mode: screen;
+}
+.business-software .hero-art .scene {
+  height: 520px;
+}
+.business-software .hero-art .scene-plate {
+  padding-bottom: 0;
+}
+@media (max-width: 1024px) {
+  .business-software .hero-art .scene {
+    height: 440px;
+  }
+}
+@media (max-width: 768px) {
+  .visual-stage .photo-credit {
+    left: 14px;
+    bottom: 16px;
+  }
+  .visual-stage .room-caption {
+    top: auto;
+    bottom: 48px;
+  }
+  .visual-stage .demo-conversation {
+    margin-top: 14px;
+  }
+  .business-software .hero-art .scene {
+    height: 360px;
+  }
+}
+@media (max-width: 480px) {
+  .business-software .hero-art .scene {
+    height: 290px;
+  }
+  .photo-credit {
+    font-size: 0.6rem;
+    left: 12px;
+    bottom: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .visual-stage .photo-scene img {
+    transition: none;
+  }
+}

@@ -1,14 +1,16 @@
-# Bring home control, cinema and EKANI to life with original illustrations
+# Bring home control, cinema and EKANI to life with natural photographic concepts
 
 The original site explained the services but hid the WhatsApp-control idea below a busy hero. This change puts the existing “Run your home from WhatsApp or Telegram” message first, illustrates a command and its confirming response, and gives phone visitors a persistent, page-specific route to enquire.
 
-Original, richly shaded vector illustrations give each service a visual identity: a furnished living room with responsive lighting, a tiered home cinema, and a phone-to-laptop enquiry workflow. The home page pairs oversized typography with a panoramic room and layered chat, then introduces the three services through an illustrated gallery. Category pages use large scene compositions, with technical drawings retained in the detail sections. Mobile compositions preserve both the artwork and readable messages.
+Natural photographic concepts connect the services to everyday life: a couple messaging from their living room, people watching a film, and business owners working with a phone and laptop. The home page pairs oversized typography with a panoramic photograph and layered chat, then introduces the three services through an image gallery. Category pages use large photographic compositions, with technical diagrams retained in the detail sections. Mobile crops preserve faces and give the messages their own readable space.
 
-The original logo, green/gold palette and light backgrounds remain. Open capability groups, a numbered process, native FAQs and a distinct EKANI pricing section give the detailed content a clearer hierarchy. These are explicitly labelled examples, not client projects or EKANI product screenshots. No stock photography, generated raster scenes, new business claims or testimonials were introduced.
+The original logo, green/gold palette and light backgrounds remain. Open capability groups, a numbered process, native FAQs and a distinct EKANI pricing section give the detailed content a clearer hierarchy. Every photographic placement is visibly labelled “AI-generated concept” and its alt text repeats that provenance. The fictional people and spaces are not represented as customers, employees, completed projects or EKANI screenshots. No stock photography, new business claims or testimonials were introduced.
+
+**Scoped visual-rule exception:** the owner subsequently requested “natural looking images , not like cartoons, with real people kind of”. This latest direction supersedes the earlier illustration-only choice and AGENTS.md rule 7 for these labelled concept assets. All other hard rules remain in force. AGENTS.md itself is unchanged. The exact prompts, built-in generation mode and original PNGs are recorded in [image-generation evidence](https://github.com/cinexisin/thalirone-site/tree/codex/ui-modernization/evidence/image-generation).
 
 ## Implementation
 
-- Three original SVG scene compositions in `src/scenes.mjs`, shared by the home service gallery and category pages. No image library, external media requests or extra runtime JavaScript. Config-driven category fallbacks remain supported.
+- Three locally hosted photographic concepts emitted by `src/scenes.mjs`, with AVIF/WebP sources at 480/768/1200/1536px, explicit dimensions, prioritised hero loading and native lazy loading below the fold. No client image library, external media requests or extra runtime JavaScript. Config-driven category fallbacks remain supported. Optional image preparation uses Sharp outside the repository; production builds remain dependency-free.
 - A fully visible server-rendered example plays once: typing → message → lights respond. Optional replay; reduced-motion and JS-off states remain complete and readable.
 - Sticky mobile WhatsApp action with config-driven secondary enquiry; safe-area padding, footer clearance, no phone-call button.
 - Keyboard-safe mobile menu: smooth opening/closing, focus containment, Escape restoration, close on navigation, `aria-expanded`, and native no-JS fallback. Skip link moves focus to the main content.
@@ -37,10 +39,10 @@ Measured on the generated site with Lighthouse 13.5.0, Chrome 153, native arm64 
 
 | Page | Performance | Accessibility | Best Practices | SEO | CLS | Transfer excluding fonts |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `/` | 97 | 100 | 100 | 100 | 0 | 174,400 bytes |
-| `/smart-home-cinema/` | 98 | 100 | 100 | 100 | 0 | 165,506 bytes |
+| `/` | 97 | 100 | 100 | 100 | 0 | 208,885 bytes |
+| `/smart-home-cinema/` | 98 | 100 | 100 | 100 | 0 | 176,397 bytes |
 
-Client JS: **2,183 bytes gzipped**, below 15 KB. All page transfers are below 350 KB excluding fonts. Both required pages have CLS **0.000**.
+Client JS: **2,183 bytes gzipped**, below 15 KB. All page transfers are below 350 KB excluding fonts. The full-scroll mobile audit, including all lazy images, measured at most **209,883 bytes** excluding fonts. Both required pages have CLS **0.000**.
 
 - 42 page/viewport combinations passed; 14 axe WCAG 2.2 AA scans had zero violations.
 - All 7 pages checked with JavaScript disabled at both 390px and 1280px.
@@ -64,9 +66,8 @@ Client JS: **2,183 bytes gzipped**, below 15 KB. All page transfers are below 35
 | Mobile / page navigation | “Close menu”, “Mobile navigation”, “On this page”, “Features”, “How it works”, “FAQ”, “Pricing”. “Menu”, “Main”, “Contact” and “WhatsApp us” are reused. |
 | Short enquiry actions | “Site survey”, “Revival consultation”, “EKANI demo”. The full CTA labels and prefilled messages are unchanged. |
 | Example visual | “WhatsApp / Telegram”, “Example”, “Living room”, “3 lights on”, “Lights off”, “Replay example”. Existing chat messages are reused verbatim. |
-| Drawing labels / accessible description | “Example floor plan”, “Example speaker layout”, “Example room: living room lights respond to the chat command”. |
-| Rich illustration captions / alt text | “Example illustration”; “Example illustration of a living room with lighting, curtains and air-conditioning”; “Example illustration of a home cinema with a screen, speakers and tiered seating”; “Example illustration of a WhatsApp enquiry becoming a lead, quote, invoice and payment in EKANI”. |
-| Illustrated EKANI workflow | “WhatsApp → Lead → Invoice”; the existing enquiry is reflowed into “Hi, need a quote for” / “3 split ACs in” / “Whitefield”. “Example”, “EKANI”, the lead, quote, invoice and payment labels, Priya S., Whitefield, example amount and item description are reused from the existing labelled workflow. |
+| Technical drawing labels | “Example floor plan”, “Example speaker layout”. |
+| Photographic captions / alt text | “AI-generated concept”; “AI-generated concept: a couple using a phone together in a naturally lit living room”; “AI-generated concept: two people watching a film in a home cinema”; “AI-generated concept: two business owners working with a phone and laptop”. |
 | Composer error | “Please enter your name to prepare your message.” |
 | Composer handoff | “Your message is ready. Review it in WhatsApp, then press send.”; “Open prepared message”. |
 | No-JS composer fallback | “To enquire without JavaScript, use the WhatsApp link. The message composer needs JavaScript.” |
@@ -74,11 +75,11 @@ Client JS: **2,183 bytes gzipped**, below 15 KB. All page transfers are below 35
 | EKANI flow section | Existing “How it works” and “Run your business from WhatsApp.” reused above the existing, labelled example workflow. |
 | Privacy font sentence | “Fonts load from Google Fonts, which sees your IP address like any web request.” → “Fonts are hosted on this website; no font requests are sent to Google Fonts.” |
 
-`COPY` and `DRAWING` centralize existing template and illustration wording without rewriting it; `ART_COPY` holds the illustration captions and accessible descriptions listed above. The original form field labels, “Name: ” / “Area: ” / “Interested in: ” prefixes, “Hi Thalir Innovations!” greeting, metadata and all other existing text retain their wording.
+`COPY` and `DRAWING` centralize existing template and illustration wording without rewriting it; `ART_COPY` holds the photographic captions and accessible descriptions listed above. The original form field labels, “Name: ” / “Area: ” / “Interested in: ” prefixes, “Hi Thalir Innovations!” greeting, metadata and all other existing text retain their wording.
 
 ## Asks for Claude Code
 
-- **TODO — review:** Check this PR against the claims rules and the interface-copy list above, then obtain owner approval before any merge.
+- **TODO — review:** Check this PR against the claims rules and interface-copy list above, including the explicitly documented visual-rule exception from the owner’s latest direction. Keep generated people and spaces clearly labelled; they must not become testimonials or project evidence. Obtain owner approval before any merge.
 - **TODO — after approval and merge:** Verify the production pages and live EKANI price presentation after the existing Pages deployment. This is a handoff only; no deployment or Pages settings were changed here.
 - No backend, form endpoint, analytics, DNS, email, API, social media or hosting changes are needed for this implementation.
 
@@ -86,7 +87,7 @@ Client JS: **2,183 bytes gzipped**, below 15 KB. All page transfers are below 35
 
 ## Before / after screenshots
 
-Baseline: commit `1afd7865b9b9af111af67660124cc7cb4a91cdb7`. After: this branch, live-pricing build. Screenshots are full-page PNGs at CSS viewport widths 390px (844px viewport height, device emulation) and 1280px (900px viewport height), DPR 1, reduced motion, fonts loaded. The fixed mobile action is captured at the viewport edge; it hides when the footer enters view during scrolling. There are **28 full-page screenshots**, committed outside `docs/`.
+Baseline: commit `1afd7865b9b9af111af67660124cc7cb4a91cdb7`. After: this branch, live-pricing build. Screenshots are full-page PNGs at CSS viewport widths 390px (844px viewport height, device emulation) and 1280px (900px viewport height), DPR 1, reduced motion, fonts and all lazy images loaded. The fixed mobile action is captured at the viewport edge; it hides when the footer enters view during scrolling. There are **28 full-page screenshots**, committed outside `docs/`.
 
 <details>
 <summary>Home — before / after at 390px and 1280px</summary>

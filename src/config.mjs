@@ -686,17 +686,14 @@ export const DRAWING = {
   ],
 };
 
-// Captions for original concept illustrations. No scene represents a client project.
+// The owner requested natural photographic imagery on 24 September 2026.
+// These are generated concepts, never customers or completed project evidence.
 export const ART_COPY = {
   homeAlt:
-    "Example illustration of a living room with lighting, curtains and air-conditioning",
+    "AI-generated concept: a couple using a phone together in a naturally lit living room",
   cinemaAlt:
-    "Example illustration of a home cinema with a screen, speakers and tiered seating",
+    "AI-generated concept: two people watching a film in a home cinema",
   businessAlt:
-    "Example illustration of a WhatsApp enquiry becoming a lead, quote, invoice and payment in EKANI",
-  concept: "Example illustration",
-  example: "Example",
-  ekani: "EKANI",
-  workflow: "WhatsApp → Lead → Invoice",
-  enquiryLines: ["Hi, need a quote for", "3 split ACs in", "Whitefield"],
+    "AI-generated concept: two business owners working with a phone and laptop",
+  concept: "AI-generated concept",
 };

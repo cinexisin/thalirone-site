@@ -1,48 +1,54 @@
 [
   {
     "page": "home",
-    "totalBytes": 260785,
-    "bytesExcludingFonts": 175065,
+    "totalBytes": 295603,
+    "bytesExcludingFonts": 209883,
     "requests": [
       "/",
       "/assets/fonts/montserrat-latin.woff2",
-      "/assets/styles.css",
-      "/assets/img/logo-344.webp",
       "/assets/fonts/nunito-sans-latin.woff2",
+      "/assets/styles.css",
+      "/assets/media/home-concept-768.avif",
+      "/assets/img/logo-344.webp",
       "/assets/main.js",
       "/assets/img/favicon-48.png",
-      "/assets/favicon.ico"
+      "/assets/favicon.ico",
+      "/assets/media/cinema-concept-768.avif",
+      "/assets/media/business-concept-768.avif"
     ],
     "errors": [],
     "external": []
   },
   {
     "page": "smart-home-cinema/",
-    "totalBytes": 251891,
-    "bytesExcludingFonts": 166171,
+    "totalBytes": 278926,
+    "bytesExcludingFonts": 193206,
     "requests": [
       "/smart-home-cinema/",
       "/assets/fonts/montserrat-latin.woff2",
+      "/assets/fonts/nunito-sans-latin.woff2",
       "/assets/styles.css",
       "/assets/img/logo-344.webp",
-      "/assets/fonts/nunito-sans-latin.woff2",
+      "/assets/media/home-concept-768.avif",
       "/assets/main.js",
       "/assets/img/favicon-48.png",
-      "/assets/favicon.ico"
+      "/assets/favicon.ico",
+      "/assets/media/cinema-concept-768.avif"
     ],
     "errors": [],
     "external": []
   },
   {
     "page": "cinema-revival/",
-    "totalBytes": 226849,
-    "bytesExcludingFonts": 141129,
+    "totalBytes": 237847,
+    "bytesExcludingFonts": 152127,
     "requests": [
       "/cinema-revival/",
-      "/assets/fonts/nunito-sans-latin.woff2",
       "/assets/fonts/montserrat-latin.woff2",
       "/assets/styles.css",
+      "/assets/fonts/nunito-sans-latin.woff2",
       "/assets/img/logo-344.webp",
+      "/assets/media/cinema-concept-768.avif",
       "/assets/main.js",
       "/assets/img/favicon-48.png",
       "/assets/favicon.ico"
@@ -52,15 +58,16 @@
   },
   {
     "page": "business-software/",
-    "totalBytes": 227107,
-    "bytesExcludingFonts": 141387,
+    "totalBytes": 245313,
+    "bytesExcludingFonts": 159593,
     "requests": [
       "/business-software/",
       "/assets/fonts/montserrat-latin.woff2",
-      "/assets/fonts/nunito-sans-latin.woff2",
       "/assets/styles.css",
       "/assets/img/logo-344.webp",
+      "/assets/media/business-concept-768.avif",
       "/assets/main.js",
+      "/assets/fonts/nunito-sans-latin.woff2",
       "/assets/img/favicon-48.png",
       "/assets/favicon.ico"
     ],
@@ -69,14 +76,14 @@
   },
   {
     "page": "contact/",
-    "totalBytes": 206091,
-    "bytesExcludingFonts": 120371,
+    "totalBytes": 208065,
+    "bytesExcludingFonts": 122345,
     "requests": [
       "/contact/",
       "/assets/fonts/montserrat-latin.woff2",
       "/assets/styles.css",
-      "/assets/img/logo-344.webp",
       "/assets/fonts/nunito-sans-latin.woff2",
+      "/assets/img/logo-344.webp",
       "/assets/main.js",
       "/assets/img/favicon-48.png",
       "/assets/favicon.ico"
@@ -86,13 +93,13 @@
   },
   {
     "page": "privacy/",
-    "totalBytes": 202898,
-    "bytesExcludingFonts": 117178,
+    "totalBytes": 204872,
+    "bytesExcludingFonts": 119152,
     "requests": [
       "/privacy/",
       "/assets/fonts/montserrat-latin.woff2",
-      "/assets/fonts/nunito-sans-latin.woff2",
       "/assets/styles.css",
+      "/assets/fonts/nunito-sans-latin.woff2",
       "/assets/img/logo-344.webp",
       "/assets/main.js",
       "/assets/img/favicon-48.png",
@@ -103,8 +110,8 @@
   },
   {
     "page": "404.html",
-    "totalBytes": 202581,
-    "bytesExcludingFonts": 116861,
+    "totalBytes": 204555,
+    "bytesExcludingFonts": 118835,
     "requests": [
       "/404.html",
       "/assets/fonts/montserrat-latin.woff2",

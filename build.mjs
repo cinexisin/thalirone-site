@@ -19,7 +19,6 @@ import {
   EKANI_PRICING_FALLBACK,
   UI,
   COPY,
-  ART_COPY,
 } from "./src/config.mjs";
 import {
   ILLUSTRATIONS,
@@ -66,7 +65,7 @@ function mobileAction(current) {
 function heroDemo(u) {
   return `<div class="home-demo" data-demo>
     <div class="demo-top"><span class="eyebrow">${esc(UI.demoLabel)}</span><span class="example-tag">${esc(UI.example)}</span></div>
-    <div class="demo-room">${livingScene(UI.exampleRoom)}<div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div></div>
+    <div class="demo-room">${livingScene(undefined, { layout: "wide", eager: true })}<div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div></div>
     <div class="demo-conversation" role="group" aria-label="${esc(u.chatSub)}">
       <div class="demo-chat-title">${ICONS.chat}<strong>${esc(u.chatTitle)}</strong><span>${esc(u.chatSub)}</span></div>
       <div class="demo-messages">${u.chat
@@ -299,7 +298,7 @@ function home() {
       c,
       i,
     ) => `<article class="cat"><span class="cat-index" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
-    <div class="cat-art">${SCENES[c.illustration]?.() || ILLUSTRATIONS[c.illustration]?.() || ""}<span class="art-label">${esc(ART_COPY.concept)}</span></div>
+    <div class="cat-art">${SCENES[c.illustration]?.() || ILLUSTRATIONS[c.illustration]?.() || ""}</div>
     <div class="cat-body">
       <span class="eyebrow">${esc(c.label)}</span>
       <h3 style="font-size:1.5rem">${esc(c.name)}</h3>
@@ -348,7 +347,7 @@ ${reachBand()}`;
 
 function categoryPage(c, pricing) {
   const p = c.page;
-  const art = `<div class="plate a scene-plate">${SCENES[c.illustration]?.() || ILLUSTRATIONS[c.illustration]?.() || ""}<span class="art-label">${esc(ART_COPY.concept)}</span></div>`;
+  const art = `<div class="plate a scene-plate">${SCENES[c.illustration]?.(undefined, { layout: "hero", eager: true }) || ILLUSTRATIONS[c.illustration]?.() || ""}</div>`;
   const sections = [
     ...(p.features || c.slug === "business-software"
       ? [["features", UI.features]]
@@ -412,7 +411,7 @@ function categoryPage(c, pricing) {
   if (p.cinema)
     s += `
 <section class="band cream" aria-labelledby="cin-h"><div class="wrap split">
-  <div class="cinema-art"><div class="scene-plate">${cinemaScene()}<span class="art-label">${esc(ART_COPY.concept)}</span></div><details class="diagram-detail"><summary>${esc(UI.exampleCinema)}</summary>${speakerLayout()}</details></div>
+  <div class="cinema-art"><div class="scene-plate">${cinemaScene(undefined, { layout: "detail" })}</div><details class="diagram-detail"><summary>${esc(UI.exampleCinema)}</summary>${speakerLayout()}</details></div>
   <div class="copy"><span class="eyebrow">${esc(p.cinema.eyebrow)}</span><h2 id="cin-h">${esc(p.cinema.title)}</h2><p class="muted">${esc(p.cinema.body)}</p><ul class="ticks">${p.cinema.points.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>${p.cinema.link ? `<a class="link-arrow" href="${p.cinema.link[0]}">${esc(p.cinema.link[1])} ${ICONS.arrow}</a>` : ""}</div>
 </div></section>`;
   if (p.process)

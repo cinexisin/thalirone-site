@@ -34,6 +34,24 @@ for (const width of [390, 1280]) {
   for (const path of pages) {
     await page.goto(base + "/" + path, { waitUntil: "networkidle" });
     await page.evaluate(() => document.fonts.ready);
+    // Visit the whole page so native lazy images are included in full-page evidence.
+    const height = await page.evaluate(
+      () => document.documentElement.scrollHeight,
+    );
+    for (let y = 0; y < height; y += 600) {
+      await page.evaluate((top) => scrollTo({ top, behavior: "instant" }), y);
+      await page.waitForTimeout(60);
+    }
+    await page.evaluate(() =>
+      Promise.all(
+        [...document.images].map((img) => {
+          img.loading = "eager";
+          return img.decode();
+        }),
+      ),
+    );
+    await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+    await page.waitForTimeout(150);
     await page.screenshot({
       path: join(
         root,
