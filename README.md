@@ -1,5 +1,7 @@
 # thalirone.com
 
+> Coding agents: read `AGENTS.md`, then the current brief in `handover/UI_MODERNIZATION.md`.
+
 Static website for Thalir Innovations. Built with a zero-dependency Node script and served by GitHub Pages from `docs/`.
 
 ## Update the site
