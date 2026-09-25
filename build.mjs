@@ -651,5 +651,7 @@ await writeFile(
   `User-agent: *\nAllow: /\nSitemap: ${SITE.url}/sitemap.xml\n`,
 );
 await writeFile(join(OUT, "CNAME"), SITE.domain + "\n");
+// IndexNow ownership key (Bing, Yandex and partners): lets us ping new pages.
+await writeFile(join(OUT, `${SITE.indexNowKey}.txt`), SITE.indexNowKey);
 await writeFile(join(OUT, ".nojekyll"), "");
 console.log("built → docs/");

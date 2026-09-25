@@ -18,6 +18,7 @@ export const SITE = {
   phoneDisplay: "+91 95136 36646",
   email: "hello@thalirone.com",
   hours: "Mon–Fri 9:30 am – 6:30 pm · Sat 9:30 am – 2 pm",
+  indexNowKey: "f04e9b12d1b3443596378761fff7280a", // public by design: served at /<key>.txt for IndexNow
   description:
     "Thalir Innovations designs smart homes, home cinemas, acoustics, commercial audio and PA systems across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
   social: [
