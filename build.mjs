@@ -60,7 +60,13 @@ const logo = (lazy = false) => `<picture>
   <source type="image/avif" srcset="/assets/img/logo-172.avif 172w, /assets/img/logo-344.avif 344w, /assets/img/logo-516.avif 516w" sizes="(max-width: 768px) 151px, 172px">
   <img src="/assets/img/logo.png" alt="${esc(SITE.name)}" width="172" height="64" ${lazy ? 'loading="lazy"' : 'fetchpriority="high"'}>
 </picture>`;
-function mobileAction(current) {
+function mobileAction(current, path) {
+  if (
+    ["/terms/", "/refunds/", "/shipping/", "/privacy/", "/contact/"].includes(
+      path,
+    )
+  )
+    return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="mailto:${esc(SITE.email)}">${esc(BUSINESS_INFO.emailSupport)} ${ICONS.arrow}</a></aside>`;
   const c = CATEGORIES.find((c) => c.slug === current) || CATEGORIES[0];
   return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></aside>`;
 }
@@ -136,6 +142,7 @@ function layout({ path, title, description, body, current }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE.name,
+    legalName: BUSINESS_INFO.registeredName,
     url: SITE.url,
     logo: SITE.url + "/assets/img/icon-512.png",
     email: SITE.email,
@@ -149,9 +156,7 @@ function layout({ path, title, description, body, current }) {
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: SITE.city,
-      addressRegion: "Karnataka",
-      addressCountry: "IN",
+      ...BUSINESS_INFO.structuredAddress,
     },
     areaServed: SITE.states.map((name) => ({ "@type": "State", name })),
     sameAs: SITE.social.map(([, u]) => u),
@@ -210,7 +215,7 @@ ${body}
     <div class="legal"><span>© ${YEAR} ${esc(SITE.name)} · ${esc(SITE.city)}</span><nav class="policy-links" aria-label="${esc(BUSINESS_INFO.nav)}">${policyLinks(path)}</nav></div>
   </div>
 </footer>
-${mobileAction(current)}
+${mobileAction(current, path)}
 <script src="/assets/main.js?v=${VERSION}" defer></script>
 </body>
 </html>`;
@@ -450,6 +455,7 @@ ${reachBand()}
   ${businessDetails()}
   ${supportBlock()}
   <nav class="policy-links" aria-label="${esc(BUSINESS_INFO.nav)}">${policyLinks()}</nav>
+  ${grievanceBlock()}
 </div></section>`;
 }
 
@@ -473,6 +479,10 @@ function businessDetails() {
 
 function supportBlock() {
   return `<aside class="policy-support" aria-label="${esc(BUSINESS_INFO.helpTitle)}"><h2>${esc(BUSINESS_INFO.helpTitle)}</h2><p>${esc(BUSINESS_INFO.helpBody)}</p><div class="support-links"><a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></div><p class="fine">${esc(SITE.hours)}</p></aside>`;
+}
+
+function grievanceBlock() {
+  return `<section class="policy-support" aria-labelledby="grievance"><h2 id="grievance">${esc(BUSINESS_INFO.grievanceTitle)}</h2>${BUSINESS_INFO.grievanceName ? `<p><strong>${esc(BUSINESS_INFO.grievanceName)}</strong> · ${esc(BUSINESS_INFO.grievanceRole)}</p>` : ""}<p>${esc(BUSINESS_INFO.grievanceBody)}</p><a href="mailto:${esc(SITE.email)}">${esc(BUSINESS_INFO.emailLabel)}</a><p>${esc(BUSINESS_INFO.grievanceEscalation)}</p><a href="https://consumerhelpline.gov.in/" target="_blank" rel="noopener">${esc(BUSINESS_INFO.grievanceLink)}</a></section>`;
 }
 
 function aboutPage() {

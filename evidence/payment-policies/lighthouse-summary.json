@@ -2,7 +2,7 @@
   {
     "path": "/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:56:53.757Z",
+    "time": "2026-09-25T02:13:38.798Z",
     "scores": {
       "performance": 97,
       "accessibility": 100,
@@ -11,7 +11,7 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2479.1585000000005,
+    "lcp": 2480.2389624639877,
     "failures": [
       {
         "id": "first-contentful-paint",
@@ -83,7 +83,7 @@
   {
     "path": "/smart-home-cinema/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:00.448Z",
+    "time": "2026-09-25T02:13:46.666Z",
     "scores": {
       "performance": 98,
       "accessibility": 100,
@@ -92,8 +92,14 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2404.5566,
+    "lcp": 2403.9784,
     "failures": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.98,
+        "displayValue": "1.4 s"
+      },
       {
         "id": "largest-contentful-paint",
         "title": "Largest Contentful Paint",
@@ -151,14 +157,14 @@
         "id": "render-blocking-insight",
         "title": "Render-blocking requests",
         "score": 0,
-        "displayValue": "Est savings of 250 ms"
+        "displayValue": "Est savings of 410 ms"
       }
     ]
   },
   {
     "path": "/cinema-revival/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:06.941Z",
+    "time": "2026-09-25T02:13:53.164Z",
     "scores": {
       "performance": 98,
       "accessibility": 100,
@@ -167,7 +173,7 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2405.9456999999998,
+    "lcp": 2405.1827,
     "failures": [
       {
         "id": "first-contentful-paint",
@@ -239,7 +245,7 @@
   {
     "path": "/business-software/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:13.225Z",
+    "time": "2026-09-25T02:13:59.454Z",
     "scores": {
       "performance": 98,
       "accessibility": 100,
@@ -248,14 +254,8 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2403.2028999999998,
+    "lcp": 2403.3458,
     "failures": [
-      {
-        "id": "first-contentful-paint",
-        "title": "First Contentful Paint",
-        "score": 0.98,
-        "displayValue": "1.4 s"
-      },
       {
         "id": "largest-contentful-paint",
         "title": "Largest Contentful Paint",
@@ -313,41 +313,41 @@
         "id": "render-blocking-insight",
         "title": "Render-blocking requests",
         "score": 0,
-        "displayValue": "Est savings of 410 ms"
+        "displayValue": "Est savings of 250 ms"
       }
     ]
   },
   {
     "path": "/contact/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:19.651Z",
+    "time": "2026-09-25T02:14:05.733Z",
     "scores": {
-      "performance": 99,
+      "performance": 98,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100,
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2103.1331,
+    "lcp": 2255.9053,
     "failures": [
       {
         "id": "first-contentful-paint",
         "title": "First Contentful Paint",
-        "score": 0.99,
-        "displayValue": "1.2 s"
+        "score": 0.98,
+        "displayValue": "1.4 s"
       },
       {
         "id": "largest-contentful-paint",
         "title": "Largest Contentful Paint",
-        "score": 0.96,
-        "displayValue": "2.1 s"
+        "score": 0.94,
+        "displayValue": "2.3 s"
       },
       {
         "id": "interactive",
         "title": "Time to Interactive",
         "score": 0.99,
-        "displayValue": "2.1 s"
+        "displayValue": "2.3 s"
       },
       {
         "id": "unminified-css",
@@ -377,7 +377,7 @@
         "id": "document-latency-insight",
         "title": "Document request latency",
         "score": 0.5,
-        "displayValue": "Est savings of 9 KiB"
+        "displayValue": "Est savings of 10 KiB"
       },
       {
         "id": "image-delivery-insight",
@@ -401,7 +401,7 @@
   {
     "path": "/privacy/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:25.750Z",
+    "time": "2026-09-25T02:14:11.879Z",
     "scores": {
       "performance": 99,
       "accessibility": 100,
@@ -410,8 +410,14 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2106.1647,
+    "lcp": 2103.8048,
     "failures": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.99,
+        "displayValue": "1.2 s"
+      },
       {
         "id": "largest-contentful-paint",
         "title": "Largest Contentful Paint",
@@ -469,14 +475,14 @@
         "id": "render-blocking-insight",
         "title": "Render-blocking requests",
         "score": 0,
-        "displayValue": "Est savings of 430 ms"
+        "displayValue": "Est savings of 440 ms"
       }
     ]
   },
   {
     "path": "/about/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:31.825Z",
+    "time": "2026-09-25T02:14:17.974Z",
     "scores": {
       "performance": 99,
       "accessibility": 100,
@@ -485,14 +491,8 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2104.7715000000003,
+    "lcp": 2104.7983999999997,
     "failures": [
-      {
-        "id": "first-contentful-paint",
-        "title": "First Contentful Paint",
-        "score": 0.99,
-        "displayValue": "1.2 s"
-      },
       {
         "id": "largest-contentful-paint",
         "title": "Largest Contentful Paint",
@@ -550,14 +550,14 @@
         "id": "render-blocking-insight",
         "title": "Render-blocking requests",
         "score": 0,
-        "displayValue": "Est savings of 440 ms"
+        "displayValue": "Est savings of 430 ms"
       }
     ]
   },
   {
     "path": "/terms/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:39.822Z",
+    "time": "2026-09-25T02:14:24.040Z",
     "scores": {
       "performance": 99,
       "accessibility": 100,
@@ -566,19 +566,19 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2104.3908,
+    "lcp": 2253.0173,
     "failures": [
       {
         "id": "largest-contentful-paint",
         "title": "Largest Contentful Paint",
-        "score": 0.96,
-        "displayValue": "2.1 s"
+        "score": 0.94,
+        "displayValue": "2.3 s"
       },
       {
         "id": "interactive",
         "title": "Time to Interactive",
         "score": 0.99,
-        "displayValue": "2.1 s"
+        "displayValue": "2.3 s"
       },
       {
         "id": "unminified-css",
@@ -608,7 +608,7 @@
         "id": "document-latency-insight",
         "title": "Document request latency",
         "score": 0.5,
-        "displayValue": "Est savings of 8 KiB"
+        "displayValue": "Est savings of 10 KiB"
       },
       {
         "id": "image-delivery-insight",
@@ -625,35 +625,41 @@
         "id": "render-blocking-insight",
         "title": "Render-blocking requests",
         "score": 0,
-        "displayValue": "Est savings of 430 ms"
+        "displayValue": "Est savings of 280 ms"
       }
     ]
   },
   {
     "path": "/refunds/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:49.538Z",
+    "time": "2026-09-25T02:14:30.146Z",
     "scores": {
-      "performance": 99,
+      "performance": 98,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 100,
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2104.8785000000003,
+    "lcp": 2254.7448,
     "failures": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.99,
+        "displayValue": "1.2 s"
+      },
       {
         "id": "largest-contentful-paint",
         "title": "Largest Contentful Paint",
-        "score": 0.96,
-        "displayValue": "2.1 s"
+        "score": 0.94,
+        "displayValue": "2.3 s"
       },
       {
         "id": "interactive",
         "title": "Time to Interactive",
         "score": 0.99,
-        "displayValue": "2.1 s"
+        "displayValue": "2.3 s"
       },
       {
         "id": "unminified-css",
@@ -683,7 +689,7 @@
         "id": "document-latency-insight",
         "title": "Document request latency",
         "score": 0.5,
-        "displayValue": "Est savings of 8 KiB"
+        "displayValue": "Est savings of 11 KiB"
       },
       {
         "id": "image-delivery-insight",
@@ -700,14 +706,14 @@
         "id": "render-blocking-insight",
         "title": "Render-blocking requests",
         "score": 0,
-        "displayValue": "Est savings of 430 ms"
+        "displayValue": "Est savings of 280 ms"
       }
     ]
   },
   {
     "path": "/shipping/",
     "version": "13.5.0",
-    "time": "2026-09-25T01:57:55.663Z",
+    "time": "2026-09-25T02:14:36.348Z",
     "scores": {
       "performance": 99,
       "accessibility": 100,
@@ -716,7 +722,7 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2103.3375,
+    "lcp": 2104.1512,
     "failures": [
       {
         "id": "largest-contentful-paint",
@@ -758,7 +764,7 @@
         "id": "document-latency-insight",
         "title": "Document request latency",
         "score": 0.5,
-        "displayValue": "Est savings of 8 KiB"
+        "displayValue": "Est savings of 9 KiB"
       },
       {
         "id": "image-delivery-insight",
@@ -782,7 +788,7 @@
   {
     "path": "/404.html",
     "version": "13.5.0",
-    "time": "2026-09-25T01:58:48.186Z",
+    "time": "2026-09-25T02:14:42.523Z",
     "scores": {
       "performance": 99,
       "accessibility": 100,
@@ -791,19 +797,13 @@
       "agentic-browsing": 100
     },
     "cls": 0,
-    "lcp": 2103.8704000000002,
+    "lcp": 2103.9471000000003,
     "failures": [
       {
         "id": "largest-contentful-paint",
         "title": "Largest Contentful Paint",
         "score": 0.96,
         "displayValue": "2.1 s"
-      },
-      {
-        "id": "speed-index",
-        "title": "Speed Index",
-        "score": 0.99,
-        "displayValue": "2.2 s"
       },
       {
         "id": "interactive",
@@ -845,7 +845,7 @@
         "id": "image-delivery-insight",
         "title": "Improve image delivery",
         "score": 0,
-        "displayValue": "Est savings of 26 KiB"
+        "displayValue": "Est savings of 21 KiB"
       },
       {
         "id": "network-dependency-tree-insight",

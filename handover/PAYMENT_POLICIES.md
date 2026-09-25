@@ -1,53 +1,59 @@
-# Payment-policy pages — draft for owner review
+# Payment policies — owner-directed terms
 
-The owner requested the pages needed for payment-gateway onboarding, selecting **PhonePe for now** and allowing a different provider later. This change prepares the static website pages. It does not activate a checkout or represent gateway approval.
+The owner supplied **THALIR INNOVATIONS**, the registered address at **65, 5th Cross, Amruthnagar, B Sector, Byatarayanyapura, Bangalore, Karnataka 560092, India**, confirmed that payments cover all services, and instructed us to design cancellation/refund terms using standard practices. Those instructions supersede the earlier missing-identity and missing-policy placeholders. No certificate or GST identifier is claimed to have been verified.
 
-## Release status
+The change updates the same PR, adds the supplied identity to all six information pages and organization metadata, and covers Smart Home & Cinema, Cinema Revival, equipment supplied with those services, and EKANI subscriptions and related services. PhonePe is the intended initial gateway; the public wording permits future providers. The existing gateway-specific EKANI marketing line becomes “Available payment methods are shown before you pay.” No backend gateway migration is claimed.
 
-**Do not merge or submit these pages as a completed onboarding policy set yet.** The owner has been asked for the details below. The draft deliberately does not invent a registered address, refund period, cancellation deduction or delivery promise. Its references to order-specific terms are not a substitute for completing those details.
+## Commercial choices drafted for Thalir
 
-| Needed from the owner | Where it will be used |
+There is no single mandatory seven-day refund rule for these different products. The periods below are merchant policy choices made under the owner's instruction, not representations of a universal legal or PhonePe standard.
+
+| Situation | Drafted policy |
 | --- | --- |
-| Exact registered seller name, confirmation that the public trade name matches the registration, full postal address including PIN code | About, Contact, Terms, Refunds, Shipping, Privacy; `BUSINESS_INFO.registeredName` and `postalAddress` |
-| Whether these payments cover home/cinema work, EKANI subscriptions, or both | Policy scope and gateway onboarding |
-| Cancellation eligibility and deadlines; treatment of advances, work completed and equipment ordered; rescheduling and returns | Refund policy and Terms |
-| Merchant refund decision/initiation period, original-payment-method handling and expected bank credit period | Refund policy |
-| Equipment dispatch/delivery estimates, transport charges, service scheduling and software activation period | Shipping & Service Delivery policy |
-| Named grievance contact and any dedicated email/phone different from the existing support details | Contact and policy support sections |
-| Whether the existing EKANI first-cycle 7-day refund rule still applies, and whether renewal and annual-plan rules differ | EKANI cancellation/refund section |
+| Project cancelled before work/procurement | Full refund; no standalone cancellation or processing fee |
+| Project already underway | Itemised satisfactory work at agreed rates and equipment delivered/retained; unused advance refunded |
+| Custom/special-order equipment | Restriction and maximum non-recoverable commitment accepted before procurement; seek supplier recovery, provide records and credit recovered amounts; paid equipment available to the customer |
+| Rescheduling | Request 24 hours notice where possible; no separate rescheduling fee; previously agreed services/travel already performed may be payable |
+| Thalir cancels an undelivered service | New date or full refund for that service; Thalir bears its cancellation costs |
+| Standard equipment, change of mind | Request within 7 calendar days; unused, uninstalled, complete packaging/accessories; actual pre-agreed return transport cost; no restocking fee |
+| Fault, misdescription, incorrect supply or non-delivery | Applicable refund/return remedy preserved; no forced repair-only path; reasonable collection/return costs borne by Thalir for its faulty/incorrect supply |
+| First EKANI purchase | 7 calendar days from paid access being made available; first monthly or annual subscription charge refundable |
+| Separate consumed charges/completed setup | Excluded from change-of-mind refund only if separately disclosed and accepted; itemised deductions |
+| Later subscription periods | No change-of-mind prorating after the first window or on renewals; future renewal cancellable; paid access continues; billing-error/non-provision/statutory remedies unaffected |
+| Wrong/duplicate renewal | Verified duplicate, excess or renewal after a received cancellation request refunded |
+| Requests and complaints | Acknowledge within 48 hours; normally determine eligibility within 7 business days after essential information; complaints resolved within one month |
+| Approved refund | Initiate within 5 business days to original source; no refund/gateway fee withheld; communicate reference; bank credit estimate separately explained |
+| Digital activation | Standard subscription access within 2 business days after successful payment confirmation and required account details; revised date only by agreement or refund for non-delivery |
+| Hardware/project delivery | Written dispatch/delivery date or latest delivery window before payment; project milestones and charges explicit; no invented universal hardware lead time |
 
-The internal claims rulebook flags the seller trade-name update as unconfirmed. No older seller name or tax identifier is copied into the source or generated site. The public WhatsApp number remains WhatsApp-only. Existing support email, hours, service region, service descriptions and quote-based workflow are reused.
+These are operational commitments that the support and billing teams must implement. Quotes may offer more favourable rights but cannot silently remove the website policy protections. New versions do not retrospectively reduce rights for existing orders.
 
-## Pages and design
+## Remaining merchant input
 
-- `/about/`: existing business description, services, location and workflow.
-- `/terms/`: website/enquiry scope, project orders, software subscriptions and payment queries.
-- `/refunds/`: request information, project and subscription scope, refund follow-up and order issues. Exact eligibility and timelines remain an owner input.
-- `/shipping/`: equipment supply, service area, scheduling, digital access and delivery problems. Order-specific estimates still require owner confirmation.
-- `/contact/`: adds an order/payment support section and policy links.
-- `/privacy/`: adds payment-enquiry data handling and external-service scope; replaces the date that changed on every build with an explicit revision date.
-- Every page has footer links to all four policies and About. New pages retain canonical URLs, metadata, organization data, local fonts and the existing light theme. Policies use readable sections and an in-page contents list.
+**Only the grievance officer's name is still requested.** `BUSINESS_INFO.grievanceName` is intentionally empty until the owner names the person; the Contact page already provides the complaint route, role-independent process, existing email/WhatsApp support and National Consumer Helpline link. Do not represent the set as fully ready for gateway review until this required named contact is completed.
 
-All visitor-facing words remain in `src/config.mjs`; `docs/` is regenerated by `build.mjs`. No dependency, client script, checkout, cookie, tracking request or new image is added. Current category copy and EKANI pricing remain unchanged. The existing EKANI description still identifies its existing payment integration; selecting a gateway for Thalir does not establish that EKANI has migrated.
+The original instruction not to merge remains respected: update the existing PR and leave it unmerged. No further permission is needed merely to draft the requested terms. No checkout is activated in this static-site change.
 
-## Provider sources checked
+## Primary sources checked on 25 September 2026
 
-- [PhonePe merchant onboarding guidelines](https://www.phonepe.com/apollo/pdf/Merchant_Profiling_Guidelines.pdf): entity-specific KYC and business documents. These are onboarding requirements, not confirmation of this merchant's registration.
-- [PhonePe grievance policy, dispute handling](https://www.phonepe.com/grievance-policy/): delivery delays, damaged/non-matching items, displayed refund policies, excess charges and contacting the merchant first. PhonePe's own service-level deadlines are not copied as Thalir promises.
+- [Department of Consumer Affairs, Lok Sabha answer dated 25 March 2026](https://fcainfoweb.nic.in/PMS/writereaddata/2026_LS_B_5415.pdf), page 2: named grievance contact, acknowledgment within 48 hours, redress within one month, transparent seller and policy information.
+- [Government explanation of cancellation-charge protections](https://www.pib.gov.in/PressReleasePage.aspx?PRID=1784185&lang=2&reg=48): cancellation restrictions are part of the e-commerce consumer rules. The policy does not introduce a flat penalty.
+- [Government explanation of accepted-refund obligations](https://www.pib.gov.in/PressReleasePage.aspx?PRID=1784582&lang=2&reg=48), e-commerce regulations section: accepted refunds must be made within the applicable legal timeframe/reasonable period. Thalir's five-business-day initiation promise is a drafted commercial commitment.
+- [PhonePe grievance policy](https://www.phonepe.com/grievance-policy/), sections 5.1 and 7: initiation and bank-credit timing differ; disputes include delayed/non-delivery, faulty supply and unhonoured merchant refund policies. PhonePe's own grievance SLA is not copied as Thalir's.
+- [Government notice of the 2026 amendment](https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=294532): the announced amendments commence on **1 January 2027**, so they are not described as already effective on the review date. Recheck before that date.
 
-The existing public EKANI policy pages returned HTTP 403 to the research client. The internal rulebook's first-cycle refund statement therefore remains an item for owner confirmation, not newly published subscription policy.
+These checks inform the draft; they are not legal certification or a guarantee of gateway acceptance. The public EKANI policy pages returned HTTP 403 to the research client. The owner's instruction authorizes a new unified draft; the application terms still need operational alignment before collecting payments under it.
 
 ## Asks for Claude Code
 
-1. **TODO — merchant setup:** after seller details and policies are confirmed, configure the PhonePe account with the matching seller identity and policy URLs. Reconcile any gateway dashboard-specific checklist and confirm the permitted business scope.
-2. **TODO — payment implementation:** implement checkout/payment links in the appropriate backend, with server-side amount validation, verified payment status, signed callbacks, idempotency, receipts and refund handling. No credentials belong in this static repository.
-3. **TODO — EKANI:** if the owner intends a gateway migration for EKANI too, reconcile its current checkout, subscription cancellation, first-cycle refund rule, renewal/annual rules and tax display before changing marketing claims.
-4. **TODO — operational review:** verify the support channels and grievance contact, and ensure the actual order documents and refund process match the published wording and timelines.
+1. **TODO — merchant onboarding:** configure PhonePe for the owner-confirmed seller identity, address and all-service scope; add the final policy URLs and named grievance contact; reconcile the actual account-specific checklist and KYC documents.
+2. **TODO — checkout and refunds:** implement payment verification, authenticated callbacks, idempotency, receipts, original-source refunds and tracking of approval/initiation/settlement. Never place gateway credentials in this static repo.
+3. **TODO — EKANI billing:** align checkout and existing public product terms with first-purchase refunds, monthly/annual renewal cancellation, consumed-charge disclosure, activation periods and pro-rata refunds when Thalir discontinues access. Verify tax display and explicit recurring-payment consent. The existing integration is not migrated by changing marketing text.
+4. **TODO — operations:** make order-specific equipment availability/delivery windows, warranty coverage, disclosed custom-order commitments and return costs explicit before payment. Implement the 48-hour/one-month grievance process and refund SLAs; retain records and refund references.
+5. **TODO — policy activation:** complete the grievance officer name and review operational readiness before gateway submission. Recheck the amendments that take effect on 1 January 2027. If checkout is later embedded on this domain, update the no-payment-form statements in Terms and Privacy to match the implementation.
 
-The frontend policy set is gateway-neutral so a future provider change need not rename routes or rewrite provider-specific promises. Before activating checkout, update the current statements that this static site does not take online payments and does not collect payment credentials if the implementation changes those facts.
+## Verification and copy review
 
-## Verification
+See [evidence](../evidence/payment-policies/README.md), [browser audit](../evidence/payment-policies/audit.json), [link audit](../evidence/payment-policies/static-audit.json), [Lighthouse scores](../evidence/payment-policies/lighthouse-summary.json), and [exact copy](PAYMENT_COPY_CHANGES.md).
 
-See [evidence](../evidence/payment-policies/README.md), [browser audit](../evidence/payment-policies/audit.json), [internal-link audit](../evidence/payment-policies/static-audit.json), [Lighthouse scores](../evidence/payment-policies/lighthouse-summary.json) and [all copy for review](PAYMENT_COPY_CHANGES.md).
-
-Prior modernization evidence remains intact. The screenshots in this change compare the deployed baseline commit `c3772a8afbee33871d3a61d40b96f41302cd750e` with this draft; the four new routes have no before page.
+Before screenshots remain the deployed baseline `c3772a8afbee33871d3a61d40b96f41302cd750e`. After screenshots show the current revision at 390px and 1280px. The four new pages have no before route. All visitor-facing words remain in config; the logo, photographic assets, pricing feed and zero-dependency build remain intact.

@@ -1,20 +1,20 @@
 # Payment-policy review evidence
 
-Status: draft, awaiting the seller details and commercial terms in [the handover](../../handover/PAYMENT_POLICIES.md). No policy pages have been deployed.
+Status: updated with the owner-supplied seller name/address and all-service scope; commercial terms drafted under the owner’s instruction. Only the grievance officer name remains pending. See [the handover](../../handover/PAYMENT_POLICIES.md). The PR remains unmerged; these pages are not deployed.
 
 ## Checks
 
 - Offline and live-feed builds succeed. Final generated output uses the live feed.
 - 11 pages, six viewport widths (360 / 390 / 768 / 1024 / 1280 / 1440): 66 layout and 44-pixel target checks.
 - 22 axe accessibility scans and 22 JavaScript-disabled checks; keyboard/menu/form/reduced-motion/footer tests pass.
-- 261 internal links and anchors resolve; 86 WhatsApp links preserve the official number and prefilled messages.
+- 268 internal links and anchors resolve; 81 WhatsApp links preserve the official number and prefilled messages.
 - No console errors or third-party runtime requests observed during browser QA.
 - Original images, logo and client JavaScript unchanged. No dependency or checkout integration added.
 - The footer headings now use level 2 so the 404 page does not skip from H1 to H3.
 
 ## Mobile Lighthouse
 
-Lighthouse 13.5.0, Chrome, native arm64 Node; default simulated mobile throttling against an uncompressed localhost server. Scores are lab measurements. CLS was 0 on every page. The 404 page was rerun after correcting the existing footer heading hierarchy.
+Lighthouse 13.5.0, Chrome, native arm64 Node; default simulated mobile throttling against an uncompressed localhost server. Scores are lab measurements. CLS was 0 on every page. All 11 pages were rerun after adding the seller information and final policy wording.
 
 | Page | Performance | Accessibility | Best Practices | SEO |
 | --- | ---: | ---: | ---: | ---: |
@@ -22,11 +22,11 @@ Lighthouse 13.5.0, Chrome, native arm64 Node; default simulated mobile throttlin
 | `/smart-home-cinema/` | 98 | 100 | 100 | 100 |
 | `/cinema-revival/` | 98 | 100 | 100 | 100 |
 | `/business-software/` | 98 | 100 | 100 | 100 |
-| `/contact/` | 99 | 100 | 100 | 100 |
+| `/contact/` | 98 | 100 | 100 | 100 |
 | `/privacy/` | 99 | 100 | 100 | 100 |
 | `/about/` | 99 | 100 | 100 | 100 |
 | `/terms/` | 99 | 100 | 100 | 100 |
-| `/refunds/` | 99 | 100 | 100 | 100 |
+| `/refunds/` | 98 | 100 | 100 | 100 |
 | `/shipping/` | 99 | 100 | 100 | 100 |
 | `/404.html` | 99 | 100 | 100 | 100 |
 
