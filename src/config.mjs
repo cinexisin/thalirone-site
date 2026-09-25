@@ -25,6 +25,8 @@ export const SITE = {
     ["Instagram", "https://www.instagram.com/thalirone/"],
     ["Facebook", "https://www.facebook.com/thalironeofficial"],
     ["YouTube", "https://www.youtube.com/@thalirone"],
+    ["Threads", "https://www.threads.com/@thalirone"],
+    ["X", "https://x.com/thalir_one"],
   ],
 };
 
