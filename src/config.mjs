@@ -19,9 +19,11 @@ export const SITE = {
   email: "hello@thalirone.com",
   hours: "Mon–Fri 9:30 am – 6:30 pm · Sat 9:30 am – 2 pm",
   description:
-    "Thalir Innovations designs smart homes and home cinemas and revives existing home theatres across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
+    "Thalir Innovations designs smart homes, home cinemas, acoustics, commercial audio and PA systems across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
   social: [
     // filled in as accounts go live: ["Instagram", "https://instagram.com/thalirone"]
+    ["Facebook", "https://www.facebook.com/profile.php?id=61594497942347"],
+    ["YouTube", "https://www.youtube.com/@thalirone"],
   ],
 };
 
@@ -382,6 +384,112 @@ export const CATEGORIES = [
     },
   },
   {
+    // Added on the owner's instruction, 25 Sep 2026: acoustic consultation,
+    // commercial audio and PA systems, design and implementation.
+    slug: "commercial-audio",
+    name: "Commercial Audio & Acoustics",
+    label: "For businesses and venues",
+    illustration: "zones",
+    card: {
+      pitch:
+        "Acoustic consultation, commercial sound and PA systems for offices, shops, restaurants, schools, halls and places of worship: designed for the space, then installed and set up on site.",
+      bullets: [
+        "Acoustic consultation for rooms and halls",
+        "Background music and paging by zone",
+        "PA systems for announcements and speech",
+        "Design first, then supply, installation and handover",
+      ],
+    },
+    composerHint: "e.g. 3,000 sq ft restaurant, background music in 3 zones",
+    cta: {
+      shortLabel: "Audio consultation",
+      label: "Request an audio consultation",
+      wa: "Hi Thalir Innovations! I'd like help with commercial audio / acoustics.\nType of space (office / shop / restaurant / school / hall / other): \nLocation: \nWhat I need (acoustics / background music / PA / other): ",
+    },
+    page: {
+      title: "Acoustic Consultation, Commercial Audio & PA Systems",
+      metaDescription:
+        "Acoustic consultation, commercial audio and PA system design and installation for offices, shops, restaurants, schools, halls and places of worship across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Talk to us on WhatsApp.",
+      eyebrow: "Commercial Audio & Acoustics",
+      h1: "Sound that suits the space.",
+      lede: "From a meeting room that echoes to a hall where announcements must reach the back row, we look at the space first. Then we design the acoustics, the speakers and the PA, install them and set them up on site.",
+      featuresTitle: "What we design and install",
+      features: [
+        [
+          "wave",
+          "Acoustic consultation",
+          "We assess echo, noise and how sound behaves in the room, and recommend the treatment and layout that suit how the space is used.",
+        ],
+        [
+          "plan",
+          "Acoustic treatment",
+          "Absorber and diffuser layouts planned for the room, then supplied and fitted.",
+        ],
+        [
+          "speaker",
+          "Commercial audio",
+          "Background music for offices, shops, restaurants and hotels, split into zones with their own source and volume.",
+        ],
+        [
+          "mic",
+          "PA systems",
+          "Paging, announcements and live speech for schools, halls, places of worship and workplaces, with microphones where they're needed.",
+        ],
+        [
+          "dial",
+          "Set up on site",
+          "Levels, coverage and settings are checked in the finished space, so every zone sounds even.",
+        ],
+        [
+          "remote",
+          "Simple controls",
+          "Easy volume and source control for your staff, with automation where your equipment supports it.",
+        ],
+      ],
+      processTitle: "How a project runs",
+      process: [
+        [
+          "Tell us about the space",
+          "Share the type of space, its size, a few photos and what you need on WhatsApp.",
+        ],
+        [
+          "Site visit & consultation",
+          "We see the space and discuss how it's used and what matters most.",
+        ],
+        [
+          "Design & written quote",
+          "Layout, equipment and scope in writing before any work starts.",
+        ],
+        [
+          "Installation & handover",
+          "We install, set up and test everything, then show your team how to use it.",
+        ],
+      ],
+      faq: [
+        [
+          "What kinds of spaces do you work on?",
+          "Offices and meeting rooms, shops, restaurants and cafés, schools and colleges, halls and auditoriums, and places of worship. Tell us about your space and we'll say what's practical.",
+        ],
+        [
+          "Can you fix echo in an existing room?",
+          "Often, yes. We assess the room on a visit and recommend acoustic treatment that suits the space and your budget.",
+        ],
+        [
+          "Do you supply the equipment too?",
+          "Yes. We design the system, supply the equipment and install it. If you already have equipment, we can look at working with it.",
+        ],
+        [
+          "Which areas do you cover?",
+          "Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. We're based in Bengaluru; for sites outside Bengaluru, any travel charges are agreed with you before the visit.",
+        ],
+        [
+          "How much does it cost?",
+          "It depends on the space and the system. After the site visit you get a written quote with every item listed.",
+        ],
+      ],
+    },
+  },
+  {
     slug: "business-software",
     name: "Business Software",
     label: "For your business",
@@ -632,7 +740,7 @@ export const COPY = {
   footerServing: "serving",
   location: "Karnataka, India",
   homeMetaSuffix:
-    "smart homes, home cinema & EKANI CRM · Karnataka, Tamil Nadu, AP & Telangana",
+    "smart homes, home cinema, commercial audio & EKANI CRM · Karnataka, Tamil Nadu, AP & Telangana",
 };
 
 // Seller details and all-service scope supplied by the owner, 25 September 2026.
@@ -920,6 +1028,16 @@ export const DRAWING = {
   screen: "SCREEN",
   sub: "SUB",
   speakerLegend: "7.2.4 · seven ear-level, two subs, four heights",
+  zonesTitle:
+    "Example plan: a restaurant with three music zones, a PA for announcements and acoustic panels",
+  zoneDining: "DINING · ZONE 1",
+  zoneBar: "BAR · ZONE 2",
+  zoneOutdoor: "OUTDOOR · ZONE 3",
+  zoneRack: "AMP",
+  zoneMic: "MIC",
+  zonePanels: "Acoustic panels",
+  zonePaging: "Paging: all zones",
+  zoneLegend: "Example · ceiling speakers by zone, one amplifier, one paging mic",
   flowLabel:
     "Example: a WhatsApp enquiry becomes a lead, a GST quote, an invoice and a recorded payment in EKANI",
   flowChat: "WhatsApp",

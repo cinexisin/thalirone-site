@@ -140,12 +140,46 @@ function layout({ path, title, description, body, current }) {
     `<a href="/contact/"${current === "contact" ? ' aria-current="page"' : ""}>${esc(COPY.contact)}</a>`;
   const ld = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
+    "@id": SITE.url + "/#business",
     name: SITE.name,
     legalName: BUSINESS_INFO.registeredName,
+    description: SITE.description,
     url: SITE.url,
     logo: SITE.url + "/assets/img/icon-512.png",
+    image: SITE.url + "/assets/img/og.jpg",
+    telephone: "+91-95136-36646",
     email: SITE.email,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:30",
+        closes: "18:30",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "09:30",
+        closes: "14:00",
+      },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: SITE.name,
+      itemListElement: CATEGORIES.map((c) => ({
+        "@type": "OfferCatalog",
+        name: c.name,
+        url: SITE.url + catUrl(c),
+        itemListElement: (c.page.features
+          ? c.page.features.map(([, h]) => h)
+          : c.card.bullets
+        ).map((name) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name },
+        })),
+      })),
+    },
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -336,7 +370,7 @@ function home() {
 <section class="band cream service-gallery" aria-labelledby="cats-h">
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div>
-    <div class="cats">${cards}</div>
+    <div class="cats${CATEGORIES.length % 3 === 1 ? " cats-even" : ""}">${cards}</div>
   </div>
 </section>
 ${sh?.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}

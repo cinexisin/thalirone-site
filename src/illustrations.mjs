@@ -90,6 +90,57 @@ export function speakerLayout(title = DRAWING.speakersTitle) {
 </svg>`;
 }
 
+export function zonePlan(title = DRAWING.zonesTitle) {
+  const spk = (x, y, c = G) =>
+    `<g><circle cx="${x}" cy="${y}" r="10" fill="${W}" stroke="${c}" stroke-width="2"/><circle cx="${x}" cy="${y}" r="3.5" fill="${c}"/></g>`;
+  const zone = (x, y, w, h, c) =>
+    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="${c}" opacity=".09"/>`;
+  const panel = (x, y, w = 34) =>
+    `<rect x="${x}" y="${y}" width="${w}" height="7" rx="2" fill="${Au}" opacity=".85"/>`;
+  return `<svg class="illo" viewBox="0 0 560 380" role="img" aria-label="${esc(title)}" xmlns="http://www.w3.org/2000/svg">
+  <title>${esc(title)}</title>
+  <rect x="20" y="20" width="520" height="340" rx="4" fill="${W}"/>
+  ${zone(34, 34, 290, 196, L)}${zone(340, 34, 186, 196, G)}${zone(34, 246, 492, 100, Au)}
+  <g fill="none" stroke="${G}" stroke-width="6" stroke-linecap="square">
+    <path d="M20 20 H540 V360 H20 Z"/>
+    <path d="M332 20 V110 M332 150 V238"/>
+    <path d="M20 238 H250 M300 238 H540"/>
+  </g>
+  ${room(44, 56, DRAWING.zoneDining)}${room(350, 56, DRAWING.zoneBar)}${room(44, 270, DRAWING.zoneOutdoor)}
+  ${[
+    [100, 110],
+    [200, 110],
+    [100, 185],
+    [200, 185],
+    [285, 148],
+  ]
+    .map(([x, y]) => spk(x, y, L))
+    .join("")}
+  ${[
+    [400, 110],
+    [480, 110],
+    [440, 190],
+  ]
+    .map(([x, y]) => spk(x, y, G))
+    .join("")}
+  ${[
+    [120, 312],
+    [260, 312],
+    [400, 312],
+  ]
+    .map(([x, y]) => spk(x, y, Au))
+    .join("")}
+  ${panel(60, 24)}${panel(140, 24)}${panel(220, 24)}${panel(380, 24)}${panel(460, 24)}
+  <rect x="470" y="276" width="44" height="26" rx="4" fill="${G}"/>
+  <text x="492" y="293" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="800" fill="${W}">${esc(DRAWING.zoneRack)}</text>
+  <rect x="470" y="310" width="44" height="22" rx="11" fill="${W}" stroke="${Au}" stroke-width="1.6"/>
+  <text x="492" y="324.5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="8.5" font-weight="700" fill="${G}">${esc(DRAWING.zoneMic)}</text>
+  ${tag(60, 206, esc(DRAWING.zonePanels), 108)}
+  ${tag(360, 206, esc(DRAWING.zonePaging), 112)}
+  <text x="280" y="376" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" font-weight="700" fill="${G}">${esc(DRAWING.zoneLegend)}</text>
+</svg>`;
+}
+
 export function ekaniFlow() {
   return `<div class="flow" role="img" aria-label="${esc(DRAWING.flowLabel)}">
   <div class="flow-step chat"><span class="flow-k">${esc(DRAWING.flowChat)}</span><p class="bubble">${esc(DRAWING.flowEnquiry)}</p></div>
@@ -115,6 +166,7 @@ export const ILLUSTRATIONS = {
   ekaniflow: ekaniFlow,
   speakers: speakerLayout,
   revival: revivalSheet,
+  zones: zonePlan,
 };
 
 // 24×24 line icons
@@ -150,6 +202,13 @@ export const ICONS = {
   ),
   plan: I('<path d="M4 4h16v16H4z"/><path d="M4 12h7V4M11 12v8M15 12h5"/>'),
   arrow: I('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+  speaker: I(
+    '<rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="14" r="3.5"/><circle cx="12" cy="7.5" r="1.3"/>',
+  ),
+  mic: I(
+    '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6"/>',
+  ),
+  wave: I('<path d="M3 12h2l2-6 3 12 3-9 2 6 2-3h4"/>'),
   shield: I(
     '<path d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/>',
   ),

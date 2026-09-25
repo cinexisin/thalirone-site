@@ -2629,6 +2629,12 @@ body {
   gap: 24px;
   align-items: stretch;
 }
+/* four categories: 2 × 2 on wide screens, so no card sits alone in a row */
+@media (min-width: 851px) {
+  .cats.cats-even {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 .cat,
 .cat:nth-child(even) {
   padding: 0;
