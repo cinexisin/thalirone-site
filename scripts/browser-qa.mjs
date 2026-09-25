@@ -5,6 +5,7 @@ import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { writeFile } from "node:fs/promises";
+import { CATEGORIES, POLICIES } from "../src/config.mjs";
 const require = createRequire(
   join(process.env.THALIR_QA_MODULES, "../package.json"),
 );
@@ -14,11 +15,11 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const base = process.env.THALIR_QA_URL || "http://127.0.0.1:4610";
 const paths = [
   "",
-  "smart-home-cinema/",
-  "cinema-revival/",
-  "business-software/",
+  ...CATEGORIES.map((c) => `${c.slug}/`),
   "contact/",
   "privacy/",
+  "about/",
+  ...POLICIES.map((p) => `${p.slug}/`),
   "404.html",
 ];
 const report = {
@@ -334,7 +335,7 @@ assert.deepEqual(report.errors, []);
 assert.deepEqual(report.external, []);
 if (!process.env.THALIR_QA_INTERACTIONS_ONLY)
   await writeFile(
-    join(root, "evidence/audit.json"),
+    join(root, process.env.THALIR_QA_OUTPUT || "evidence/audit.json"),
     JSON.stringify(report, null, 2),
   );
 console.log(

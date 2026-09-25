@@ -3,6 +3,7 @@ import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { mkdir } from "node:fs/promises";
+import { CATEGORIES, POLICIES } from "../src/config.mjs";
 const require = createRequire(
   join(process.env.THALIR_QA_MODULES, "../package.json"),
 );
@@ -12,16 +13,19 @@ const stage = process.argv[2] || "after";
 if (!["before", "after"].includes(stage)) throw Error("Use before or after");
 const base = process.env.THALIR_QA_URL || "http://127.0.0.1:4610";
 const browser = await chromium.launch({ channel: "chrome", headless: true });
-const pages = [
-  "",
-  "smart-home-cinema/",
-  "cinema-revival/",
-  "business-software/",
-  "contact/",
-  "privacy/",
-  "404.html",
-];
-await mkdir(join(root, "evidence/screenshots", stage), { recursive: true });
+const pages = process.env.THALIR_QA_PATHS
+  ? JSON.parse(process.env.THALIR_QA_PATHS)
+  : [
+      "",
+      ...CATEGORIES.map((c) => `${c.slug}/`),
+      "contact/",
+      "privacy/",
+      "about/",
+      ...POLICIES.map((p) => `${p.slug}/`),
+      "404.html",
+    ];
+const output = process.env.THALIR_QA_OUTPUT || "evidence/screenshots";
+await mkdir(join(root, output, stage), { recursive: true });
 for (const width of [390, 1280]) {
   const context = await browser.newContext({
     viewport: { width, height: width === 390 ? 844 : 900 },
@@ -55,7 +59,7 @@ for (const width of [390, 1280]) {
     await page.screenshot({
       path: join(
         root,
-        "evidence/screenshots",
+        output,
         stage,
         `${path.replaceAll("/", "") || "home"}-${width}.png`,
       ),

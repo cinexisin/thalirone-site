@@ -1,0 +1,133 @@
+# Payment pages: exact copy for owner review
+
+Seller identity, address and all-service scope are supplied by the owner. Commercial terms are designed under the owner’s instruction. The owner approved publication on 25 September 2026 and confirmed that no grievance officer is appointed; no officer name is invented. See [the handover](PAYMENT_POLICIES.md).
+
+## Changed existing sentence
+
+- Before: Payments through Razorpay: UPI, cards and netbanking.
+- After: Available payment methods are shown before you pay.
+
+## New page copy and labels
+
+- **BUSINESS_INFO.registeredName**: THALIR INNOVATIONS
+- **BUSINESS_INFO.postalAddress.0**: 65, 5th Cross, Amruthnagar, B Sector
+- **BUSINESS_INFO.postalAddress.1**: Byatarayanyapura, Bangalore
+- **BUSINESS_INFO.postalAddress.2**: Karnataka 560092, India
+- **BUSINESS_INFO.structuredAddress.streetAddress**: 65, 5th Cross, Amruthnagar, B Sector, Byatarayanyapura
+- **BUSINESS_INFO.structuredAddress.addressLocality**: Bangalore
+- **BUSINESS_INFO.structuredAddress.addressRegion**: Karnataka
+- **BUSINESS_INFO.structuredAddress.postalCode**: 560092
+- **BUSINESS_INFO.structuredAddress.addressCountry**: IN
+- **BUSINESS_INFO.grievanceRole**: Grievance Officer
+- **BUSINESS_INFO.grievanceTitle**: Complaints & grievance redressal
+- **BUSINESS_INFO.grievanceBody**: Send a complaint to hello@thalirone.com with the subject 'Grievance' or message our WhatsApp number. Include your order reference and the outcome you are requesting. We acknowledge complaints within 48 hours and resolve them within one month of receipt.
+- **BUSINESS_INFO.grievanceEscalation**: You may also use the National Consumer Helpline or other remedies available under applicable law. Contacting us does not restrict those rights.
+- **BUSINESS_INFO.grievanceLink**: National Consumer Helpline
+- **BUSINESS_INFO.scope**: These policies cover payments collected by THALIR INNOVATIONS for Smart Home & Cinema, Cinema Revival, equipment supplied with those services, and EKANI subscriptions and related services.
+- **BUSINESS_INFO.updatedLabel**: 25 September 2026
+- **BUSINESS_INFO.nav**: Business information and policies
+- **BUSINESS_INFO.onPage**: On this page
+- **BUSINESS_INFO.about**: About us
+- **BUSINESS_INFO.policies**: Customer policies
+- **BUSINESS_INFO.seller**: Registered seller
+- **BUSINESS_INFO.address**: Registered address
+- **BUSINESS_INFO.helpTitle**: Questions about an order or payment?
+- **BUSINESS_INFO.helpBody**: Email us or message us on WhatsApp with your quote, invoice or transaction reference, payment date and a short description of the issue. Please do not share a card number, CVV, PIN, password or one-time password.
+- **BUSINESS_INFO.emailLabel**: Email customer support
+- **BUSINESS_INFO.emailSupport**: Email support
+- **BUSINESS_INFO.paymentTitle**: Order & payment support
+- **BUSINESS_INFO.paymentBody**: For any Smart Home & Cinema, Cinema Revival or EKANI order, contact us about cancellations, refunds, delivery or payment issues. Include your quote, invoice or transaction reference so we can identify it.
+- **BUSINESS_INFO.privacyPaymentsTitle**: Order and payment enquiries
+- **BUSINESS_INFO.privacyPaymentsBody**: If you send us an invoice, transaction reference or payment issue, we use those details to identify your order and respond to your request. Please do not send full card details, CVVs, PINs, passwords or one-time passwords through the contact form, email or WhatsApp. This website has no payment form and does not collect payment credentials.
+- **BUSINESS_INFO.privacyExternalTitle**: Other websites and payment services
+- **BUSINESS_INFO.privacyExternalBody**: Links to EKANI and messaging or payment services take you to separate websites or apps. Their privacy notices explain how they handle information you provide there. This notice describes thalirone.com and the enquiries you send to Thalir Innovations.
+- **BUSINESS_INFO.aboutIntro**: Thalir Innovations designs smart homes and home cinemas and revives existing home theatres across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.
+- **BUSINESS_INFO.aboutProcessTitle**: A clear scope before work begins
+- **BUSINESS_INFO.aboutProcess**: For a smart home or cinema project, we start with a site survey and a written quote. For an existing theatre, share your setup with us; the scope, charges and visit date are agreed before scheduling. EKANI features and current module prices are listed on our Business Software page.
+- **BUSINESS_INFO.aboutLocationTitle**: Based in Bengaluru
+- **BUSINESS_INFO.aboutLocation**: We take home and cinema projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Travel charges outside Bengaluru are agreed before the visit.
+- **POLICIES.0.title**: Terms & Conditions
+- **POLICIES.0.description**: Terms for Thalir Innovations home and cinema projects, equipment supply and EKANI subscriptions.
+- **POLICIES.0.intro**: These terms apply to orders and payments for all our services. Read them with your written quote or selected subscription plan before paying.
+- **POLICIES.0.sections.0.title**: Who you are buying from
+- **POLICIES.0.sections.0.paragraphs.0**: THALIR INNOVATIONS is the seller for the services covered by these terms. Our registered address and support contacts appear on this page and on Contact.
+- **POLICIES.0.sections.0.paragraphs.1**: These policies cover Smart Home & Cinema, Cinema Revival, equipment we supply with those services, and EKANI subscriptions and related services. They apply whether you pay by a payment link, within EKANI or through another payment method we offer.
+- **POLICIES.0.sections.0.paragraphs.2**: thalirone.com is an information and enquiry website. Its contact form prepares a WhatsApp message; it has no checkout or payment-credential form. Sending an enquiry does not confirm an order or reserve a visit.
+- **POLICIES.0.sections.1.title**: Quotes, prices and orders
+- **POLICIES.0.sections.1.paragraphs.0**: Smart Home & Cinema projects begin with a site survey and a written quote. For Cinema Revival, the scope, charges and visit date are agreed before scheduling. Equipment compatibility and the capabilities of your system are confirmed for your project.
+- **POLICIES.0.sections.1.paragraphs.1**: Before payment, your quote or checkout must show the total payable in Indian rupees, including any applicable taxes and separately identified delivery, travel or other charges. Project milestones, equipment specifications and delivery or service dates are agreed in writing. We do not add unapproved work or charges.
+- **POLICIES.0.sections.1.paragraphs.2**: An advance is credited towards the order and is subject to our Cancellation & Refund Policy. A quote cannot remove the protections in that policy or your rights under applicable law. Any more favourable written terms agreed for your order will be honoured.
+- **POLICIES.0.sections.2.title**: EKANI subscriptions and renewal
+- **POLICIES.0.sections.2.paragraphs.0**: EKANI plan prices, included modules, user limits and billing cycle are shown before purchase. Review the total for a monthly or annual plan in EKANI before paying. Enquiring about a demo does not activate a paid subscription.
+- **POLICIES.0.sections.2.paragraphs.1**: Any recurring payment requires your consent. Where auto-renewal is enabled, you may cancel future renewal through the available billing controls or by emailing support before the renewal is processed. Access continues until the paid period ends unless you request a refund and cancellation of access.
+- **POLICIES.0.sections.2.paragraphs.2**: Deleting an app, logging out or no longer using the service does not itself cancel an authorised recurring payment. Our refund policy explains first-purchase refunds, renewals and billing errors.
+- **POLICIES.0.sections.2.links.0.1**: Explore EKANI pricing
+- **POLICIES.0.sections.2.links.1.1**: EKANI cancellation and refund terms
+- **POLICIES.0.sections.3.title**: Payments and billing problems
+- **POLICIES.0.sections.3.paragraphs.0**: Pay only against the agreed quote, invoice or subscription selection. Payment methods and the provider processing your payment are shown when you pay; providers may change. Keep your receipt and transaction reference.
+- **POLICIES.0.sections.3.paragraphs.1**: If a payment is pending, duplicated, debited without confirmation or for an incorrect amount, contact us before retrying. We verify the payment record and refund confirmed duplicate or excess amounts under our refund process. Failed-payment reversals are handled by the bank or payment provider and do not confirm an order.
+- **POLICIES.0.sections.4.title**: Service scope and customer information
+- **POLICIES.0.sections.4.paragraphs.0**: Provide accurate billing, delivery and site-access information and tell us about changes that affect the agreed work. We confirm any resulting changes to scope, dates or charges with you before proceeding.
+- **POLICIES.0.sections.4.paragraphs.1**: Equipment warranty coverage and exclusions are stated with the relevant product or order. A manufacturer warranty does not replace our responsibility for goods or services that are defective, not as agreed or not delivered. No statement on this website removes a remedy available under applicable law.
+- **POLICIES.0.sections.5.title**: Policies, changes and applicable law
+- **POLICIES.0.sections.5.paragraphs.0**: The policy version supplied or displayed when you place an order applies to that order. Later changes do not retrospectively reduce your agreed rights. Indian law applies, without limiting your right to approach a consumer forum or other authority having jurisdiction.
+- **POLICIES.0.sections.5.paragraphs.1**: Use our Contact page for order support or to raise a grievance. The linked policies explain cancellation, returns, refunds, delivery and privacy.
+- **POLICIES.0.sections.5.links.0.1**: Cancellation & Refund Policy
+- **POLICIES.0.sections.5.links.1.1**: Shipping & Service Delivery Policy
+- **POLICIES.0.sections.5.links.2.1**: Privacy Policy
+- **POLICIES.0.sections.5.links.3.1**: Complaints and grievance contact
+- **POLICIES.1.title**: Cancellation & Refund Policy
+- **POLICIES.1.description**: Cancellation, returns and refund terms for all Thalir Innovations services, equipment and EKANI subscriptions.
+- **POLICIES.1.intro**: Clear terms for changing an order, returning eligible equipment or requesting a refund. This policy covers all payments collected by THALIR INNOVATIONS for our home, cinema and EKANI services.
+- **POLICIES.1.sections.0.title**: How to make a request
+- **POLICIES.1.sections.0.paragraphs.0**: Email hello@thalirone.com or message our WhatsApp number with your name, quote or invoice reference, payment date, transaction reference and the reason for the request. Include your account email for EKANI, or the agreed date for a service visit. The time we receive your message is the request time.
+- **POLICIES.1.sections.0.paragraphs.1**: We acknowledge requests within 48 hours and normally confirm eligibility and the refund calculation within 7 business days of receiving the information needed to assess them. If inspection is required, we explain the steps and expected date. Complaints are resolved within one month of receipt.
+- **POLICIES.1.sections.0.paragraphs.2**: A business day in this policy means Monday to Friday, excluding public holidays in Karnataka. The time limits for making a request are calendar days unless stated otherwise.
+- **POLICIES.1.sections.1.title**: Cancelling home and cinema work
+- **POLICIES.1.sections.1.paragraphs.0**: Before we begin any agreed work or place an equipment order with your approval, you may cancel for a full refund of the amount paid. We do not charge a separate cancellation or payment-processing fee.
+- **POLICIES.1.sections.1.paragraphs.1**: If work has started, you pay only for satisfactorily completed work at the agreed rates and equipment you have received or choose to retain. We provide an itemised statement and refund the unused balance of your advance.
+- **POLICIES.1.sections.1.paragraphs.2**: Customised, made-to-order or specially procured equipment may not be cancellable for a change of mind once production or an irrevocable supplier order has begun. Any such restriction and maximum non-recoverable commitment must be disclosed and accepted in writing before procurement. We first seek cancellation or recovery from the supplier, credit any recovered amount to you and provide supporting records. Equipment you pay for remains available for delivery to you. A generic statement that every advance is non-refundable is not part of this policy.
+- **POLICIES.1.sections.1.paragraphs.3**: These provisions do not allow deductions for defective or incorrect goods, deficient work or our failure to deliver. No cancellation charge is imposed contrary to applicable law.
+- **POLICIES.1.sections.2.title**: Rescheduling surveys and service visits
+- **POLICIES.1.sections.2.paragraphs.0**: Please give at least 24 hours notice when possible. We reschedule subject to availability and do not charge a separate rescheduling fee. Only services or travel already carried out at previously agreed rates may be payable; we explain any such amount before collecting it.
+- **POLICIES.1.sections.2.paragraphs.1**: If we cancel a visit or cannot carry out the agreed service for reasons within our control, you may choose a new date or a full refund for the undelivered service. We bear the costs of our cancellation.
+- **POLICIES.1.sections.3.title**: Equipment returns and faults
+- **POLICIES.1.sections.3.paragraphs.0**: For standard equipment, request a change-of-mind return within 7 days of delivery. It must be unused, uninstalled and complete with its original packaging and accessories. Contact us for return instructions; you pay only the actual return transport cost agreed with you in advance. There is no separate restocking fee.
+- **POLICIES.1.sections.3.paragraphs.1**: Change-of-mind returns do not apply to equipment that has been installed, used, customised or specially ordered under a restriction you accepted before purchase. This does not exclude returns or refunds for faults, damage, incorrect supply, misdescription or non-delivery.
+- **POLICIES.1.sections.3.paragraphs.2**: Report damaged, missing or incorrect items promptly, preferably within 7 days, with the invoice and photographs where practical. This reporting request does not shorten your statutory or warranty rights. An unboxing video is not a condition for a valid claim.
+- **POLICIES.1.sections.3.paragraphs.3**: Where goods or services are defective, deficient, not as agreed or not delivered as promised, you may request the applicable return, refund or other remedy. Repair or replacement is available with your agreement and does not remove a right to a refund. We bear reasonable return or collection costs for our incorrect or defective supply and refund the affected amount, including taxes and delivery charges paid for it where applicable.
+- **POLICIES.1.sections.4.title**: EKANI subscriptions
+- **POLICIES.1.sections.4.paragraphs.0**: Your first paid EKANI subscription, whether monthly or annual, has a 7-day refund window starting when paid access is first made available. Request cancellation within that period for a full refund of that first subscription charge. This is a paid-purchase refund policy, not a free trial.
+- **POLICIES.1.sections.4.paragraphs.1**: Separately agreed setup, migration or training work already completed, and separately billed usage or third-party charges already consumed, are excluded from a change-of-mind subscription refund only if disclosed and accepted before payment. Unused refundable balances are returned, and any deduction is itemised.
+- **POLICIES.1.sections.4.paragraphs.2**: After the first-purchase refund window, and for subsequent renewals, subscription fees are not refunded solely because you change your mind or stop using the service. Cancel future renewal before it is processed; access remains available until the end of the paid period. This applies to both monthly and annual billing. Refunds for non-provision, defects, incorrect billing or other legal entitlements remain available.
+- **POLICIES.1.sections.4.paragraphs.3**: A renewal processed after we received your cancellation request, a duplicate charge or an unauthorised excess charge is refunded in full once verified. If we discontinue paid access without a breach by you, we refund the unused prepaid period. If paid access cannot be provided, you may request a refund for the undelivered subscription.
+- **POLICIES.1.sections.5.title**: Refund method and timing
+- **POLICIES.1.sections.5.paragraphs.0**: We initiate an approved refund within 5 business days of approval and send the amount and refund reference to you. Refunds go back to the original payment method; we do not substitute store credit unless you choose it. We do not deduct a payment-gateway or refund-processing fee from the refundable amount.
+- **POLICIES.1.sections.5.paragraphs.1**: Banks and payment providers commonly take a further 5–10 business days to display the credit after initiation. This is an estimate, not a guaranteed bank settlement time. Any shorter timeline required by applicable law or payment rules takes precedence. Contact us with the refund reference if the credit has not appeared after 10 business days.
+- **POLICIES.1.sections.5.paragraphs.2**: If the original method cannot receive the refund, we verify the issue with the provider and agree an alternative payment to the verified original payer. We never ask for a PIN, CVV, password or one-time password to issue a refund.
+- **POLICIES.1.sections.5.paragraphs.3**: For a failed or pending payment, a bank reversal may follow a different schedule. We help trace the transaction and refund any confirmed duplicate or excess payment we received; a pending transaction is not treated as a completed order.
+- **POLICIES.1.sections.6.title**: Your rights and complaints
+- **POLICIES.1.sections.6.paragraphs.0**: This policy does not limit rights or remedies under applicable consumer law. More favourable terms expressly agreed for your order continue to apply. Contact us if you disagree with a refund decision; we provide the reason and calculation in writing.
+- **POLICIES.1.sections.6.links.0.1**: Complaints and grievance contact
+- **POLICIES.1.sections.6.links.1.1**: Shipping & Service Delivery Policy
+- **POLICIES.2.title**: Shipping & Service Delivery Policy
+- **POLICIES.2.description**: Equipment delivery, installation schedules and EKANI digital activation for Thalir Innovations customers.
+- **POLICIES.2.intro**: We confirm the delivery or service schedule and any associated charges before payment. Project work, equipment supply and digital subscriptions each have a different fulfilment process.
+- **POLICIES.2.sections.0.title**: Where we work
+- **POLICIES.2.sections.0.paragraphs.0**: We are based in Bengaluru and take home and cinema projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Visits outside Bengaluru are by prior confirmation, with travel charges agreed before the visit. Equipment delivery is arranged to the address agreed for your project.
+- **POLICIES.2.sections.1.title**: Equipment delivery and installation
+- **POLICIES.2.sections.1.paragraphs.0**: Before you pay, the written quote or order specifies the equipment, delivery address, estimated dispatch date, expected delivery date or latest delivery window, installation milestones and any transport or handling charges. Equipment lead times depend on availability and any custom work; there is no single dispatch period for every project.
+- **POLICIES.2.sections.1.paragraphs.1**: We confirm readiness, site access and installation requirements with you. Delivery of equipment and completion of installation may take place on different dates. Where a carrier is used, we provide tracking or delivery coordination details when dispatched.
+- **POLICIES.2.sections.1.paragraphs.2**: If availability or a delay changes the promised schedule, we inform you and seek your agreement to a revised date. You do not have to accept an indefinite extension. Cancellation and refund remedies for an undelivered order are described in our refund policy.
+- **POLICIES.2.sections.2.title**: Surveys, installation and service visits
+- **POLICIES.2.sections.2.paragraphs.0**: Smart Home & Cinema work follows a site survey, written quote, installation and programming, then handover. Cinema Revival scope, charges and the visit date are agreed before scheduling. Sending an enquiry does not reserve a date.
+- **POLICIES.2.sections.2.paragraphs.1**: Tell us promptly if site access, readiness or your availability changes. Any revised work, dates or charges must be agreed with you. Our cancellation policy explains rescheduling and refunds for services not delivered.
+- **POLICIES.2.sections.3.title**: EKANI digital access
+- **POLICIES.2.sections.3.paragraphs.0**: EKANI is supplied digitally; there is no physical shipment for a software subscription. Standard paid access is provided within 2 business days after successful payment confirmation and receipt of the account details needed for activation. Business days are Monday to Friday, excluding public holidays in Karnataka.
+- **POLICIES.2.sections.3.paragraphs.1**: Any separately purchased setup, migration, training or integration work has its own delivery schedule stated before payment and does not silently extend the subscription activation period. The paid subscription period begins when the purchased access is available.
+- **POLICIES.2.sections.3.paragraphs.2**: If access is not available within that period, contact us with your account email and payment reference. You may accept a revised activation date or request a full refund of the undelivered subscription. Do not send passwords or one-time passwords.
+- **POLICIES.2.sections.4.title**: Missing, damaged or delayed deliveries
+- **POLICIES.2.sections.4.paragraphs.0**: Contact us with your order reference if the agreed date has passed, equipment is damaged or missing, or the service differs from the agreed scope. Preserve packaging and photographs where practical so we can investigate and arrange the applicable remedy.
+- **POLICIES.2.sections.4.paragraphs.1**: Return and collection arrangements depend on the reason for the return. We cover reasonable return costs for incorrect or defective supply; change-of-mind returns follow the conditions in our refund policy. These arrangements do not limit your statutory rights.
+- **POLICIES.2.sections.4.links.0.1**: Cancellation & Refund Policy
+- **POLICIES.2.sections.4.links.1.1**: Order support and complaints
