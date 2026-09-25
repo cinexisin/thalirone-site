@@ -1021,6 +1021,7 @@ export const POLICIES = [
         title: "Who you are buying from",
         paragraphs: [
           "THALIR INNOVATIONS is the seller for the services covered by these terms. Our registered address and support contacts appear on this page and on Contact.",
+          "Business contact: Jawahar E.",
           "These policies cover Smart Home & Cinema, Cinema Revival, Commercial Spaces (audio, PA, acoustics and building automation), equipment we supply with those services, and EKANI subscriptions and related services. They apply whether you pay by a payment link, within EKANI or through another payment method we offer.",
           "thalirone.com is an information and enquiry website. Its contact form prepares a WhatsApp message; it has no checkout or payment-credential form. Sending an enquiry does not confirm an order or reserve a visit.",
         ],
