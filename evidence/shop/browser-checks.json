@@ -1,5 +1,6 @@
 [
   {
+    "path": "shop/",
     "width": 360,
     "brokenImages": [],
     "contentWidth": 360,
@@ -7,6 +8,7 @@
     "smallTargets": []
   },
   {
+    "path": "shop/",
     "width": 390,
     "brokenImages": [],
     "contentWidth": 390,
@@ -14,6 +16,7 @@
     "smallTargets": []
   },
   {
+    "path": "shop/",
     "width": 768,
     "brokenImages": [],
     "contentWidth": 768,
@@ -21,6 +24,7 @@
     "smallTargets": []
   },
   {
+    "path": "shop/",
     "width": 1024,
     "brokenImages": [],
     "contentWidth": 1024,
@@ -28,6 +32,7 @@
     "smallTargets": []
   },
   {
+    "path": "shop/",
     "width": 1280,
     "brokenImages": [],
     "contentWidth": 1280,
@@ -35,6 +40,103 @@
     "smallTargets": []
   },
   {
+    "path": "shop/",
+    "width": 1440,
+    "brokenImages": [],
+    "contentWidth": 1440,
+    "scrollWidth": 1440,
+    "smallTargets": []
+  },
+  {
+    "path": "cinema-revival/",
+    "width": 360,
+    "brokenImages": [],
+    "contentWidth": 360,
+    "scrollWidth": 360,
+    "smallTargets": []
+  },
+  {
+    "path": "cinema-revival/",
+    "width": 390,
+    "brokenImages": [],
+    "contentWidth": 390,
+    "scrollWidth": 390,
+    "smallTargets": []
+  },
+  {
+    "path": "cinema-revival/",
+    "width": 768,
+    "brokenImages": [],
+    "contentWidth": 768,
+    "scrollWidth": 768,
+    "smallTargets": []
+  },
+  {
+    "path": "cinema-revival/",
+    "width": 1024,
+    "brokenImages": [],
+    "contentWidth": 1024,
+    "scrollWidth": 1024,
+    "smallTargets": []
+  },
+  {
+    "path": "cinema-revival/",
+    "width": 1280,
+    "brokenImages": [],
+    "contentWidth": 1280,
+    "scrollWidth": 1280,
+    "smallTargets": []
+  },
+  {
+    "path": "cinema-revival/",
+    "width": 1440,
+    "brokenImages": [],
+    "contentWidth": 1440,
+    "scrollWidth": 1440,
+    "smallTargets": []
+  },
+  {
+    "path": "/",
+    "width": 360,
+    "brokenImages": [],
+    "contentWidth": 360,
+    "scrollWidth": 360,
+    "smallTargets": []
+  },
+  {
+    "path": "/",
+    "width": 390,
+    "brokenImages": [],
+    "contentWidth": 390,
+    "scrollWidth": 390,
+    "smallTargets": []
+  },
+  {
+    "path": "/",
+    "width": 768,
+    "brokenImages": [],
+    "contentWidth": 768,
+    "scrollWidth": 768,
+    "smallTargets": []
+  },
+  {
+    "path": "/",
+    "width": 1024,
+    "brokenImages": [],
+    "contentWidth": 1024,
+    "scrollWidth": 1024,
+    "smallTargets": []
+  },
+  {
+    "path": "/",
+    "width": 1280,
+    "brokenImages": [],
+    "contentWidth": 1280,
+    "scrollWidth": 1280,
+    "smallTargets": []
+  },
+  {
+    "path": "/",
     "width": 1440,
     "brokenImages": [],
     "contentWidth": 1440,

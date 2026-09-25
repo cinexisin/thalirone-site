@@ -16,6 +16,48 @@
   margin: 0;
   max-width: 520px;
 }
+.shop-starting {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  background: #f2f5f1;
+  border-left: 2px solid var(--green);
+  text-decoration: none;
+}
+.shop-starting > span {
+  font-weight: 650;
+}
+.shop-starting > strong {
+  font-size: 1.55rem;
+}
+.shop-starting > small {
+  color: var(--muted);
+}
+.shop-starting > .ico {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+}
+.shop-includes {
+  padding-left: 19px;
+  margin: 0 0 26px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.shop-includes li + li {
+  margin-top: 8px;
+}
+.shop-service-price--fixed {
+  font-size: 1.8rem;
+}
+.shop-service-price--fixed small {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+}
 .shop-jump {
   display: flex;
   flex-wrap: wrap;

@@ -289,28 +289,30 @@ export const CATEGORIES = [
     illustration: "revival",
     card: {
       pitch:
-        "Get more from the home theatre you already own: consultation, enhancement, advanced calibration, and help with unwanted smells and eye irritation in the room.",
+        "Get more from the home theatre you already own: consultation, odour removal, acoustic corrections where needed, theatre enhancement and advanced calibration.",
       bullets: [
         "Consultation on your room and equipment",
         "Enhancement plan around your budget",
         "Advanced calibration scoped to your system",
-        "Find and fix causes of smells and eye irritation",
+        "Odour removal and room comfort",
+        "Acoustic corrections where needed",
       ],
     },
-    composerHint: "e.g. 12×16 ft theatre, 5.1 system, dialogue is hard to hear",
+    composerHint:
+      "e.g. 12×16 ft theatre, unclear dialogue, echo or unwanted odours",
     cta: {
       shortLabel: "Revival consultation",
       label: "Book a revival consultation",
-      wa: "Hi Thalir Innovations! I'd like a Home Cinema Revival consultation.\nMy location: \nWhat I want to improve (sound / picture / controls / room comfort): ",
+      wa: "Hi Thalir Innovations! I'd like a Home Cinema Revival consultation.\nMy location: \nWhat I want to improve (odours / acoustics / sound / picture / controls / room comfort): ",
     },
     page: {
       title:
         "Home Cinema Revival in Karnataka, Tamil Nadu, Andhra Pradesh & Telangana",
       metaDescription:
-        "Home Cinema Revival for existing home theatres across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana: consultation, theatre enhancement, advanced calibration, and help with unwanted smells and eye irritation in the room. Book on WhatsApp.",
+        "Home Cinema Revival across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana: consultation, odour removal, acoustic corrections where needed, theatre enhancement and calibration. Book on WhatsApp.",
       eyebrow: "Home Cinema Revival",
       h1: "Rediscover your home theatre.",
-      lede: "Get more from the theatre you already own. We look at the sound, the picture, the controls and how comfortable the room is to sit in, then agree a practical plan to put it right.",
+      lede: "Revive the whole theatre: odour removal, acoustic corrections where needed, better sound and picture, and simpler controls. We assess your room and equipment, then agree the improvements that suit your setup and budget.",
       featuresTitle: "What Cinema Revival covers",
       features: [
         [
@@ -330,8 +332,13 @@ export const CATEGORIES = [
         ],
         [
           "air",
-          "Smells & eye irritation",
-          "We help find and fix the causes within the theatre, so the room is comfortable to spend an evening in.",
+          "Odour removal & room comfort",
+          "We help identify and address the causes of unwanted odours and eye irritation within the theatre room, with the work agreed after assessment.",
+        ],
+        [
+          "plan",
+          "Acoustic corrections",
+          "We assess how sound behaves in the room and recommend acoustic corrections where needed. The treatment and work are scoped to your theatre.",
         ],
         [
           "remote",
@@ -826,49 +833,106 @@ export const BUSINESS_INFO = {
     "We take home, cinema and commercial projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Travel charges outside Bengaluru are agreed before the visit.",
 };
 
-// Shop: only verified software prices are displayed. Null service prices mean
-// a written quote is required; never substitute test catalogue prices or zero.
+// The owner asked us to propose basic Cinema Revival/consultation pricing.
+// These newly designed starter packages are for review in the unmerged PR,
+// not a historical rate card. Null prices require a project-specific quote.
 export const SHOP = {
   nav: "Shop",
   title: "Shop services & software",
   description:
-    "Explore Cinema Revival, acoustic consultation, WABot and EKANI business software from THALIR INNOVATIONS. View software prices in INR and request a written service quote.",
+    "Shop Cinema Revival consultations from ₹999, theatre assessments, calibration and EKANI business software from THALIR INNOVATIONS. View service scope and INR prices.",
   eyebrow: "Services & software",
-  heading: "Find your next step.",
+  heading: "Shop services & software.",
   intro:
-    "Improve a room. Connect your home. Organise your business. Explore our services and subscriptions, then talk to us about the right scope for you.",
+    "Start with a consultation, plan your theatre's revival or choose software for your business. Clear starting prices, with the scope agreed before you pay.",
+  startingLabel: "Cinema Revival phone consultation",
+  startingNote: "30 minutes · INR · applicable GST extra",
   servicesLabel: "Consultations & services",
   softwareLabel: "Software subscriptions",
   orderLabel: "Ordering & support",
   servicesHeading: "Start with your space.",
   servicesIntro:
-    "Each room and system is different. We agree the work, service charges, any travel costs and a date with you before scheduling or collecting payment.",
+    "Cinema Revival includes odour removal, acoustic corrections where needed, theatre enhancement and calibration. Start with the assessment that suits your room; corrective work is scoped separately.",
+  serviceTaxNote:
+    "Service prices are in INR. Applicable GST is extra. Any travel, materials, equipment or work beyond the stated package is separately quoted and agreed before payment.",
   quotePrice: "Priced by written quote",
   quoteNote: "Scope and total in INR confirmed before payment.",
   serviceCta: "Request a quote",
+  bookingCta: "Request booking",
   detailsCta: "Explore the service",
   services: [
     {
       id: "revival-consultation",
       icon: "chat",
-      label: "Cinema Revival",
-      title: "Home theatre consultation",
+      label: "30-minute phone session",
+      title: "Cinema Revival consultation",
       description:
-        "Review your existing room, equipment, sound, picture and controls, with a practical improvement plan around your priorities and budget.",
-      priceInr: null,
+        "Discuss your theatre, unwanted odours, acoustic issues, sound, picture and controls. Share room photos and equipment details beforehand so we can plan the next step.",
+      priceInr: 999,
+      priceUnit: "/session",
+      priceNote:
+        "One 30-minute phone consultation. No site visit or corrective work included.",
+      includes: [
+        "Review of one existing home theatre",
+        "Your priorities, room concerns and equipment",
+        "Recommended next steps",
+      ],
       href: "/cinema-revival/",
-      wa: "Hi Thalir Innovations! I'd like a quote for a Cinema Revival consultation.\nMy location: \nRoom size and equipment: \nWhat I want to improve: ",
+      wa: "Hi Thalir Innovations! I'd like to book the 30-minute Cinema Revival phone consultation listed on your shop.\nMy location: \nRoom size and equipment: \nConcerns (odours / acoustics / sound / picture / controls): \nPlease confirm the total including applicable tax and a suitable time.",
     },
     {
-      id: "cinema-calibration",
-      icon: "dial",
-      label: "Cinema Revival",
-      title: "Advanced cinema calibration",
+      id: "theatre-assessment",
+      icon: "plan",
+      label: "On-site · Bengaluru",
+      title: "Theatre assessment & revival plan",
       description:
-        "Calibration scoped to your receiver or processor, speakers and display. Share your setup so we can confirm the work suitable for your system.",
+        "An on-site assessment of your existing theatre, including unwanted odours, room acoustics, equipment and controls. Agree what needs correcting before committing to improvement work.",
+      priceInr: 2999,
+      priceUnit: "/visit",
+      priceNote:
+        "One theatre, up to 90 minutes. Repairs, treatment and calibration are separately quoted.",
+      includes: [
+        "Review of one room and its existing system",
+        "Odour and acoustic concerns assessed",
+        "Written improvement scope and next steps",
+      ],
+      href: "/cinema-revival/",
+      wa: "Hi Thalir Innovations! I'd like to book the Theatre assessment & revival plan listed on your shop.\nSite location: \nRoom size and equipment: \nMain concerns: \nPlease confirm availability, travel charges if any, applicable tax and the total.",
+    },
+    {
+      id: "basic-audio-calibration",
+      icon: "dial",
+      label: "Existing systems · up to 5.1",
+      title: "Basic audio calibration",
+      description:
+        "Review and adjust the speaker setup in one working home theatre system. This package covers basic audio setup; advanced processors, larger systems and picture calibration are quoted separately.",
+      priceInr: 4999,
+      priceUnit: "/system",
+      priceNote:
+        "Up to 5.1 speakers with one compatible receiver. Equipment must be installed and working.",
+      includes: [
+        "Speaker levels and distances",
+        "Crossover settings and subwoofer integration",
+        "Listening check and setting handover",
+      ],
+      href: "/cinema-revival/#features",
+      wa: "Hi Thalir Innovations! I'd like to book the Basic audio calibration package listed on your shop.\nMy location: \nReceiver model: \nSpeaker setup: \nPlease confirm compatibility, travel charges if any, applicable tax and the total.",
+    },
+    {
+      id: "revival-improvements",
+      icon: "air",
+      label: "Cinema Revival",
+      title: "Odour removal & acoustic corrections",
+      description:
+        "Address the causes of unwanted odours and correct acoustic issues where needed. The treatment, materials and work are agreed after assessing your theatre; these are not included in consultation or calibration fees.",
+      includes: [
+        "Work based on your room assessment",
+        "Treatment and materials identified in the quote",
+        "Agreed scope before work begins",
+      ],
       priceInr: null,
       href: "/cinema-revival/#features",
-      wa: "Hi Thalir Innovations! I'd like a quote for advanced cinema calibration.\nMy location: \nReceiver / processor: \nSpeaker setup and display: ",
+      wa: "Hi Thalir Innovations! I'd like a quote for Cinema Revival improvements.\nMy location: \nRoom size and equipment: \nWork needed (odour removal / acoustic corrections / calibration / other improvements): ",
     },
     {
       id: "acoustic-consultation",
@@ -1199,16 +1263,17 @@ export const DRAWING = {
   flowRecorded: "recorded against the job",
   flowNote: "Example only: the name and amounts are made up.",
   revivalLabel:
-    "Example Cinema Revival checklist: dialogue, bass, picture, controls, room comfort and equipment",
+    "Example Cinema Revival checklist: dialogue, bass, acoustics, picture, controls, odours, room comfort and equipment",
   revivalTitle: "Revival checklist",
   example: "Example",
   revivalNote: "What we look at on a revival consultation.",
   revivalRows: [
     ["Dialogue clarity", "Hard to follow at normal volume"],
     ["Bass", "Boomy at the sofa, thin at the back"],
+    ["Acoustics", "Echo and room reflections"],
     ["Picture", "Brightness, colour, screen fit"],
     ["Controls", "Too many remotes"],
-    ["Room comfort", "Smells, stuffiness, eye irritation"],
+    ["Odours & room comfort", "Unwanted smells, stuffiness, eye irritation"],
     ["Equipment", "Receiver, speakers, display, wiring"],
   ],
 };

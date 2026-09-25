@@ -519,12 +519,14 @@ function shopPage(pricing) {
   return `<section class="shop-hero"><div class="wrap">
     <span class="eyebrow">${esc(SHOP.eyebrow)}</span>
     <div class="shop-intro"><h1>${esc(SHOP.heading)}</h1><p class="lede">${esc(SHOP.intro)}</p></div>
+    <a class="shop-starting" href="#${esc(SHOP.services[0].id)}"><span>${esc(SHOP.startingLabel)}</span><strong>${inr(SHOP.services[0].priceInr)}</strong><small>${esc(SHOP.startingNote)}</small>${ICONS.arrow}</a>
     <nav class="shop-jump" aria-label="${esc(BUSINESS_INFO.onPage)}"><a href="#services">${esc(SHOP.servicesLabel)} ${ICONS.arrow}</a><a href="#software">${esc(SHOP.softwareLabel)} ${ICONS.arrow}</a><a href="#ordering">${esc(SHOP.orderLabel)} ${ICONS.arrow}</a></nav>
     <p class="shop-seller-line"><span>${esc(BUSINESS_INFO.seller)}</span><strong>${esc(BUSINESS_INFO.registeredName)}</strong><a href="#seller">${esc(BUSINESS_INFO.address)} ${ICONS.arrow}</a></p>
   </div></section>
   <section class="band cream" id="services" aria-labelledby="shop-services-heading"><div class="wrap">
     <div class="shop-section-head"><div><span class="eyebrow">${esc(SHOP.servicesLabel)}</span><h2 id="shop-services-heading">${esc(SHOP.servicesHeading)}</h2></div><p>${esc(SHOP.servicesIntro)}</p></div>
-    <div class="shop-services">${SHOP.services.map((s) => `<article class="shop-card" id="${esc(s.id)}"><div class="shop-card-top">${ICONS[s.icon] || ""}<span class="eyebrow">${esc(s.label)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.description)}</p><div class="shop-card-bottom"><p class="shop-service-price">${s.priceInr === null ? esc(SHOP.quotePrice) : inr(s.priceInr)}</p><p class="fine">${esc(SHOP.quoteNote)}</p>${waBtn(s.wa, SHOP.serviceCta)}<a class="shop-detail" href="${esc(s.href)}">${esc(SHOP.detailsCta)} ${ICONS.arrow}</a></div></article>`).join("")}</div>
+    <p class="shop-tax">${esc(SHOP.serviceTaxNote)}</p>
+    <div class="shop-services">${SHOP.services.map((s) => `<article class="shop-card" id="${esc(s.id)}"><div class="shop-card-top">${ICONS[s.icon] || ""}<span class="eyebrow">${esc(s.label)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.description)}</p>${s.includes?.length ? `<ul class="shop-includes">${s.includes.map((text) => `<li>${esc(text)}</li>`).join("")}</ul>` : ""}<div class="shop-card-bottom"><p class="shop-service-price${s.priceInr === null ? "" : " shop-service-price--fixed"}">${s.priceInr === null ? esc(SHOP.quotePrice) : `${inr(s.priceInr)}<small>${esc(s.priceUnit)}</small>`}</p><p class="fine">${esc(s.priceNote || SHOP.quoteNote)}</p>${waBtn(s.wa, s.priceInr === null ? SHOP.serviceCta : SHOP.bookingCta)}<a class="shop-detail" href="${esc(s.href)}">${esc(SHOP.detailsCta)} ${ICONS.arrow}</a></div></article>`).join("")}</div>
     <div class="shop-project"><p>${esc(SHOP.otherServices)}</p>${waBtn(DESIGN.projectMessage, SHOP.projectCta, "ghost")}</div>
   </div></section>
   <section class="band" id="software" aria-labelledby="shop-software-heading"><div class="wrap">

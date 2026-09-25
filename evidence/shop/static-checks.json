@@ -12,12 +12,12 @@
     "refunds",
     "shipping"
   ],
-  "internalLinks": 384,
-  "whatsappLinks": 115,
+  "internalLinks": 387,
+  "whatsappLinks": 117,
   "localResourceReferences": 352,
   "localAssetsReferenced": 43,
   "clientGzipBytes": 2181,
-  "cssGzipBytes": 12935,
+  "cssGzipBytes": 13066,
   "originalImagesChecked": 14,
   "manufacturerLogosChecked": 12,
   "assetFilesChecked": 58,
@@ -25,68 +25,68 @@
   "pageBudgets": [
     {
       "route": "/",
-      "htmlGzipBytes": 11394,
-      "textTransferFloorBytes": 26510
+      "htmlGzipBytes": 11409,
+      "textTransferFloorBytes": 26656
     },
     {
       "route": "/smart-home-cinema/",
-      "htmlGzipBytes": 10866,
-      "textTransferFloorBytes": 25982
+      "htmlGzipBytes": 10884,
+      "textTransferFloorBytes": 26131
     },
     {
       "route": "/cinema-revival/",
-      "htmlGzipBytes": 7087,
-      "textTransferFloorBytes": 22203
+      "htmlGzipBytes": 7180,
+      "textTransferFloorBytes": 22427
     },
     {
       "route": "/commercial-audio/",
-      "htmlGzipBytes": 7871,
-      "textTransferFloorBytes": 22987
+      "htmlGzipBytes": 7888,
+      "textTransferFloorBytes": 23135
     },
     {
       "route": "/business-software/",
-      "htmlGzipBytes": 7388,
-      "textTransferFloorBytes": 22504
+      "htmlGzipBytes": 7405,
+      "textTransferFloorBytes": 22652
     },
     {
       "route": "/contact/",
-      "htmlGzipBytes": 4935,
-      "textTransferFloorBytes": 20051
+      "htmlGzipBytes": 4951,
+      "textTransferFloorBytes": 20198
     },
     {
       "route": "/shop/",
-      "htmlGzipBytes": 6464,
-      "textTransferFloorBytes": 21580
+      "htmlGzipBytes": 7749,
+      "textTransferFloorBytes": 22996
     },
     {
       "route": "/privacy/",
-      "htmlGzipBytes": 4052,
-      "textTransferFloorBytes": 19168
+      "htmlGzipBytes": 4064,
+      "textTransferFloorBytes": 19311
     },
     {
       "route": "/about/",
-      "htmlGzipBytes": 4008,
-      "textTransferFloorBytes": 19124
+      "htmlGzipBytes": 4016,
+      "textTransferFloorBytes": 19263
     },
     {
       "route": "/terms/",
-      "htmlGzipBytes": 5402,
-      "textTransferFloorBytes": 20518
+      "htmlGzipBytes": 5413,
+      "textTransferFloorBytes": 20660
     },
     {
       "route": "/refunds/",
-      "htmlGzipBytes": 6416,
-      "textTransferFloorBytes": 21532
+      "htmlGzipBytes": 6428,
+      "textTransferFloorBytes": 21675
     },
     {
       "route": "/shipping/",
-      "htmlGzipBytes": 5017,
-      "textTransferFloorBytes": 20133
+      "htmlGzipBytes": 5029,
+      "textTransferFloorBytes": 20276
     },
     {
       "route": "/404.html",
-      "htmlGzipBytes": 3385,
-      "textTransferFloorBytes": 18501
+      "htmlGzipBytes": 3397,
+      "textTransferFloorBytes": 18644
     }
   ],
   "checks": [
