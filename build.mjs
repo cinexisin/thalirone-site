@@ -21,6 +21,7 @@ import {
   COPY,
   BUSINESS_INFO,
   POLICIES,
+  DESIGN,
 } from "./src/config.mjs";
 import {
   ILLUSTRATIONS,
@@ -31,6 +32,10 @@ import {
 } from "./src/illustrations.mjs";
 
 import { SCENES, livingScene, cinemaScene } from "./src/scenes.mjs";
+
+import { BRAND_ASSETS } from "./src/brands.mjs";
+import { productWorkflow } from "./src/product-workflow.mjs";
+import { commercialPlan } from "./src/commercial-plan.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, "docs");
@@ -67,25 +72,63 @@ function mobileAction(current, path) {
     )
   )
     return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="mailto:${esc(SITE.email)}">${esc(BUSINESS_INFO.emailSupport)} ${ICONS.arrow}</a></aside>`;
+  if (!current)
+    return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="${esc(wa(DESIGN.projectMessage))}" target="_blank" rel="noopener">${esc(DESIGN.projectShort)} ${ICONS.arrow}</a></aside>`;
   const c = CATEGORIES.find((c) => c.slug === current) || CATEGORIES[0];
   return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></aside>`;
 }
 function heroDemo(u) {
   return `<div class="home-demo" data-demo>
-    <div class="demo-top"><span class="eyebrow">${esc(UI.demoLabel)}</span><span class="example-tag">${esc(UI.example)}</span></div>
-    <div class="demo-room">${livingScene(undefined, { layout: "wide", eager: true })}<div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div></div>
-    <div class="demo-conversation" role="group" aria-label="${esc(u.chatSub)}">
-      <div class="demo-chat-title">${ICONS.chat}<strong>${esc(u.chatTitle)}</strong><span>${esc(u.chatSub)}</span></div>
-      <div class="demo-messages">${u.chat
-        .slice(0, 4)
-        .map(
-          ([who, t], i) =>
-            `<div class="demo-slot"><p class="msg ${who}" data-message="${i}">${esc(t)}</p><span class="typing" aria-hidden="true"><i></i><i></i><i></i></span></div>`,
-        )
-        .join("")}</div>
+    <div class="demo-room">${livingScene(undefined, { layout: "wide", eager: true })}
+      <div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div>
     </div>
-    <div class="demo-bottom"><p>${esc(u.chatNote)}</p><button class="replay" type="button" hidden>${esc(UI.replay)} ${ICONS.arrow}</button></div>
+    <div class="demo-panel">
+      <div class="demo-top"><span class="eyebrow">${esc(UI.demoLabel)}</span><span class="example-tag">${esc(UI.example)}</span></div>
+      <h2>${esc(DESIGN.homeDemoTitle)}</h2><p class="demo-intro">${esc(DESIGN.homeDemoIntro)}</p>
+      <div class="demo-conversation" role="group" aria-label="${esc(u.chatSub)}">
+        <div class="demo-chat-title">${ICONS.chat}<strong>${esc(u.chatTitle)}</strong><span>${esc(u.chatSub)}</span></div>
+        <div class="demo-messages">${u.chat
+          .slice(0, 4)
+          .map(
+            ([who, t], i) =>
+              `<div class="demo-slot"><p class="msg ${who}" data-message="${i}">${esc(t)}</p><span class="typing" aria-hidden="true"><i></i><i></i><i></i></span></div>`,
+          )
+          .join("")}</div>
+      </div>
+      <div class="demo-bottom"><p>${esc(u.chatNote)}</p><button class="replay" type="button" hidden>${esc(UI.replay)} ${ICONS.arrow}</button></div>
+    </div>
   </div>`;
+}
+function serviceArt(c, { eager = false, compact = false } = {}) {
+  if (c.illustration === "ekaniflow")
+    return productWorkflow(DESIGN.product, { compact });
+  if (c.illustration === "zones")
+    return commercialPlan(DESIGN.commercialPlan, { compact });
+  return (
+    SCENES[c.illustration]?.(undefined, {
+      layout: compact ? "card" : "hero",
+      eager,
+    }) ||
+    ILLUSTRATIONS[c.illustration]?.() ||
+    ""
+  );
+}
+function brandsBlock(brands, id = "brands-h") {
+  if (!brands) return "";
+  return `<section class="band brand-section" aria-labelledby="${id}"><div class="wrap">
+    <div class="brand-heading"><h2 id="${id}">${esc(brands.title)}</h2><p>${esc(DESIGN.brandsIntro)}</p></div>
+    <div class="brand-groups">${brands.groups
+      .map(
+        ([k, list]) =>
+          `<div class="brand-group"><h3>${esc(k)}</h3><ul class="brand-grid">${list
+            .map((n) => {
+              const logo = BRAND_ASSETS[n];
+              return `<li class="manufacturer">${logo ? `<img src="${esc(logo.src)}" width="${logo.width}" height="${logo.height}" alt="${esc(n)}" loading="lazy" decoding="async">` : `<span class="brand-name">${esc(n)}</span>`}</li>`;
+            })
+            .join("")}</ul></div>`,
+      )
+      .join("")}</div>
+  </div></section>`;
 }
 
 // ---------- EKANI pricing (live feed → fallback) ----------
@@ -333,65 +376,34 @@ const faqBlock = (items) =>
 
 // ---------- pages ----------
 function home() {
-  const bySlug = (slug) => CATEGORIES.find((c) => c.slug === slug);
-  const a = bySlug("smart-home-cinema") ?? CATEGORIES[0];
-  const rv = bySlug("cinema-revival");
+  const sh =
+    CATEGORIES.find((c) => c.slug === "smart-home-cinema") || CATEGORIES[0];
+  const commercial = CATEGORIES.find((c) => c.slug === "commercial-audio");
   const cards = CATEGORIES.map(
-    (
-      c,
-      i,
-    ) => `<article class="cat"><span class="cat-index" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
-    <div class="cat-art">${SCENES[c.illustration]?.() || ILLUSTRATIONS[c.illustration]?.() || ""}</div>
-    <div class="cat-body">
-      <span class="eyebrow">${esc(c.label)}</span>
-      <h3 style="font-size:1.5rem">${esc(c.name)}</h3>
-      <p class="muted">${esc(c.card.pitch)}</p>
-      <ul class="ticks">${c.card.bullets.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>
-      <div class="cat-foot">${waBtn(c.cta.wa, c.cta.label, "sm")}<a class="link-arrow" href="${catUrl(c)}">${esc(UI.explore)} ${esc(c.name)} ${ICONS.arrow}</a></div>
-    </div>
+    (c, i) => `<article class="service-row">
+    <div class="service-art">${serviceArt(c, { compact: true })}</div>
+    <div class="service-copy"><span class="service-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span class="eyebrow">${esc(c.label)}</span><h3><a href="${catUrl(c)}">${esc(c.name)}</a></h3>
+    <p class="lede">${esc(c.card.pitch)}</p><ul class="service-points">${c.card.bullets.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+    <div class="service-actions"><a class="link-arrow" href="${catUrl(c)}">${esc(UI.explore)} ${esc(c.name)} ${ICONS.arrow}</a>${waBtn(c.cta.wa, c.cta.label, "ghost sm")}</div></div>
   </article>`,
   ).join("");
-  const sh = CATEGORIES.find((c) => c.slug === "smart-home-cinema");
-  return `
-<section class="hero visual-hero">
-  <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow">${esc(UI.heroEyebrow)}</span>
-      <h1>${esc(UI.heroTitle[0])} <span>${esc(UI.heroTitle[1])}</span></h1>
-      <p class="lede">${esc(UI.heroLede)}</p>
-      <div class="btns">${waBtn(a.cta.wa, a.cta.label)}<a class="link-arrow" href="#chat-control">${esc(UI.heroDetail)} ${ICONS.arrow}</a></div>
-      ${rv ? `<a class="link-arrow" href="${catUrl(rv)}">${esc(COPY.alreadyTheatre)} ${esc(rv.name)} ${ICONS.arrow}</a>` : ""}
-      <p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(COPY.call)} <a href="tel:${esc(SITE.phone)}">${esc(SITE.phoneDisplay)}</a></span><span>${esc(SITE.hours)}</span></p>
-    </div>
-  </div>
-  <div class="visual-stage wrap">${a.page.usp ? heroDemo(a.page.usp) : `<div class="hero-art">${ILLUSTRATIONS[a.illustration]?.() || ""}</div>`}</div>
-</section>
-<div class="service-strip"><div class="wrap"><p>${esc(SITE.serviceArea)}</p><div>${CATEGORIES.map((c) => `<a href="${catUrl(c)}">${esc(c.name)} ${ICONS.arrow}</a>`).join("")}</div></div></div>
-<section class="band cream service-gallery" aria-labelledby="cats-h">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div>
-    <div class="cats${CATEGORIES.length % 3 === 1 ? " cats-even" : ""}">${cards}</div>
-  </div>
-</section>
-${sh?.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}
-<section class="band" aria-labelledby="why-h">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">${esc(COPY.why)}</span><h2 id="why-h">${esc(COPY.whyTitle)}</h2></div>
-    <div class="why">
-      <div><h3>${esc(COPY.why1)}</h3><p>${esc(COPY.why1Body)}</p></div>
-      <div><h3>${esc(COPY.why2)}</h3><p>${esc(COPY.why2Body)}</p></div>
-      <div><h3>${esc(COPY.why3)}</h3><p>${esc(COPY.why3Body)}</p></div>
-    </div>
-  </div>
-</section>
-${sh?.page.brands ? `<section class="band cream tight" aria-labelledby="brands-h"><div class="wrap"><div class="sec-head"><h2 id="brands-h" style="font-size:1.4rem">${esc(sh.page.brands.title)}</h2></div><div class="brand-groups">${sh.page.brands.groups.map(([k, list]) => `<div class="row"><span class="k">${esc(k)}</span>${list.map((n) => `<span class="brand-name">${esc(n)}</span>`).join("")}</div>`).join("")}</div></div></section>` : ""}
-${reachBand()}`;
+  return `<section class="home-intro hero">
+    <div class="wrap"><div class="home-heading"><span class="eyebrow">${esc(UI.heroEyebrow)}</span><h1>${esc(UI.heroTitle[0])}<br><span>${esc(UI.heroTitle[1])}</span></h1></div><div class="home-intro-copy"><p class="lede">${esc(UI.heroLede)}</p><div class="btns">${waBtn(DESIGN.projectMessage, DESIGN.project)}<a class="link-arrow" href="#services">${esc(DESIGN.explore)} ${ICONS.arrow}</a></div><p class="location-note">${esc(DESIGN.location)}<span>${esc(SITE.serviceArea)}</span></p></div></div>
+  </section>
+  <section class="experience wrap" aria-label="${esc(DESIGN.homeDemoIntro)}">${sh.page.usp ? heroDemo(sh.page.usp) : serviceArt(sh, { eager: true })}</section>
+  <nav class="service-strip" aria-label="${esc(DESIGN.services)}"><div class="wrap">${CATEGORIES.map((c, i) => `<a href="${catUrl(c)}"><span class="service-strip-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span>${esc(c.name)}</span>${ICONS.arrow}</a>`).join("")}</div></nav>
+  ${commercial ? `<section class="band commercial-feature" aria-labelledby="commercial-h"><div class="wrap"><div class="commercial-lead"><span class="eyebrow">${esc(DESIGN.commercialEyebrow)}</span><h2 id="commercial-h">${esc(DESIGN.commercialTitle)}</h2><p class="lede">${esc(DESIGN.commercialBody)}</p>${waBtn(commercial.cta.wa, commercial.cta.label)}<a class="link-arrow" href="${catUrl(commercial)}">${esc(UI.explore)} ${esc(commercial.name)} ${ICONS.arrow}</a></div><div class="commercial-visual">${commercialPlan(DESIGN.commercialPlan, { compact: true })}</div><ul class="sector-strip">${commercial.page.sectors.map(([h]) => `<li>${esc(h)}</li>`).join("")}</ul></div></section>` : ""}
+  <section class="band services-section" id="services" aria-labelledby="cats-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div><div class="services-list">${cards}</div></div></section>
+  ${sh.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}
+  <section class="band why-section" aria-labelledby="why-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(COPY.why)}</span><h2 id="why-h">${esc(COPY.whyTitle)}</h2></div><div class="why"><div>${ICONS.plan}<h3>${esc(COPY.why1)}</h3><p>${esc(COPY.why1Body)}</p></div><div>${ICONS.remote}<h3>${esc(COPY.why2)}</h3><p>${esc(COPY.why2Body)}</p></div><div>${ICONS.chat}<h3>${esc(COPY.why3)}</h3><p>${esc(COPY.why3Body)}</p></div></div></div></section>
+  ${brandsBlock(sh.page.brands)}${reachBand()}`;
 }
 
 function categoryPage(c, pricing) {
   const p = c.page;
-  const art = `<div class="plate a scene-plate">${SCENES[c.illustration]?.(undefined, { layout: "hero", eager: true }) || ILLUSTRATIONS[c.illustration]?.() || ""}</div>`;
+  const art = `<div class="plate a scene-plate">${serviceArt(c, { eager: true })}</div>`;
   const sections = [
+    ...(p.sectors ? [["sectors", DESIGN.sectors]] : []),
     ...(p.features || c.slug === "business-software"
       ? [["features", UI.features]]
       : []),
@@ -413,12 +425,14 @@ function categoryPage(c, pricing) {
       <h1>${esc(p.h1)}</h1>
       <p class="lede">${esc(p.lede)}</p>
       <div class="btns">${waBtn(c.cta.wa, c.cta.label)}${p.pricingUrl ? `<a class="btn ghost" href="${p.pricingUrl}" target="_blank" rel="noopener">${esc(COPY.seePricing)}</a>` : ""}</div>
-      ${p.signInUrl ? `<p class="contact-line"><span>${esc(COPY.alreadyCustomer)} <a href="${p.signInUrl}" target="_blank" rel="noopener">${esc(COPY.signIn)}</a></span></p>` : `<p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(COPY.call)} <a href="tel:${esc(SITE.phone)}">${esc(SITE.phoneDisplay)}</a></span><span>${esc(SITE.hours)}</span><span>${esc(COPY.serving)} ${esc(SITE.serviceArea)}</span></p>`}
+      ${p.signInUrl ? `<p class="contact-line"><span>${esc(COPY.alreadyCustomer)} <a href="${p.signInUrl}" target="_blank" rel="noopener">${esc(COPY.signIn)}</a></span></p>` : ""}
     </div>
     <div class="hero-art">${art}</div>
   </div>
 </section>
 <nav class="page-nav" aria-label="${esc(UI.pageNav)}"><div class="wrap">${sections.map(([id, label]) => `<a href="#${id}">${esc(label)}</a>`).join("")}<a class="page-nav-cta" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></div></nav>`;
+  if (p.sectors)
+    s += `<section class="band sectors-section" id="sectors" aria-labelledby="sectors-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(DESIGN.sectors)}</span><h2 id="sectors-h">${esc(p.sectorsTitle)}</h2><p>${esc(p.sectorsIntro)}</p></div><div class="sectors-grid">${p.sectors.map(([h, t], i) => `<article><span class="sector-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><h3>${esc(h)}</h3><p>${esc(t)}</p></article>`).join("")}</div></div></section>`;
   if (c.illustration === "revival")
     s += `<section class="revival-detail band"><div class="wrap split"><div class="art">${speakerLayout()}</div>${ILLUSTRATIONS.revival()}</div></section>`;
   if (p.usp) s += uspBlock(p.usp);
@@ -436,7 +450,7 @@ function categoryPage(c, pricing) {
   <div class="modules">${pricing.modules.map(([n, t, price, orig], i) => `<div class="module">${ICONS[["chat", "globe", "plan", "spark", "dial", "gate", "curtain", "shield", "remote", "bulb"][i % 10]]}<h3>${esc(n)}</h3><p>${esc(t)}</p><span class="price">${inr(price)}<small>${esc(UI.month)}</small>${orig && orig > price ? `<s>${inr(orig)}</s>` : ""}</span></div>`).join("")}</div>
   <p class="price-note">${esc(UI.pricingSource)} <a href="${p.pricingUrl}" target="_blank" rel="noopener">${esc(UI.pricingSourceLabel)}</a>. ${esc(UI.annualNote)}</p>
 </div></section>
-<section class="band workflow" id="how-it-works" aria-labelledby="workflow-h"><div class="wrap"><div class="sec-head"><span class="eyebrow">${esc(UI.how)}</span><h2 id="workflow-h">${esc(p.h1)}</h2></div>${ILLUSTRATIONS.ekaniflow()}</div></section>
+<section class="band workflow" id="how-it-works" aria-labelledby="workflow-h"><div class="wrap"><div class="sec-head"><span class="eyebrow">${esc(UI.how)}</span><h2 id="workflow-h">${esc(p.h1)}</h2></div>${productWorkflow(DESIGN.product)}</div></section>
 <section class="band" aria-labelledby="who-h"><div class="wrap split">
   <div class="copy"><span class="eyebrow">${esc(COPY.builtFor)}</span><h2 id="who-h">${esc(COPY.audienceTitle)}</h2><p class="muted">${esc(COPY.audienceBody)}</p><div class="pill-row">${p.audience.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div></div>
   <div class="copy"><span class="eyebrow">${esc(COPY.languages)}</span><h3>${esc(COPY.languagesTitle)}</h3><div class="pill-row">${p.languages.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div><p class="muted" style="font-size:.92rem">${esc(COPY.webLanguage)}</p></div>
@@ -463,12 +477,7 @@ function categoryPage(c, pricing) {
   <div class="sec-head"><span class="eyebrow">${esc(COPY.how)}</span><h2 id="pr-h">${esc(p.processTitle || COPY.processTitle)}</h2></div>
   <ol class="steps">${p.process.map(([h, t]) => `<li><h3>${esc(h)}</h3><p>${esc(t)}</p></li>`).join("")}</ol>
 </div></section>`;
-  if (p.brands)
-    s += `
-<section class="band cream tight" aria-labelledby="br-h"><div class="wrap">
-  <div class="sec-head"><h2 id="br-h" style="font-size:1.4rem">${esc(p.brands.title)}</h2></div>
-  <div class="brand-groups">${p.brands.groups.map(([k, list]) => `<div class="row"><span class="k">${esc(k)}</span>${list.map((n) => `<span class="brand-name">${esc(n)}</span>`).join("")}</div>`).join("")}</div>
-</div></section>`;
+  if (p.brands) s += brandsBlock(p.brands, "br-h");
   if (p.faq)
     s += `
 <section class="band faq-section" id="faq" aria-labelledby="faq-h"><div class="wrap">

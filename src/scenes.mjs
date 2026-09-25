@@ -8,9 +8,9 @@ const esc = (s) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 const sizes = {
-  wide: "(min-width: 1400px) 1320px, calc(100vw - 40px)",
+  wide: "(min-width: 1360px) 815px, (min-width: 1041px) 60vw, (min-width: 769px) 53vw, calc(100vw - 40px)",
   hero: "(min-width: 1400px) 650px, (min-width: 851px) 50vw, calc(100vw - 40px)",
-  card: "(min-width: 1400px) 420px, (min-width: 851px) 33vw, (min-width: 481px) 48vw, calc(100vw - 40px)",
+  card: "(min-width: 1360px) 608px, (min-width: 769px) 48vw, calc(100vw - 40px)",
   detail:
     "(min-width: 1400px) 620px, (min-width: 769px) 48vw, calc(100vw - 40px)",
 };

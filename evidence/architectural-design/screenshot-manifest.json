@@ -1,0 +1,242 @@
+[
+  {
+    "file": "screenshots/before/home-390.jpg",
+    "bytes": 532043,
+    "sha256": "0e423d7c9b979adfb0c5028048c64e9d1ad64970af2f0e384f1e60aa9f1daba5"
+  },
+  {
+    "file": "screenshots/after/home-390.jpg",
+    "bytes": 587026,
+    "sha256": "2a76da46b58b4b36cc0f8b68d8eb23f33ce30ddad7c48b9ceae19139d6cdb6b2"
+  },
+  {
+    "file": "screenshots/before/home-1280.jpg",
+    "bytes": 737655,
+    "sha256": "cbcd492f0d559d97b79aec290f30736fbc6ae4418f2f5e60f02a2e4d9cd0a933"
+  },
+  {
+    "file": "screenshots/after/home-1280.jpg",
+    "bytes": 827769,
+    "sha256": "b4e4e19486202cd0d759319d0c73de789f2546eb901ab8dfa2d8443ec4b0c988"
+  },
+  {
+    "file": "screenshots/before/smart-home-cinema-390.jpg",
+    "bytes": 496191,
+    "sha256": "03fb4d7e554429defd142606f3a7cb80f3c629080a3ba8d3f1737993572c77a4"
+  },
+  {
+    "file": "screenshots/after/smart-home-cinema-390.jpg",
+    "bytes": 496214,
+    "sha256": "2a53992d6ae40cecd22d09b778dac4b6c4c0fbd7b0cdc2711e7920eaa6d21604"
+  },
+  {
+    "file": "screenshots/before/smart-home-cinema-1280.jpg",
+    "bytes": 668601,
+    "sha256": "fb78cb19c233b8e2f03443c69b3f72d38b2c7543ff95bbe12f27c1f36f3dee64"
+  },
+  {
+    "file": "screenshots/after/smart-home-cinema-1280.jpg",
+    "bytes": 673458,
+    "sha256": "7db3a934671469622a798fc1bbb37d8d7f1189615bdeecc1001b00562f01cc23"
+  },
+  {
+    "file": "screenshots/before/cinema-revival-390.jpg",
+    "bytes": 285736,
+    "sha256": "1174daa621a77d55da41a6c0d46348f55c546d148d7b578bce7e73114d2a6dca"
+  },
+  {
+    "file": "screenshots/after/cinema-revival-390.jpg",
+    "bytes": 267543,
+    "sha256": "41333bac7097d37bde2b9b21fd97268078acb17a4a3be362ce362bc13f8ffe67"
+  },
+  {
+    "file": "screenshots/before/cinema-revival-1280.jpg",
+    "bytes": 374207,
+    "sha256": "df08b5734d3ec5fd7ada0c420ec3a782ff2be4316614428ab9829bf6bbc22a94"
+  },
+  {
+    "file": "screenshots/after/cinema-revival-1280.jpg",
+    "bytes": 366720,
+    "sha256": "1694a08f003f7e5babf8810e38c3e07744ef436c5729e90940fdcae7d141544f"
+  },
+  {
+    "file": "screenshots/before/commercial-audio-390.jpg",
+    "bytes": 251079,
+    "sha256": "41d6eeca9c5e452e65b71c951e36c48f222d0e30bc2f0116522b9abd269d3ee4"
+  },
+  {
+    "file": "screenshots/after/commercial-audio-390.jpg",
+    "bytes": 297256,
+    "sha256": "4ee63aa221680e973439de21176f189be035f77172bc25901aa63cd82c4d73cd"
+  },
+  {
+    "file": "screenshots/before/commercial-audio-1280.jpg",
+    "bytes": 322978,
+    "sha256": "66a96b0589b064b5db2407d10562c165b5566e19e3d190b1cd816cfe600a2df8"
+  },
+  {
+    "file": "screenshots/after/commercial-audio-1280.jpg",
+    "bytes": 385064,
+    "sha256": "1a81663a5dc7be36d09147d026987a38bd39a6ed7513448f7b238da01fc0a186"
+  },
+  {
+    "file": "screenshots/before/business-software-390.jpg",
+    "bytes": 370922,
+    "sha256": "c39d65121f300ddb31fa915a371d14f33486b8ba371c69c1aafb42751101ce7f"
+  },
+  {
+    "file": "screenshots/after/business-software-390.jpg",
+    "bytes": 330223,
+    "sha256": "e996c61371f77db642c4ad5c155980f59c59e42d28081ea3307c27a621a70864"
+  },
+  {
+    "file": "screenshots/before/business-software-1280.jpg",
+    "bytes": 475512,
+    "sha256": "7546b99084286f4eef5ca954cb37f6042daa3dee864acff50dfe9488b285e6be"
+  },
+  {
+    "file": "screenshots/after/business-software-1280.jpg",
+    "bytes": 419350,
+    "sha256": "0b0c6bbbc224a32197aca7dd6b5e6916e0c034bd2962d5c73f832fdce207e519"
+  },
+  {
+    "file": "screenshots/before/contact-390.jpg",
+    "bytes": 207262,
+    "sha256": "3270ff8258e3cb3c9e5eab4ad02457767e3f8ebe81c25cdb3ee74b193e8d4fe2"
+  },
+  {
+    "file": "screenshots/after/contact-390.jpg",
+    "bytes": 189347,
+    "sha256": "75608fac93c1326ff36452ce0e444abc71b4d64528e850d498e0082ffc62d412"
+  },
+  {
+    "file": "screenshots/before/contact-1280.jpg",
+    "bytes": 254050,
+    "sha256": "6399f3a4c408e8359b2269c09d25615507a8e24a298c638023d9d82a24af625c"
+  },
+  {
+    "file": "screenshots/after/contact-1280.jpg",
+    "bytes": 236218,
+    "sha256": "5be41e4ac2291b16f027ac936aa1c3f4f29cbbef38361643ec1076fd79d82bf5"
+  },
+  {
+    "file": "screenshots/before/privacy-390.jpg",
+    "bytes": 179229,
+    "sha256": "3ce791b9528e59ffaec9f9a69682a920d1d22c19dad59412f4bdfae87068d3ac"
+  },
+  {
+    "file": "screenshots/after/privacy-390.jpg",
+    "bytes": 166773,
+    "sha256": "2ee50f818cf265faadea8381a6016d919d80d7ddf910873a62715d309846df74"
+  },
+  {
+    "file": "screenshots/before/privacy-1280.jpg",
+    "bytes": 222832,
+    "sha256": "92dbb1987881ee6d2910c5a32b2c3324b6e090984617bbf3256649a9245b48e5"
+  },
+  {
+    "file": "screenshots/after/privacy-1280.jpg",
+    "bytes": 205650,
+    "sha256": "f2a13d08bb33d65e776dedbe8603cec5c159a2b7905fc25127b0b701164a1d8b"
+  },
+  {
+    "file": "screenshots/before/about-390.jpg",
+    "bytes": 191080,
+    "sha256": "756aa5fcb8303ad80fac5a87aff823cc64835f64d523f9586ccd6d91a1efb014"
+  },
+  {
+    "file": "screenshots/after/about-390.jpg",
+    "bytes": 172712,
+    "sha256": "6169891469763757f00560b7e98f372b51a28bf86bf906afc6e72a5db47dc9f5"
+  },
+  {
+    "file": "screenshots/before/about-1280.jpg",
+    "bytes": 232468,
+    "sha256": "3bad002dc979ca3ddcfcbe150160a747dad947fea786d1641cac37684ca26369"
+  },
+  {
+    "file": "screenshots/after/about-1280.jpg",
+    "bytes": 206388,
+    "sha256": "89d575fd6c51c89d79169d277c25ebf9f33d4c1780db6f76c0cc444b106cff97"
+  },
+  {
+    "file": "screenshots/before/terms-390.jpg",
+    "bytes": 376466,
+    "sha256": "182a40026991f23565df1bd04eb494dfc57fbcec1e65274d8d5a3f18757a9714"
+  },
+  {
+    "file": "screenshots/after/terms-390.jpg",
+    "bytes": 335855,
+    "sha256": "70576c122ccaa68c67473f3432bbbf13adc62e8889e14d5f8e9d9ea3045c3f86"
+  },
+  {
+    "file": "screenshots/before/terms-1280.jpg",
+    "bytes": 455590,
+    "sha256": "fd544453dd3cab08313587e4422425304477b598bcd07184cf78c2894666979b"
+  },
+  {
+    "file": "screenshots/after/terms-1280.jpg",
+    "bytes": 394434,
+    "sha256": "544124d2da67c0620d4d95488998f6ea12396779f557848200e7585a2593b4f5"
+  },
+  {
+    "file": "screenshots/before/refunds-390.jpg",
+    "bytes": 549110,
+    "sha256": "2040f00af8374b28801ef4861e759ef81fc7025ca9a7c1ded0c699260bb1f167"
+  },
+  {
+    "file": "screenshots/after/refunds-390.jpg",
+    "bytes": 481051,
+    "sha256": "669526a4183074a8bccf6ee404e87e1b0270a8bcfd2144a701859125e2f5e422"
+  },
+  {
+    "file": "screenshots/before/refunds-1280.jpg",
+    "bytes": 656038,
+    "sha256": "624203ca957c984abeca15fdb1c3fa443f0471ec76d4700033f181b60c24ae59"
+  },
+  {
+    "file": "screenshots/after/refunds-1280.jpg",
+    "bytes": 551756,
+    "sha256": "94777b6c7d904bbc40c83a986e152c59ba5f170004e1d346b3cea23eea6a0e4c"
+  },
+  {
+    "file": "screenshots/before/shipping-390.jpg",
+    "bytes": 322661,
+    "sha256": "d4c9cd4472c28ee968a9d0f3b1af9a134b9fb9630d686245229d214316fd3c49"
+  },
+  {
+    "file": "screenshots/after/shipping-390.jpg",
+    "bytes": 290007,
+    "sha256": "cf8a81dcd69745bf9eb68ee25048dc58838e0468837b6346df16e868fe78dea8"
+  },
+  {
+    "file": "screenshots/before/shipping-1280.jpg",
+    "bytes": 391294,
+    "sha256": "ffdf02a30fedb604a57a69ebd4ec5cd366bf2fcb9d530ed6e43c5e1502961e01"
+  },
+  {
+    "file": "screenshots/after/shipping-1280.jpg",
+    "bytes": 343065,
+    "sha256": "92e8e9d7620d4afb730295e955935f5a61b02dc9dc98231911ca86a444c983d3"
+  },
+  {
+    "file": "screenshots/before/404.html-390.jpg",
+    "bytes": 59450,
+    "sha256": "4fbb6ab534a5a29b31e9da3029b7ad25a452a9a902ae5d7cb9b31a3480a54b66"
+  },
+  {
+    "file": "screenshots/after/404.html-390.jpg",
+    "bytes": 51667,
+    "sha256": "cf27803e504c99793228e6b1e6813e213889199c52fcfc2049f6048013b0cfc8"
+  },
+  {
+    "file": "screenshots/before/404.html-1280.jpg",
+    "bytes": 64860,
+    "sha256": "0e20414441f3df18f3886f52e130fe7d35f644f5fc57b867f73d847925bcfdf4"
+  },
+  {
+    "file": "screenshots/after/404.html-1280.jpg",
+    "bytes": 74332,
+    "sha256": "e965914f22ce530a5e9c1233ed7a30fc57a7637edc7bae9c9aa83e4b796935c3"
+  }
+]
