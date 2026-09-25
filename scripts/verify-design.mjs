@@ -15,6 +15,7 @@ import {
   BUSINESS_INFO,
   POLICIES,
   DESIGN,
+  SHOP,
 } from "../src/config.mjs";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -38,6 +39,7 @@ const routes = [
   "/",
   ...CATEGORIES.map((c) => `/${c.slug}/`),
   "/contact/",
+  "/shop/",
   "/privacy/",
   "/about/",
   ...POLICIES.map((p) => `/${p.slug}/`),
@@ -200,6 +202,13 @@ const pages = new Map();
 const allowedMessages = new Set([
   UI.generalEnquiry,
   DESIGN.projectMessage,
+  SHOP.bundleMessage,
+  ...SHOP.services.map((s) => s.wa),
+  ...[
+    ...(await read("docs/shop/index.html"))
+      .match(/<ul class="shop-modules">([\s\S]*?)<\/ul>/)[1]
+      .matchAll(/<h3>(.*?)<\/h3>/g),
+  ].map(([, name]) => SHOP.softwareMessage.replace("{product}", decode(name))),
   ...CATEGORIES.map((c) => c.cta.wa),
 ]);
 let whatsappLinks = 0,
@@ -494,10 +503,11 @@ for (const path of cssFiles) {
     await exists(local.path, "CSS resource");
     usedAssets.add(local.path);
   }
-  assert.ok(
-    css.includes("prefers-reduced-motion"),
-    "Preserve reduced-motion handling",
-  );
+  if (path.endsWith("styles.css") || /\b(?:animation|transition)\s*:/.test(css))
+    assert.ok(
+      css.includes("prefers-reduced-motion"),
+      "Preserve reduced-motion handling in stylesheets that introduce motion",
+    );
 }
 checks.push(
   "Local static resource graph, no runtime network APIs, 15KiB gzipped client-JS ceiling",

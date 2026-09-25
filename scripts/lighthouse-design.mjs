@@ -34,6 +34,7 @@ const routes = [
   "/",
   ...CATEGORIES.map((c) => `/${c.slug}/`),
   "/contact/",
+  "/shop/",
   "/privacy/",
   "/about/",
   ...POLICIES.map((p) => `/${p.slug}/`),
@@ -54,13 +55,16 @@ const targets = {
   seo: 100,
 };
 const sha256 = (data) => createHash("sha256").update(data).digest("hex");
+const assetFiles = [
+  "styles.css",
+  "main.js",
+  ...(requestedPaths.includes("/shop/") ? ["shop.css"] : []),
+];
 const assetHash = async () =>
   sha256(
     Buffer.concat(
       await Promise.all(
-        ["styles.css", "main.js"].map((file) =>
-          readFile(join(root, "docs/assets", file)),
-        ),
+        assetFiles.map((file) => readFile(join(root, "docs/assets", file))),
       ),
     ),
   );
@@ -134,6 +138,7 @@ const report = {
   executedRouteCount: paths.length,
   reusedRoutes: retainedResults.map((result) => result.path),
   assetSha256AtStart,
+  assetFiles,
   results: retainedResults,
 };
 await mkdir(evidenceDir, { recursive: true });

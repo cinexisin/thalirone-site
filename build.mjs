@@ -22,6 +22,7 @@ import {
   BUSINESS_INFO,
   POLICIES,
   DESIGN,
+  SHOP,
 } from "./src/config.mjs";
 import {
   ILLUSTRATIONS,
@@ -43,6 +44,10 @@ const YEAR = new Date().getFullYear();
 const VERSION = createHash("sha256")
   .update(await readFile(join(ROOT, "src/assets/styles.css")))
   .update(await readFile(join(ROOT, "src/assets/main.js")))
+  .digest("hex")
+  .slice(0, 10);
+const SHOP_VERSION = createHash("sha256")
+  .update(await readFile(join(ROOT, "src/assets/shop.css")))
   .digest("hex")
   .slice(0, 10);
 
@@ -67,9 +72,14 @@ const logo = (lazy = false) => `<picture>
 </picture>`;
 function mobileAction(current, path) {
   if (
-    ["/terms/", "/refunds/", "/shipping/", "/privacy/", "/contact/"].includes(
-      path,
-    )
+    [
+      "/terms/",
+      "/refunds/",
+      "/shipping/",
+      "/privacy/",
+      "/contact/",
+      "/shop/",
+    ].includes(path)
   )
     return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="mailto:${esc(SITE.email)}">${esc(BUSINESS_INFO.emailSupport)} ${ICONS.arrow}</a></aside>`;
   if (!current)
@@ -260,6 +270,7 @@ function layout({ path, title, description, body, current }) {
 <link rel="preload" href="/assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/styles.css?v=${VERSION}">
+${path === "/shop/" ? `<link rel="stylesheet" href="/assets/shop.css?v=${SHOP_VERSION}">` : ""}
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
 <body class="${path === "/" ? "home-page" : current || "utility-page"}">
@@ -281,7 +292,7 @@ ${body}
         ${logo(true)}
         <p class="muted">${esc(SITE.tagline)} ${esc(COPY.footerBased)} ${esc(SITE.city)}, ${esc(COPY.footerServing)} ${esc(SITE.serviceArea)}.</p>
       </div>
-      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
+      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/shop/"${path === "/shop/" ? ' aria-current="page"' : ""}>${esc(SHOP.nav)}</a></li><li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
       <div><h2>${esc(COPY.talk)}</h2><ul>
         <li><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></li>
         <li><a href="tel:${esc(SITE.phone)}">${esc(COPY.call)} ${esc(SITE.phoneDisplay)}</a></li>
@@ -504,6 +515,34 @@ ${reachBand()}
 </div></section>`;
 }
 
+function shopPage(pricing) {
+  return `<section class="shop-hero"><div class="wrap">
+    <span class="eyebrow">${esc(SHOP.eyebrow)}</span>
+    <div class="shop-intro"><h1>${esc(SHOP.heading)}</h1><p class="lede">${esc(SHOP.intro)}</p></div>
+    <nav class="shop-jump" aria-label="${esc(BUSINESS_INFO.onPage)}"><a href="#services">${esc(SHOP.servicesLabel)} ${ICONS.arrow}</a><a href="#software">${esc(SHOP.softwareLabel)} ${ICONS.arrow}</a><a href="#ordering">${esc(SHOP.orderLabel)} ${ICONS.arrow}</a></nav>
+    <p class="shop-seller-line"><span>${esc(BUSINESS_INFO.seller)}</span><strong>${esc(BUSINESS_INFO.registeredName)}</strong><a href="#seller">${esc(BUSINESS_INFO.address)} ${ICONS.arrow}</a></p>
+  </div></section>
+  <section class="band cream" id="services" aria-labelledby="shop-services-heading"><div class="wrap">
+    <div class="shop-section-head"><div><span class="eyebrow">${esc(SHOP.servicesLabel)}</span><h2 id="shop-services-heading">${esc(SHOP.servicesHeading)}</h2></div><p>${esc(SHOP.servicesIntro)}</p></div>
+    <div class="shop-services">${SHOP.services.map((s) => `<article class="shop-card" id="${esc(s.id)}"><div class="shop-card-top">${ICONS[s.icon] || ""}<span class="eyebrow">${esc(s.label)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.description)}</p><div class="shop-card-bottom"><p class="shop-service-price">${s.priceInr === null ? esc(SHOP.quotePrice) : inr(s.priceInr)}</p><p class="fine">${esc(SHOP.quoteNote)}</p>${waBtn(s.wa, SHOP.serviceCta)}<a class="shop-detail" href="${esc(s.href)}">${esc(SHOP.detailsCta)} ${ICONS.arrow}</a></div></article>`).join("")}</div>
+    <div class="shop-project"><p>${esc(SHOP.otherServices)}</p>${waBtn(DESIGN.projectMessage, SHOP.projectCta, "ghost")}</div>
+  </div></section>
+  <section class="band" id="software" aria-labelledby="shop-software-heading"><div class="wrap">
+    <div class="shop-section-head"><div><span class="eyebrow">${esc(SHOP.softwareLabel)}</span><h2 id="shop-software-heading">${esc(SHOP.softwareHeading)}</h2></div><p>${esc(SHOP.softwareIntro)}</p></div>
+    <p class="shop-tax">${esc(SHOP.taxNote)}</p>
+    <article class="shop-bundle"><div><h3>${esc(SHOP.bundleTitle)}</h3><p>${esc(SHOP.bundleDescription)}</p></div><p class="shop-subscription-price"><span>${esc(SHOP.from)}</span> ${inr(pricing.bundleFrom)}<small>${esc(SHOP.monthly)}</small></p>${waBtn(SHOP.bundleMessage, SHOP.softwareCta)}</article>
+    <ul class="shop-modules">${pricing.modules.map(([name, description, price]) => `<li><div><h3>${esc(name)}</h3><p>${esc(description)}</p></div><p class="shop-subscription-price">${inr(price)}<small>${esc(SHOP.monthly)}</small></p>${waBtn(SHOP.softwareMessage.replace("{product}", name), SHOP.softwareCta, "ghost")}</li>`).join("")}</ul>
+    <p class="shop-source">${esc(SHOP.sourceNote)} <a href="${esc(SHOP.sourceUrl)}" target="_blank" rel="noopener">${esc(SHOP.sourceLabel)}</a>. ${esc(UI.annualNote)}</p>
+  </div></section>
+  <section class="band cream" id="ordering" aria-labelledby="shop-order-heading"><div class="wrap">
+    <span class="eyebrow">${esc(SHOP.orderLabel)}</span><h2 id="shop-order-heading">${esc(SHOP.orderHeading)}</h2>
+    <ol class="shop-steps">${SHOP.steps.map(([title, description], i) => `<li><span aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><h3>${esc(title)}</h3><p>${esc(description)}</p></li>`).join("")}</ol>
+    <p class="shop-fulfilment">${esc(SHOP.fulfilment)}</p><p class="shop-payment-note">${esc(SHOP.paymentNote)}</p>
+    <div class="shop-policies"><h3>${esc(SHOP.policiesHeading)}</h3><nav class="policy-links" aria-label="${esc(BUSINESS_INFO.nav)}">${policyLinks()}<a href="/contact/">${esc(COPY.contact)}</a><a href="/about/">${esc(BUSINESS_INFO.about)}</a></nav></div>
+  </div></section>
+  <section class="band" id="seller" aria-labelledby="shop-seller-heading"><div class="wrap shop-business"><div><span class="eyebrow">${esc(BUSINESS_INFO.registeredName)}</span><h2 id="shop-seller-heading">${esc(SHOP.sellerHeading)}</h2><p>${esc(SHOP.sellerIntro)}</p>${businessDetails()}</div>${supportBlock()}</div></section>`;
+}
+
 function policyLinks(current = "") {
   return [
     ...POLICIES.map((p) => [`/${p.slug}/`, p.title]),
@@ -620,6 +659,11 @@ await page("/contact/", "contact/index.html", {
   body: contactPage(),
   current: "contact",
 });
+await page("/shop/", "shop/index.html", {
+  title: SHOP.title,
+  description: SHOP.description,
+  body: shopPage(pricing),
+});
 await page("/privacy/", "privacy/index.html", {
   title: COPY.privacy,
   description: `How ${SITE.name} handles your information.`,
@@ -647,6 +691,7 @@ const urls = [
   "/",
   ...CATEGORIES.map(catUrl),
   "/contact/",
+  "/shop/",
   "/privacy/",
   "/about/",
   ...POLICIES.map((p) => `/${p.slug}/`),

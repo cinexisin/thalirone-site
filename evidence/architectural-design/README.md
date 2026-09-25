@@ -1,5 +1,7 @@
 # Architectural redesign evidence
 
+This directory records the architectural review snapshot committed as `e92478c`. The subsequent shop addition has its own [evidence](../shop/) and [handover](../../handover/SHOP.md). HTML hashes and screenshots below refer to the architectural snapshot before the shared footer gained a Shop link.
+
 25 September 2026. Feature branch: `codex/architectural-design`. Baseline: `304468eaee19ce063b0d7f5cdf3e1b128902dc69` (main at the start of this follow-up). The original `codex/ui-modernization` work was already merged; this change remains a separate reviewable pull request into main.
 
 ## Acceptance checklist
