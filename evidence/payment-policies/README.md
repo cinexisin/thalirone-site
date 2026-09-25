@@ -1,6 +1,6 @@
 # Payment-policy review evidence
 
-Status: updated with the owner-supplied seller name/address and all-service scope; commercial terms drafted under the owner’s instruction. Only the grievance officer name remains pending. See [the handover](../../handover/PAYMENT_POLICIES.md). The PR remains unmerged; these pages are not deployed.
+Status: the owner authorized publication on 25 September 2026 with the supplied seller name/address, all-service scope and current commercial terms, and confirmed that no grievance officer is appointed. The named contact remains an onboarding follow-up. See [the handover](../../handover/PAYMENT_POLICIES.md) and [PR #2](https://github.com/cinexisin/thalirone-site/pull/2) for release verification. The audit JSON files record the completed pre-release checks; their release-status wording reflects that earlier test stage.
 
 ## Checks
 

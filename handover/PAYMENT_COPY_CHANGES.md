@@ -1,6 +1,6 @@
 # Payment pages: exact copy for owner review
 
-Seller identity, address and all-service scope are supplied by the owner. Commercial terms are designed under the owner’s instruction. The grievance officer name remains pending. See [the handover](PAYMENT_POLICIES.md).
+Seller identity, address and all-service scope are supplied by the owner. Commercial terms are designed under the owner’s instruction. The owner approved publication on 25 September 2026 and confirmed that no grievance officer is appointed; no officer name is invented. See [the handover](PAYMENT_POLICIES.md).
 
 ## Changed existing sentence
 

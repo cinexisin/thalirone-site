@@ -28,11 +28,13 @@ There is no single mandatory seven-day refund rule for these different products.
 
 These are operational commitments that the support and billing teams must implement. Quotes may offer more favourable rights but cannot silently remove the website policy protections. New versions do not retrospectively reduce rights for existing orders.
 
-## Remaining merchant input
+## Publication authorization and remaining onboarding detail
 
-**Only the grievance officer's name is still requested.** `BUSINESS_INFO.grievanceName` is intentionally empty until the owner names the person; the Contact page already provides the complaint route, role-independent process, existing email/WhatsApp support and National Consumer Helpline link. Do not represent the set as fully ready for gateway review until this required named contact is completed.
+On 25 September 2026, the owner explicitly authorized publication: “ok upload it, for now i dont have a grievance officer”. This supersedes the earlier instruction to leave the PR unmerged. Publish through the existing PR into `main`; do not push directly to `main`.
 
-The original instruction not to merge remains respected: update the existing PR and leave it unmerged. No further permission is needed merely to draft the requested terms. No checkout is activated in this static-site change.
+`BUSINESS_INFO.grievanceName` remains intentionally empty. The Contact page provides the complaint route, role-independent process, existing email/WhatsApp support and National Consumer Helpline link without inventing an officer. A named grievance contact remains an outstanding onboarding detail; publication does not establish gateway approval or complete readiness for gateway submission.
+
+No checkout is activated in this static-site change. The owner authorized publication of the current policies; backend billing and support operations still need the alignment listed below.
 
 ## Primary sources checked on 25 September 2026
 
