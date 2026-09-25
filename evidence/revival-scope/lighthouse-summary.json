@@ -1,0 +1,358 @@
+{
+  "startedAt": "2026-09-25T04:28:09.604Z",
+  "baseUrl": "http://127.0.0.1:4660",
+  "runtime": {
+    "node": "v24.19.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "methodology": "Lighthouse default mobile preset with simulated throttling, one new headless Chrome profile per route. Local static server; no custom scoring or throttling settings.",
+  "networkScope": "Only requests observed during the Lighthouse navigation audit. Lazy images below the viewport may be absent. This is not a full-page transfer audit or an estimate of CDN compression.",
+  "fullReportDirectory": "/var/folders/2z/4d5kfcz16mq8zf8q17nskh980000gn/T/thalirone-lighthouse-design-AdOVIr",
+  "targets": {
+    "performance": 95,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 100,
+    "clsMaximumExclusive": 0.05,
+    "nonFontTransferMaximumBytes": 350000
+  },
+  "configuredRouteCount": 13,
+  "auditedRouteCount": 1,
+  "executedRouteCount": 1,
+  "reusedRoutes": [],
+  "assetSha256AtStart": "f120b51c0613c3865233e3c2ad019be60c17fd2c43ccc07412c302cdfb7a9653",
+  "assetFiles": [
+    "styles.css",
+    "main.js"
+  ],
+  "results": [
+    {
+      "path": "/cinema-revival/",
+      "startedAt": "2026-09-25T04:28:09.606Z",
+      "fetchedAt": "2026-09-25T04:28:11.424Z",
+      "lighthouseVersion": "13.5.0",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "settings": {
+        "formFactor": "mobile",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        }
+      },
+      "htmlSha256": "bba1a98abfc57452dad244eee3134c33c8805f266858f350f50520c823ca3a2a",
+      "assetSha256": "f120b51c0613c3865233e3c2ad019be60c17fd2c43ccc07412c302cdfb7a9653",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "cls": 0,
+      "lcpMs": 2405.3989,
+      "fcpMs": 1355.3989,
+      "totalBlockingTimeMs": 0,
+      "network": {
+        "requestCount": 9,
+        "transferBytes": 247059,
+        "nonFontTransferBytes": 161561,
+        "nonFontResourceBytes": 160237,
+        "externalRequests": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://127.0.0.1:4660/cinema-revival/",
+            "resourceType": "Document",
+            "statusCode": 200,
+            "transferSize": 31080,
+            "resourceSize": 30892,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4660/assets/fonts/montserrat-latin.woff2",
+            "resourceType": "Font",
+            "statusCode": 200,
+            "transferSize": 35697,
+            "resourceSize": 35508,
+            "isFont": true
+          },
+          {
+            "url": "http://127.0.0.1:4660/assets/fonts/nunito-sans-latin.woff2",
+            "resourceType": "Font",
+            "statusCode": 200,
+            "transferSize": 49801,
+            "resourceSize": 49612,
+            "isFont": true
+          },
+          {
+            "url": "http://127.0.0.1:4660/assets/styles.css?v=f120b51c06",
+            "resourceType": "Stylesheet",
+            "statusCode": 200,
+            "transferSize": 60220,
+            "resourceSize": 60033,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4660/assets/img/logo-344.webp",
+            "resourceType": "Image",
+            "statusCode": 200,
+            "transferSize": 29099,
+            "resourceSize": 28910,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4660/assets/media/cinema-concept-768.avif",
+            "resourceType": "Image",
+            "statusCode": 200,
+            "transferSize": 15922,
+            "resourceSize": 15733,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4660/assets/main.js?v=f120b51c06",
+            "resourceType": "Script",
+            "statusCode": 200,
+            "transferSize": 7409,
+            "resourceSize": 7216,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4660/assets/img/favicon-48.png",
+            "resourceType": "Other",
+            "statusCode": 200,
+            "transferSize": 4088,
+            "resourceSize": 3901,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4660/assets/favicon.ico",
+            "resourceType": "Other",
+            "statusCode": 200,
+            "transferSize": 13743,
+            "resourceSize": 13552,
+            "isFont": false
+          }
+        ]
+      },
+      "thresholdFailures": [],
+      "reviewAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.98,
+          "displayValue": "1.4 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.91,
+          "displayValue": "2.4 s"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.98,
+          "displayValue": "2.4 s"
+        },
+        {
+          "id": "unminified-css",
+          "title": "Minify CSS",
+          "score": 0.5,
+          "displayValue": "Est savings of 13 KiB"
+        },
+        {
+          "id": "unminified-javascript",
+          "title": "Minify JavaScript",
+          "score": 0.5,
+          "displayValue": "Est savings of 2 KiB"
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "score": 0,
+          "displayValue": "Est savings of 41 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4660/assets/styles.css?v=f120b51c06",
+              "wastedBytes": 41903,
+              "wastedPercent": 69.79959686151693,
+              "totalBytes": 60033
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 194 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4660/assets/styles.css?v=f120b51c06",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 60220,
+              "wastedBytes": 60220
+            },
+            {
+              "url": "http://127.0.0.1:4660/assets/fonts/nunito-sans-latin.woff2",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 49801,
+              "wastedBytes": 49801
+            },
+            {
+              "url": "http://127.0.0.1:4660/assets/fonts/montserrat-latin.woff2",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 35697,
+              "wastedBytes": 35697
+            },
+            {
+              "url": "http://127.0.0.1:4660/assets/img/logo-344.webp",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 29099,
+              "wastedBytes": 29099
+            },
+            {
+              "url": "http://127.0.0.1:4660/assets/media/cinema-concept-768.avif",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 15922,
+              "wastedBytes": 15922
+            },
+            {
+              "url": "http://127.0.0.1:4660/assets/main.js?v=f120b51c06",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 7409,
+              "wastedBytes": 7409
+            }
+          ]
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "score": 0.5,
+          "displayValue": "Est savings of 20 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 21 KiB",
+          "details": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-1-IMG",
+                "path": "1,HTML,1,BODY,3,FOOTER,0,DIV,0,DIV,0,DIV,0,PICTURE,2,IMG",
+                "selector": "div.cols > div > picture > img",
+                "boundingRect": {
+                  "top": 6133,
+                  "bottom": 6197,
+                  "left": 20,
+                  "right": 192,
+                  "width": 172,
+                  "height": 64
+                },
+                "snippet": "<img src=\"http://127.0.0.1:4660/assets/img/logo-344.webp\" alt=\"Thalir Innovations\" width=\"172\" height=\"64\" loading=\"lazy\">",
+                "nodeLabel": "Thalir Innovations"
+              },
+              "url": "http://127.0.0.1:4660/assets/img/logo-344.webp",
+              "totalBytes": 28910,
+              "wastedBytes": 21571,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 21571
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "details": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "DE7F7F158D812FA366B441669B28AED3": {
+                    "url": "http://127.0.0.1:4660/cinema-revival/",
+                    "navStartToEndTime": 9,
+                    "transferSize": 31080,
+                    "isLongest": true,
+                    "children": {
+                      "62441.4": {
+                        "url": "http://127.0.0.1:4660/assets/styles.css?v=f120b51c06",
+                        "navStartToEndTime": 11,
+                        "transferSize": 60220,
+                        "isLongest": true,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 11
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 420 ms",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4660/assets/styles.css?v=f120b51c06",
+              "totalBytes": 60220,
+              "wastedMs": 603
+            }
+          ]
+        }
+      ],
+      "runWarnings": [],
+      "fullReport": "/var/folders/2z/4d5kfcz16mq8zf8q17nskh980000gn/T/thalirone-lighthouse-design-AdOVIr/cinema-revival.json"
+    }
+  ],
+  "finishedAt": "2026-09-25T04:28:16.251Z",
+  "assetSha256AtEnd": "f120b51c0613c3865233e3c2ad019be60c17fd2c43ccc07412c302cdfb7a9653",
+  "assetsChangedDuringAudit": false,
+  "htmlChangedDuringAudit": [],
+  "allTargetsPassed": true
+}

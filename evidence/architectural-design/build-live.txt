@@ -1,0 +1,14 @@
+EKANI pricing: live feed · modules from ₹199 · One from ₹2,099
+  index.html
+  smart-home-cinema/index.html
+  cinema-revival/index.html
+  commercial-audio/index.html
+  business-software/index.html
+  contact/index.html
+  privacy/index.html
+  about/index.html
+  terms/index.html
+  refunds/index.html
+  shipping/index.html
+  404.html
+built → docs/

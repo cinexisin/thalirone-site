@@ -1,0 +1,105 @@
+{
+  "baselineCommit": "304468eaee19ce063b0d7f5cdf3e1b128902dc69",
+  "pages": 13,
+  "categories": [
+    "smart-home-cinema",
+    "cinema-revival",
+    "commercial-audio",
+    "business-software"
+  ],
+  "policies": [
+    "terms",
+    "refunds",
+    "shipping"
+  ],
+  "internalLinks": 387,
+  "whatsappLinks": 117,
+  "localResourceReferences": 352,
+  "localAssetsReferenced": 43,
+  "clientGzipBytes": 2181,
+  "cssGzipBytes": 13066,
+  "originalImagesChecked": 14,
+  "manufacturerLogosChecked": 12,
+  "assetFilesChecked": 58,
+  "untrackedAssets": [],
+  "pageBudgets": [
+    {
+      "route": "/",
+      "htmlGzipBytes": 11409,
+      "textTransferFloorBytes": 26656
+    },
+    {
+      "route": "/smart-home-cinema/",
+      "htmlGzipBytes": 10884,
+      "textTransferFloorBytes": 26131
+    },
+    {
+      "route": "/cinema-revival/",
+      "htmlGzipBytes": 7180,
+      "textTransferFloorBytes": 22427
+    },
+    {
+      "route": "/commercial-audio/",
+      "htmlGzipBytes": 7888,
+      "textTransferFloorBytes": 23135
+    },
+    {
+      "route": "/business-software/",
+      "htmlGzipBytes": 7405,
+      "textTransferFloorBytes": 22652
+    },
+    {
+      "route": "/contact/",
+      "htmlGzipBytes": 4951,
+      "textTransferFloorBytes": 20198
+    },
+    {
+      "route": "/shop/",
+      "htmlGzipBytes": 7749,
+      "textTransferFloorBytes": 22996
+    },
+    {
+      "route": "/privacy/",
+      "htmlGzipBytes": 4064,
+      "textTransferFloorBytes": 19311
+    },
+    {
+      "route": "/about/",
+      "htmlGzipBytes": 4016,
+      "textTransferFloorBytes": 19263
+    },
+    {
+      "route": "/terms/",
+      "htmlGzipBytes": 5413,
+      "textTransferFloorBytes": 20660
+    },
+    {
+      "route": "/refunds/",
+      "htmlGzipBytes": 6428,
+      "textTransferFloorBytes": 21675
+    },
+    {
+      "route": "/shipping/",
+      "htmlGzipBytes": 5029,
+      "textTransferFloorBytes": 20276
+    },
+    {
+      "route": "/404.html",
+      "htmlGzipBytes": 3397,
+      "textTransferFloorBytes": 18644
+    }
+  ],
+  "checks": [
+    "All configured pages, canonical domain, CNAME, sitemap, robots, .nojekyll and IndexNow file",
+    "Business identity, hours, full route navigation, WhatsApp messages, internal links/anchors, metadata and reputation-claim regression checks",
+    "Local static resource graph, no runtime network APIs, 15KiB gzipped client-JS ceiling",
+    "Original Thalir image bytes unchanged; deployed assets match source; added SVGs have no active/external references; manufacturer manifest and source evidence"
+  ],
+  "warnings": [],
+  "limitations": [
+    "This static check is not a runtime network, responsive-layout, accessibility or Lighthouse test.",
+    "textTransferFloorBytes excludes fonts, images and protocol overhead; use a browser network audit for the full 350KB page budget.",
+    "SVG sanitization and source records do not establish trademark permission or manufacturer affiliation.",
+    "Claim patterns are regression guardrails, not an exhaustive editorial or legal review."
+  ]
+}

@@ -20,7 +20,7 @@ export const SITE = {
   hours: "Mon–Fri 9:30 am – 6:30 pm · Sat 9:30 am – 2 pm",
   indexNowKey: "f04e9b12d1b3443596378761fff7280a", // public by design: served at /<key>.txt for IndexNow
   description:
-    "Thalir Innovations designs smart homes, home cinemas, acoustics, commercial audio and PA systems across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
+    "Thalir Innovations designs smart homes, home cinemas, commercial audio, PA, acoustics and building automation across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
   social: [
     // filled in as accounts go live: ["Instagram", "https://instagram.com/thalirone"]
     ["Facebook", "https://www.facebook.com/thalironeofficial"],
@@ -289,28 +289,30 @@ export const CATEGORIES = [
     illustration: "revival",
     card: {
       pitch:
-        "Get more from the home theatre you already own: consultation, enhancement, advanced calibration, and help with unwanted smells and eye irritation in the room.",
+        "Get more from the home theatre you already own: consultation, odour removal, acoustic corrections where needed, theatre enhancement and advanced calibration.",
       bullets: [
         "Consultation on your room and equipment",
         "Enhancement plan around your budget",
         "Advanced calibration scoped to your system",
-        "Find and fix causes of smells and eye irritation",
+        "Odour removal and room comfort",
+        "Acoustic corrections where needed",
       ],
     },
-    composerHint: "e.g. 12×16 ft theatre, 5.1 system, dialogue is hard to hear",
+    composerHint:
+      "e.g. 12×16 ft theatre, unclear dialogue, echo or unwanted odours",
     cta: {
       shortLabel: "Revival consultation",
       label: "Book a revival consultation",
-      wa: "Hi Thalir Innovations! I'd like a Home Cinema Revival consultation.\nMy location: \nWhat I want to improve (sound / picture / controls / room comfort): ",
+      wa: "Hi Thalir Innovations! I'd like a Home Cinema Revival consultation.\nMy location: \nWhat I want to improve (odours / acoustics / sound / picture / controls / room comfort): ",
     },
     page: {
       title:
         "Home Cinema Revival in Karnataka, Tamil Nadu, Andhra Pradesh & Telangana",
       metaDescription:
-        "Home Cinema Revival for existing home theatres across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana: consultation, theatre enhancement, advanced calibration, and help with unwanted smells and eye irritation in the room. Book on WhatsApp.",
+        "Home Cinema Revival across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana: consultation, odour removal, acoustic corrections where needed, theatre enhancement and calibration. Book on WhatsApp.",
       eyebrow: "Home Cinema Revival",
       h1: "Rediscover your home theatre.",
-      lede: "Get more from the theatre you already own. We look at the sound, the picture, the controls and how comfortable the room is to sit in, then agree a practical plan to put it right.",
+      lede: "Revive the whole theatre: odour removal, acoustic corrections where needed, better sound and picture, and simpler controls. We assess your room and equipment, then agree the improvements that suit your setup and budget.",
       featuresTitle: "What Cinema Revival covers",
       features: [
         [
@@ -330,8 +332,13 @@ export const CATEGORIES = [
         ],
         [
           "air",
-          "Smells & eye irritation",
-          "We help find and fix the causes within the theatre, so the room is comfortable to spend an evening in.",
+          "Odour removal & room comfort",
+          "We help identify and address the causes of unwanted odours and eye irritation within the theatre room, with the work agreed after assessment.",
+        ],
+        [
+          "plan",
+          "Acoustic corrections",
+          "We assess how sound behaves in the room and recommend acoustic corrections where needed. The treatment and work are scoped to your theatre.",
         ],
         [
           "remote",
@@ -385,41 +392,60 @@ export const CATEGORIES = [
     },
   },
   {
-    // Added on the owner's instruction, 25 Sep 2026: acoustic consultation,
-    // commercial audio and PA systems, design and implementation.
+    // Commercial sectors and building automation confirmed by the owner, 25 Sep 2026.
     slug: "commercial-audio",
-    name: "Commercial Audio & Acoustics",
-    label: "For businesses and venues",
+    name: "Commercial Spaces",
+    label: "For organisations and institutions",
     illustration: "zones",
     card: {
       pitch:
-        "Acoustic consultation, commercial sound and PA systems for offices, shops, restaurants, schools, halls and places of worship: designed for the space, then installed and set up on site.",
+        "Audio, PA systems, acoustics and building automation for corporate offices, hospitals, colleges, auditoriums and halls. Planned around the building and the people who use it.",
       bullets: [
-        "Acoustic consultation for rooms and halls",
-        "Background music and paging by zone",
-        "PA systems for announcements and speech",
-        "Design first, then supply, installation and handover",
+        "Commercial audio and PA systems",
+        "Acoustic consultation and treatment",
+        "Building automation and everyday controls",
+        "Design, supply, installation and handover",
       ],
     },
-    composerHint: "e.g. 3,000 sq ft restaurant, background music in 3 zones",
+    composerHint:
+      "e.g. college auditorium; location, hall dimensions, seating layout, audio and automation needs",
     cta: {
-      shortLabel: "Audio consultation",
-      label: "Request an audio consultation",
-      wa: "Hi Thalir Innovations! I'd like help with commercial audio / acoustics.\nType of space (office / shop / restaurant / school / hall / other): \nLocation: \nWhat I need (acoustics / background music / PA / other): ",
+      shortLabel: "Commercial project",
+      label: "Discuss a commercial project",
+      wa: "Hi Thalir Innovations! I'd like to discuss a commercial project.\nOrganisation / type of space: \nLocation: \nProject stage (new build / renovation / existing space): \nWhat I need (audio / PA / acoustics / building automation): ",
     },
     page: {
-      title: "Acoustic Consultation, Commercial Audio & PA Systems",
+      title: "Commercial Audio, PA, Acoustics & Building Automation",
       metaDescription:
-        "Acoustic consultation, commercial audio and PA system design and installation for offices, shops, restaurants, schools, halls and places of worship across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Talk to us on WhatsApp.",
-      eyebrow: "Commercial Audio & Acoustics",
-      h1: "Sound that suits the space.",
-      lede: "From a meeting room that echoes to a hall where announcements must reach the back row, we look at the space first. Then we design the acoustics, the speakers and the PA, install them and set them up on site.",
-      featuresTitle: "What we design and install",
+        "Audio, PA, acoustics and building automation for corporate offices, hospitals, colleges, auditoriums and marriage halls across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana.",
+      eyebrow: "Commercial spaces",
+      h1: "A considered system. For the whole space.",
+      lede: "Audio, PA, acoustics and building automation for the places where people work, learn and come together. We plan around your building, its users and the way your team needs to operate it.",
+      sectorsTitle: "Different spaces. Different requirements.",
+      sectorsIntro: "Start with how the building is used. The system follows.",
+      sectors: [
+        ["Corporate offices", "Meeting rooms, workplaces and shared areas."],
+        ["Hospitals", "Public areas, administration and shared spaces."],
+        [
+          "Colleges & campuses",
+          "Classrooms, lecture halls and gathering spaces.",
+        ],
+        ["Auditoriums", "Speech, presentations and performances."],
+        [
+          "Marriage & event halls",
+          "Ceremonies, speeches, music and everyday operation.",
+        ],
+        [
+          "Hospitality & other spaces",
+          "Hotels, restaurants, retail and places of worship.",
+        ],
+      ],
+      featuresTitle: "One brief. A coordinated system.",
       features: [
         [
           "wave",
           "Acoustic consultation",
-          "We assess echo, noise and how sound behaves in the room, and recommend the treatment and layout that suit how the space is used.",
+          "We assess echo, noise and how sound behaves in the room, and recommend treatment and a layout suited to its use.",
         ],
         [
           "plan",
@@ -429,63 +455,67 @@ export const CATEGORIES = [
         [
           "speaker",
           "Commercial audio",
-          "Background music for offices, shops, restaurants and hotels, split into zones with their own source and volume.",
+          "Music and sound systems planned by space and zone, with source and volume control for the way the building is used.",
         ],
         [
           "mic",
-          "PA systems",
-          "Paging, announcements and live speech for schools, halls, places of worship and workplaces, with microphones where they're needed.",
-        ],
-        [
-          "dial",
-          "Set up on site",
-          "Levels, coverage and settings are checked in the finished space, so every zone sounds even.",
+          "PA & speech",
+          "Paging, announcements and live speech, with microphones and speaker layouts planned around your rooms and halls.",
         ],
         [
           "remote",
-          "Simple controls",
-          "Easy volume and source control for your staff, with automation where your equipment supports it.",
+          "Building automation",
+          "Automation and controls planned around the building's systems and daily operation. Equipment compatibility and the scope are confirmed during consultation.",
+        ],
+        [
+          "dial",
+          "On-site setup & handover",
+          "We check levels, coverage, settings and agreed controls on site, then show your team how to use the system.",
         ],
       ],
-      processTitle: "How a project runs",
+      processTitle: "From the project brief to handover",
       process: [
         [
-          "Tell us about the space",
-          "Share the type of space, its size, a few photos and what you need on WhatsApp.",
+          "Share the brief",
+          "Send your organisation, location, project stage, plans or dimensions, and the systems you need.",
         ],
         [
-          "Site visit & consultation",
-          "We see the space and discuss how it's used and what matters most.",
+          "Site consultation",
+          "We review the space, how it is used, the existing equipment and the requirements of your team.",
         ],
         [
           "Design & written quote",
-          "Layout, equipment and scope in writing before any work starts.",
+          "The proposed layout, equipment, scope and charges are agreed in writing before work starts.",
         ],
         [
           "Installation & handover",
-          "We install, set up and test everything, then show your team how to use it.",
+          "We supply, install and set up the agreed system, then demonstrate its operation to your team.",
         ],
       ],
       faq: [
         [
           "What kinds of spaces do you work on?",
-          "Offices and meeting rooms, shops, restaurants and cafés, schools and colleges, halls and auditoriums, and places of worship. Tell us about your space and we'll say what's practical.",
+          "Corporate offices, hospitals, colleges and campuses, auditoriums, marriage halls and other large halls, along with hospitality, retail and places of worship. We confirm the proposed system and its suitability during consultation.",
         ],
         [
-          "Can you fix echo in an existing room?",
-          "Often, yes. We assess the room on a visit and recommend acoustic treatment that suits the space and your budget.",
+          "Can audio and building automation be planned together?",
+          "Yes. Tell us which audio, PA, acoustic and automation requirements belong to the project. We confirm the compatible equipment, controls and scope in the proposal.",
         ],
         [
-          "Do you supply the equipment too?",
-          "Yes. We design the system, supply the equipment and install it. If you already have equipment, we can look at working with it.",
+          "Can you work with an existing building or system?",
+          "We can review an existing space and its equipment, then explain what can be retained and what needs to change. The recommendation follows a consultation.",
+        ],
+        [
+          "What should we share before a consultation?",
+          "Your organisation and location, the type and size of the space, whether this is a new build or an upgrade, and your audio, acoustic and automation requirements. Plans, dimensions and equipment details help us understand the brief.",
         ],
         [
           "Which areas do you cover?",
-          "Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. We're based in Bengaluru; for sites outside Bengaluru, any travel charges are agreed with you before the visit.",
+          "Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. We're based in Bengaluru; for sites outside Bengaluru, any travel charges are agreed before the visit.",
         ],
         [
-          "How much does it cost?",
-          "It depends on the space and the system. After the site visit you get a written quote with every item listed.",
+          "How is the project priced?",
+          "Pricing depends on the space, systems and agreed scope. We provide a written quote following consultation; no project is priced from a generic package.",
         ],
       ],
     },
@@ -626,13 +656,13 @@ export const UI = {
   roomStateOff: "Lights off",
   demoLabel: "WhatsApp / Telegram",
   replay: "Replay example",
-  heroEyebrow: "Smart Home & Cinema",
-  heroTitle: ["Run your home from", "WhatsApp or Telegram"],
+  heroEyebrow: "Homes · Commercial spaces · Software",
+  heroTitle: ["Intelligent spaces.", "Connected business."],
   heroDetail: "See everything your home can do",
   heroLede:
-    "No new app to learn. Message your home the way you'd message a person.",
+    "Smart homes, cinema, commercial audio and building automation. Thoughtfully designed for the way you live, work and gather.",
   homeLede:
-    "We design smart homes and home cinemas, bring existing home theatres back to their best, and build EKANI, the WhatsApp-first CRM for Indian businesses. One team, engineering for your home and your business.",
+    "From the room you come home to, to the buildings your organisation depends on. Explore our home, commercial and software services.",
   survey: "Site survey",
   consultation: "Revival consultation",
   demo: "EKANI demo",
@@ -684,7 +714,7 @@ export const COPY = {
   hours: "Hours",
   cover: "We cover",
   based: "Based in",
-  categoriesTitle: "One standard of work, for your home and your business",
+  categoriesTitle: "The right technology. In the right place.",
   why: "Why Thalir",
   whyTitle: "Engineered properly, explained plainly",
   why1: "Programmed, not just installed",
@@ -712,7 +742,7 @@ export const COPY = {
   questionsTitle: "What people ask us",
   contactTitle: "Let's talk.",
   contactIntro:
-    "The fastest way to reach us is WhatsApp. Tell us a little about your home or business and we'll take it from there.",
+    "The fastest way to reach us is WhatsApp. Tell us about your home, commercial space or software needs and we'll take it from there.",
   privacyTitle: "How we handle your information",
   privacySite: "This website",
   privacyMessage: "When you message us",
@@ -741,7 +771,7 @@ export const COPY = {
   footerServing: "serving",
   location: "Karnataka, India",
   homeMetaSuffix:
-    "smart homes, home cinema, commercial audio & EKANI CRM · Karnataka, Tamil Nadu, AP & Telangana",
+    "smart homes, commercial systems & EKANI CRM · Karnataka, Tamil Nadu, AP & Telangana",
 };
 
 // Seller details and all-service scope supplied by the owner, 25 September 2026.
@@ -771,7 +801,7 @@ export const BUSINESS_INFO = {
     "You may also use the National Consumer Helpline or other remedies available under applicable law. Contacting us does not restrict those rights.",
   grievanceLink: "National Consumer Helpline",
   scope:
-    "These policies cover payments collected by THALIR INNOVATIONS for Smart Home & Cinema, Cinema Revival, equipment supplied with those services, and EKANI subscriptions and related services.",
+    "These policies cover payments collected by THALIR INNOVATIONS for Smart Home & Cinema, Cinema Revival, Commercial Spaces (audio, PA, acoustics and building automation), equipment supplied with those services, and EKANI subscriptions and related services.",
   updated: "2026-09-25",
   updatedLabel: "25 September 2026",
   nav: "Business information and policies",
@@ -787,7 +817,7 @@ export const BUSINESS_INFO = {
   emailSupport: "Email support",
   paymentTitle: "Order & payment support",
   paymentBody:
-    "For any Smart Home & Cinema, Cinema Revival or EKANI order, contact us about cancellations, refunds, delivery or payment issues. Include your quote, invoice or transaction reference so we can identify it.",
+    "For any Smart Home & Cinema, Cinema Revival, Commercial Spaces or EKANI order, contact us about cancellations, refunds, delivery or payment issues. Include your quote, invoice or transaction reference so we can identify it.",
   privacyPaymentsTitle: "Order and payment enquiries",
   privacyPaymentsBody:
     "If you send us an invoice, transaction reference or payment issue, we use those details to identify your order and respond to your request. Please do not send full card details, CVVs, PINs, passwords or one-time passwords through the contact form, email or WhatsApp. This website has no payment form and does not collect payment credentials.",
@@ -797,10 +827,180 @@ export const BUSINESS_INFO = {
   aboutIntro: SITE.description,
   aboutProcessTitle: "A clear scope before work begins",
   aboutProcess:
-    "For a smart home or cinema project, we start with a site survey and a written quote. For an existing theatre, share your setup with us; the scope, charges and visit date are agreed before scheduling. EKANI features and current module prices are listed on our Business Software page.",
+    "For a smart home, cinema or commercial project, we start with a site survey and a written quote. For an existing theatre, share your setup with us; the scope, charges and visit date are agreed before scheduling. EKANI features and current module prices are listed on our Business Software page.",
   aboutLocationTitle: "Based in Bengaluru",
   aboutLocation:
-    "We take home and cinema projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Travel charges outside Bengaluru are agreed before the visit.",
+    "We take home, cinema and commercial projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Travel charges outside Bengaluru are agreed before the visit.",
+};
+
+// The owner asked us to propose basic Cinema Revival/consultation pricing.
+// These newly designed starter packages are for review in the unmerged PR,
+// not a historical rate card. Null prices require a project-specific quote.
+export const SHOP = {
+  nav: "Shop",
+  title: "Shop services & software",
+  description:
+    "Shop Cinema Revival consultations from ₹999, theatre assessments, calibration and EKANI business software from THALIR INNOVATIONS. View service scope and INR prices.",
+  eyebrow: "Services & software",
+  heading: "Shop services & software.",
+  intro:
+    "Start with a consultation, plan your theatre's revival or choose software for your business. Clear starting prices, with the scope agreed before you pay.",
+  startingLabel: "Cinema Revival phone consultation",
+  startingNote: "30 minutes · INR · applicable GST extra",
+  servicesLabel: "Consultations & services",
+  softwareLabel: "Software subscriptions",
+  orderLabel: "Ordering & support",
+  servicesHeading: "Start with your space.",
+  servicesIntro:
+    "Cinema Revival includes odour removal, acoustic corrections where needed, theatre enhancement and calibration. Start with the assessment that suits your room; corrective work is scoped separately.",
+  serviceTaxNote:
+    "Service prices are in INR. Applicable GST is extra. Any travel, materials, equipment or work beyond the stated package is separately quoted and agreed before payment.",
+  quotePrice: "Priced by written quote",
+  quoteNote: "Scope and total in INR confirmed before payment.",
+  serviceCta: "Request a quote",
+  bookingCta: "Request booking",
+  detailsCta: "Explore the service",
+  services: [
+    {
+      id: "revival-consultation",
+      icon: "chat",
+      label: "30-minute phone session",
+      title: "Cinema Revival consultation",
+      description:
+        "Discuss your theatre, unwanted odours, acoustic issues, sound, picture and controls. Share room photos and equipment details beforehand so we can plan the next step.",
+      priceInr: 999,
+      priceUnit: "/session",
+      priceNote:
+        "One 30-minute phone consultation. No site visit or corrective work included.",
+      includes: [
+        "Review of one existing home theatre",
+        "Your priorities, room concerns and equipment",
+        "Recommended next steps",
+      ],
+      href: "/cinema-revival/",
+      wa: "Hi Thalir Innovations! I'd like to book the 30-minute Cinema Revival phone consultation listed on your shop.\nMy location: \nRoom size and equipment: \nConcerns (odours / acoustics / sound / picture / controls): \nPlease confirm the total including applicable tax and a suitable time.",
+    },
+    {
+      id: "theatre-assessment",
+      icon: "plan",
+      label: "On-site · Bengaluru",
+      title: "Theatre assessment & revival plan",
+      description:
+        "An on-site assessment of your existing theatre, including unwanted odours, room acoustics, equipment and controls. Agree what needs correcting before committing to improvement work.",
+      priceInr: 2999,
+      priceUnit: "/visit",
+      priceNote:
+        "One theatre, up to 90 minutes. Repairs, treatment and calibration are separately quoted.",
+      includes: [
+        "Review of one room and its existing system",
+        "Odour and acoustic concerns assessed",
+        "Written improvement scope and next steps",
+      ],
+      href: "/cinema-revival/",
+      wa: "Hi Thalir Innovations! I'd like to book the Theatre assessment & revival plan listed on your shop.\nSite location: \nRoom size and equipment: \nMain concerns: \nPlease confirm availability, travel charges if any, applicable tax and the total.",
+    },
+    {
+      id: "basic-audio-calibration",
+      icon: "dial",
+      label: "Existing systems · up to 5.1",
+      title: "Basic audio calibration",
+      description:
+        "Review and adjust the speaker setup in one working home theatre system. This package covers basic audio setup; advanced processors, larger systems and picture calibration are quoted separately.",
+      priceInr: 4999,
+      priceUnit: "/system",
+      priceNote:
+        "Up to 5.1 speakers with one compatible receiver. Equipment must be installed and working.",
+      includes: [
+        "Speaker levels and distances",
+        "Crossover settings and subwoofer integration",
+        "Listening check and setting handover",
+      ],
+      href: "/cinema-revival/#features",
+      wa: "Hi Thalir Innovations! I'd like to book the Basic audio calibration package listed on your shop.\nMy location: \nReceiver model: \nSpeaker setup: \nPlease confirm compatibility, travel charges if any, applicable tax and the total.",
+    },
+    {
+      id: "revival-improvements",
+      icon: "air",
+      label: "Cinema Revival",
+      title: "Odour removal & acoustic corrections",
+      description:
+        "Address the causes of unwanted odours and correct acoustic issues where needed. The treatment, materials and work are agreed after assessing your theatre; these are not included in consultation or calibration fees.",
+      includes: [
+        "Work based on your room assessment",
+        "Treatment and materials identified in the quote",
+        "Agreed scope before work begins",
+      ],
+      priceInr: null,
+      href: "/cinema-revival/#features",
+      wa: "Hi Thalir Innovations! I'd like a quote for Cinema Revival improvements.\nMy location: \nRoom size and equipment: \nWork needed (odour removal / acoustic corrections / calibration / other improvements): ",
+    },
+    {
+      id: "acoustic-consultation",
+      icon: "plan",
+      label: "Homes & commercial spaces",
+      title: "Acoustic consultation",
+      description:
+        "Review echo, noise and how sound behaves in your room, hall or commercial space. Discuss acoustic treatment and a layout suited to its use.",
+      priceInr: null,
+      href: "/commercial-audio/",
+      wa: "Hi Thalir Innovations! I'd like a quote for acoustic consultation.\nMy location: \nSpace type and size: \nSound or noise concern: ",
+    },
+    {
+      id: "wabot",
+      icon: "chat",
+      label: "Home automation",
+      title: "WABot",
+      description:
+        "Discuss messaging control for your home. We confirm equipment compatibility, setup requirements and the applicable subscription before you order.",
+      priceInr: null,
+      href: "/smart-home-cinema/#features",
+      wa: "Hi Thalir Innovations! I'd like details and a quote for WABot.\nMy location: \nCurrent home automation equipment: \nWhat I want to control: ",
+    },
+  ],
+  softwareHeading: "Software that fits your business.",
+  softwareIntro:
+    "Choose individual EKANI modules or the EKANI One bundle. Prices below are monthly subscription prices in Indian rupees (INR).",
+  taxNote:
+    "GST is extra on the listed software prices. Your selected plan, billing cycle, user limits, any usage or setup charges, applicable tax and total are confirmed before payment.",
+  softwareCta: "Request subscription",
+  softwareMessage:
+    "Hi Thalir Innovations! I'm interested in the EKANI {product} subscription listed on your shop.\nPlease confirm the plan, user limits, applicable charges, GST and total before payment.\nBusiness name: ",
+  bundleMessage:
+    "Hi Thalir Innovations! I'm interested in EKANI One listed on your shop.\nTeam size: \nPreferred billing cycle: \nPlease confirm the plan, applicable charges, GST and total before payment.",
+  sourceNote: "Software prices as listed on",
+  sourceLabel: "EKANI pricing",
+  sourceUrl: "https://ekanicrm.com/pricing",
+  monthly: "/month",
+  from: "From",
+  bundleTitle: "EKANI One",
+  bundleDescription:
+    "Every module in one subscription. Price depends on team size.",
+  otherServices:
+    "For smart home installations, new cinemas, audio, PA, acoustic treatment or building automation projects, contact us for a site-specific written quote.",
+  projectCta: "Discuss a project",
+  sellerHeading: "Your seller, clearly identified.",
+  sellerIntro:
+    "Services and subscriptions on this page are offered by THALIR INNOVATIONS.",
+  orderHeading: "From enquiry to order.",
+  steps: [
+    [
+      "Choose your service or plan",
+      "Use its enquiry button to share your requirements with our team on WhatsApp.",
+    ],
+    [
+      "Confirm the scope and total",
+      "Review the written quote or selected plan, total in INR, tax, any extra charges and service or activation arrangements.",
+    ],
+    [
+      "Pay for the agreed order",
+      "Use the payment method provided for your confirmed order. An enquiry alone does not take payment or reserve a visit.",
+    ],
+  ],
+  fulfilment:
+    "Consultations and on-site work are scheduled after the scope and charges are agreed. Software activation and access follow the selected plan and the agreed activation arrangements. See our Shipping & Service Delivery Policy for details.",
+  paymentNote:
+    "This shop currently accepts enquiries. It has no online checkout and does not ask for card details, CVV, PIN or one-time passwords.",
+  policiesHeading: "Before you order",
 };
 
 // Commercial policy choices drafted under the owner's express instruction.
@@ -810,7 +1010,7 @@ export const POLICIES = [
     slug: "terms",
     title: "Terms & Conditions",
     description:
-      "Terms for Thalir Innovations home and cinema projects, equipment supply and EKANI subscriptions.",
+      "Terms for Thalir Innovations home, cinema and commercial projects, equipment supply and EKANI subscriptions.",
     intro:
       "These terms apply to orders and payments for all our services. Read them with your written quote or selected subscription plan before paying.",
     sections: [
@@ -819,7 +1019,7 @@ export const POLICIES = [
         title: "Who you are buying from",
         paragraphs: [
           "THALIR INNOVATIONS is the seller for the services covered by these terms. Our registered address and support contacts appear on this page and on Contact.",
-          "These policies cover Smart Home & Cinema, Cinema Revival, equipment we supply with those services, and EKANI subscriptions and related services. They apply whether you pay by a payment link, within EKANI or through another payment method we offer.",
+          "These policies cover Smart Home & Cinema, Cinema Revival, Commercial Spaces (audio, PA, acoustics and building automation), equipment we supply with those services, and EKANI subscriptions and related services. They apply whether you pay by a payment link, within EKANI or through another payment method we offer.",
           "thalirone.com is an information and enquiry website. Its contact form prepares a WhatsApp message; it has no checkout or payment-credential form. Sending an enquiry does not confirm an order or reserve a visit.",
         ],
       },
@@ -827,7 +1027,7 @@ export const POLICIES = [
         id: "project-orders",
         title: "Quotes, prices and orders",
         paragraphs: [
-          "Smart Home & Cinema projects begin with a site survey and a written quote. For Cinema Revival, the scope, charges and visit date are agreed before scheduling. Equipment compatibility and the capabilities of your system are confirmed for your project.",
+          "Smart Home & Cinema and Commercial Spaces projects begin with a site survey and a written quote. For Cinema Revival, the scope, charges and visit date are agreed before scheduling. Equipment compatibility and the capabilities of your system are confirmed for your project.",
           "Before payment, your quote or checkout must show the total payable in Indian rupees, including any applicable taxes and separately identified delivery, travel or other charges. Project milestones, equipment specifications and delivery or service dates are agreed in writing. We do not add unapproved work or charges.",
           "An advance is credited towards the order and is subject to our Cancellation & Refund Policy. A quote cannot remove the protections in that policy or your rights under applicable law. Any more favourable written terms agreed for your order will be honoured.",
         ],
@@ -883,7 +1083,7 @@ export const POLICIES = [
     description:
       "Cancellation, returns and refund terms for all Thalir Innovations services, equipment and EKANI subscriptions.",
     intro:
-      "Clear terms for changing an order, returning eligible equipment or requesting a refund. This policy covers all payments collected by THALIR INNOVATIONS for our home, cinema and EKANI services.",
+      "Clear terms for changing an order, returning eligible equipment or requesting a refund. This policy covers all payments collected by THALIR INNOVATIONS for our home, cinema, commercial and EKANI services.",
     sections: [
       {
         id: "request",
@@ -896,7 +1096,7 @@ export const POLICIES = [
       },
       {
         id: "projects",
-        title: "Cancelling home and cinema work",
+        title: "Cancelling project work",
         paragraphs: [
           "Before we begin any agreed work or place an equipment order with your approval, you may cancel for a full refund of the amount paid. We do not charge a separate cancellation or payment-processing fee.",
           "If work has started, you pay only for satisfactorily completed work at the agreed rates and equipment you have received or choose to retain. We provide an itemised statement and refund the unused balance of your advance.",
@@ -967,7 +1167,7 @@ export const POLICIES = [
         id: "service-area",
         title: "Where we work",
         paragraphs: [
-          "We are based in Bengaluru and take home and cinema projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Visits outside Bengaluru are by prior confirmation, with travel charges agreed before the visit. Equipment delivery is arranged to the address agreed for your project.",
+          "We are based in Bengaluru and take home, cinema and commercial projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Visits outside Bengaluru are by prior confirmation, with travel charges agreed before the visit. Equipment delivery is arranged to the address agreed for your project.",
         ],
       },
       {
@@ -983,7 +1183,7 @@ export const POLICIES = [
         id: "visits",
         title: "Surveys, installation and service visits",
         paragraphs: [
-          "Smart Home & Cinema work follows a site survey, written quote, installation and programming, then handover. Cinema Revival scope, charges and the visit date are agreed before scheduling. Sending an enquiry does not reserve a date.",
+          "Smart Home & Cinema and Commercial Spaces work follows a site survey, written quote, installation and programming, then handover. Cinema Revival scope, charges and the visit date are agreed before scheduling. Sending an enquiry does not reserve a date.",
           "Tell us promptly if site access, readiness or your availability changes. Any revised work, dates or charges must be agreed with you. Our cancellation policy explains rescheduling and refunds for services not delivered.",
         ],
       },
@@ -1038,7 +1238,8 @@ export const DRAWING = {
   zoneMic: "MIC",
   zonePanels: "Acoustic panels",
   zonePaging: "Paging: all zones",
-  zoneLegend: "Example · ceiling speakers by zone, one amplifier, one paging mic",
+  zoneLegend:
+    "Example · ceiling speakers by zone, one amplifier, one paging mic",
   flowLabel:
     "Example: a WhatsApp enquiry becomes a lead, a GST quote, an invoice and a recorded payment in EKANI",
   flowChat: "WhatsApp",
@@ -1062,16 +1263,17 @@ export const DRAWING = {
   flowRecorded: "recorded against the job",
   flowNote: "Example only: the name and amounts are made up.",
   revivalLabel:
-    "Example Cinema Revival checklist: dialogue, bass, picture, controls, room comfort and equipment",
+    "Example Cinema Revival checklist: dialogue, bass, acoustics, picture, controls, odours, room comfort and equipment",
   revivalTitle: "Revival checklist",
   example: "Example",
   revivalNote: "What we look at on a revival consultation.",
   revivalRows: [
     ["Dialogue clarity", "Hard to follow at normal volume"],
     ["Bass", "Boomy at the sofa, thin at the back"],
+    ["Acoustics", "Echo and room reflections"],
     ["Picture", "Brightness, colour, screen fit"],
     ["Controls", "Too many remotes"],
-    ["Room comfort", "Smells, stuffiness, eye irritation"],
+    ["Odours & room comfort", "Unwanted smells, stuffiness, eye irritation"],
     ["Equipment", "Receiver, speakers, display, wiring"],
   ],
 };
@@ -1086,4 +1288,65 @@ export const ART_COPY = {
   businessAlt:
     "AI-generated concept: two business owners working with a phone and laptop",
   concept: "AI-generated concept",
+};
+
+// Presentation copy for the architectural design refresh. Claims are scoped to
+// existing services and the owner's confirmed commercial offering.
+export const DESIGN = {
+  project: "Discuss your project",
+  projectShort: "Project enquiry",
+  projectMessage:
+    "Hi Thalir Innovations! I'd like to discuss a project.\nType of space: \nLocation: \nWhat I need: ",
+  explore: "Explore our services",
+  services: "Our services",
+  introduction: "Technology, with purpose",
+  location: "Bengaluru, India",
+  homeDemoTitle: "Your home. One conversation.",
+  homeDemoIntro: "Run your home from WhatsApp or Telegram.",
+  homeDemoNote:
+    "No new app to learn. Message your home the way you'd message a person.",
+  commercialEyebrow: "For organisations & institutions",
+  commercialTitle: "Think beyond the room.",
+  commercialBody:
+    "From corporate offices and hospitals to colleges, auditoriums and marriage halls. Plan audio, PA, acoustics and building automation around the whole space.",
+  sectors: "Spaces we work with",
+  brandsIntro:
+    "Selected manufacturers used in our projects. Equipment is specified around the requirements of each space.",
+  systemNote:
+    "Illustrative layout. The final system is designed for your space.",
+  commercialPlan: {
+    label: "Example system plan",
+    alt: "Example auditorium plan with a main hall, stage, foyer, adjoining room, audio speakers, acoustic treatment and building automation controls.",
+    mainHall: "Main hall",
+    stage: "Stage",
+    foyer: "Foyer",
+    adjoiningRoom: ["Adjoining", "room"],
+    control: ["Control", "point"],
+    legend: {
+      audio: "Audio & PA",
+      acoustics: "Acoustics",
+      automation: "Building automation",
+    },
+    markers: ["01", "02", "03"],
+  },
+  product: {
+    brand: "EKANI",
+    label: "Example workflow",
+    enquiry: { label: "WhatsApp enquiry", message: "I'd like a quote." },
+    steps: [
+      { kind: "lead", title: "Lead", detail: "Capture the enquiry." },
+      {
+        kind: "quote",
+        title: "GST quote",
+        detail: "Prepare and share a quote.",
+      },
+      { kind: "invoice", title: "Invoice", detail: "Bill the agreed work." },
+      {
+        kind: "payment",
+        title: "Recorded payment",
+        detail: "Keep the payment record.",
+      },
+    ],
+    summary: "From the first enquiry to a recorded payment.",
+  },
 };

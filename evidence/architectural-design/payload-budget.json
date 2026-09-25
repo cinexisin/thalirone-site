@@ -1,0 +1,4877 @@
+{
+  "createdAt": "2026-09-25T04:13:16.668Z",
+  "limitBytes": 350000,
+  "method": {
+    "source": "Generated docs/ HTML and CSS, all pages derived from CATEGORIES and POLICIES; local byte sizes read from exact referenced files.",
+    "included": "Full HTML, linked stylesheets/scripts, every image occurrence including lazy images and all manufacturer logos, CSS URL resources, and all declared favicon/apple-touch icons. Inline SVG is already part of HTML.",
+    "excluded": "Font payloads, Open Graph/JSON-LD image metadata that browsers do not fetch for page rendering, ordinary link destinations, HTTP headers and TLS/protocol overhead.",
+    "mobileModel": "390 CSS pixels at DPR 2; parse sizes and srcset width/density descriptors; select first supported picture format (AVIF and WebP), then smallest adequate candidate or largest available; count each selected URL once across the full page.",
+    "worstCandidateBound": "For each image occurrence select the largest byte file among all picture sources, img srcset and fallback src, independent of viewport or format. Count repeated image occurrences separately to avoid understating scenarios where different candidates are downloaded. This is a deliberately conservative upper bound, not an observed transfer or a claim all variants load.",
+    "compression": "uncompressedBodyBytes is exact raw file-body bytes for the model. gzipTextBodyBytes uses Node gzipSync defaults only for HTML/CSS/JS/SVG; raster images remain exact file sizes. Gzip results are estimates conditional on server compression, not measured CDN transfers.",
+    "networkAudit": "Lighthouse network numbers are navigation observations; they do not prove the complete page after lazy loading."
+  },
+  "hashCheck": {
+    "cssAndJsSha256": "f120b51c0613c3865233e3c2ad019be60c17fd2c43ccc07412c302cdfb7a9653",
+    "lighthouseAllTargetsPassed": true,
+    "allLighthouseHtmlAndAssetsMatch": true,
+    "sourceAssetsCompared": 57,
+    "sourceToDocsAssetMismatches": []
+  },
+  "pages": [
+    {
+      "path": "/",
+      "htmlSha256": "4cb7130334cf3219b4a45bb443efefefae8193dfac81203347663f644738c44f",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 215375,
+      "manufacturerLogoCount": 12,
+      "manufacturerLogoRawBytes": 77992,
+      "imageOccurrences": 17,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 21,
+          "uncompressedBodyBytes": 311991,
+          "gzipTextBodyBytes": 185210,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/index.html",
+              "bytes": 60073,
+              "gzipIfServedBytes": 11380,
+              "sha256": "4cb7130334cf3219b4a45bb443efefefae8193dfac81203347663f644738c44f",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            },
+            {
+              "url": "/assets/media/home-concept-768.avif",
+              "bytes": 24444,
+              "gzipIfServedBytes": 24444,
+              "sha256": "48f8146bb9ad15707ffbe3381aa72a31a281ce34648257e039f3dad9c67d10ef",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-768.avif",
+              "bytes": 15733,
+              "gzipIfServedBytes": 15733,
+              "sha256": "28990fbc12b73490e4517d0c96d0b720f819ac0b9c0278112708073fdde69f17",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/abb.png",
+              "bytes": 2318,
+              "gzipIfServedBytes": 2318,
+              "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/theben.svg",
+              "bytes": 1948,
+              "gzipIfServedBytes": 949,
+              "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/zennio.webp",
+              "bytes": 7690,
+              "gzipIfServedBytes": 7690,
+              "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/mdt.svg",
+              "bytes": 14892,
+              "gzipIfServedBytes": 3000,
+              "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/intesis.webp",
+              "bytes": 12890,
+              "gzipIfServedBytes": 12890,
+              "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/eae.webp",
+              "bytes": 5628,
+              "gzipIfServedBytes": 5628,
+              "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/blumotix.webp",
+              "bytes": 5622,
+              "gzipIfServedBytes": 5622,
+              "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/sation.png",
+              "bytes": 7478,
+              "gzipIfServedBytes": 7478,
+              "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/insta.svg",
+              "bytes": 805,
+              "gzipIfServedBytes": 448,
+              "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/klipsch.svg",
+              "bytes": 8116,
+              "gzipIfServedBytes": 3313,
+              "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/jamo.svg",
+              "bytes": 3341,
+              "gzipIfServedBytes": 1489,
+              "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/pure-acoustics.svg",
+              "bytes": 7264,
+              "gzipIfServedBytes": 2574,
+              "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 21,
+          "uncompressedBodyBytes": 375655,
+          "gzipTextBodyBytes": 248874,
+          "under350KBUncompressed": false,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/index.html",
+              "bytes": 60073,
+              "gzipIfServedBytes": 11380,
+              "sha256": "4cb7130334cf3219b4a45bb443efefefae8193dfac81203347663f644738c44f",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            },
+            {
+              "url": "/assets/media/home-concept-1200.avif",
+              "bytes": 45728,
+              "gzipIfServedBytes": 45728,
+              "sha256": "6fb8eb631d2a3e8493db23c90df04c7406a3a80f7847e36c18d08d8c7b6dea21",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1200.avif",
+              "bytes": 34341,
+              "gzipIfServedBytes": 34341,
+              "sha256": "31730c5e74fedb421749b457ab97cdd934b41b526bf03cb7579cb32d4a2a09bf",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/abb.png",
+              "bytes": 2318,
+              "gzipIfServedBytes": 2318,
+              "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/theben.svg",
+              "bytes": 1948,
+              "gzipIfServedBytes": 949,
+              "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/zennio.webp",
+              "bytes": 7690,
+              "gzipIfServedBytes": 7690,
+              "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/mdt.svg",
+              "bytes": 14892,
+              "gzipIfServedBytes": 3000,
+              "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/intesis.webp",
+              "bytes": 12890,
+              "gzipIfServedBytes": 12890,
+              "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/eae.webp",
+              "bytes": 5628,
+              "gzipIfServedBytes": 5628,
+              "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/blumotix.webp",
+              "bytes": 5622,
+              "gzipIfServedBytes": 5622,
+              "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/sation.png",
+              "bytes": 7478,
+              "gzipIfServedBytes": 7478,
+              "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/insta.svg",
+              "bytes": 805,
+              "gzipIfServedBytes": 448,
+              "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/klipsch.svg",
+              "bytes": 8116,
+              "gzipIfServedBytes": 3313,
+              "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/jamo.svg",
+              "bytes": 3341,
+              "gzipIfServedBytes": 1489,
+              "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/pure-acoustics.svg",
+              "bytes": 7264,
+              "gzipIfServedBytes": 2574,
+              "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 21,
+          "uncompressedBodyBytes": 435234,
+          "gzipTextBodyBytes": 308453,
+          "under350KBUncompressed": false,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/index.html",
+              "bytes": 60073,
+              "gzipIfServedBytes": 11380,
+              "sha256": "4cb7130334cf3219b4a45bb443efefefae8193dfac81203347663f644738c44f",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            },
+            {
+              "url": "/assets/media/home-concept-1200.webp",
+              "bytes": 82100,
+              "gzipIfServedBytes": 82100,
+              "sha256": "60b8eba775b527bddd2e4ff3816ff5394ec9335f07c7cb8800c622adb8c9d016",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1200.webp",
+              "bytes": 57548,
+              "gzipIfServedBytes": 57548,
+              "sha256": "e98c0ca86e67d3e78d8abaed54d5c4ab4ab9502846c3ab74b58b32439bc904a7",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/abb.png",
+              "bytes": 2318,
+              "gzipIfServedBytes": 2318,
+              "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/theben.svg",
+              "bytes": 1948,
+              "gzipIfServedBytes": 949,
+              "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/zennio.webp",
+              "bytes": 7690,
+              "gzipIfServedBytes": 7690,
+              "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/mdt.svg",
+              "bytes": 14892,
+              "gzipIfServedBytes": 3000,
+              "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/intesis.webp",
+              "bytes": 12890,
+              "gzipIfServedBytes": 12890,
+              "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/eae.webp",
+              "bytes": 5628,
+              "gzipIfServedBytes": 5628,
+              "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/blumotix.webp",
+              "bytes": 5622,
+              "gzipIfServedBytes": 5622,
+              "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/sation.png",
+              "bytes": 7478,
+              "gzipIfServedBytes": 7478,
+              "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/insta.svg",
+              "bytes": 805,
+              "gzipIfServedBytes": 448,
+              "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/klipsch.svg",
+              "bytes": 8116,
+              "gzipIfServedBytes": 3313,
+              "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/jamo.svg",
+              "bytes": 3341,
+              "gzipIfServedBytes": 1489,
+              "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/pure-acoustics.svg",
+              "bytes": 7264,
+              "gzipIfServedBytes": 2574,
+              "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 21,
+          "uncompressedBodyBytes": 388624,
+          "gzipTextBodyBytes": 261843,
+          "under350KBUncompressed": false,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/index.html",
+              "bytes": 60073,
+              "gzipIfServedBytes": 11380,
+              "sha256": "4cb7130334cf3219b4a45bb443efefefae8193dfac81203347663f644738c44f",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            },
+            {
+              "url": "/assets/media/home-concept-1536.avif",
+              "bytes": 64161,
+              "gzipIfServedBytes": 64161,
+              "sha256": "12a54456f3843b59d7a91b57110d636b76e1b296af5e5d25da688b08943ce02e",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1536.avif",
+              "bytes": 52649,
+              "gzipIfServedBytes": 52649,
+              "sha256": "192aa3e1d48f9559e4b17d6f1e01aae15538d7df38fbbf1402a4c241e1697403",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/abb.png",
+              "bytes": 2318,
+              "gzipIfServedBytes": 2318,
+              "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/theben.svg",
+              "bytes": 1948,
+              "gzipIfServedBytes": 949,
+              "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/zennio.webp",
+              "bytes": 7690,
+              "gzipIfServedBytes": 7690,
+              "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/mdt.svg",
+              "bytes": 14892,
+              "gzipIfServedBytes": 3000,
+              "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/intesis.webp",
+              "bytes": 12890,
+              "gzipIfServedBytes": 12890,
+              "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/eae.webp",
+              "bytes": 5628,
+              "gzipIfServedBytes": 5628,
+              "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/blumotix.webp",
+              "bytes": 5622,
+              "gzipIfServedBytes": 5622,
+              "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/sation.png",
+              "bytes": 7478,
+              "gzipIfServedBytes": 7478,
+              "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/insta.svg",
+              "bytes": 805,
+              "gzipIfServedBytes": 448,
+              "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/klipsch.svg",
+              "bytes": 8116,
+              "gzipIfServedBytes": 3313,
+              "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/jamo.svg",
+              "bytes": 3341,
+              "gzipIfServedBytes": 1489,
+              "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/pure-acoustics.svg",
+              "bytes": 7264,
+              "gzipIfServedBytes": 2574,
+              "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 23,
+        "uncompressedBodyBytes": 709480,
+        "gzipTextBodyBytes": 582699,
+        "under350KBUncompressed": false,
+        "under350KBGzipText": false
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "AI-generated concept: a couple using a phone together in a naturally lit living room",
+          "loading": "eager",
+          "candidateCount": 8,
+          "largestCandidate": {
+            "url": "/assets/media/home-concept-1536.webp",
+            "bytes": 112240,
+            "gzipIfServedBytes": 112240,
+            "sha256": "059ca851d43c3954a5f2c7628ca2960c85618a46e99929efbcb2d6593b5252ef",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/media/home-concept-768.avif",
+            "modernMobile390Dpr3": "/assets/media/home-concept-1200.avif",
+            "webpMobile390Dpr3": "/assets/media/home-concept-1200.webp",
+            "modernDesktop1280Dpr2": "/assets/media/home-concept-1536.avif"
+          }
+        },
+        {
+          "alt": "AI-generated concept: a couple using a phone together in a naturally lit living room",
+          "loading": "lazy",
+          "candidateCount": 8,
+          "largestCandidate": {
+            "url": "/assets/media/home-concept-1536.webp",
+            "bytes": 112240,
+            "gzipIfServedBytes": 112240,
+            "sha256": "059ca851d43c3954a5f2c7628ca2960c85618a46e99929efbcb2d6593b5252ef",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/media/home-concept-768.avif",
+            "modernMobile390Dpr3": "/assets/media/home-concept-1200.avif",
+            "webpMobile390Dpr3": "/assets/media/home-concept-1200.webp",
+            "modernDesktop1280Dpr2": "/assets/media/home-concept-1536.avif"
+          }
+        },
+        {
+          "alt": "AI-generated concept: two people watching a film in a home cinema",
+          "loading": "lazy",
+          "candidateCount": 8,
+          "largestCandidate": {
+            "url": "/assets/media/cinema-concept-1536.webp",
+            "bytes": 86958,
+            "gzipIfServedBytes": 86958,
+            "sha256": "1bd41ea4d12e313a1878ac05b208e911efb061f8eb9890c5369e9f6df4969c58",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/media/cinema-concept-768.avif",
+            "modernMobile390Dpr3": "/assets/media/cinema-concept-1200.avif",
+            "webpMobile390Dpr3": "/assets/media/cinema-concept-1200.webp",
+            "modernDesktop1280Dpr2": "/assets/media/cinema-concept-1536.avif"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "ABB",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/abb.png",
+            "bytes": 2318,
+            "gzipIfServedBytes": 2318,
+            "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/abb.png",
+            "modernMobile390Dpr3": "/assets/brands/abb.png",
+            "webpMobile390Dpr3": "/assets/brands/abb.png",
+            "modernDesktop1280Dpr2": "/assets/brands/abb.png"
+          }
+        },
+        {
+          "alt": "Theben",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/theben.svg",
+            "bytes": 1948,
+            "gzipIfServedBytes": 949,
+            "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/theben.svg",
+            "modernMobile390Dpr3": "/assets/brands/theben.svg",
+            "webpMobile390Dpr3": "/assets/brands/theben.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/theben.svg"
+          }
+        },
+        {
+          "alt": "Zennio",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/zennio.webp",
+            "bytes": 7690,
+            "gzipIfServedBytes": 7690,
+            "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/zennio.webp",
+            "modernMobile390Dpr3": "/assets/brands/zennio.webp",
+            "webpMobile390Dpr3": "/assets/brands/zennio.webp",
+            "modernDesktop1280Dpr2": "/assets/brands/zennio.webp"
+          }
+        },
+        {
+          "alt": "MDT",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/mdt.svg",
+            "bytes": 14892,
+            "gzipIfServedBytes": 3000,
+            "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/mdt.svg",
+            "modernMobile390Dpr3": "/assets/brands/mdt.svg",
+            "webpMobile390Dpr3": "/assets/brands/mdt.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/mdt.svg"
+          }
+        },
+        {
+          "alt": "Intesis",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/intesis.webp",
+            "bytes": 12890,
+            "gzipIfServedBytes": 12890,
+            "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/intesis.webp",
+            "modernMobile390Dpr3": "/assets/brands/intesis.webp",
+            "webpMobile390Dpr3": "/assets/brands/intesis.webp",
+            "modernDesktop1280Dpr2": "/assets/brands/intesis.webp"
+          }
+        },
+        {
+          "alt": "EAE",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/eae.webp",
+            "bytes": 5628,
+            "gzipIfServedBytes": 5628,
+            "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/eae.webp",
+            "modernMobile390Dpr3": "/assets/brands/eae.webp",
+            "webpMobile390Dpr3": "/assets/brands/eae.webp",
+            "modernDesktop1280Dpr2": "/assets/brands/eae.webp"
+          }
+        },
+        {
+          "alt": "Blumotix",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/blumotix.webp",
+            "bytes": 5622,
+            "gzipIfServedBytes": 5622,
+            "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/blumotix.webp",
+            "modernMobile390Dpr3": "/assets/brands/blumotix.webp",
+            "webpMobile390Dpr3": "/assets/brands/blumotix.webp",
+            "modernDesktop1280Dpr2": "/assets/brands/blumotix.webp"
+          }
+        },
+        {
+          "alt": "SATION",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/sation.png",
+            "bytes": 7478,
+            "gzipIfServedBytes": 7478,
+            "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/sation.png",
+            "modernMobile390Dpr3": "/assets/brands/sation.png",
+            "webpMobile390Dpr3": "/assets/brands/sation.png",
+            "modernDesktop1280Dpr2": "/assets/brands/sation.png"
+          }
+        },
+        {
+          "alt": "INSTA",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/insta.svg",
+            "bytes": 805,
+            "gzipIfServedBytes": 448,
+            "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/insta.svg",
+            "modernMobile390Dpr3": "/assets/brands/insta.svg",
+            "webpMobile390Dpr3": "/assets/brands/insta.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/insta.svg"
+          }
+        },
+        {
+          "alt": "Klipsch",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/klipsch.svg",
+            "bytes": 8116,
+            "gzipIfServedBytes": 3313,
+            "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/klipsch.svg",
+            "modernMobile390Dpr3": "/assets/brands/klipsch.svg",
+            "webpMobile390Dpr3": "/assets/brands/klipsch.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/klipsch.svg"
+          }
+        },
+        {
+          "alt": "Jamo",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/jamo.svg",
+            "bytes": 3341,
+            "gzipIfServedBytes": 1489,
+            "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/jamo.svg",
+            "modernMobile390Dpr3": "/assets/brands/jamo.svg",
+            "webpMobile390Dpr3": "/assets/brands/jamo.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/jamo.svg"
+          }
+        },
+        {
+          "alt": "Pure Acoustics",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/pure-acoustics.svg",
+            "bytes": 7264,
+            "gzipIfServedBytes": 2574,
+            "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/pure-acoustics.svg",
+            "modernMobile390Dpr3": "/assets/brands/pure-acoustics.svg",
+            "webpMobile390Dpr3": "/assets/brands/pure-acoustics.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/pure-acoustics.svg"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/smart-home-cinema/",
+      "htmlSha256": "e3fca6fbbbb32e59d127f9f2795aac85e61e6e8b0d9578c9ac45e73d6b1e66e1",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 187226,
+      "manufacturerLogoCount": 12,
+      "manufacturerLogoRawBytes": 77992,
+      "imageOccurrences": 16,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 21,
+          "uncompressedBodyBytes": 299764,
+          "gzipTextBodyBytes": 184686,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/smart-home-cinema/index.html",
+              "bytes": 47846,
+              "gzipIfServedBytes": 10856,
+              "sha256": "e3fca6fbbbb32e59d127f9f2795aac85e61e6e8b0d9578c9ac45e73d6b1e66e1",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            },
+            {
+              "url": "/assets/media/home-concept-768.avif",
+              "bytes": 24444,
+              "gzipIfServedBytes": 24444,
+              "sha256": "48f8146bb9ad15707ffbe3381aa72a31a281ce34648257e039f3dad9c67d10ef",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-768.avif",
+              "bytes": 15733,
+              "gzipIfServedBytes": 15733,
+              "sha256": "28990fbc12b73490e4517d0c96d0b720f819ac0b9c0278112708073fdde69f17",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/abb.png",
+              "bytes": 2318,
+              "gzipIfServedBytes": 2318,
+              "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/theben.svg",
+              "bytes": 1948,
+              "gzipIfServedBytes": 949,
+              "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/zennio.webp",
+              "bytes": 7690,
+              "gzipIfServedBytes": 7690,
+              "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/mdt.svg",
+              "bytes": 14892,
+              "gzipIfServedBytes": 3000,
+              "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/intesis.webp",
+              "bytes": 12890,
+              "gzipIfServedBytes": 12890,
+              "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/eae.webp",
+              "bytes": 5628,
+              "gzipIfServedBytes": 5628,
+              "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/blumotix.webp",
+              "bytes": 5622,
+              "gzipIfServedBytes": 5622,
+              "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/sation.png",
+              "bytes": 7478,
+              "gzipIfServedBytes": 7478,
+              "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/insta.svg",
+              "bytes": 805,
+              "gzipIfServedBytes": 448,
+              "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/klipsch.svg",
+              "bytes": 8116,
+              "gzipIfServedBytes": 3313,
+              "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/jamo.svg",
+              "bytes": 3341,
+              "gzipIfServedBytes": 1489,
+              "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/pure-acoustics.svg",
+              "bytes": 7264,
+              "gzipIfServedBytes": 2574,
+              "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 21,
+          "uncompressedBodyBytes": 363428,
+          "gzipTextBodyBytes": 248350,
+          "under350KBUncompressed": false,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/smart-home-cinema/index.html",
+              "bytes": 47846,
+              "gzipIfServedBytes": 10856,
+              "sha256": "e3fca6fbbbb32e59d127f9f2795aac85e61e6e8b0d9578c9ac45e73d6b1e66e1",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            },
+            {
+              "url": "/assets/media/home-concept-1200.avif",
+              "bytes": 45728,
+              "gzipIfServedBytes": 45728,
+              "sha256": "6fb8eb631d2a3e8493db23c90df04c7406a3a80f7847e36c18d08d8c7b6dea21",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1200.avif",
+              "bytes": 34341,
+              "gzipIfServedBytes": 34341,
+              "sha256": "31730c5e74fedb421749b457ab97cdd934b41b526bf03cb7579cb32d4a2a09bf",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/abb.png",
+              "bytes": 2318,
+              "gzipIfServedBytes": 2318,
+              "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/theben.svg",
+              "bytes": 1948,
+              "gzipIfServedBytes": 949,
+              "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/zennio.webp",
+              "bytes": 7690,
+              "gzipIfServedBytes": 7690,
+              "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/mdt.svg",
+              "bytes": 14892,
+              "gzipIfServedBytes": 3000,
+              "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/intesis.webp",
+              "bytes": 12890,
+              "gzipIfServedBytes": 12890,
+              "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/eae.webp",
+              "bytes": 5628,
+              "gzipIfServedBytes": 5628,
+              "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/blumotix.webp",
+              "bytes": 5622,
+              "gzipIfServedBytes": 5622,
+              "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/sation.png",
+              "bytes": 7478,
+              "gzipIfServedBytes": 7478,
+              "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/insta.svg",
+              "bytes": 805,
+              "gzipIfServedBytes": 448,
+              "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/klipsch.svg",
+              "bytes": 8116,
+              "gzipIfServedBytes": 3313,
+              "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/jamo.svg",
+              "bytes": 3341,
+              "gzipIfServedBytes": 1489,
+              "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/pure-acoustics.svg",
+              "bytes": 7264,
+              "gzipIfServedBytes": 2574,
+              "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 21,
+          "uncompressedBodyBytes": 423007,
+          "gzipTextBodyBytes": 307929,
+          "under350KBUncompressed": false,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/smart-home-cinema/index.html",
+              "bytes": 47846,
+              "gzipIfServedBytes": 10856,
+              "sha256": "e3fca6fbbbb32e59d127f9f2795aac85e61e6e8b0d9578c9ac45e73d6b1e66e1",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            },
+            {
+              "url": "/assets/media/home-concept-1200.webp",
+              "bytes": 82100,
+              "gzipIfServedBytes": 82100,
+              "sha256": "60b8eba775b527bddd2e4ff3816ff5394ec9335f07c7cb8800c622adb8c9d016",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1200.webp",
+              "bytes": 57548,
+              "gzipIfServedBytes": 57548,
+              "sha256": "e98c0ca86e67d3e78d8abaed54d5c4ab4ab9502846c3ab74b58b32439bc904a7",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/abb.png",
+              "bytes": 2318,
+              "gzipIfServedBytes": 2318,
+              "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/theben.svg",
+              "bytes": 1948,
+              "gzipIfServedBytes": 949,
+              "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/zennio.webp",
+              "bytes": 7690,
+              "gzipIfServedBytes": 7690,
+              "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/mdt.svg",
+              "bytes": 14892,
+              "gzipIfServedBytes": 3000,
+              "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/intesis.webp",
+              "bytes": 12890,
+              "gzipIfServedBytes": 12890,
+              "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/eae.webp",
+              "bytes": 5628,
+              "gzipIfServedBytes": 5628,
+              "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/blumotix.webp",
+              "bytes": 5622,
+              "gzipIfServedBytes": 5622,
+              "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/sation.png",
+              "bytes": 7478,
+              "gzipIfServedBytes": 7478,
+              "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/insta.svg",
+              "bytes": 805,
+              "gzipIfServedBytes": 448,
+              "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/klipsch.svg",
+              "bytes": 8116,
+              "gzipIfServedBytes": 3313,
+              "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/jamo.svg",
+              "bytes": 3341,
+              "gzipIfServedBytes": 1489,
+              "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/pure-acoustics.svg",
+              "bytes": 7264,
+              "gzipIfServedBytes": 2574,
+              "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 21,
+          "uncompressedBodyBytes": 376397,
+          "gzipTextBodyBytes": 261319,
+          "under350KBUncompressed": false,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/smart-home-cinema/index.html",
+              "bytes": 47846,
+              "gzipIfServedBytes": 10856,
+              "sha256": "e3fca6fbbbb32e59d127f9f2795aac85e61e6e8b0d9578c9ac45e73d6b1e66e1",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            },
+            {
+              "url": "/assets/media/home-concept-1536.avif",
+              "bytes": 64161,
+              "gzipIfServedBytes": 64161,
+              "sha256": "12a54456f3843b59d7a91b57110d636b76e1b296af5e5d25da688b08943ce02e",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1536.avif",
+              "bytes": 52649,
+              "gzipIfServedBytes": 52649,
+              "sha256": "192aa3e1d48f9559e4b17d6f1e01aae15538d7df38fbbf1402a4c241e1697403",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/abb.png",
+              "bytes": 2318,
+              "gzipIfServedBytes": 2318,
+              "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/theben.svg",
+              "bytes": 1948,
+              "gzipIfServedBytes": 949,
+              "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/zennio.webp",
+              "bytes": 7690,
+              "gzipIfServedBytes": 7690,
+              "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/mdt.svg",
+              "bytes": 14892,
+              "gzipIfServedBytes": 3000,
+              "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/intesis.webp",
+              "bytes": 12890,
+              "gzipIfServedBytes": 12890,
+              "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/eae.webp",
+              "bytes": 5628,
+              "gzipIfServedBytes": 5628,
+              "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/blumotix.webp",
+              "bytes": 5622,
+              "gzipIfServedBytes": 5622,
+              "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/sation.png",
+              "bytes": 7478,
+              "gzipIfServedBytes": 7478,
+              "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/insta.svg",
+              "bytes": 805,
+              "gzipIfServedBytes": 448,
+              "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/klipsch.svg",
+              "bytes": 8116,
+              "gzipIfServedBytes": 3313,
+              "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/jamo.svg",
+              "bytes": 3341,
+              "gzipIfServedBytes": 1489,
+              "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+              "font": false
+            },
+            {
+              "url": "/assets/brands/pure-acoustics.svg",
+              "bytes": 7264,
+              "gzipIfServedBytes": 2574,
+              "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 22,
+        "uncompressedBodyBytes": 585013,
+        "gzipTextBodyBytes": 469935,
+        "under350KBUncompressed": false,
+        "under350KBGzipText": false
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "AI-generated concept: a couple using a phone together in a naturally lit living room",
+          "loading": "eager",
+          "candidateCount": 8,
+          "largestCandidate": {
+            "url": "/assets/media/home-concept-1536.webp",
+            "bytes": 112240,
+            "gzipIfServedBytes": 112240,
+            "sha256": "059ca851d43c3954a5f2c7628ca2960c85618a46e99929efbcb2d6593b5252ef",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/media/home-concept-768.avif",
+            "modernMobile390Dpr3": "/assets/media/home-concept-1200.avif",
+            "webpMobile390Dpr3": "/assets/media/home-concept-1200.webp",
+            "modernDesktop1280Dpr2": "/assets/media/home-concept-1536.avif"
+          }
+        },
+        {
+          "alt": "AI-generated concept: two people watching a film in a home cinema",
+          "loading": "lazy",
+          "candidateCount": 8,
+          "largestCandidate": {
+            "url": "/assets/media/cinema-concept-1536.webp",
+            "bytes": 86958,
+            "gzipIfServedBytes": 86958,
+            "sha256": "1bd41ea4d12e313a1878ac05b208e911efb061f8eb9890c5369e9f6df4969c58",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/media/cinema-concept-768.avif",
+            "modernMobile390Dpr3": "/assets/media/cinema-concept-1200.avif",
+            "webpMobile390Dpr3": "/assets/media/cinema-concept-1200.webp",
+            "modernDesktop1280Dpr2": "/assets/media/cinema-concept-1536.avif"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "ABB",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/abb.png",
+            "bytes": 2318,
+            "gzipIfServedBytes": 2318,
+            "sha256": "3766300f4734f69abb86525cfdb63f7db930378c82eb2c3ae6ff27618a289bb5",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/abb.png",
+            "modernMobile390Dpr3": "/assets/brands/abb.png",
+            "webpMobile390Dpr3": "/assets/brands/abb.png",
+            "modernDesktop1280Dpr2": "/assets/brands/abb.png"
+          }
+        },
+        {
+          "alt": "Theben",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/theben.svg",
+            "bytes": 1948,
+            "gzipIfServedBytes": 949,
+            "sha256": "4a5eed126374949308dc80fcdde9d23c519606db68e3823255d3479695a8f824",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/theben.svg",
+            "modernMobile390Dpr3": "/assets/brands/theben.svg",
+            "webpMobile390Dpr3": "/assets/brands/theben.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/theben.svg"
+          }
+        },
+        {
+          "alt": "Zennio",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/zennio.webp",
+            "bytes": 7690,
+            "gzipIfServedBytes": 7690,
+            "sha256": "875f4da92d59a1156d0952fbde02838eae8d9cafd1d14773a66b34d5f589be64",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/zennio.webp",
+            "modernMobile390Dpr3": "/assets/brands/zennio.webp",
+            "webpMobile390Dpr3": "/assets/brands/zennio.webp",
+            "modernDesktop1280Dpr2": "/assets/brands/zennio.webp"
+          }
+        },
+        {
+          "alt": "MDT",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/mdt.svg",
+            "bytes": 14892,
+            "gzipIfServedBytes": 3000,
+            "sha256": "c4749b63eff73326e96aebe49aaf16fba35f2724e4153aebecc2d0d89abb602f",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/mdt.svg",
+            "modernMobile390Dpr3": "/assets/brands/mdt.svg",
+            "webpMobile390Dpr3": "/assets/brands/mdt.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/mdt.svg"
+          }
+        },
+        {
+          "alt": "Intesis",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/intesis.webp",
+            "bytes": 12890,
+            "gzipIfServedBytes": 12890,
+            "sha256": "a6a6401013af4dba0f264257410a06d9a42b168875556f1f483a37febdc7d134",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/intesis.webp",
+            "modernMobile390Dpr3": "/assets/brands/intesis.webp",
+            "webpMobile390Dpr3": "/assets/brands/intesis.webp",
+            "modernDesktop1280Dpr2": "/assets/brands/intesis.webp"
+          }
+        },
+        {
+          "alt": "EAE",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/eae.webp",
+            "bytes": 5628,
+            "gzipIfServedBytes": 5628,
+            "sha256": "ee1d6e289a1b6149cc7c322cd31a45ee1681bf249c70c83ed40d7a3bd444ce15",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/eae.webp",
+            "modernMobile390Dpr3": "/assets/brands/eae.webp",
+            "webpMobile390Dpr3": "/assets/brands/eae.webp",
+            "modernDesktop1280Dpr2": "/assets/brands/eae.webp"
+          }
+        },
+        {
+          "alt": "Blumotix",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/blumotix.webp",
+            "bytes": 5622,
+            "gzipIfServedBytes": 5622,
+            "sha256": "3e3d9d194abc9bd5be8fae1d0d364febc379d12c2ede856d5e29f6ed7164ccd8",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/blumotix.webp",
+            "modernMobile390Dpr3": "/assets/brands/blumotix.webp",
+            "webpMobile390Dpr3": "/assets/brands/blumotix.webp",
+            "modernDesktop1280Dpr2": "/assets/brands/blumotix.webp"
+          }
+        },
+        {
+          "alt": "SATION",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/sation.png",
+            "bytes": 7478,
+            "gzipIfServedBytes": 7478,
+            "sha256": "0492b63da38fd44384969c2e5fe65d0bd62d7118c587576b50cc4a5c856c1180",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/sation.png",
+            "modernMobile390Dpr3": "/assets/brands/sation.png",
+            "webpMobile390Dpr3": "/assets/brands/sation.png",
+            "modernDesktop1280Dpr2": "/assets/brands/sation.png"
+          }
+        },
+        {
+          "alt": "INSTA",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/insta.svg",
+            "bytes": 805,
+            "gzipIfServedBytes": 448,
+            "sha256": "5b1779b481b2d086011288529a9b61ec3bafb1eaf70421c27725caecad3e6a6c",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/insta.svg",
+            "modernMobile390Dpr3": "/assets/brands/insta.svg",
+            "webpMobile390Dpr3": "/assets/brands/insta.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/insta.svg"
+          }
+        },
+        {
+          "alt": "Klipsch",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/klipsch.svg",
+            "bytes": 8116,
+            "gzipIfServedBytes": 3313,
+            "sha256": "cc9c6d77342ee8afb28575618c66b20ef6dced1e6fc6620206df880fd1e5e392",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/klipsch.svg",
+            "modernMobile390Dpr3": "/assets/brands/klipsch.svg",
+            "webpMobile390Dpr3": "/assets/brands/klipsch.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/klipsch.svg"
+          }
+        },
+        {
+          "alt": "Jamo",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/jamo.svg",
+            "bytes": 3341,
+            "gzipIfServedBytes": 1489,
+            "sha256": "57cb3f227887e37e997d0955f20e970edb1e912e89f19edab8f24abbff0eac32",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/jamo.svg",
+            "modernMobile390Dpr3": "/assets/brands/jamo.svg",
+            "webpMobile390Dpr3": "/assets/brands/jamo.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/jamo.svg"
+          }
+        },
+        {
+          "alt": "Pure Acoustics",
+          "loading": "lazy",
+          "candidateCount": 1,
+          "largestCandidate": {
+            "url": "/assets/brands/pure-acoustics.svg",
+            "bytes": 7264,
+            "gzipIfServedBytes": 2574,
+            "sha256": "e2a8cbc4408fecc2c1b99f4e16a4f6ab28f468bb191374dcdc86781febe764be",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/brands/pure-acoustics.svg",
+            "modernMobile390Dpr3": "/assets/brands/pure-acoustics.svg",
+            "webpMobile390Dpr3": "/assets/brands/pure-acoustics.svg",
+            "modernDesktop1280Dpr2": "/assets/brands/pure-acoustics.svg"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/cinema-revival/",
+      "htmlSha256": "7b6b02c5afb400deac27d4b4dc03d299f8e36fe37620b36405548d5f60e79169",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 160750,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 3,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 8,
+          "uncompressedBodyBytes": 179563,
+          "gzipTextBodyBytes": 103065,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/cinema-revival/index.html",
+              "bytes": 30081,
+              "gzipIfServedBytes": 7078,
+              "sha256": "7b6b02c5afb400deac27d4b4dc03d299f8e36fe37620b36405548d5f60e79169",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-768.avif",
+              "bytes": 15733,
+              "gzipIfServedBytes": 15733,
+              "sha256": "28990fbc12b73490e4517d0c96d0b720f819ac0b9c0278112708073fdde69f17",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 8,
+          "uncompressedBodyBytes": 221943,
+          "gzipTextBodyBytes": 145445,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/cinema-revival/index.html",
+              "bytes": 30081,
+              "gzipIfServedBytes": 7078,
+              "sha256": "7b6b02c5afb400deac27d4b4dc03d299f8e36fe37620b36405548d5f60e79169",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1200.avif",
+              "bytes": 34341,
+              "gzipIfServedBytes": 34341,
+              "sha256": "31730c5e74fedb421749b457ab97cdd934b41b526bf03cb7579cb32d4a2a09bf",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 8,
+          "uncompressedBodyBytes": 245150,
+          "gzipTextBodyBytes": 168652,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/cinema-revival/index.html",
+              "bytes": 30081,
+              "gzipIfServedBytes": 7078,
+              "sha256": "7b6b02c5afb400deac27d4b4dc03d299f8e36fe37620b36405548d5f60e79169",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1200.webp",
+              "bytes": 57548,
+              "gzipIfServedBytes": 57548,
+              "sha256": "e98c0ca86e67d3e78d8abaed54d5c4ab4ab9502846c3ab74b58b32439bc904a7",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 8,
+          "uncompressedBodyBytes": 216479,
+          "gzipTextBodyBytes": 139981,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/cinema-revival/index.html",
+              "bytes": 30081,
+              "gzipIfServedBytes": 7078,
+              "sha256": "7b6b02c5afb400deac27d4b4dc03d299f8e36fe37620b36405548d5f60e79169",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            },
+            {
+              "url": "/assets/media/cinema-concept-1536.avif",
+              "bytes": 52649,
+              "gzipIfServedBytes": 52649,
+              "sha256": "192aa3e1d48f9559e4b17d6f1e01aae15538d7df38fbbf1402a4c241e1697403",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 9,
+        "uncompressedBodyBytes": 377016,
+        "gzipTextBodyBytes": 300518,
+        "under350KBUncompressed": false,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "AI-generated concept: two people watching a film in a home cinema",
+          "loading": "eager",
+          "candidateCount": 8,
+          "largestCandidate": {
+            "url": "/assets/media/cinema-concept-1536.webp",
+            "bytes": 86958,
+            "gzipIfServedBytes": 86958,
+            "sha256": "1bd41ea4d12e313a1878ac05b208e911efb061f8eb9890c5369e9f6df4969c58",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/media/cinema-concept-768.avif",
+            "modernMobile390Dpr3": "/assets/media/cinema-concept-1200.avif",
+            "webpMobile390Dpr3": "/assets/media/cinema-concept-1200.webp",
+            "modernDesktop1280Dpr2": "/assets/media/cinema-concept-1536.avif"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/commercial-audio/",
+      "htmlSha256": "5acaf2349f266cdfc2f085c78fb7a499194065dc13080dd0f59695feb187fd5b",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 147360,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 166362,
+          "gzipTextBodyBytes": 88116,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/commercial-audio/index.html",
+              "bytes": 32613,
+              "gzipIfServedBytes": 7862,
+              "sha256": "5acaf2349f266cdfc2f085c78fb7a499194065dc13080dd0f59695feb187fd5b",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 190134,
+          "gzipTextBodyBytes": 111888,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/commercial-audio/index.html",
+              "bytes": 32613,
+              "gzipIfServedBytes": 7862,
+              "sha256": "5acaf2349f266cdfc2f085c78fb7a499194065dc13080dd0f59695feb187fd5b",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 190134,
+          "gzipTextBodyBytes": 111888,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/commercial-audio/index.html",
+              "bytes": 32613,
+              "gzipIfServedBytes": 7862,
+              "sha256": "5acaf2349f266cdfc2f085c78fb7a499194065dc13080dd0f59695feb187fd5b",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 166362,
+          "gzipTextBodyBytes": 88116,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/commercial-audio/index.html",
+              "bytes": 32613,
+              "gzipIfServedBytes": 7862,
+              "sha256": "5acaf2349f266cdfc2f085c78fb7a499194065dc13080dd0f59695feb187fd5b",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 292590,
+        "gzipTextBodyBytes": 214344,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/business-software/",
+      "htmlSha256": "4f178b6897922f802c839843ca52361f372e9c8dee26d306a34e0e2d52723574",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 149803,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 168805,
+          "gzipTextBodyBytes": 87634,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/business-software/index.html",
+              "bytes": 35056,
+              "gzipIfServedBytes": 7380,
+              "sha256": "4f178b6897922f802c839843ca52361f372e9c8dee26d306a34e0e2d52723574",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 192577,
+          "gzipTextBodyBytes": 111406,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/business-software/index.html",
+              "bytes": 35056,
+              "gzipIfServedBytes": 7380,
+              "sha256": "4f178b6897922f802c839843ca52361f372e9c8dee26d306a34e0e2d52723574",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 192577,
+          "gzipTextBodyBytes": 111406,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/business-software/index.html",
+              "bytes": 35056,
+              "gzipIfServedBytes": 7380,
+              "sha256": "4f178b6897922f802c839843ca52361f372e9c8dee26d306a34e0e2d52723574",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 168805,
+          "gzipTextBodyBytes": 87634,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/business-software/index.html",
+              "bytes": 35056,
+              "gzipIfServedBytes": 7380,
+              "sha256": "4f178b6897922f802c839843ca52361f372e9c8dee26d306a34e0e2d52723574",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 295033,
+        "gzipTextBodyBytes": 213862,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/contact/",
+      "htmlSha256": "b849835b401cae82fb5e09c271ed42c13560ef54e17b7b2c7a0070d31d0d7d88",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 133511,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 152513,
+          "gzipTextBodyBytes": 85180,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/contact/index.html",
+              "bytes": 18764,
+              "gzipIfServedBytes": 4926,
+              "sha256": "b849835b401cae82fb5e09c271ed42c13560ef54e17b7b2c7a0070d31d0d7d88",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 176285,
+          "gzipTextBodyBytes": 108952,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/contact/index.html",
+              "bytes": 18764,
+              "gzipIfServedBytes": 4926,
+              "sha256": "b849835b401cae82fb5e09c271ed42c13560ef54e17b7b2c7a0070d31d0d7d88",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 176285,
+          "gzipTextBodyBytes": 108952,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/contact/index.html",
+              "bytes": 18764,
+              "gzipIfServedBytes": 4926,
+              "sha256": "b849835b401cae82fb5e09c271ed42c13560ef54e17b7b2c7a0070d31d0d7d88",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 152513,
+          "gzipTextBodyBytes": 85180,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/contact/index.html",
+              "bytes": 18764,
+              "gzipIfServedBytes": 4926,
+              "sha256": "b849835b401cae82fb5e09c271ed42c13560ef54e17b7b2c7a0070d31d0d7d88",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 278741,
+        "gzipTextBodyBytes": 211408,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/privacy/",
+      "htmlSha256": "47329af6bed409d80435b643e1b87d51997c6fbf4111d3ad78ea03ba425c1d6a",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 128574,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 147576,
+          "gzipTextBodyBytes": 84293,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/privacy/index.html",
+              "bytes": 13827,
+              "gzipIfServedBytes": 4039,
+              "sha256": "47329af6bed409d80435b643e1b87d51997c6fbf4111d3ad78ea03ba425c1d6a",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 171348,
+          "gzipTextBodyBytes": 108065,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/privacy/index.html",
+              "bytes": 13827,
+              "gzipIfServedBytes": 4039,
+              "sha256": "47329af6bed409d80435b643e1b87d51997c6fbf4111d3ad78ea03ba425c1d6a",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 171348,
+          "gzipTextBodyBytes": 108065,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/privacy/index.html",
+              "bytes": 13827,
+              "gzipIfServedBytes": 4039,
+              "sha256": "47329af6bed409d80435b643e1b87d51997c6fbf4111d3ad78ea03ba425c1d6a",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 147576,
+          "gzipTextBodyBytes": 84293,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/privacy/index.html",
+              "bytes": 13827,
+              "gzipIfServedBytes": 4039,
+              "sha256": "47329af6bed409d80435b643e1b87d51997c6fbf4111d3ad78ea03ba425c1d6a",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 273804,
+        "gzipTextBodyBytes": 210521,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/about/",
+      "htmlSha256": "59d27e52f3ba3dadd9c1235a3ab8b17f7b89f9455148df33df25d3eb4cfe2d20",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 129841,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 148843,
+          "gzipTextBodyBytes": 84251,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/about/index.html",
+              "bytes": 15094,
+              "gzipIfServedBytes": 3997,
+              "sha256": "59d27e52f3ba3dadd9c1235a3ab8b17f7b89f9455148df33df25d3eb4cfe2d20",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 172615,
+          "gzipTextBodyBytes": 108023,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/about/index.html",
+              "bytes": 15094,
+              "gzipIfServedBytes": 3997,
+              "sha256": "59d27e52f3ba3dadd9c1235a3ab8b17f7b89f9455148df33df25d3eb4cfe2d20",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 172615,
+          "gzipTextBodyBytes": 108023,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/about/index.html",
+              "bytes": 15094,
+              "gzipIfServedBytes": 3997,
+              "sha256": "59d27e52f3ba3dadd9c1235a3ab8b17f7b89f9455148df33df25d3eb4cfe2d20",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 148843,
+          "gzipTextBodyBytes": 84251,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/about/index.html",
+              "bytes": 15094,
+              "gzipIfServedBytes": 3997,
+              "sha256": "59d27e52f3ba3dadd9c1235a3ab8b17f7b89f9455148df33df25d3eb4cfe2d20",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 275071,
+        "gzipTextBodyBytes": 210479,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/terms/",
+      "htmlSha256": "6db1080d52e7a15b8ccb86c302e9adc7d1a1e45e5ae7a0551544eeacc1fb1637",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 133211,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 152213,
+          "gzipTextBodyBytes": 85646,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/terms/index.html",
+              "bytes": 18464,
+              "gzipIfServedBytes": 5392,
+              "sha256": "6db1080d52e7a15b8ccb86c302e9adc7d1a1e45e5ae7a0551544eeacc1fb1637",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 175985,
+          "gzipTextBodyBytes": 109418,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/terms/index.html",
+              "bytes": 18464,
+              "gzipIfServedBytes": 5392,
+              "sha256": "6db1080d52e7a15b8ccb86c302e9adc7d1a1e45e5ae7a0551544eeacc1fb1637",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 175985,
+          "gzipTextBodyBytes": 109418,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/terms/index.html",
+              "bytes": 18464,
+              "gzipIfServedBytes": 5392,
+              "sha256": "6db1080d52e7a15b8ccb86c302e9adc7d1a1e45e5ae7a0551544eeacc1fb1637",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 152213,
+          "gzipTextBodyBytes": 85646,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/terms/index.html",
+              "bytes": 18464,
+              "gzipIfServedBytes": 5392,
+              "sha256": "6db1080d52e7a15b8ccb86c302e9adc7d1a1e45e5ae7a0551544eeacc1fb1637",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 278441,
+        "gzipTextBodyBytes": 211874,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/refunds/",
+      "htmlSha256": "f54ee42bc4efcf817fd7f28f594c4a800824c2f6a5fa655b01ce8bfdf4157040",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 135789,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 154791,
+          "gzipTextBodyBytes": 86659,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/refunds/index.html",
+              "bytes": 21042,
+              "gzipIfServedBytes": 6405,
+              "sha256": "f54ee42bc4efcf817fd7f28f594c4a800824c2f6a5fa655b01ce8bfdf4157040",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 178563,
+          "gzipTextBodyBytes": 110431,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/refunds/index.html",
+              "bytes": 21042,
+              "gzipIfServedBytes": 6405,
+              "sha256": "f54ee42bc4efcf817fd7f28f594c4a800824c2f6a5fa655b01ce8bfdf4157040",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 178563,
+          "gzipTextBodyBytes": 110431,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/refunds/index.html",
+              "bytes": 21042,
+              "gzipIfServedBytes": 6405,
+              "sha256": "f54ee42bc4efcf817fd7f28f594c4a800824c2f6a5fa655b01ce8bfdf4157040",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 154791,
+          "gzipTextBodyBytes": 86659,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/refunds/index.html",
+              "bytes": 21042,
+              "gzipIfServedBytes": 6405,
+              "sha256": "f54ee42bc4efcf817fd7f28f594c4a800824c2f6a5fa655b01ce8bfdf4157040",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 281019,
+        "gzipTextBodyBytes": 212887,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/shipping/",
+      "htmlSha256": "4ec0604ed01be14d9547c3ef94d4aad2ccd2509d9520407284b72911f57e9cee",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 132029,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 151031,
+          "gzipTextBodyBytes": 85261,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/shipping/index.html",
+              "bytes": 17282,
+              "gzipIfServedBytes": 5007,
+              "sha256": "4ec0604ed01be14d9547c3ef94d4aad2ccd2509d9520407284b72911f57e9cee",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 174803,
+          "gzipTextBodyBytes": 109033,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/shipping/index.html",
+              "bytes": 17282,
+              "gzipIfServedBytes": 5007,
+              "sha256": "4ec0604ed01be14d9547c3ef94d4aad2ccd2509d9520407284b72911f57e9cee",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 174803,
+          "gzipTextBodyBytes": 109033,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/shipping/index.html",
+              "bytes": 17282,
+              "gzipIfServedBytes": 5007,
+              "sha256": "4ec0604ed01be14d9547c3ef94d4aad2ccd2509d9520407284b72911f57e9cee",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 151031,
+          "gzipTextBodyBytes": 85261,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/shipping/index.html",
+              "bytes": 17282,
+              "gzipIfServedBytes": 5007,
+              "sha256": "4ec0604ed01be14d9547c3ef94d4aad2ccd2509d9520407284b72911f57e9cee",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 277259,
+        "gzipTextBodyBytes": 211489,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/404.html",
+      "htmlSha256": "9f88b287a8ccb3385ec5cb50809bece00dfda09fb996e0b7c04e923d6644804c",
+      "lighthouseHtmlMatches": true,
+      "lighthouseAssetsMatch": true,
+      "lighthouseObservedNonFontTransferBytes": 127547,
+      "manufacturerLogoCount": 0,
+      "manufacturerLogoRawBytes": 0,
+      "imageOccurrences": 2,
+      "scenarios": {
+        "modernMobile390Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 146549,
+          "gzipTextBodyBytes": 83624,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/404.html",
+              "bytes": 12800,
+              "gzipIfServedBytes": 3370,
+              "sha256": "9f88b287a8ccb3385ec5cb50809bece00dfda09fb996e0b7c04e923d6644804c",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        },
+        "modernMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 170321,
+          "gzipTextBodyBytes": 107396,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/404.html",
+              "bytes": 12800,
+              "gzipIfServedBytes": 3370,
+              "sha256": "9f88b287a8ccb3385ec5cb50809bece00dfda09fb996e0b7c04e923d6644804c",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "webpMobile390Dpr3": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 170321,
+          "gzipTextBodyBytes": 107396,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/404.html",
+              "bytes": 12800,
+              "gzipIfServedBytes": 3370,
+              "sha256": "9f88b287a8ccb3385ec5cb50809bece00dfda09fb996e0b7c04e923d6644804c",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-516.webp",
+              "bytes": 52682,
+              "gzipIfServedBytes": 52682,
+              "sha256": "cb8bd2fa8080543a935885deedb1b47aef45851a401cdf59bb1e03af2c190f52",
+              "font": false
+            }
+          ]
+        },
+        "modernDesktop1280Dpr2": {
+          "resourceCount": 7,
+          "uncompressedBodyBytes": 146549,
+          "gzipTextBodyBytes": 83624,
+          "under350KBUncompressed": true,
+          "under350KBGzipText": true,
+          "resources": [
+            {
+              "url": "/404.html",
+              "bytes": 12800,
+              "gzipIfServedBytes": 3370,
+              "sha256": "9f88b287a8ccb3385ec5cb50809bece00dfda09fb996e0b7c04e923d6644804c",
+              "font": false
+            },
+            {
+              "url": "/assets/favicon.ico",
+              "bytes": 13552,
+              "gzipIfServedBytes": 13552,
+              "sha256": "dab8358843874dd2410b86520dc0e31daaa01a4398dec2167c2602ded6503c7d",
+              "font": false
+            },
+            {
+              "url": "/assets/img/favicon-48.png",
+              "bytes": 3901,
+              "gzipIfServedBytes": 3901,
+              "sha256": "58b1f88cab505d8fd4ced08603c2ffaf71e3886b2e5cc482ba53881f2a21271b",
+              "font": false
+            },
+            {
+              "url": "/assets/img/apple-touch-icon.png",
+              "bytes": 20137,
+              "gzipIfServedBytes": 20137,
+              "sha256": "8b0463546076168b0415f3b28a04f11cb83e5d33a43d19132b493c31a455192c",
+              "font": false
+            },
+            {
+              "url": "/assets/styles.css",
+              "bytes": 60033,
+              "gzipIfServedBytes": 11573,
+              "sha256": "55d0b0f5c858e9816f2ab74763ea65220a0debfd2c200a1bcafff205432ec2ad",
+              "font": false
+            },
+            {
+              "url": "/assets/main.js",
+              "bytes": 7216,
+              "gzipIfServedBytes": 2181,
+              "sha256": "8e6a4a50740f1196a6e7d0a7d58b304fc33f873c19df124eefbeef974ad87ba2",
+              "font": false
+            },
+            {
+              "url": "/assets/img/logo-344.webp",
+              "bytes": 28910,
+              "gzipIfServedBytes": 28910,
+              "sha256": "28e04f700e6668791bd89eaec6fa82d51efbee95b0660eccaa1087b213273558",
+              "font": false
+            }
+          ]
+        }
+      },
+      "worstCandidatePerOccurrenceBound": {
+        "resourceCount": 8,
+        "uncompressedBodyBytes": 272777,
+        "gzipTextBodyBytes": 209852,
+        "under350KBUncompressed": true,
+        "under350KBGzipText": true
+      },
+      "imageDetails": [
+        {
+          "alt": "Thalir Innovations",
+          "loading": "eager",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        },
+        {
+          "alt": "Thalir Innovations",
+          "loading": "lazy",
+          "candidateCount": 7,
+          "largestCandidate": {
+            "url": "/assets/img/logo-516.avif",
+            "bytes": 77569,
+            "gzipIfServedBytes": 77569,
+            "sha256": "9a9c0c31a30ddca794f9462fae48f25e66f8217fc4c9444252be0ed556b29671",
+            "font": false
+          },
+          "selected": {
+            "modernMobile390Dpr2": "/assets/img/logo-344.webp",
+            "modernMobile390Dpr3": "/assets/img/logo-516.webp",
+            "webpMobile390Dpr3": "/assets/img/logo-516.webp",
+            "modernDesktop1280Dpr2": "/assets/img/logo-344.webp"
+          }
+        }
+      ]
+    }
+  ],
+  "findings": {
+    "modernMobile390Dpr2Over350KBUncompressed": [],
+    "modernMobile390Dpr2Over350KBGzipText": [],
+    "conservativeWorstCandidateBoundOver350KBUncompressed": [
+      "/",
+      "/smart-home-cinema/",
+      "/cinema-revival/"
+    ],
+    "conservativeWorstCandidateBoundOver350KBGzipText": [
+      "/",
+      "/smart-home-cinema/"
+    ],
+    "scenarioOver350KBUncompressed": {
+      "modernMobile390Dpr2": [],
+      "modernMobile390Dpr3": [
+        "/",
+        "/smart-home-cinema/"
+      ],
+      "webpMobile390Dpr3": [
+        "/",
+        "/smart-home-cinema/"
+      ],
+      "modernDesktop1280Dpr2": [
+        "/",
+        "/smart-home-cinema/"
+      ]
+    },
+    "scenarioOver350KBGzipText": {
+      "modernMobile390Dpr2": [],
+      "modernMobile390Dpr3": [],
+      "webpMobile390Dpr3": [],
+      "modernDesktop1280Dpr2": []
+    },
+    "interpretation": "All four modeled, deduplicated full-page scenarios stay below 350,000 file-body bytes if HTML/CSS/JS/SVG are gzip-compressed. Modern 390px DPR 2 stays below 350,000 even without compression. Home and Smart Home exceed 350,000 raw bytes in DPR 3 mobile and desktop DPR 2 models. The independent largest-candidate-per-occurrence upper bound exceeds 350,000 on Home and Smart Home even with gzip; this bound deliberately overcounts repeated images and is not an observed visitor load. Lighthouse does not establish an unconditional all-device full-page limit of 350KB."
+  }
+}

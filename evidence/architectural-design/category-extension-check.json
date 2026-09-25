@@ -1,0 +1,137 @@
+{
+  "status": "pass",
+  "checkedAt": "2026-09-25T04:02:01.691577+00:00",
+  "scope": "Isolated config-only fifth-category regression build. No browser/layout claim.",
+  "method": {
+    "copy": [
+      "build.mjs",
+      "src/**"
+    ],
+    "temporaryDirectory": "/tmp/thalir-category-extension-uuw0khzi",
+    "onlyTemporaryMutation": "Append the fixture below to copied src/config.mjs using CATEGORIES.push(...).",
+    "buildCommand": "node build.mjs --offline",
+    "templateEdits": false,
+    "productionBuildRun": false,
+    "baselineCategoryCount": 4,
+    "fixtureCategoryCount": 5,
+    "generatedHtmlPageCount": 13,
+    "nodeVersion": "v25.8.2"
+  },
+  "fixture": {
+    "slug": "category-extension-check",
+    "name": "Category Extension Check",
+    "label": "Isolated regression fixture",
+    "illustration": "unmapped-illustration-for-regression-check",
+    "card": {
+      "pitch": "Temporary fixture for config-driven rendering only.",
+      "bullets": [
+        "Fixture service one",
+        "Fixture service two"
+      ]
+    },
+    "composerHint": "Temporary fixture enquiry context",
+    "cta": {
+      "shortLabel": "Fixture enquiry",
+      "label": "Discuss fixture category",
+      "wa": "Isolated category regression enquiry"
+    },
+    "page": {
+      "title": "Category Extension Check",
+      "metaDescription": "Temporary fifth-category regression fixture.",
+      "eyebrow": "Isolated regression fixture",
+      "h1": "A config-only fifth category.",
+      "lede": "This content exists only in the isolated temporary build.",
+      "featuresTitle": "Fixture features",
+      "features": [
+        [
+          "plan",
+          "Fixture planning",
+          "Temporary planning description."
+        ]
+      ],
+      "processTitle": "Fixture process",
+      "process": [
+        [
+          "Fixture first step",
+          "Temporary process description."
+        ]
+      ],
+      "brands": {
+        "title": "Fixture manufacturers",
+        "groups": [
+          [
+            "Fixture group",
+            [
+              "Unmapped Manufacturer Fixture"
+            ]
+          ]
+        ]
+      },
+      "faq": [
+        [
+          "Fixture question?",
+          "Temporary fixture answer."
+        ]
+      ]
+    }
+  },
+  "checks": {
+    "offline_build_exited_zero": true,
+    "template_copy_byte_identical": true,
+    "one_additional_html_page": true,
+    "fifth_category_route_generated": true,
+    "desktop_navigation_all_pages": true,
+    "mobile_navigation_all_pages": true,
+    "footer_all_pages": true,
+    "fifth_home_service_card": true,
+    "home_service_strip": true,
+    "category_page_copy": true,
+    "category_current_nav": true,
+    "canonical_generated": true,
+    "composer_option_and_preselection": true,
+    "about_listing": true,
+    "not_found_recovery_link": true,
+    "unmapped_brand_renders_name_text": true,
+    "unknown_illustration_safe_empty_fallback": true,
+    "jsonld_catalog_all_pages": true,
+    "sitemap_fifth_category_exactly_once": true,
+    "generated_html_asset_id_aria_integrity": true,
+    "production_source_and_docs_unchanged": true,
+    "no_undefined_artifact": true
+  },
+  "integrityIssues": [],
+  "sourceEvidence": {
+    "buildMjsSha256": "a0bed5d6a65c5662ed6fbf4c9467729842cb98e4131fec4c4122aa39e1d8e098",
+    "productionManifestBefore": {
+      "sha256": "b76759c92f81405998c7771c2801e1b199e1729dc9d3157db9f3d9b8dfa77857",
+      "files": 138
+    },
+    "productionManifestAfter": {
+      "sha256": "b76759c92f81405998c7771c2801e1b199e1729dc9d3157db9f3d9b8dfa77857",
+      "files": 138
+    }
+  },
+  "buildOutput": [
+    "EKANI pricing: fallback \u00b7 modules from \u20b9199 \u00b7 One from \u20b92,099",
+    "  index.html",
+    "  smart-home-cinema/index.html",
+    "  cinema-revival/index.html",
+    "  commercial-audio/index.html",
+    "  business-software/index.html",
+    "  category-extension-check/index.html",
+    "  contact/index.html",
+    "  privacy/index.html",
+    "  about/index.html",
+    "  terms/index.html",
+    "  refunds/index.html",
+    "  shipping/index.html",
+    "  404.html",
+    "built \u2192 docs/"
+  ],
+  "buildStderr": "",
+  "limits": [
+    "Unknown illustration safely produces an empty artwork container; visual treatment of a new category still requires selecting or supplying an appropriate illustration.",
+    "Static generation and document structure checked; fifth-item responsive layout was not exercised in a browser."
+  ],
+  "productionContent": "Fixture appears only in the temporary copy and this evidence record; production src and docs hashes were unchanged."
+}

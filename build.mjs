@@ -21,6 +21,8 @@ import {
   COPY,
   BUSINESS_INFO,
   POLICIES,
+  DESIGN,
+  SHOP,
 } from "./src/config.mjs";
 import {
   ILLUSTRATIONS,
@@ -32,12 +34,20 @@ import {
 
 import { SCENES, livingScene, cinemaScene } from "./src/scenes.mjs";
 
+import { BRAND_ASSETS } from "./src/brands.mjs";
+import { productWorkflow } from "./src/product-workflow.mjs";
+import { commercialPlan } from "./src/commercial-plan.mjs";
+
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, "docs");
 const YEAR = new Date().getFullYear();
 const VERSION = createHash("sha256")
   .update(await readFile(join(ROOT, "src/assets/styles.css")))
   .update(await readFile(join(ROOT, "src/assets/main.js")))
+  .digest("hex")
+  .slice(0, 10);
+const SHOP_VERSION = createHash("sha256")
+  .update(await readFile(join(ROOT, "src/assets/shop.css")))
   .digest("hex")
   .slice(0, 10);
 
@@ -62,30 +72,73 @@ const logo = (lazy = false) => `<picture>
 </picture>`;
 function mobileAction(current, path) {
   if (
-    ["/terms/", "/refunds/", "/shipping/", "/privacy/", "/contact/"].includes(
-      path,
-    )
+    [
+      "/terms/",
+      "/refunds/",
+      "/shipping/",
+      "/privacy/",
+      "/contact/",
+      "/shop/",
+    ].includes(path)
   )
     return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="mailto:${esc(SITE.email)}">${esc(BUSINESS_INFO.emailSupport)} ${ICONS.arrow}</a></aside>`;
+  if (!current)
+    return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="${esc(wa(DESIGN.projectMessage))}" target="_blank" rel="noopener">${esc(DESIGN.projectShort)} ${ICONS.arrow}</a></aside>`;
   const c = CATEGORIES.find((c) => c.slug === current) || CATEGORIES[0];
   return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></aside>`;
 }
 function heroDemo(u) {
   return `<div class="home-demo" data-demo>
-    <div class="demo-top"><span class="eyebrow">${esc(UI.demoLabel)}</span><span class="example-tag">${esc(UI.example)}</span></div>
-    <div class="demo-room">${livingScene(undefined, { layout: "wide", eager: true })}<div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div></div>
-    <div class="demo-conversation" role="group" aria-label="${esc(u.chatSub)}">
-      <div class="demo-chat-title">${ICONS.chat}<strong>${esc(u.chatTitle)}</strong><span>${esc(u.chatSub)}</span></div>
-      <div class="demo-messages">${u.chat
-        .slice(0, 4)
-        .map(
-          ([who, t], i) =>
-            `<div class="demo-slot"><p class="msg ${who}" data-message="${i}">${esc(t)}</p><span class="typing" aria-hidden="true"><i></i><i></i><i></i></span></div>`,
-        )
-        .join("")}</div>
+    <div class="demo-room">${livingScene(undefined, { layout: "wide", eager: true })}
+      <div class="room-caption"><span>${esc(UI.room)}</span><span class="room-status" data-on="${esc(UI.roomState)}" data-off="${esc(UI.roomStateOff)}">${esc(UI.roomState)}</span></div>
     </div>
-    <div class="demo-bottom"><p>${esc(u.chatNote)}</p><button class="replay" type="button" hidden>${esc(UI.replay)} ${ICONS.arrow}</button></div>
+    <div class="demo-panel">
+      <div class="demo-top"><span class="eyebrow">${esc(UI.demoLabel)}</span><span class="example-tag">${esc(UI.example)}</span></div>
+      <h2>${esc(DESIGN.homeDemoTitle)}</h2><p class="demo-intro">${esc(DESIGN.homeDemoIntro)}</p>
+      <div class="demo-conversation" role="group" aria-label="${esc(u.chatSub)}">
+        <div class="demo-chat-title">${ICONS.chat}<strong>${esc(u.chatTitle)}</strong><span>${esc(u.chatSub)}</span></div>
+        <div class="demo-messages">${u.chat
+          .slice(0, 4)
+          .map(
+            ([who, t], i) =>
+              `<div class="demo-slot"><p class="msg ${who}" data-message="${i}">${esc(t)}</p><span class="typing" aria-hidden="true"><i></i><i></i><i></i></span></div>`,
+          )
+          .join("")}</div>
+      </div>
+      <div class="demo-bottom"><p>${esc(u.chatNote)}</p><button class="replay" type="button" hidden>${esc(UI.replay)} ${ICONS.arrow}</button></div>
+    </div>
   </div>`;
+}
+function serviceArt(c, { eager = false, compact = false } = {}) {
+  if (c.illustration === "ekaniflow")
+    return productWorkflow(DESIGN.product, { compact });
+  if (c.illustration === "zones")
+    return commercialPlan(DESIGN.commercialPlan, { compact });
+  return (
+    SCENES[c.illustration]?.(undefined, {
+      layout: compact ? "card" : "hero",
+      eager,
+    }) ||
+    ILLUSTRATIONS[c.illustration]?.() ||
+    ""
+  );
+}
+function brandsBlock(brands, id = "brands-h") {
+  if (!brands) return "";
+  return `<section class="band brand-section" aria-labelledby="${id}"><div class="wrap">
+    <div class="brand-heading"><h2 id="${id}">${esc(brands.title)}</h2><p>${esc(DESIGN.brandsIntro)}</p></div>
+    <div class="brand-groups">${brands.groups
+      .map(
+        ([k, list]) =>
+          `<div class="brand-group"><h3>${esc(k)}</h3><ul class="brand-grid">${list
+            .map((n) => {
+              const logo = BRAND_ASSETS[n];
+              return `<li class="manufacturer">${logo ? `<img src="${esc(logo.src)}" width="${logo.width}" height="${logo.height}" alt="${esc(n)}" loading="lazy" decoding="async">` : `<span class="brand-name">${esc(n)}</span>`}</li>`;
+            })
+            .join("")}</ul></div>`,
+      )
+      .join("")}</div>
+  </div></section>`;
 }
 
 // ---------- EKANI pricing (live feed → fallback) ----------
@@ -217,6 +270,7 @@ function layout({ path, title, description, body, current }) {
 <link rel="preload" href="/assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/styles.css?v=${VERSION}">
+${path === "/shop/" ? `<link rel="stylesheet" href="/assets/shop.css?v=${SHOP_VERSION}">` : ""}
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
 <body class="${path === "/" ? "home-page" : current || "utility-page"}">
@@ -238,7 +292,7 @@ ${body}
         ${logo(true)}
         <p class="muted">${esc(SITE.tagline)} ${esc(COPY.footerBased)} ${esc(SITE.city)}, ${esc(COPY.footerServing)} ${esc(SITE.serviceArea)}.</p>
       </div>
-      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
+      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/shop/"${path === "/shop/" ? ' aria-current="page"' : ""}>${esc(SHOP.nav)}</a></li><li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
       <div><h2>${esc(COPY.talk)}</h2><ul>
         <li><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></li>
         <li><a href="tel:${esc(SITE.phone)}">${esc(COPY.call)} ${esc(SITE.phoneDisplay)}</a></li>
@@ -333,65 +387,34 @@ const faqBlock = (items) =>
 
 // ---------- pages ----------
 function home() {
-  const bySlug = (slug) => CATEGORIES.find((c) => c.slug === slug);
-  const a = bySlug("smart-home-cinema") ?? CATEGORIES[0];
-  const rv = bySlug("cinema-revival");
+  const sh =
+    CATEGORIES.find((c) => c.slug === "smart-home-cinema") || CATEGORIES[0];
+  const commercial = CATEGORIES.find((c) => c.slug === "commercial-audio");
   const cards = CATEGORIES.map(
-    (
-      c,
-      i,
-    ) => `<article class="cat"><span class="cat-index" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
-    <div class="cat-art">${SCENES[c.illustration]?.() || ILLUSTRATIONS[c.illustration]?.() || ""}</div>
-    <div class="cat-body">
-      <span class="eyebrow">${esc(c.label)}</span>
-      <h3 style="font-size:1.5rem">${esc(c.name)}</h3>
-      <p class="muted">${esc(c.card.pitch)}</p>
-      <ul class="ticks">${c.card.bullets.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>
-      <div class="cat-foot">${waBtn(c.cta.wa, c.cta.label, "sm")}<a class="link-arrow" href="${catUrl(c)}">${esc(UI.explore)} ${esc(c.name)} ${ICONS.arrow}</a></div>
-    </div>
+    (c, i) => `<article class="service-row">
+    <div class="service-art">${serviceArt(c, { compact: true })}</div>
+    <div class="service-copy"><span class="service-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span class="eyebrow">${esc(c.label)}</span><h3><a href="${catUrl(c)}">${esc(c.name)}</a></h3>
+    <p class="lede">${esc(c.card.pitch)}</p><ul class="service-points">${c.card.bullets.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+    <div class="service-actions"><a class="link-arrow" href="${catUrl(c)}">${esc(UI.explore)} ${esc(c.name)} ${ICONS.arrow}</a>${waBtn(c.cta.wa, c.cta.label, "ghost sm")}</div></div>
   </article>`,
   ).join("");
-  const sh = CATEGORIES.find((c) => c.slug === "smart-home-cinema");
-  return `
-<section class="hero visual-hero">
-  <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow">${esc(UI.heroEyebrow)}</span>
-      <h1>${esc(UI.heroTitle[0])} <span>${esc(UI.heroTitle[1])}</span></h1>
-      <p class="lede">${esc(UI.heroLede)}</p>
-      <div class="btns">${waBtn(a.cta.wa, a.cta.label)}<a class="link-arrow" href="#chat-control">${esc(UI.heroDetail)} ${ICONS.arrow}</a></div>
-      ${rv ? `<a class="link-arrow" href="${catUrl(rv)}">${esc(COPY.alreadyTheatre)} ${esc(rv.name)} ${ICONS.arrow}</a>` : ""}
-      <p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(COPY.call)} <a href="tel:${esc(SITE.phone)}">${esc(SITE.phoneDisplay)}</a></span><span>${esc(SITE.hours)}</span></p>
-    </div>
-  </div>
-  <div class="visual-stage wrap">${a.page.usp ? heroDemo(a.page.usp) : `<div class="hero-art">${ILLUSTRATIONS[a.illustration]?.() || ""}</div>`}</div>
-</section>
-<div class="service-strip"><div class="wrap"><p>${esc(SITE.serviceArea)}</p><div>${CATEGORIES.map((c) => `<a href="${catUrl(c)}">${esc(c.name)} ${ICONS.arrow}</a>`).join("")}</div></div></div>
-<section class="band cream service-gallery" aria-labelledby="cats-h">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div>
-    <div class="cats${CATEGORIES.length % 3 === 1 ? " cats-even" : ""}">${cards}</div>
-  </div>
-</section>
-${sh?.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}
-<section class="band" aria-labelledby="why-h">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">${esc(COPY.why)}</span><h2 id="why-h">${esc(COPY.whyTitle)}</h2></div>
-    <div class="why">
-      <div><h3>${esc(COPY.why1)}</h3><p>${esc(COPY.why1Body)}</p></div>
-      <div><h3>${esc(COPY.why2)}</h3><p>${esc(COPY.why2Body)}</p></div>
-      <div><h3>${esc(COPY.why3)}</h3><p>${esc(COPY.why3Body)}</p></div>
-    </div>
-  </div>
-</section>
-${sh?.page.brands ? `<section class="band cream tight" aria-labelledby="brands-h"><div class="wrap"><div class="sec-head"><h2 id="brands-h" style="font-size:1.4rem">${esc(sh.page.brands.title)}</h2></div><div class="brand-groups">${sh.page.brands.groups.map(([k, list]) => `<div class="row"><span class="k">${esc(k)}</span>${list.map((n) => `<span class="brand-name">${esc(n)}</span>`).join("")}</div>`).join("")}</div></div></section>` : ""}
-${reachBand()}`;
+  return `<section class="home-intro hero">
+    <div class="wrap"><div class="home-heading"><span class="eyebrow">${esc(UI.heroEyebrow)}</span><h1>${esc(UI.heroTitle[0])}<br><span>${esc(UI.heroTitle[1])}</span></h1></div><div class="home-intro-copy"><p class="lede">${esc(UI.heroLede)}</p><div class="btns">${waBtn(DESIGN.projectMessage, DESIGN.project)}<a class="link-arrow" href="#services">${esc(DESIGN.explore)} ${ICONS.arrow}</a></div><p class="location-note">${esc(DESIGN.location)}<span>${esc(SITE.serviceArea)}</span></p></div></div>
+  </section>
+  <section class="experience wrap" aria-label="${esc(DESIGN.homeDemoIntro)}">${sh.page.usp ? heroDemo(sh.page.usp) : serviceArt(sh, { eager: true })}</section>
+  <nav class="service-strip" aria-label="${esc(DESIGN.services)}"><div class="wrap">${CATEGORIES.map((c, i) => `<a href="${catUrl(c)}"><span class="service-strip-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span>${esc(c.name)}</span>${ICONS.arrow}</a>`).join("")}</div></nav>
+  ${commercial ? `<section class="band commercial-feature" aria-labelledby="commercial-h"><div class="wrap"><div class="commercial-lead"><span class="eyebrow">${esc(DESIGN.commercialEyebrow)}</span><h2 id="commercial-h">${esc(DESIGN.commercialTitle)}</h2><p class="lede">${esc(DESIGN.commercialBody)}</p>${waBtn(commercial.cta.wa, commercial.cta.label)}<a class="link-arrow" href="${catUrl(commercial)}">${esc(UI.explore)} ${esc(commercial.name)} ${ICONS.arrow}</a></div><div class="commercial-visual">${commercialPlan(DESIGN.commercialPlan, { compact: true })}</div><ul class="sector-strip">${commercial.page.sectors.map(([h]) => `<li>${esc(h)}</li>`).join("")}</ul></div></section>` : ""}
+  <section class="band services-section" id="services" aria-labelledby="cats-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div><div class="services-list">${cards}</div></div></section>
+  ${sh.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}
+  <section class="band why-section" aria-labelledby="why-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(COPY.why)}</span><h2 id="why-h">${esc(COPY.whyTitle)}</h2></div><div class="why"><div>${ICONS.plan}<h3>${esc(COPY.why1)}</h3><p>${esc(COPY.why1Body)}</p></div><div>${ICONS.remote}<h3>${esc(COPY.why2)}</h3><p>${esc(COPY.why2Body)}</p></div><div>${ICONS.chat}<h3>${esc(COPY.why3)}</h3><p>${esc(COPY.why3Body)}</p></div></div></div></section>
+  ${brandsBlock(sh.page.brands)}${reachBand()}`;
 }
 
 function categoryPage(c, pricing) {
   const p = c.page;
-  const art = `<div class="plate a scene-plate">${SCENES[c.illustration]?.(undefined, { layout: "hero", eager: true }) || ILLUSTRATIONS[c.illustration]?.() || ""}</div>`;
+  const art = `<div class="plate a scene-plate">${serviceArt(c, { eager: true })}</div>`;
   const sections = [
+    ...(p.sectors ? [["sectors", DESIGN.sectors]] : []),
     ...(p.features || c.slug === "business-software"
       ? [["features", UI.features]]
       : []),
@@ -413,12 +436,14 @@ function categoryPage(c, pricing) {
       <h1>${esc(p.h1)}</h1>
       <p class="lede">${esc(p.lede)}</p>
       <div class="btns">${waBtn(c.cta.wa, c.cta.label)}${p.pricingUrl ? `<a class="btn ghost" href="${p.pricingUrl}" target="_blank" rel="noopener">${esc(COPY.seePricing)}</a>` : ""}</div>
-      ${p.signInUrl ? `<p class="contact-line"><span>${esc(COPY.alreadyCustomer)} <a href="${p.signInUrl}" target="_blank" rel="noopener">${esc(COPY.signIn)}</a></span></p>` : `<p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(COPY.call)} <a href="tel:${esc(SITE.phone)}">${esc(SITE.phoneDisplay)}</a></span><span>${esc(SITE.hours)}</span><span>${esc(COPY.serving)} ${esc(SITE.serviceArea)}</span></p>`}
+      ${p.signInUrl ? `<p class="contact-line"><span>${esc(COPY.alreadyCustomer)} <a href="${p.signInUrl}" target="_blank" rel="noopener">${esc(COPY.signIn)}</a></span></p>` : ""}
     </div>
     <div class="hero-art">${art}</div>
   </div>
 </section>
 <nav class="page-nav" aria-label="${esc(UI.pageNav)}"><div class="wrap">${sections.map(([id, label]) => `<a href="#${id}">${esc(label)}</a>`).join("")}<a class="page-nav-cta" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></div></nav>`;
+  if (p.sectors)
+    s += `<section class="band sectors-section" id="sectors" aria-labelledby="sectors-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(DESIGN.sectors)}</span><h2 id="sectors-h">${esc(p.sectorsTitle)}</h2><p>${esc(p.sectorsIntro)}</p></div><div class="sectors-grid">${p.sectors.map(([h, t], i) => `<article><span class="sector-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><h3>${esc(h)}</h3><p>${esc(t)}</p></article>`).join("")}</div></div></section>`;
   if (c.illustration === "revival")
     s += `<section class="revival-detail band"><div class="wrap split"><div class="art">${speakerLayout()}</div>${ILLUSTRATIONS.revival()}</div></section>`;
   if (p.usp) s += uspBlock(p.usp);
@@ -436,7 +461,7 @@ function categoryPage(c, pricing) {
   <div class="modules">${pricing.modules.map(([n, t, price, orig], i) => `<div class="module">${ICONS[["chat", "globe", "plan", "spark", "dial", "gate", "curtain", "shield", "remote", "bulb"][i % 10]]}<h3>${esc(n)}</h3><p>${esc(t)}</p><span class="price">${inr(price)}<small>${esc(UI.month)}</small>${orig && orig > price ? `<s>${inr(orig)}</s>` : ""}</span></div>`).join("")}</div>
   <p class="price-note">${esc(UI.pricingSource)} <a href="${p.pricingUrl}" target="_blank" rel="noopener">${esc(UI.pricingSourceLabel)}</a>. ${esc(UI.annualNote)}</p>
 </div></section>
-<section class="band workflow" id="how-it-works" aria-labelledby="workflow-h"><div class="wrap"><div class="sec-head"><span class="eyebrow">${esc(UI.how)}</span><h2 id="workflow-h">${esc(p.h1)}</h2></div>${ILLUSTRATIONS.ekaniflow()}</div></section>
+<section class="band workflow" id="how-it-works" aria-labelledby="workflow-h"><div class="wrap"><div class="sec-head"><span class="eyebrow">${esc(UI.how)}</span><h2 id="workflow-h">${esc(p.h1)}</h2></div>${productWorkflow(DESIGN.product)}</div></section>
 <section class="band" aria-labelledby="who-h"><div class="wrap split">
   <div class="copy"><span class="eyebrow">${esc(COPY.builtFor)}</span><h2 id="who-h">${esc(COPY.audienceTitle)}</h2><p class="muted">${esc(COPY.audienceBody)}</p><div class="pill-row">${p.audience.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div></div>
   <div class="copy"><span class="eyebrow">${esc(COPY.languages)}</span><h3>${esc(COPY.languagesTitle)}</h3><div class="pill-row">${p.languages.map((x) => `<span class="pill">${esc(x)}</span>`).join("")}</div><p class="muted" style="font-size:.92rem">${esc(COPY.webLanguage)}</p></div>
@@ -463,12 +488,7 @@ function categoryPage(c, pricing) {
   <div class="sec-head"><span class="eyebrow">${esc(COPY.how)}</span><h2 id="pr-h">${esc(p.processTitle || COPY.processTitle)}</h2></div>
   <ol class="steps">${p.process.map(([h, t]) => `<li><h3>${esc(h)}</h3><p>${esc(t)}</p></li>`).join("")}</ol>
 </div></section>`;
-  if (p.brands)
-    s += `
-<section class="band cream tight" aria-labelledby="br-h"><div class="wrap">
-  <div class="sec-head"><h2 id="br-h" style="font-size:1.4rem">${esc(p.brands.title)}</h2></div>
-  <div class="brand-groups">${p.brands.groups.map(([k, list]) => `<div class="row"><span class="k">${esc(k)}</span>${list.map((n) => `<span class="brand-name">${esc(n)}</span>`).join("")}</div>`).join("")}</div>
-</div></section>`;
+  if (p.brands) s += brandsBlock(p.brands, "br-h");
   if (p.faq)
     s += `
 <section class="band faq-section" id="faq" aria-labelledby="faq-h"><div class="wrap">
@@ -493,6 +513,36 @@ ${reachBand()}
   <nav class="policy-links" aria-label="${esc(BUSINESS_INFO.nav)}">${policyLinks()}</nav>
   ${grievanceBlock()}
 </div></section>`;
+}
+
+function shopPage(pricing) {
+  return `<section class="shop-hero"><div class="wrap">
+    <span class="eyebrow">${esc(SHOP.eyebrow)}</span>
+    <div class="shop-intro"><h1>${esc(SHOP.heading)}</h1><p class="lede">${esc(SHOP.intro)}</p></div>
+    <a class="shop-starting" href="#${esc(SHOP.services[0].id)}"><span>${esc(SHOP.startingLabel)}</span><strong>${inr(SHOP.services[0].priceInr)}</strong><small>${esc(SHOP.startingNote)}</small>${ICONS.arrow}</a>
+    <nav class="shop-jump" aria-label="${esc(BUSINESS_INFO.onPage)}"><a href="#services">${esc(SHOP.servicesLabel)} ${ICONS.arrow}</a><a href="#software">${esc(SHOP.softwareLabel)} ${ICONS.arrow}</a><a href="#ordering">${esc(SHOP.orderLabel)} ${ICONS.arrow}</a></nav>
+    <p class="shop-seller-line"><span>${esc(BUSINESS_INFO.seller)}</span><strong>${esc(BUSINESS_INFO.registeredName)}</strong><a href="#seller">${esc(BUSINESS_INFO.address)} ${ICONS.arrow}</a></p>
+  </div></section>
+  <section class="band cream" id="services" aria-labelledby="shop-services-heading"><div class="wrap">
+    <div class="shop-section-head"><div><span class="eyebrow">${esc(SHOP.servicesLabel)}</span><h2 id="shop-services-heading">${esc(SHOP.servicesHeading)}</h2></div><p>${esc(SHOP.servicesIntro)}</p></div>
+    <p class="shop-tax">${esc(SHOP.serviceTaxNote)}</p>
+    <div class="shop-services">${SHOP.services.map((s) => `<article class="shop-card" id="${esc(s.id)}"><div class="shop-card-top">${ICONS[s.icon] || ""}<span class="eyebrow">${esc(s.label)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.description)}</p>${s.includes?.length ? `<ul class="shop-includes">${s.includes.map((text) => `<li>${esc(text)}</li>`).join("")}</ul>` : ""}<div class="shop-card-bottom"><p class="shop-service-price${s.priceInr === null ? "" : " shop-service-price--fixed"}">${s.priceInr === null ? esc(SHOP.quotePrice) : `${inr(s.priceInr)}<small>${esc(s.priceUnit)}</small>`}</p><p class="fine">${esc(s.priceNote || SHOP.quoteNote)}</p>${waBtn(s.wa, s.priceInr === null ? SHOP.serviceCta : SHOP.bookingCta)}<a class="shop-detail" href="${esc(s.href)}">${esc(SHOP.detailsCta)} ${ICONS.arrow}</a></div></article>`).join("")}</div>
+    <div class="shop-project"><p>${esc(SHOP.otherServices)}</p>${waBtn(DESIGN.projectMessage, SHOP.projectCta, "ghost")}</div>
+  </div></section>
+  <section class="band" id="software" aria-labelledby="shop-software-heading"><div class="wrap">
+    <div class="shop-section-head"><div><span class="eyebrow">${esc(SHOP.softwareLabel)}</span><h2 id="shop-software-heading">${esc(SHOP.softwareHeading)}</h2></div><p>${esc(SHOP.softwareIntro)}</p></div>
+    <p class="shop-tax">${esc(SHOP.taxNote)}</p>
+    <article class="shop-bundle"><div><h3>${esc(SHOP.bundleTitle)}</h3><p>${esc(SHOP.bundleDescription)}</p></div><p class="shop-subscription-price"><span>${esc(SHOP.from)}</span> ${inr(pricing.bundleFrom)}<small>${esc(SHOP.monthly)}</small></p>${waBtn(SHOP.bundleMessage, SHOP.softwareCta)}</article>
+    <ul class="shop-modules">${pricing.modules.map(([name, description, price]) => `<li><div><h3>${esc(name)}</h3><p>${esc(description)}</p></div><p class="shop-subscription-price">${inr(price)}<small>${esc(SHOP.monthly)}</small></p>${waBtn(SHOP.softwareMessage.replace("{product}", name), SHOP.softwareCta, "ghost")}</li>`).join("")}</ul>
+    <p class="shop-source">${esc(SHOP.sourceNote)} <a href="${esc(SHOP.sourceUrl)}" target="_blank" rel="noopener">${esc(SHOP.sourceLabel)}</a>. ${esc(UI.annualNote)}</p>
+  </div></section>
+  <section class="band cream" id="ordering" aria-labelledby="shop-order-heading"><div class="wrap">
+    <span class="eyebrow">${esc(SHOP.orderLabel)}</span><h2 id="shop-order-heading">${esc(SHOP.orderHeading)}</h2>
+    <ol class="shop-steps">${SHOP.steps.map(([title, description], i) => `<li><span aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><h3>${esc(title)}</h3><p>${esc(description)}</p></li>`).join("")}</ol>
+    <p class="shop-fulfilment">${esc(SHOP.fulfilment)}</p><p class="shop-payment-note">${esc(SHOP.paymentNote)}</p>
+    <div class="shop-policies"><h3>${esc(SHOP.policiesHeading)}</h3><nav class="policy-links" aria-label="${esc(BUSINESS_INFO.nav)}">${policyLinks()}<a href="/contact/">${esc(COPY.contact)}</a><a href="/about/">${esc(BUSINESS_INFO.about)}</a></nav></div>
+  </div></section>
+  <section class="band" id="seller" aria-labelledby="shop-seller-heading"><div class="wrap shop-business"><div><span class="eyebrow">${esc(BUSINESS_INFO.registeredName)}</span><h2 id="shop-seller-heading">${esc(SHOP.sellerHeading)}</h2><p>${esc(SHOP.sellerIntro)}</p>${businessDetails()}</div>${supportBlock()}</div></section>`;
 }
 
 function policyLinks(current = "") {
@@ -611,6 +661,11 @@ await page("/contact/", "contact/index.html", {
   body: contactPage(),
   current: "contact",
 });
+await page("/shop/", "shop/index.html", {
+  title: SHOP.title,
+  description: SHOP.description,
+  body: shopPage(pricing),
+});
 await page("/privacy/", "privacy/index.html", {
   title: COPY.privacy,
   description: `How ${SITE.name} handles your information.`,
@@ -638,6 +693,7 @@ const urls = [
   "/",
   ...CATEGORIES.map(catUrl),
   "/contact/",
+  "/shop/",
   "/privacy/",
   "/about/",
   ...POLICIES.map((p) => `/${p.slug}/`),

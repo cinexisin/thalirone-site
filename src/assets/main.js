@@ -66,7 +66,7 @@
     menu
       .querySelectorAll("a")
       .forEach((a) => a.addEventListener("click", () => close(false)));
-    window.matchMedia("(min-width: 851px)").addEventListener("change", (e) => {
+    window.matchMedia("(min-width: 1041px)").addEventListener("change", (e) => {
       if (e.matches) close(false);
     });
   }
@@ -143,19 +143,13 @@
       if (opening) {
         details.open = true;
         animation = answer.animate(
-          [
-            { height: "0px" },
-            { height: `${answer.scrollHeight}px` },
-          ],
+          [{ height: "0px" }, { height: `${answer.scrollHeight}px` }],
           { duration: 220, easing: "ease-out" },
         );
       } else {
         details.dataset.closing = "true";
         animation = answer.animate(
-          [
-            { height: `${answer.scrollHeight}px` },
-            { height: "0px" },
-          ],
+          [{ height: `${answer.scrollHeight}px` }, { height: "0px" }],
           { duration: 180, easing: "ease-in" },
         );
       }

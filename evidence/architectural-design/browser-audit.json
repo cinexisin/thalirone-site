@@ -1,0 +1,1524 @@
+{
+  "responsive": [
+    {
+      "width": 360,
+      "path": "/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "smart-home-cinema/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "cinema-revival/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "commercial-audio/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "business-software/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "contact/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "privacy/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "about/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "terms/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "refunds/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "shipping/",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 360,
+      "path": "404.html",
+      "brokenImages": [],
+      "contentWidth": 360,
+      "scrollWidth": 360,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "smart-home-cinema/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "cinema-revival/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "commercial-audio/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "business-software/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "contact/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "privacy/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "about/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "terms/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "refunds/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "shipping/",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 390,
+      "path": "404.html",
+      "brokenImages": [],
+      "contentWidth": 390,
+      "scrollWidth": 390,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "smart-home-cinema/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "cinema-revival/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "commercial-audio/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "business-software/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "contact/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "privacy/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "about/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "terms/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "refunds/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "shipping/",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 768,
+      "path": "404.html",
+      "brokenImages": [],
+      "contentWidth": 768,
+      "scrollWidth": 768,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "smart-home-cinema/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "cinema-revival/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "commercial-audio/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "business-software/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "contact/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "privacy/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "about/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "terms/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "refunds/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "shipping/",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1024,
+      "path": "404.html",
+      "brokenImages": [],
+      "contentWidth": 1024,
+      "scrollWidth": 1024,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "smart-home-cinema/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "cinema-revival/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "commercial-audio/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "business-software/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "contact/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "privacy/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "about/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "terms/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "refunds/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "shipping/",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1280,
+      "path": "404.html",
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "scrollWidth": 1280,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "smart-home-cinema/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "cinema-revival/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "commercial-audio/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "business-software/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "contact/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "privacy/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "about/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "terms/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "refunds/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "shipping/",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    },
+    {
+      "width": 1440,
+      "path": "404.html",
+      "brokenImages": [],
+      "contentWidth": 1440,
+      "scrollWidth": 1440,
+      "smallTargets": []
+    }
+  ],
+  "screenshots": [
+    {
+      "stage": "before",
+      "page": "/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 10572
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "smart-home-cinema/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 10903
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "cinema-revival/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 6904
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "commercial-audio/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 5861
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "business-software/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 9292
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "contact/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 4641
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "privacy/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 3436
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "about/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 3868
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "terms/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 6039
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "refunds/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 7822
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "shipping/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 5296
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "404.html",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 1892
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "before",
+      "page": "/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 6547
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "smart-home-cinema/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 7123
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "cinema-revival/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 4656
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "commercial-audio/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 3884
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "business-software/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 5514
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "contact/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 3069
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "privacy/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 2479
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "about/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 2219
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "terms/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 3943
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "refunds/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 4858
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "shipping/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 3433
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "before",
+      "page": "404.html",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 1193
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 12397
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "smart-home-cinema/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 10900
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "cinema-revival/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 6596
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "commercial-audio/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 6776
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "business-software/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 8584
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "contact/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 4279
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "privacy/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 2983
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "about/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 3398
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "terms/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 5471
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "refunds/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 6962
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "shipping/",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 4742
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "404.html",
+      "width": 390,
+      "imageDimensions": {
+        "width": 390,
+        "height": 1634
+      },
+      "brokenImages": [],
+      "contentWidth": 390,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 405
+    },
+    {
+      "stage": "after",
+      "page": "/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 8155
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "smart-home-cinema/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 7424
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "cinema-revival/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 4752
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "commercial-audio/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 4800
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "business-software/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 5824
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "contact/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 2996
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "privacy/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 2250
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "about/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 1927
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "terms/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 3609
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "refunds/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 4406
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "shipping/",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 3198
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    },
+    {
+      "stage": "after",
+      "page": "404.html",
+      "width": 1280,
+      "imageDimensions": {
+        "width": 1280,
+        "height": 1240
+      },
+      "brokenImages": [],
+      "contentWidth": 1280,
+      "overflow": false,
+      "scrollY": 0,
+      "viewportWidth": 1295
+    }
+  ],
+  "interaction": [
+    {
+      "name": "Mobile menu",
+      "result": "Opens with aria-expanded, makes main inert, Shift+Tab wraps to last link, Tab returns to summary, Escape restores summary focus."
+    },
+    {
+      "name": "Menu link navigation",
+      "result": "Business Software link navigated to the software page with menu closed."
+    },
+    {
+      "name": "Commercial enquiry form",
+      "result": "Commercial Spaces preselected with organisation/project hint; blank submission shows name error and focuses name; entering a name clears error. No message sent."
+    },
+    {
+      "name": "Script-blocked native menu",
+      "result": "Native details menu opens and exposes every service/contact/enquiry link with script-src none."
+    },
+    {
+      "name": "FAQ and footer",
+      "result": {
+        "faqOpen": true,
+        "barHidden": true,
+        "footerTop": 25.421875,
+        "scrollY": 6114,
+        "viewport": 844
+      }
+    }
+  ],
+  "scriptBlocked": [
+    {
+      "path": "",
+      "width": 390,
+      "composerHidden": true,
+      "h1": "Intelligent spaces.Connected business.",
+      "hiddenMessages": 0,
+      "mainHeight": 10842.53125,
+      "replayHidden": true,
+      "waLinks": 13
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 390,
+      "composerHidden": true,
+      "h1": "A home that answers to you.",
+      "hiddenMessages": 0,
+      "mainHeight": 9435.734375,
+      "replayHidden": null,
+      "waLinks": 9
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 390,
+      "composerHidden": true,
+      "h1": "Rediscover your home theatre.",
+      "hiddenMessages": 0,
+      "mainHeight": 5032.6875,
+      "replayHidden": null,
+      "waLinks": 9
+    },
+    {
+      "path": "commercial-audio/",
+      "width": 390,
+      "composerHidden": true,
+      "h1": "A considered system. For the whole space.",
+      "hiddenMessages": 0,
+      "mainHeight": 5275.46875,
+      "replayHidden": null,
+      "waLinks": 9
+    },
+    {
+      "path": "business-software/",
+      "width": 390,
+      "composerHidden": true,
+      "h1": "Run your business from WhatsApp.",
+      "hiddenMessages": 0,
+      "mainHeight": 7173,
+      "replayHidden": null,
+      "waLinks": 10
+    },
+    {
+      "path": "contact/",
+      "width": 390,
+      "composerHidden": true,
+      "h1": "Let's talk.",
+      "hiddenMessages": 0,
+      "mainHeight": 2793,
+      "replayHidden": null,
+      "waLinks": 7
+    },
+    {
+      "path": "privacy/",
+      "width": 390,
+      "composerHidden": null,
+      "h1": "How we handle your information",
+      "hiddenMessages": 0,
+      "mainHeight": 2139.453125,
+      "replayHidden": null,
+      "waLinks": 4
+    },
+    {
+      "path": "about/",
+      "width": 390,
+      "composerHidden": null,
+      "h1": "Thalir Innovations",
+      "hiddenMessages": 0,
+      "mainHeight": 2585.9375,
+      "replayHidden": null,
+      "waLinks": 6
+    },
+    {
+      "path": "terms/",
+      "width": 390,
+      "composerHidden": null,
+      "h1": "Terms & Conditions",
+      "hiddenMessages": 0,
+      "mainHeight": 4690.1875,
+      "replayHidden": null,
+      "waLinks": 5
+    },
+    {
+      "path": "refunds/",
+      "width": 390,
+      "composerHidden": null,
+      "h1": "Cancellation & Refund Policy",
+      "hiddenMessages": 0,
+      "mainHeight": 6293.59375,
+      "replayHidden": null,
+      "waLinks": 5
+    },
+    {
+      "path": "shipping/",
+      "width": 390,
+      "composerHidden": null,
+      "h1": "Shipping & Service Delivery Policy",
+      "hiddenMessages": 0,
+      "mainHeight": 3948.390625,
+      "replayHidden": null,
+      "waLinks": 5
+    },
+    {
+      "path": "404.html",
+      "width": 390,
+      "composerHidden": null,
+      "h1": "This page isn't here.",
+      "hiddenMessages": 0,
+      "mainHeight": 799.5625,
+      "replayHidden": null,
+      "waLinks": 5
+    },
+    {
+      "path": "",
+      "width": 1280,
+      "composerHidden": true,
+      "h1": "Intelligent spaces.Connected business.",
+      "hiddenMessages": 0,
+      "mainHeight": 7430.09375,
+      "replayHidden": true,
+      "waLinks": 13
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 1280,
+      "composerHidden": true,
+      "h1": "A home that answers to you.",
+      "hiddenMessages": 0,
+      "mainHeight": 6787.59375,
+      "replayHidden": null,
+      "waLinks": 9
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 1280,
+      "composerHidden": true,
+      "h1": "Rediscover your home theatre.",
+      "hiddenMessages": 0,
+      "mainHeight": 4122.296875,
+      "replayHidden": null,
+      "waLinks": 9
+    },
+    {
+      "path": "commercial-audio/",
+      "width": 1280,
+      "composerHidden": true,
+      "h1": "A considered system. For the whole space.",
+      "hiddenMessages": 0,
+      "mainHeight": 4168.25,
+      "replayHidden": null,
+      "waLinks": 9
+    },
+    {
+      "path": "business-software/",
+      "width": 1280,
+      "composerHidden": true,
+      "h1": "Run your business from WhatsApp.",
+      "hiddenMessages": 0,
+      "mainHeight": 5197.203125,
+      "replayHidden": null,
+      "waLinks": 10
+    },
+    {
+      "path": "contact/",
+      "width": 1280,
+      "composerHidden": true,
+      "h1": "Let's talk.",
+      "hiddenMessages": 0,
+      "mainHeight": 2381.1875,
+      "replayHidden": null,
+      "waLinks": 7
+    },
+    {
+      "path": "privacy/",
+      "width": 1280,
+      "composerHidden": null,
+      "h1": "How we handle your information",
+      "hiddenMessages": 0,
+      "mainHeight": 1637.671875,
+      "replayHidden": null,
+      "waLinks": 4
+    },
+    {
+      "path": "about/",
+      "width": 1280,
+      "composerHidden": null,
+      "h1": "Thalir Innovations",
+      "hiddenMessages": 0,
+      "mainHeight": 1343.640625,
+      "replayHidden": null,
+      "waLinks": 6
+    },
+    {
+      "path": "terms/",
+      "width": 1280,
+      "composerHidden": null,
+      "h1": "Terms & Conditions",
+      "hiddenMessages": 0,
+      "mainHeight": 2997.6875,
+      "replayHidden": null,
+      "waLinks": 5
+    },
+    {
+      "path": "refunds/",
+      "width": 1280,
+      "composerHidden": null,
+      "h1": "Cancellation & Refund Policy",
+      "hiddenMessages": 0,
+      "mainHeight": 3795.265625,
+      "replayHidden": null,
+      "waLinks": 5
+    },
+    {
+      "path": "shipping/",
+      "width": 1280,
+      "composerHidden": null,
+      "h1": "Shipping & Service Delivery Policy",
+      "hiddenMessages": 0,
+      "mainHeight": 2586.703125,
+      "replayHidden": null,
+      "waLinks": 5
+    },
+    {
+      "path": "404.html",
+      "width": 1280,
+      "composerHidden": null,
+      "h1": "This page isn't here.",
+      "hiddenMessages": 0,
+      "mainHeight": 629.28125,
+      "replayHidden": null,
+      "waLinks": 5
+    }
+  ]
+}

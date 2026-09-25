@@ -1,0 +1,92 @@
+{
+  "retrievedAt": "2026-09-25T04:20:21.528106+00:00",
+  "source": "https://api.ekanicrm.com/v1/public/pricing",
+  "scope": "Public EKANI software price evidence; not WABot home automation pricing.",
+  "footnote": "All prices in Indian Rupees. GST extra. Billed via Razorpay; UPI / cards / netbanking accepted.",
+  "modules": [
+    {
+      "key": "crm",
+      "label": "Leads & CRM",
+      "monthlyInr": 299
+    },
+    {
+      "key": "books",
+      "label": "Books",
+      "monthlyInr": 449
+    },
+    {
+      "key": "inventory",
+      "label": "Inventory",
+      "monthlyInr": 349
+    },
+    {
+      "key": "projects",
+      "label": "Projects",
+      "monthlyInr": 399
+    },
+    {
+      "key": "service",
+      "label": "Service & AMC",
+      "monthlyInr": 349
+    },
+    {
+      "key": "purchasing",
+      "label": "Purchasing",
+      "monthlyInr": 249
+    },
+    {
+      "key": "finance",
+      "label": "Finance",
+      "monthlyInr": 349
+    },
+    {
+      "key": "whatsapp",
+      "label": "WhatsApp",
+      "monthlyInr": 599
+    },
+    {
+      "key": "ai",
+      "label": "AI Suite",
+      "monthlyInr": 599
+    },
+    {
+      "key": "planner",
+      "label": "Planner",
+      "monthlyInr": 199
+    },
+    {
+      "key": "planner_team",
+      "label": "Planner Team",
+      "monthlyInr": 499
+    }
+  ],
+  "bundleTiers": [
+    {
+      "key": "u3",
+      "label": "Up to 3 users",
+      "maxUsers": 3,
+      "originalMonthlyInr": 3499,
+      "monthlyInr": 2099,
+      "originalAnnualInr": 34990,
+      "annualInr": 20990
+    },
+    {
+      "key": "u10",
+      "label": "Up to 10 users",
+      "maxUsers": 10,
+      "originalMonthlyInr": 7499,
+      "monthlyInr": 4499,
+      "originalAnnualInr": 74990,
+      "annualInr": 44990
+    },
+    {
+      "key": "u25",
+      "label": "Up to 25 users",
+      "maxUsers": 25,
+      "originalMonthlyInr": 14999,
+      "monthlyInr": 8999,
+      "originalAnnualInr": 149990,
+      "annualInr": 89990
+    }
+  ]
+}
