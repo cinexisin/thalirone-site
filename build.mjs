@@ -149,7 +149,7 @@ function layout({ path, title, description, body, current }) {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+91-95136-36657",
+        telephone: "+91-95136-36646",
         contactType: "sales",
         areaServed: "IN",
       },
@@ -207,6 +207,7 @@ ${body}
       <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
       <div><h2>${esc(COPY.talk)}</h2><ul>
         <li><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></li>
+        <li><a href="tel:${esc(SITE.phone)}">${esc(COPY.call)} ${esc(SITE.phoneDisplay)}</a></li>
         <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
         <li class="muted">${esc(SITE.hours)}</li>
         ${SITE.social.map(([n, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a></li>`).join("")}
@@ -253,6 +254,7 @@ function reachBand(preselect) {
       <p>${esc(COPY.reachIntro)}</p>
       <dl>
         <dt>${esc(COPY.whatsapp)}</dt><dd><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(SITE.whatsappDisplay)}</a></dd>
+        <dt>${esc(COPY.call)}</dt><dd><a href="tel:${esc(SITE.phone)}">${esc(SITE.phoneDisplay)}</a></dd>
         <dt>${esc(COPY.email)}</dt><dd><a href="mailto:${SITE.email}">${SITE.email}</a></dd>
         <dt>${esc(COPY.hours)}</dt><dd>${esc(SITE.hours)}</dd>
         <dt>${esc(COPY.cover)}</dt><dd>${esc(SITE.states.join(", "))}</dd>
@@ -325,7 +327,7 @@ function home() {
       <p class="lede">${esc(UI.heroLede)}</p>
       <div class="btns">${waBtn(a.cta.wa, a.cta.label)}<a class="link-arrow" href="#chat-control">${esc(UI.heroDetail)} ${ICONS.arrow}</a></div>
       ${rv ? `<a class="link-arrow" href="${catUrl(rv)}">${esc(COPY.alreadyTheatre)} ${esc(rv.name)} ${ICONS.arrow}</a>` : ""}
-      <p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span></p>
+      <p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(COPY.call)} <a href="tel:${esc(SITE.phone)}">${esc(SITE.phoneDisplay)}</a></span><span>${esc(SITE.hours)}</span></p>
     </div>
   </div>
   <div class="visual-stage wrap">${a.page.usp ? heroDemo(a.page.usp) : `<div class="hero-art">${ILLUSTRATIONS[a.illustration]?.() || ""}</div>`}</div>
@@ -377,7 +379,7 @@ function categoryPage(c, pricing) {
       <h1>${esc(p.h1)}</h1>
       <p class="lede">${esc(p.lede)}</p>
       <div class="btns">${waBtn(c.cta.wa, c.cta.label)}${p.pricingUrl ? `<a class="btn ghost" href="${p.pricingUrl}" target="_blank" rel="noopener">${esc(COPY.seePricing)}</a>` : ""}</div>
-      ${p.signInUrl ? `<p class="contact-line"><span>${esc(COPY.alreadyCustomer)} <a href="${p.signInUrl}" target="_blank" rel="noopener">${esc(COPY.signIn)}</a></span></p>` : `<p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(SITE.hours)}</span><span>${esc(COPY.serving)} ${esc(SITE.serviceArea)}</span></p>`}
+      ${p.signInUrl ? `<p class="contact-line"><span>${esc(COPY.alreadyCustomer)} <a href="${p.signInUrl}" target="_blank" rel="noopener">${esc(COPY.signIn)}</a></span></p>` : `<p class="contact-line"><span>${esc(COPY.whatsapp)} <b>${esc(SITE.whatsappDisplay)}</b></span><span>${esc(COPY.call)} <a href="tel:${esc(SITE.phone)}">${esc(SITE.phoneDisplay)}</a></span><span>${esc(SITE.hours)}</span><span>${esc(COPY.serving)} ${esc(SITE.serviceArea)}</span></p>`}
     </div>
     <div class="hero-art">${art}</div>
   </div>
@@ -478,7 +480,7 @@ function businessDetails() {
 }
 
 function supportBlock() {
-  return `<aside class="policy-support" aria-label="${esc(BUSINESS_INFO.helpTitle)}"><h2>${esc(BUSINESS_INFO.helpTitle)}</h2><p>${esc(BUSINESS_INFO.helpBody)}</p><div class="support-links"><a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></div><p class="fine">${esc(SITE.hours)}</p></aside>`;
+  return `<aside class="policy-support" aria-label="${esc(BUSINESS_INFO.helpTitle)}"><h2>${esc(BUSINESS_INFO.helpTitle)}</h2><p>${esc(BUSINESS_INFO.helpBody)}</p><div class="support-links"><a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a><a href="tel:${esc(SITE.phone)}">${esc(COPY.call)} ${esc(SITE.phoneDisplay)}</a></div><p class="fine">${esc(SITE.hours)}</p></aside>`;
 }
 
 function grievanceBlock() {
@@ -571,7 +573,7 @@ for (const c of CATEGORIES) {
 }
 await page("/contact/", "contact/index.html", {
   title: COPY.contact,
-  description: `WhatsApp ${SITE.whatsappDisplay} or email ${SITE.email}. ${SITE.name}, ${SITE.city}.`,
+  description: `WhatsApp ${SITE.whatsappDisplay}, call ${SITE.phoneDisplay} or email ${SITE.email}. ${SITE.name}, ${SITE.city}.`,
   body: contactPage(),
   current: "contact",
 });

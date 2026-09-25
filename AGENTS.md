@@ -36,6 +36,7 @@ Node 20+ is enough. There is no package.json and no dependencies; keep it that w
 8. **Light theme only.** The logo's dark-green wordmark is designed for light grounds.
 9. **No trackers, analytics, cookies, chat widgets or third-party scripts.** The privacy page promises this.
 10. **Every WhatsApp call to action** must keep pointing to `https://wa.me/919513636657` with the prefilled text from `src/config.mjs`.
+11. **Calls** go to `SITE.phone` (+91 95136 36646). WhatsApp stays 95136 36657. No other phone number may appear on the site.
 
 ## Asks for Claude Code
 Anything outside the static front end is handled by Claude Code, not by you: form submissions to a server,

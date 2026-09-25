@@ -14,8 +14,10 @@ export const SITE = {
   serviceArea: "Karnataka, Tamil Nadu, Andhra Pradesh and Telangana",
   whatsapp: "919513636657", // official WhatsApp API number (Gupshup) → EKANI inbox
   whatsappDisplay: "+91 95136 36657",
+  phone: "+919513636646", // calls only (owner, 25 Sep 2026); the WhatsApp number above is chat only
+  phoneDisplay: "+91 95136 36646",
   email: "hello@thalirone.com",
-  hours: "Mon–Sat, 10 am – 7 pm",
+  hours: "Mon–Fri 9:30 am – 6:30 pm · Sat 9:30 am – 2 pm",
   description:
     "Thalir Innovations designs smart homes and home cinemas and revives existing home theatres across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
   social: [
@@ -559,6 +561,7 @@ export const UI = {
 
 // Existing shared copy moved from templates without rewriting its claims.
 export const COPY = {
+  call: "Call",
   skip: "Skip to content",
   contact: "Contact",
   whatWeDo: "What we do",
