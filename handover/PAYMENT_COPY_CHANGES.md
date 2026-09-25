@@ -1,0 +1,81 @@
+# Payment pages: exact copy for owner review
+
+Draft wording only. Missing commercial terms are listed in [the handover](PAYMENT_POLICIES.md). Existing category and pricing copy is unchanged. The privacy revision date becomes explicit instead of being regenerated on every build.
+
+- **BUSINESS_INFO.updatedLabel**: 25 September 2026
+- **BUSINESS_INFO.nav**: Business information and policies
+- **BUSINESS_INFO.onPage**: On this page
+- **BUSINESS_INFO.about**: About us
+- **BUSINESS_INFO.policies**: Customer policies
+- **BUSINESS_INFO.seller**: Registered seller
+- **BUSINESS_INFO.address**: Registered address
+- **BUSINESS_INFO.helpTitle**: Questions about an order or payment?
+- **BUSINESS_INFO.helpBody**: Email us or message us on WhatsApp with your quote, invoice or transaction reference, payment date and a short description of the issue. Please do not share a card number, CVV, PIN, password or one-time password.
+- **BUSINESS_INFO.emailLabel**: Email customer support
+- **BUSINESS_INFO.paymentTitle**: Order & payment support
+- **BUSINESS_INFO.paymentBody**: For a cancellation, refund, delivery or payment query, use the contact details below. Include the reference for your order or payment so we can identify it.
+- **BUSINESS_INFO.privacyPaymentsTitle**: Order and payment enquiries
+- **BUSINESS_INFO.privacyPaymentsBody**: If you send us an invoice, transaction reference or payment issue, we use those details to identify your order and respond to your request. Please do not send full card details, CVVs, PINs, passwords or one-time passwords through the contact form, email or WhatsApp. This website has no payment form and does not collect payment credentials.
+- **BUSINESS_INFO.privacyExternalTitle**: Other websites and payment services
+- **BUSINESS_INFO.privacyExternalBody**: Links to EKANI and messaging or payment services take you to separate websites or apps. Their privacy notices explain how they handle information you provide there. This notice describes thalirone.com and the enquiries you send to Thalir Innovations.
+- **BUSINESS_INFO.aboutIntro**: Thalir Innovations designs smart homes and home cinemas and revives existing home theatres across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.
+- **BUSINESS_INFO.aboutProcessTitle**: A clear scope before work begins
+- **BUSINESS_INFO.aboutProcess**: For a smart home or cinema project, we start with a site survey and a written quote. For an existing theatre, share your setup with us; the scope, charges and visit date are agreed before scheduling. EKANI features and current module prices are listed on our Business Software page.
+- **BUSINESS_INFO.aboutLocationTitle**: Based in Bengaluru
+- **BUSINESS_INFO.aboutLocation**: We take home and cinema projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Travel charges outside Bengaluru are agreed before the visit.
+- **POLICIES.0.title**: Terms & Conditions
+- **POLICIES.0.description**: Terms for using thalirone.com and enquiring about Thalir Innovations services.
+- **POLICIES.0.intro**: Please read these terms alongside your written quote or subscription terms before placing an order or making a payment.
+- **POLICIES.0.sections.0.title**: Using this website
+- **POLICIES.0.sections.0.paragraphs.0**: thalirone.com describes Smart Home & Cinema, Cinema Revival and EKANI business software from Thalir Innovations. The contact form prepares a WhatsApp message on your device. Sending an enquiry does not by itself confirm an order or a visit.
+- **POLICIES.0.sections.0.paragraphs.1**: This website does not currently take online payments. A link to an external website or app is subject to that service's own terms.
+- **POLICIES.0.sections.1.title**: Home and cinema projects
+- **POLICIES.0.sections.1.paragraphs.0**: A smart home or cinema project begins with a site survey and a written quote. The quote sets out the agreed scope, equipment, charges and timeline. Capabilities depend on the equipment at your property and are confirmed during the survey.
+- **POLICIES.0.sections.1.paragraphs.1**: For Cinema Revival, the scope, charges and visit date are agreed before scheduling. Travel charges for visits outside Bengaluru are agreed in advance.
+- **POLICIES.0.sections.1.paragraphs.2**: Before paying, check the total amount, any applicable taxes, payment stages, delivery or service dates, and cancellation terms in your written order. Ask us to clarify anything that is missing or unclear.
+- **POLICIES.0.sections.2.title**: EKANI subscriptions
+- **POLICIES.0.sections.2.paragraphs.0**: EKANI is a subscription service. Our Business Software page displays module and bundle prices in Indian rupees. The selected plan, billing cycle, total charge and subscription terms should be reviewed in EKANI before purchase. An enquiry through this website does not activate a subscription.
+- **POLICIES.0.sections.2.links.0.1**: Explore EKANI pricing
+- **POLICIES.0.sections.3.title**: Payment records and queries
+- **POLICIES.0.sections.3.paragraphs.0**: Keep your quote, invoice and transaction reference. If a payment is pending, debited without confirmation, duplicated or charged for a different amount, contact us with those references so the transaction can be checked before you retry.
+- **POLICIES.0.sections.3.paragraphs.1**: The payment provider and available payment methods are identified when you pay. The provider used for one service may differ from another, or change over time.
+- **POLICIES.0.sections.4.title**: Cancellations, delivery and privacy
+- **POLICIES.0.sections.4.paragraphs.0**: Read the policies below together with the terms agreed for your order. These website terms do not remove rights or remedies available under applicable law.
+- **POLICIES.0.sections.4.links.0.1**: Cancellation & Refund Policy
+- **POLICIES.0.sections.4.links.1.1**: Shipping & Service Delivery Policy
+- **POLICIES.0.sections.4.links.2.1**: Privacy Policy
+- **POLICIES.1.title**: Cancellation & Refund Policy
+- **POLICIES.1.description**: How to contact Thalir Innovations about cancellations, refunds and payment issues.
+- **POLICIES.1.intro**: Cancellation and refund terms depend on the service purchased and the written terms of your order. Check those terms before paying.
+- **POLICIES.1.sections.0.title**: How to request a cancellation or refund
+- **POLICIES.1.sections.0.paragraphs.0**: Email hello@thalirone.com or message our WhatsApp number with your name, quote or invoice reference, payment reference, payment date and the reason for your request. For a visit that needs to be changed, include the agreed visit date.
+- **POLICIES.1.sections.0.paragraphs.1**: If the amount was debited but the payment appears pending or failed, include the transaction status shown by your bank or payment app. A failed-payment reversal and a refund for a completed order are different processes.
+- **POLICIES.1.sections.1.title**: Home and cinema orders
+- **POLICIES.1.sections.1.paragraphs.0**: Contact us as soon as you need to cancel or reschedule a survey, installation or service visit. Refer to the cancellation and refund terms in your written quote or order, including any terms for equipment procurement and work already carried out.
+- **POLICIES.1.sections.1.paragraphs.1**: Refund eligibility, any agreed deductions and the processing period need to be clear in the written terms before payment. If your quote does not explain them, ask us to clarify them before proceeding.
+- **POLICIES.1.sections.2.title**: EKANI subscriptions
+- **POLICIES.1.sections.2.paragraphs.0**: For a payment made within EKANI, refer to the cancellation and refund terms supplied with that subscription. Include your account email and invoice reference when you contact support. Cancelling future renewal and requesting a refund for a charge already made are separate requests.
+- **POLICIES.1.sections.3.title**: Following up on a refund
+- **POLICIES.1.sections.3.paragraphs.0**: For an agreed refund, keep the confirmation, amount, processing estimate and reference provided for your transaction. The time a bank or payment provider takes to credit a refund can differ from the date it is initiated.
+- **POLICIES.1.sections.3.paragraphs.1**: If an agreed refund has not arrived by the communicated date, contact us with the refund and original payment references. Do not share payment credentials or a one-time password to request a refund.
+- **POLICIES.1.sections.4.title**: Wrong, damaged or undelivered items and services
+- **POLICIES.1.sections.4.paragraphs.0**: Contact us if equipment supplied under your order is damaged, incomplete or different from the agreed scope, or if an agreed service or delivery has not taken place. Include the order reference and a description or photographs of the problem where relevant.
+- **POLICIES.1.sections.4.paragraphs.1**: These instructions do not limit rights or remedies available under applicable law.
+- **POLICIES.1.sections.4.links.0.1**: Shipping & Service Delivery Policy
+- **POLICIES.2.title**: Shipping & Service Delivery Policy
+- **POLICIES.2.description**: Delivery, installation, service scheduling and digital subscription information for Thalir Innovations customers.
+- **POLICIES.2.intro**: Home and cinema work is scoped individually. Delivery and service arrangements belong in your written quote or order, so you know what is included before paying.
+- **POLICIES.2.sections.0.title**: Where we work
+- **POLICIES.2.sections.0.paragraphs.0**: We are based in Bengaluru and take home and cinema projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Visits outside Bengaluru are by prior confirmation, with travel charges agreed before the visit.
+- **POLICIES.2.sections.1.title**: Equipment delivery and installation
+- **POLICIES.2.sections.1.paragraphs.0**: Where equipment supply is included in a project, review the equipment list, delivery address, delivery or installation schedule and any transport charges in the written quote. An installation date and an equipment delivery date may be different.
+- **POLICIES.2.sections.1.paragraphs.1**: There is no standard dispatch period for every project. Ask for the delivery estimate for your specific equipment and site before accepting the quote.
+- **POLICIES.2.sections.2.title**: Surveys and service visits
+- **POLICIES.2.sections.2.paragraphs.0**: Smart Home & Cinema work follows a site survey, written quote, installation and programming, then handover. For Cinema Revival, the scope, charges and visit date are agreed before scheduling.
+- **POLICIES.2.sections.2.paragraphs.1**: Tell us if site access, readiness or your availability changes so the visit arrangements can be reviewed. Sending a WhatsApp enquiry does not reserve a visit date.
+- **POLICIES.2.sections.3.title**: EKANI digital access
+- **POLICIES.2.sections.3.paragraphs.0**: EKANI is delivered as access to software, rather than a physical shipment. Review the selected plan's activation and billing details within EKANI before paying. Enquiring about a demo on this website does not activate a paid plan.
+- **POLICIES.2.sections.3.paragraphs.1**: If payment has completed but access is unavailable, contact support with your account email and payment reference. Do not send your password or one-time password.
+- **POLICIES.2.sections.4.title**: Delays or problems with your order
+- **POLICIES.2.sections.4.paragraphs.0**: If the date agreed for your order has passed, or supplied equipment is damaged, missing or different from the agreed scope, contact us with your quote or invoice reference and the relevant details. Refer to the cancellation and refund policy for requests concerning an affected order.
+- **POLICIES.2.sections.4.links.0.1**: Cancellation & Refund Policy

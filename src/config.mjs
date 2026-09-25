@@ -632,6 +632,202 @@ export const COPY = {
     "smart homes, home cinema & EKANI CRM · Karnataka, Tamil Nadu, AP & Telangana",
 };
 
+// Payment-policy draft: review handover/PAYMENT_POLICIES.md before publication.
+// TODO(owner): confirm seller identity, postal address, payment scope, refund
+// eligibility/processing periods, delivery/activation periods and grievance contact.
+// TODO(Claude Code): configure the selected gateway only after that confirmation.
+export const BUSINESS_INFO = {
+  registeredName: "",
+  postalAddress: [],
+  updated: "2026-09-25",
+  updatedLabel: "25 September 2026",
+  nav: "Business information and policies",
+  onPage: "On this page",
+  about: "About us",
+  policies: "Customer policies",
+  seller: "Registered seller",
+  address: "Registered address",
+  helpTitle: "Questions about an order or payment?",
+  helpBody:
+    "Email us or message us on WhatsApp with your quote, invoice or transaction reference, payment date and a short description of the issue. Please do not share a card number, CVV, PIN, password or one-time password.",
+  emailLabel: "Email customer support",
+  paymentTitle: "Order & payment support",
+  paymentBody:
+    "For a cancellation, refund, delivery or payment query, use the contact details below. Include the reference for your order or payment so we can identify it.",
+  privacyPaymentsTitle: "Order and payment enquiries",
+  privacyPaymentsBody:
+    "If you send us an invoice, transaction reference or payment issue, we use those details to identify your order and respond to your request. Please do not send full card details, CVVs, PINs, passwords or one-time passwords through the contact form, email or WhatsApp. This website has no payment form and does not collect payment credentials.",
+  privacyExternalTitle: "Other websites and payment services",
+  privacyExternalBody:
+    "Links to EKANI and messaging or payment services take you to separate websites or apps. Their privacy notices explain how they handle information you provide there. This notice describes thalirone.com and the enquiries you send to Thalir Innovations.",
+  aboutIntro: SITE.description,
+  aboutProcessTitle: "A clear scope before work begins",
+  aboutProcess:
+    "For a smart home or cinema project, we start with a site survey and a written quote. For an existing theatre, share your setup with us; the scope, charges and visit date are agreed before scheduling. EKANI features and current module prices are listed on our Business Software page.",
+  aboutLocationTitle: "Based in Bengaluru",
+  aboutLocation:
+    "We take home and cinema projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Travel charges outside Bengaluru are agreed before the visit.",
+};
+
+// These are reviewable drafts, not an assertion of gateway approval. Do not add
+// invented time limits, non-refundable charges, tax treatment or seller details.
+export const POLICIES = [
+  {
+    slug: "terms",
+    title: "Terms & Conditions",
+    description:
+      "Terms for using thalirone.com and enquiring about Thalir Innovations services.",
+    intro:
+      "Please read these terms alongside your written quote or subscription terms before placing an order or making a payment.",
+    sections: [
+      {
+        id: "scope",
+        title: "Using this website",
+        paragraphs: [
+          "thalirone.com describes Smart Home & Cinema, Cinema Revival and EKANI business software from Thalir Innovations. The contact form prepares a WhatsApp message on your device. Sending an enquiry does not by itself confirm an order or a visit.",
+          "This website does not currently take online payments. A link to an external website or app is subject to that service's own terms.",
+        ],
+      },
+      {
+        id: "project-orders",
+        title: "Home and cinema projects",
+        paragraphs: [
+          "A smart home or cinema project begins with a site survey and a written quote. The quote sets out the agreed scope, equipment, charges and timeline. Capabilities depend on the equipment at your property and are confirmed during the survey.",
+          "For Cinema Revival, the scope, charges and visit date are agreed before scheduling. Travel charges for visits outside Bengaluru are agreed in advance.",
+          "Before paying, check the total amount, any applicable taxes, payment stages, delivery or service dates, and cancellation terms in your written order. Ask us to clarify anything that is missing or unclear.",
+        ],
+      },
+      {
+        id: "software",
+        title: "EKANI subscriptions",
+        paragraphs: [
+          "EKANI is a subscription service. Our Business Software page displays module and bundle prices in Indian rupees. The selected plan, billing cycle, total charge and subscription terms should be reviewed in EKANI before purchase. An enquiry through this website does not activate a subscription.",
+        ],
+        links: [["/business-software/#pricing", "Explore EKANI pricing"]],
+      },
+      {
+        id: "payment-records",
+        title: "Payment records and queries",
+        paragraphs: [
+          "Keep your quote, invoice and transaction reference. If a payment is pending, debited without confirmation, duplicated or charged for a different amount, contact us with those references so the transaction can be checked before you retry.",
+          "The payment provider and available payment methods are identified when you pay. The provider used for one service may differ from another, or change over time.",
+        ],
+      },
+      {
+        id: "related-policies",
+        title: "Cancellations, delivery and privacy",
+        paragraphs: [
+          "Read the policies below together with the terms agreed for your order. These website terms do not remove rights or remedies available under applicable law.",
+        ],
+        links: [
+          ["/refunds/", "Cancellation & Refund Policy"],
+          ["/shipping/", "Shipping & Service Delivery Policy"],
+          ["/privacy/", "Privacy Policy"],
+        ],
+      },
+    ],
+  },
+  {
+    slug: "refunds",
+    title: "Cancellation & Refund Policy",
+    description:
+      "How to contact Thalir Innovations about cancellations, refunds and payment issues.",
+    intro:
+      "Cancellation and refund terms depend on the service purchased and the written terms of your order. Check those terms before paying.",
+    sections: [
+      {
+        id: "request",
+        title: "How to request a cancellation or refund",
+        paragraphs: [
+          "Email hello@thalirone.com or message our WhatsApp number with your name, quote or invoice reference, payment reference, payment date and the reason for your request. For a visit that needs to be changed, include the agreed visit date.",
+          "If the amount was debited but the payment appears pending or failed, include the transaction status shown by your bank or payment app. A failed-payment reversal and a refund for a completed order are different processes.",
+        ],
+      },
+      {
+        id: "projects",
+        title: "Home and cinema orders",
+        paragraphs: [
+          "Contact us as soon as you need to cancel or reschedule a survey, installation or service visit. Refer to the cancellation and refund terms in your written quote or order, including any terms for equipment procurement and work already carried out.",
+          "Refund eligibility, any agreed deductions and the processing period need to be clear in the written terms before payment. If your quote does not explain them, ask us to clarify them before proceeding.",
+        ],
+      },
+      {
+        id: "subscriptions",
+        title: "EKANI subscriptions",
+        paragraphs: [
+          "For a payment made within EKANI, refer to the cancellation and refund terms supplied with that subscription. Include your account email and invoice reference when you contact support. Cancelling future renewal and requesting a refund for a charge already made are separate requests.",
+        ],
+      },
+      {
+        id: "refund-status",
+        title: "Following up on a refund",
+        paragraphs: [
+          "For an agreed refund, keep the confirmation, amount, processing estimate and reference provided for your transaction. The time a bank or payment provider takes to credit a refund can differ from the date it is initiated.",
+          "If an agreed refund has not arrived by the communicated date, contact us with the refund and original payment references. Do not share payment credentials or a one-time password to request a refund.",
+        ],
+      },
+      {
+        id: "order-problems",
+        title: "Wrong, damaged or undelivered items and services",
+        paragraphs: [
+          "Contact us if equipment supplied under your order is damaged, incomplete or different from the agreed scope, or if an agreed service or delivery has not taken place. Include the order reference and a description or photographs of the problem where relevant.",
+          "These instructions do not limit rights or remedies available under applicable law.",
+        ],
+        links: [["/shipping/", "Shipping & Service Delivery Policy"]],
+      },
+    ],
+  },
+  {
+    slug: "shipping",
+    title: "Shipping & Service Delivery Policy",
+    description:
+      "Delivery, installation, service scheduling and digital subscription information for Thalir Innovations customers.",
+    intro:
+      "Home and cinema work is scoped individually. Delivery and service arrangements belong in your written quote or order, so you know what is included before paying.",
+    sections: [
+      {
+        id: "service-area",
+        title: "Where we work",
+        paragraphs: [
+          "We are based in Bengaluru and take home and cinema projects across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana. Visits outside Bengaluru are by prior confirmation, with travel charges agreed before the visit.",
+        ],
+      },
+      {
+        id: "equipment",
+        title: "Equipment delivery and installation",
+        paragraphs: [
+          "Where equipment supply is included in a project, review the equipment list, delivery address, delivery or installation schedule and any transport charges in the written quote. An installation date and an equipment delivery date may be different.",
+          "There is no standard dispatch period for every project. Ask for the delivery estimate for your specific equipment and site before accepting the quote.",
+        ],
+      },
+      {
+        id: "visits",
+        title: "Surveys and service visits",
+        paragraphs: [
+          "Smart Home & Cinema work follows a site survey, written quote, installation and programming, then handover. For Cinema Revival, the scope, charges and visit date are agreed before scheduling.",
+          "Tell us if site access, readiness or your availability changes so the visit arrangements can be reviewed. Sending a WhatsApp enquiry does not reserve a visit date.",
+        ],
+      },
+      {
+        id: "digital-delivery",
+        title: "EKANI digital access",
+        paragraphs: [
+          "EKANI is delivered as access to software, rather than a physical shipment. Review the selected plan's activation and billing details within EKANI before paying. Enquiring about a demo on this website does not activate a paid plan.",
+          "If payment has completed but access is unavailable, contact support with your account email and payment reference. Do not send your password or one-time password.",
+        ],
+      },
+      {
+        id: "delivery-issues",
+        title: "Delays or problems with your order",
+        paragraphs: [
+          "If the date agreed for your order has passed, or supplied equipment is damaged, missing or different from the agreed scope, contact us with your quote or invoice reference and the relevant details. Refer to the cancellation and refund policy for requests concerning an affected order.",
+        ],
+        links: [["/refunds/", "Cancellation & Refund Policy"]],
+      },
+    ],
+  },
+];
+
 // Existing illustrative example text, centralized unchanged.
 export const DRAWING = {
   floorplanTitle: "Example floor plan with KNX devices and group addresses",

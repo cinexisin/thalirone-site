@@ -1,0 +1,677 @@
+{
+  "widths": [
+    {
+      "path": "home",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "business-software/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "contact/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "privacy/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "about/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "terms/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "refunds/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "shipping/",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "404.html",
+      "width": 360,
+      "scroll": 360,
+      "smallTargets": []
+    },
+    {
+      "path": "home",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "business-software/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "contact/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "privacy/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "about/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "terms/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "refunds/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "shipping/",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "404.html",
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": []
+    },
+    {
+      "path": "home",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "business-software/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "contact/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "privacy/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "about/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "terms/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "refunds/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "shipping/",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "404.html",
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": []
+    },
+    {
+      "path": "home",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "business-software/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "contact/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "privacy/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "about/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "terms/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "refunds/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "shipping/",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "404.html",
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": []
+    },
+    {
+      "path": "home",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "business-software/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "contact/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "privacy/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "about/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "terms/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "refunds/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "shipping/",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "404.html",
+      "width": 1280,
+      "scroll": 1280,
+      "smallTargets": []
+    },
+    {
+      "path": "home",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "business-software/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "contact/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "privacy/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "about/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "terms/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "refunds/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "shipping/",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    },
+    {
+      "path": "404.html",
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": []
+    }
+  ],
+  "accessibility": [
+    {
+      "path": "home",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "business-software/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "contact/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "privacy/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "about/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "terms/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "refunds/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "shipping/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "404.html",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "path": "home",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "business-software/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "contact/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "privacy/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "about/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "terms/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "refunds/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "shipping/",
+      "width": 1280,
+      "violations": []
+    },
+    {
+      "path": "404.html",
+      "width": 1280,
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "interactions": [
+    "Keyboard: skip link, mobile open, forward/backward focus wrap, Escape focus restoration, link navigation and native FAQ",
+    "Composer: whitespace/name validation, error recovery, topic hint, encoded config message, one noopener handoff; external navigation intercepted, no enquiry sent",
+    "Mobile bar clears footer and returns at top",
+    "Reduced motion: static complete example, no hidden messages or replay animation",
+    "Motion: fully visible initial state, one sequence, room responds, explicit replay, live reduced-motion cancellation, animated FAQ open/close"
+  ],
+  "noJS": [
+    {
+      "path": "home",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "business-software/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "contact/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "privacy/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "about/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "terms/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "refunds/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "shipping/",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "404.html",
+      "width": 390,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "home",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "smart-home-cinema/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "cinema-revival/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "business-software/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "contact/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "privacy/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "about/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "terms/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "refunds/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "shipping/",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    },
+    {
+      "path": "404.html",
+      "width": 1280,
+      "readable": true,
+      "navigation": true,
+      "whatsapp": true
+    }
+  ]
+}

@@ -19,6 +19,8 @@ import {
   EKANI_PRICING_FALLBACK,
   UI,
   COPY,
+  BUSINESS_INFO,
+  POLICIES,
 } from "./src/config.mjs";
 import {
   ILLUSTRATIONS,
@@ -197,15 +199,15 @@ ${body}
         ${logo(true)}
         <p class="muted">${esc(SITE.tagline)} ${esc(COPY.footerBased)} ${esc(SITE.city)}, ${esc(COPY.footerServing)} ${esc(SITE.serviceArea)}.</p>
       </div>
-      <div><h3>${esc(COPY.whatWeDo)}</h3><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
-      <div><h3>${esc(COPY.talk)}</h3><ul>
+      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
+      <div><h2>${esc(COPY.talk)}</h2><ul>
         <li><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></li>
         <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
         <li class="muted">${esc(SITE.hours)}</li>
         ${SITE.social.map(([n, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a></li>`).join("")}
       </ul></div>
     </div>
-    <div class="legal"><span>© ${YEAR} ${esc(SITE.name)} · ${esc(SITE.city)}</span><a href="/privacy/">${esc(COPY.privacy)}</a></div>
+    <div class="legal"><span>© ${YEAR} ${esc(SITE.name)} · ${esc(SITE.city)}</span><nav class="policy-links" aria-label="${esc(BUSINESS_INFO.nav)}">${policyLinks(path)}</nav></div>
   </div>
 </footer>
 ${mobileAction(current)}
@@ -440,24 +442,77 @@ function contactPage() {
 <section class="hero page-hero" style="padding-bottom:24px"><div class="wrap" style="grid-template-columns:1fr">
   <div class="hero-copy"><span class="eyebrow">${esc(COPY.contact)}</span><h1>${esc(COPY.contactTitle)}</h1><p class="lede">${esc(COPY.contactIntro)}</p></div>
 </div></section>
-${reachBand()}`;
+${reachBand()}
+<section class="band tight" aria-labelledby="payment-support"><div class="wrap prose">
+  <span class="eyebrow">${esc(BUSINESS_INFO.policies)}</span>
+  <h2 id="payment-support">${esc(BUSINESS_INFO.paymentTitle)}</h2>
+  <p>${esc(BUSINESS_INFO.paymentBody)}</p>
+  ${businessDetails()}
+  ${supportBlock()}
+  <nav class="policy-links" aria-label="${esc(BUSINESS_INFO.nav)}">${policyLinks()}</nav>
+</div></section>`;
+}
+
+function policyLinks(current = "") {
+  return [
+    ...POLICIES.map((p) => [`/${p.slug}/`, p.title]),
+    ["/privacy/", COPY.privacy],
+  ]
+    .map(
+      ([url, label]) =>
+        `<a href="${url}"${current === url ? ' aria-current="page"' : ""}>${esc(label)}</a>`,
+    )
+    .join("");
+}
+
+function businessDetails() {
+  if (!BUSINESS_INFO.registeredName || !BUSINESS_INFO.postalAddress.length)
+    return "";
+  return `<dl class="business-details"><dt>${esc(BUSINESS_INFO.seller)}</dt><dd>${esc(BUSINESS_INFO.registeredName)}</dd><dt>${esc(BUSINESS_INFO.address)}</dt><dd><address>${BUSINESS_INFO.postalAddress.map(esc).join("<br>")}</address></dd></dl>`;
+}
+
+function supportBlock() {
+  return `<aside class="policy-support" aria-label="${esc(BUSINESS_INFO.helpTitle)}"><h2>${esc(BUSINESS_INFO.helpTitle)}</h2><p>${esc(BUSINESS_INFO.helpBody)}</p><div class="support-links"><a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></div><p class="fine">${esc(SITE.hours)}</p></aside>`;
+}
+
+function aboutPage() {
+  return `<section class="band about-page"><div class="wrap">
+    <header class="policy-heading"><span class="eyebrow">${esc(BUSINESS_INFO.about)}</span><h1>${esc(SITE.name)}</h1><p class="lede">${esc(BUSINESS_INFO.aboutIntro)}</p></header>
+    <div class="about-services">${CATEGORIES.map((c) => `<article><span class="eyebrow">${esc(c.label)}</span><h2><a href="${catUrl(c)}">${esc(c.name)}</a></h2><p>${esc(c.card.pitch)}</p></article>`).join("")}</div>
+    <div class="about-details"><div><h2>${esc(BUSINESS_INFO.aboutProcessTitle)}</h2><p>${esc(BUSINESS_INFO.aboutProcess)}</p><h2>${esc(BUSINESS_INFO.aboutLocationTitle)}</h2><p>${esc(BUSINESS_INFO.aboutLocation)}</p>${businessDetails()}</div>${supportBlock()}</div>
+  </div></section>`;
+}
+
+function policyPage(p) {
+  return `<section class="band policy-page"><div class="wrap">
+    <header class="policy-heading"><span class="eyebrow">${esc(BUSINESS_INFO.policies)}</span><h1>${esc(p.title)}</h1><p class="lede">${esc(p.intro)}</p><p class="fine">${esc(COPY.lastUpdated)} <time datetime="${BUSINESS_INFO.updated}">${esc(BUSINESS_INFO.updatedLabel)}</time></p></header>
+    <div class="policy-layout">
+      <nav class="policy-toc" aria-label="${esc(BUSINESS_INFO.onPage)}"><span class="eyebrow">${esc(BUSINESS_INFO.onPage)}</span><ol>${p.sections.map((s) => `<li><a href="#${esc(s.id)}">${esc(s.title)}</a></li>`).join("")}</ol></nav>
+      <div class="policy-body">${businessDetails()}${p.sections.map((s) => `<section aria-labelledby="${esc(s.id)}"><h2 id="${esc(s.id)}">${esc(s.title)}</h2>${s.paragraphs.map((t) => `<p>${esc(t)}</p>`).join("")}${s.links ? `<ul class="policy-related">${s.links.map(([url, label]) => `<li><a href="${esc(url)}">${esc(label)}</a></li>`).join("")}</ul>` : ""}</section>`).join("")}${supportBlock()}</div>
+    </div>
+  </div></section>`;
 }
 
 function privacyPage() {
   return `<section class="band privacy"><div class="wrap prose">
   <span class="eyebrow">${esc(COPY.privacy)}</span>
   <h1 style="font-size:2.2rem">${esc(COPY.privacyTitle)}</h1>
-  <p class="muted">${esc(COPY.lastUpdated)} ${new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</p>
+  <p class="muted">${esc(COPY.lastUpdated)} <time datetime="${BUSINESS_INFO.updated}">${esc(BUSINESS_INFO.updatedLabel)}</time></p>
   <h2>${esc(COPY.privacySite)}</h2>
   <p>${esc(UI.privacyWebsite)}</p>
   <h2>${esc(COPY.privacyMessage)}</h2>
   <p>${esc(COPY.privacyMessagePrefix)} ${esc(SITE.whatsappDisplay)} ${esc(COPY.privacyMessageBody)}</p>
   <h2>${esc(COPY.privacyShare)}</h2>
   <p>${esc(COPY.privacySharing)}</p>
+  <h2>${esc(BUSINESS_INFO.privacyPaymentsTitle)}</h2>
+  <p>${esc(BUSINESS_INFO.privacyPaymentsBody)}</p>
+  <h2>${esc(BUSINESS_INFO.privacyExternalTitle)}</h2>
+  <p>${esc(BUSINESS_INFO.privacyExternalBody)}</p>
   <h2>${esc(COPY.privacyChoices)}</h2>
   <p>${esc(COPY.privacyChoicesPrefix)} <a href="mailto:${SITE.email}">${SITE.email}</a> ${esc(COPY.privacyChoicesBody)}</p>
   <h2>${esc(COPY.contact)}</h2>
   <p>${esc(SITE.name)}, ${esc(SITE.city)}, ${esc(COPY.location)} · <a href="mailto:${SITE.email}">${SITE.email}</a></p>
+  ${businessDetails()}
 </div></section>`;
 }
 
@@ -515,13 +570,32 @@ await page("/privacy/", "privacy/index.html", {
   description: `How ${SITE.name} handles your information.`,
   body: privacyPage(),
 });
+await page("/about/", "about/index.html", {
+  title: BUSINESS_INFO.about,
+  description: SITE.description,
+  body: aboutPage(),
+});
+for (const p of POLICIES) {
+  await page(`/${p.slug}/`, `${p.slug}/index.html`, {
+    title: p.title,
+    description: p.description,
+    body: policyPage(p),
+  });
+}
 await page("/404.html", "404.html", {
   title: COPY.notFoundMeta,
   description: SITE.description,
   body: notFound(),
 });
 
-const urls = ["/", ...CATEGORIES.map(catUrl), "/contact/", "/privacy/"];
+const urls = [
+  "/",
+  ...CATEGORIES.map(catUrl),
+  "/contact/",
+  "/privacy/",
+  "/about/",
+  ...POLICIES.map((p) => `/${p.slug}/`),
+];
 await writeFile(
   join(OUT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE.url}${u}</loc></url>`).join("\n")}\n</urlset>\n`,
