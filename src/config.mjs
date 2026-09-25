@@ -23,7 +23,7 @@ export const SITE = {
     "Thalir Innovations designs smart homes, home cinemas, commercial audio, PA, acoustics and building automation across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and builds EKANI, the WhatsApp-first CRM for Indian businesses.",
   social: [
     // filled in as accounts go live: ["Instagram", "https://instagram.com/thalirone"]
-    ["Facebook", "https://www.facebook.com/profile.php?id=61594497942347"],
+    ["Facebook", "https://www.facebook.com/thalironeofficial"],
     ["YouTube", "https://www.youtube.com/@thalirone"],
   ],
 };

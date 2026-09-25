@@ -20,7 +20,7 @@ import {
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const output = join(root, "docs");
-const baselineRef = process.env.THALIR_VERIFY_BASE || "304468e";
+const baselineRef = process.env.THALIR_VERIFY_BASE || "711ecd7";
 const git = (...args) => execFileSync("git", args, { cwd: root });
 const baselineCommit = git("rev-parse", baselineRef).toString().trim();
 const baselineFiles = new Set(
