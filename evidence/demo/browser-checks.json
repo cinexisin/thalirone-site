@@ -1,0 +1,163 @@
+{
+  "navigation": [
+    {
+      "focused": "Give the enquiry a next step.",
+      "nextDisabled": false,
+      "panel": "installation-enquiry",
+      "previousDisabled": true,
+      "status": "1 of 4 · Enquiry",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Put the scope into a clear quote.",
+      "nextDisabled": false,
+      "panel": "installation-quote",
+      "previousDisabled": false,
+      "status": "2 of 4 · Quote",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "See which stage the job has reached.",
+      "nextDisabled": false,
+      "panel": "installation-project",
+      "previousDisabled": false,
+      "status": "3 of 4 · Project",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Keep the payment with the job.",
+      "nextDisabled": true,
+      "panel": "installation-payment",
+      "previousDisabled": false,
+      "status": "4 of 4 · Payment record",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Give the service request a place to live.",
+      "nextDisabled": false,
+      "panel": "service-request",
+      "previousDisabled": true,
+      "status": "1 of 4 · Request",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Make the next owner clear.",
+      "nextDisabled": false,
+      "panel": "service-assignment",
+      "previousDisabled": false,
+      "status": "2 of 4 · Assignment",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Keep the current position in view.",
+      "nextDisabled": false,
+      "panel": "service-progress",
+      "previousDisabled": false,
+      "status": "3 of 4 · Progress",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Keep context for the next request.",
+      "nextDisabled": true,
+      "panel": "service-history",
+      "previousDisabled": false,
+      "status": "4 of 4 · Customer history",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Turn the next action into a task.",
+      "nextDisabled": false,
+      "panel": "team-capture",
+      "previousDisabled": true,
+      "status": "1 of 4 · Capture",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Give the task a clear owner.",
+      "nextDisabled": false,
+      "panel": "team-assign",
+      "previousDisabled": false,
+      "status": "2 of 4 · Assign",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Bring today's actions into view.",
+      "nextDisabled": false,
+      "panel": "team-day-plan",
+      "previousDisabled": false,
+      "status": "3 of 4 · Day plan",
+      "visiblePanels": 1
+    },
+    {
+      "focused": "Leave the task with a useful update.",
+      "nextDisabled": true,
+      "panel": "team-update",
+      "previousDisabled": false,
+      "status": "4 of 4 · Update",
+      "visiblePanels": 1
+    }
+  ],
+  "responsive": [
+    {
+      "requested": 360,
+      "client": 360,
+      "inner": 375,
+      "overflow": [],
+      "scroll": 360
+    },
+    {
+      "requested": 390,
+      "client": 390,
+      "inner": 405,
+      "overflow": [],
+      "scroll": 390
+    },
+    {
+      "requested": 768,
+      "client": 768,
+      "inner": 783,
+      "overflow": [],
+      "scroll": 768
+    },
+    {
+      "requested": 1024,
+      "client": 1024,
+      "inner": 1039,
+      "overflow": [],
+      "scroll": 1024
+    },
+    {
+      "requested": 1280,
+      "client": 1280,
+      "inner": 1295,
+      "overflow": [],
+      "scroll": 1280
+    },
+    {
+      "requested": 1440,
+      "client": 1440,
+      "inner": 1455,
+      "overflow": [],
+      "scroll": 1440
+    }
+  ],
+  "additionalChecks": {
+    "previousAndRestart": true,
+    "keyboardArrowsHomeEndEscape": true,
+    "deepLinksAndBackForward": true,
+    "invalidFragmentFallback": true,
+    "notesExpansion": true,
+    "copySuccessLabel": true,
+    "mobileMenuOpenClose": true,
+    "phoneLongPanelsNoOverflow": true,
+    "noJsAll12PanelsReadable": true,
+    "noJsControlsHidden": true,
+    "consoleWarningsOrErrors": 0,
+    "printDialogVerified": false
+  },
+  "notes": [
+    "Responsive widths are document client widths; viewport override includes 15px scrollbar.",
+    "Print stylesheet statically reviewed; browser print control is wired to window.print. Native print preview could not be inspected through the browser connector.",
+    "Clipboard success label was verified; connector clipboard read did not expose the browser-written value."
+  ]
+}

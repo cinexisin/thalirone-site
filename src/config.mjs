@@ -1353,3 +1353,366 @@ export const DESIGN = {
     summary: "From the first enquiry to a recorded payment.",
   },
 };
+
+// Guided examples use anonymous sample data and describe published workflows.
+// These illustrations are not captures or replicas of the application interface.
+export const DEMO = {
+  title: "EKANI demo — follow the work from enquiry to payment",
+  description:
+    "Explore three illustrative EKANI workflows: installation jobs, service requests and a team's day. See how the modules support the work, then ask for a demo for your business.",
+  eyebrow: "Explore EKANI",
+  heading: "Start with the work you do.",
+  intro:
+    "Choose a familiar situation and follow four simple steps. See where EKANI helps you keep the customer, the work and the next action together.",
+  nav: "Demo",
+  exploreLabel: "Choose a walkthrough",
+  crmLabel: "Open EKANI CRM",
+  crmNote: "Opens the EKANI sign-in page. An account is required.",
+  pricingLabel: "View current plans",
+  exampleLabel: "Example",
+  exampleNote:
+    "Illustrative walkthrough · Sample data, not the live CRM. No messages, invoices or payments are created here.",
+  journeyLabel: "Choose your workflow",
+  stepsLabel: "Walkthrough steps",
+  previousLabel: "Previous",
+  nextLabel: "Next step",
+  restartLabel: "Start again",
+  presentLabel: "Presenter view",
+  exitPresentLabel: "Exit presenter view",
+  notesLabel: "Conversation prompts",
+  copyLabel: "Copy link",
+  copiedLabel: "Link copied",
+  copyFailureLabel: "Select this link to copy it manually.",
+  progressTemplate: "{current} of {total} · {title}",
+  presentHint:
+    "Use ← and → to move between steps. Open conversation prompts when you need them. Press Esc to leave presenter view.",
+  modulesEyebrow: "Find the right starting point",
+  modulesTitle: "Choose modules around the problem.",
+  modulesIntro:
+    "Start with the work that needs attention. Add the modules that fit your business, from customer conversations to your team's daily plan.",
+  modulesCta: "Explore EKANI modules",
+  closeTitle: "See it with your kind of business.",
+  closeBody:
+    "Tell us what you sell or service, how enquiries reach you and where the work gets stuck. We will walk through the relevant EKANI modules with you.",
+  closeCta: "Get an EKANI demo",
+  printLabel: "Print guide",
+  moduleGroups: [
+    {
+      title: "Win and bill work",
+      description: "Bring enquiries, customer conversations and billing together.",
+      modules: ["Leads & CRM", "WhatsApp", "Books"],
+    },
+    {
+      title: "Deliver and support",
+      description: "Follow project stages, service tickets and AMC renewals.",
+      modules: ["Projects", "Service & AMC"],
+    },
+    {
+      title: "Keep operations in view",
+      description: "Track materials, purchasing, expenses and account records.",
+      modules: ["Inventory", "Purchasing", "Finance"],
+    },
+    {
+      title: "Organise the day",
+      description:
+        "Plan actions and team tasks, with AI tools for receipts, reply drafts and catalogue extraction.",
+      modules: ["Planner", "Planner Team", "AI Suite"],
+    },
+  ],
+  scenarios: [
+    {
+      id: "installation",
+      label: "Quote and deliver a job",
+      summary: "Connect the enquiry, quote, project and payment record.",
+      question: "Do you quote, install and then collect payment?",
+      steps: [
+        {
+          id: "enquiry",
+          label: "Enquiry",
+          module: "WhatsApp · Leads & CRM",
+          title: "Give the enquiry a next step.",
+          description:
+            "Bring a WhatsApp enquiry into your shared workspace as a lead, with the customer and follow-up in view.",
+          outcome: "Keep a promising conversation in your pipeline.",
+          note:
+            "Where do enquiries arrive today? Ask how the customer remembers which conversations need a follow-up, then relate the lead to that routine.",
+          visual: {
+            kind: "conversation",
+            eyebrow: "Sample enquiry",
+            title: "A new installation enquiry",
+            status: "New lead",
+            message: "Could you send a quote for an AC installation?",
+            rows: [
+              ["Customer", "Sample customer"],
+              ["Source", "WhatsApp"],
+              ["Next step", "Confirm the installation scope"],
+            ],
+          },
+        },
+        {
+          id: "quote",
+          label: "Quote",
+          module: "Books",
+          title: "Put the scope into a clear quote.",
+          description:
+            "Prepare a GST quote for the agreed work and share it with the customer.",
+          outcome: "Move the conversation towards a defined scope of work.",
+          note:
+            "How do you prepare and share quotes now? Ask what customers usually need clarified before agreeing. This sample explains the sequence; use a product demo to show the actual document.",
+          visual: {
+            kind: "document",
+            eyebrow: "Sample document",
+            title: "Installation quote",
+            status: "For customer review",
+            rows: [
+              ["Customer", "Sample customer"],
+              ["Document", "Sample GST quote"],
+              ["Work", "AC installation"],
+              ["Next step", "Review the proposed scope"],
+            ],
+          },
+        },
+        {
+          id: "project",
+          label: "Project",
+          module: "Projects",
+          title: "See which stage the job has reached.",
+          description:
+            "Organise the agreed work into project stages and keep stage payments with the project.",
+          outcome: "Give the job a visible path from planning to completion.",
+          note:
+            "Which stages do your jobs usually pass through? Use the customer's own terms, such as survey, materials and installation, to explain why stages help.",
+          visual: {
+            kind: "tasks",
+            eyebrow: "Sample project",
+            title: "AC installation",
+            status: "Installation planned",
+            rows: [
+              ["Scope", "Agreed"],
+              ["Current stage", "Prepare for installation"],
+              ["Next action", "Confirm site readiness"],
+              ["Stage payment", "Agreed milestone recorded"],
+            ],
+          },
+        },
+        {
+          id: "payment",
+          label: "Payment record",
+          module: "Books",
+          title: "Keep the payment with the job.",
+          description:
+            "Invoice the agreed work and record the payment, so the job has a clear billing record.",
+          outcome: "Follow the story from the first enquiry to recorded payment.",
+          note:
+            "Where do you record payments today? Ask how they connect a receipt to the right job. Explain payment recording without implying automatic bank reconciliation.",
+          visual: {
+            kind: "record",
+            eyebrow: "Sample payment record",
+            title: "Installation billing",
+            status: "Payment recorded",
+            rows: [
+              ["Customer", "Sample customer"],
+              ["Invoice", "Sample installation invoice"],
+              ["Payment", "Recorded against the job"],
+              ["Job", "AC installation"],
+            ],
+          },
+        },
+      ],
+    },
+    {
+      id: "service",
+      label: "Handle a service request",
+      summary: "Follow a request through assignment, progress and customer history.",
+      question: "Do customers return for repairs, maintenance or AMC service?",
+      steps: [
+        {
+          id: "request",
+          label: "Request",
+          module: "WhatsApp · Service & AMC",
+          title: "Give the service request a place to live.",
+          description:
+            "Keep a customer's service request in a ticket, with the issue available for the next step.",
+          outcome: "Keep service work visible beyond the original conversation.",
+          note:
+            "How does a customer request service today? Ask where the issue is written down after the first call or message.",
+          visual: {
+            kind: "conversation",
+            eyebrow: "Sample service request",
+            title: "A customer needs help",
+            status: "Open ticket",
+            message: "The AC is not cooling. Can you arrange a service visit?",
+            rows: [
+              ["Customer", "Sample customer"],
+              ["Issue", "AC not cooling"],
+              ["Next step", "Arrange service"],
+            ],
+          },
+        },
+        {
+          id: "assignment",
+          label: "Assignment",
+          module: "Service & AMC",
+          title: "Make the next owner clear.",
+          description:
+            "Assign the service work to an engineer so the request has someone responsible for moving it forward.",
+          outcome: "Connect the ticket to the person handling the visit.",
+          note:
+            "Who decides which engineer handles a request? Ask what information the engineer needs before visiting.",
+          visual: {
+            kind: "record",
+            eyebrow: "Sample assignment",
+            title: "Service visit",
+            status: "Assigned",
+            rows: [
+              ["Ticket", "Sample cooling issue"],
+              ["Engineer", "Sample team member"],
+              ["Next action", "Confirm visit arrangements"],
+            ],
+          },
+        },
+        {
+          id: "progress",
+          label: "Progress",
+          module: "Service & AMC",
+          title: "Keep the current position in view.",
+          description:
+            "Update the service ticket as the work progresses, keeping the latest position with the request.",
+          outcome: "Give the next conversation a useful starting point.",
+          note:
+            "When a customer asks for an update, where do you look? Ask which service stages would be useful for their business.",
+          visual: {
+            kind: "tasks",
+            eyebrow: "Sample service progress",
+            title: "Cooling issue",
+            status: "In progress",
+            rows: [
+              ["Visit", "Completed"],
+              ["Current position", "Repair in progress"],
+              ["Next action", "Confirm work is complete"],
+            ],
+          },
+        },
+        {
+          id: "history",
+          label: "Customer history",
+          module: "Service & AMC · Leads & CRM",
+          title: "Keep context for the next request.",
+          description:
+            "Keep the completed service record with customer context, ready for the next conversation about maintenance or support.",
+          outcome: "Build on the previous visit when the customer returns.",
+          note:
+            "What would you want to know when this customer calls again? Ask whether previous work, warranty or AMC renewal information matters most, then focus the live demo there.",
+          visual: {
+            kind: "record",
+            eyebrow: "Sample customer history",
+            title: "The service record",
+            status: "Completed",
+            rows: [
+              ["Customer", "Sample customer"],
+              ["Request", "AC not cooling"],
+              ["Work", "Service completed"],
+              ["Record", "Previous service available for reference"],
+            ],
+          },
+        },
+      ],
+    },
+    {
+      id: "team",
+      label: "Coordinate the team's day",
+      summary: "Capture an action, give it an owner and keep its progress visible.",
+      question: "Do you spend time reminding people what needs to happen next?",
+      steps: [
+        {
+          id: "capture",
+          label: "Capture",
+          module: "Planner Team",
+          title: "Turn the next action into a task.",
+          description:
+            "Capture a task while the work is fresh, so it can become part of the day's plan.",
+          outcome: "Keep the next action somewhere you can return to.",
+          note:
+            "Where do small actions get written down today? Start with one familiar task, such as confirming a visit or following up on a quote.",
+          visual: {
+            kind: "record",
+            eyebrow: "Sample task",
+            title: "Confirm an installation visit",
+            status: "Captured",
+            rows: [
+              ["Task", "Confirm site readiness"],
+              ["Customer", "Sample customer"],
+              ["Plan", "Today"],
+            ],
+          },
+        },
+        {
+          id: "assign",
+          label: "Assign",
+          module: "Planner Team",
+          title: "Give the task a clear owner.",
+          description:
+            "Use team task assignment to make it clear who is handling the next action.",
+          outcome: "Help the team understand who needs to act.",
+          note:
+            "How do you currently agree who will do a task? Explain team assignment in the relevant Planner plan, and confirm plan availability in the product demo.",
+          visual: {
+            kind: "record",
+            eyebrow: "Sample team assignment",
+            title: "A task with an owner",
+            status: "Assigned",
+            rows: [
+              ["Task", "Confirm site readiness"],
+              ["Owner", "Sample team member"],
+              ["Plan", "Today"],
+            ],
+          },
+        },
+        {
+          id: "day-plan",
+          label: "Day plan",
+          module: "Planner Team",
+          title: "Bring today's actions into view.",
+          description:
+            "Use the day's plan and reminders on WhatsApp or Telegram to keep the next actions close at hand.",
+          outcome: "Start the day with a clear list of work to follow up.",
+          note:
+            "How does the team decide what needs attention each morning? Ask which reminders would be useful, then show only those relevant to their day.",
+          visual: {
+            kind: "tasks",
+            eyebrow: "Sample day plan",
+            title: "Today's actions",
+            status: "Ready to review",
+            rows: [
+              ["Follow-up", "Check the sample quote"],
+              ["Installation", "Confirm site readiness"],
+              ["Service", "Review the sample service ticket"],
+            ],
+          },
+        },
+        {
+          id: "update",
+          label: "Update",
+          module: "Planner Team",
+          title: "Leave the task with a useful update.",
+          description:
+            "Update the task when the action is complete, so the team can see where it stands.",
+          outcome: "Keep the shared plan useful as the day changes.",
+          note:
+            "How do you learn that an action is complete? Ask what the person assigning the work needs to see before moving on to the next task.",
+          visual: {
+            kind: "record",
+            eyebrow: "Sample task update",
+            title: "Site readiness confirmed",
+            status: "Completed",
+            rows: [
+              ["Task", "Confirm site readiness"],
+              ["Owner", "Sample team member"],
+              ["Update", "Customer confirmed the site is ready"],
+            ],
+          },
+        },
+      ],
+    },
+  ],
+};

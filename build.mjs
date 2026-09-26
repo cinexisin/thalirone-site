@@ -23,6 +23,7 @@ import {
   POLICIES,
   DESIGN,
   SHOP,
+  DEMO,
 } from "./src/config.mjs";
 import {
   ILLUSTRATIONS,
@@ -37,6 +38,7 @@ import { SCENES, livingScene, cinemaScene } from "./src/scenes.mjs";
 import { BRAND_ASSETS } from "./src/brands.mjs";
 import { productWorkflow } from "./src/product-workflow.mjs";
 import { commercialPlan } from "./src/commercial-plan.mjs";
+import { demoHub } from "./src/demo-hub.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, "docs");
@@ -48,6 +50,10 @@ const VERSION = createHash("sha256")
   .slice(0, 10);
 const SHOP_VERSION = createHash("sha256")
   .update(await readFile(join(ROOT, "src/assets/shop.css")))
+  .digest("hex")
+  .slice(0, 10);
+const DEMO_VERSION = createHash("sha256")
+  .update(await readFile(join(ROOT, "src/assets/demo.css")))
   .digest("hex")
   .slice(0, 10);
 
@@ -84,7 +90,7 @@ function mobileAction(current, path) {
     return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="mailto:${esc(SITE.email)}">${esc(BUSINESS_INFO.emailSupport)} ${ICONS.arrow}</a></aside>`;
   if (!current)
     return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="${esc(wa(DESIGN.projectMessage))}" target="_blank" rel="noopener">${esc(DESIGN.projectShort)} ${ICONS.arrow}</a></aside>`;
-  const c = CATEGORIES.find((c) => c.slug === current) || CATEGORIES[0];
+  const c = CATEGORIES.find((c) => c.slug === (path === "/demo/" ? "business-software" : current)) || CATEGORIES[0];
   return `<aside class="mobile-action" aria-label="${esc(UI.contact)}">${waBtn(WA_GENERAL, UI.whatsapp)}<a class="mobile-secondary" href="${esc(wa(c.cta.wa))}" target="_blank" rel="noopener">${esc(c.cta.shortLabel || c.cta.label)} ${ICONS.arrow}</a></aside>`;
 }
 function heroDemo(u) {
@@ -271,6 +277,7 @@ function layout({ path, title, description, body, current }) {
 <link rel="preload" href="/assets/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/styles.css?v=${VERSION}">
 ${path === "/shop/" ? `<link rel="stylesheet" href="/assets/shop.css?v=${SHOP_VERSION}">` : ""}
+${path === "/demo/" ? `<link rel="stylesheet" href="/assets/demo.css?v=${DEMO_VERSION}">` : ""}
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
 <body class="${path === "/" ? "home-page" : current || "utility-page"}">
@@ -292,7 +299,7 @@ ${body}
         ${logo(true)}
         <p class="muted">${esc(SITE.tagline)} ${esc(COPY.footerBased)} ${esc(SITE.city)}, ${esc(COPY.footerServing)} ${esc(SITE.serviceArea)}.</p>
       </div>
-      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/shop/"${path === "/shop/" ? ' aria-current="page"' : ""}>${esc(SHOP.nav)}</a></li><li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
+      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/demo/"${path === "/demo/" ? ' aria-current="page"' : ""}>${esc(DEMO.nav)}</a></li><li><a href="/shop/"${path === "/shop/" ? ' aria-current="page"' : ""}>${esc(SHOP.nav)}</a></li><li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
       <div><h2>${esc(COPY.talk)}</h2><ul>
         <li><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></li>
         <li><a href="tel:${esc(SITE.phone)}">${esc(COPY.call)} ${esc(SITE.phoneDisplay)}</a></li>
@@ -436,6 +443,7 @@ function categoryPage(c, pricing) {
       <h1>${esc(p.h1)}</h1>
       <p class="lede">${esc(p.lede)}</p>
       <div class="btns">${waBtn(c.cta.wa, c.cta.label)}${p.pricingUrl ? `<a class="btn ghost" href="${p.pricingUrl}" target="_blank" rel="noopener">${esc(COPY.seePricing)}</a>` : ""}</div>
+      ${c.slug === "business-software" ? `<p class="contact-line"><a href="/demo/">${esc(DEMO.exploreLabel)} ${ICONS.arrow}</a></p>` : ""}
       ${p.signInUrl ? `<p class="contact-line"><span>${esc(COPY.alreadyCustomer)} <a href="${p.signInUrl}" target="_blank" rel="noopener">${esc(COPY.signIn)}</a></span></p>` : ""}
     </div>
     <div class="hero-art">${art}</div>
@@ -666,6 +674,13 @@ await page("/shop/", "shop/index.html", {
   description: SHOP.description,
   body: shopPage(pricing),
 });
+const demoProduct = CATEGORIES.find((c) => c.slug === "business-software");
+await page("/demo/", "demo/index.html", {
+  title: DEMO.title,
+  description: DEMO.description,
+  body: demoHub(DEMO, demoProduct.page, waBtn(demoProduct.cta.wa, DEMO.closeCta, "ghost")),
+  current: "demo-page",
+});
 await page("/privacy/", "privacy/index.html", {
   title: COPY.privacy,
   description: `How ${SITE.name} handles your information.`,
@@ -694,6 +709,7 @@ const urls = [
   ...CATEGORIES.map(catUrl),
   "/contact/",
   "/shop/",
+  "/demo/",
   "/privacy/",
   "/about/",
   ...POLICIES.map((p) => `/${p.slug}/`),

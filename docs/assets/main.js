@@ -211,3 +211,263 @@
     });
   }
 })();
+
+// The guided demo is an optional layer over complete, linked example journeys.
+(() => {
+  const hub = document.querySelector("[data-demo-hub]");
+  if (!hub) return;
+
+  const journeys = [...hub.querySelectorAll("[data-demo-journey]")]
+    .map((element) => ({
+      element,
+      id: element.dataset.demoJourney,
+      panels: [...element.querySelectorAll("[data-demo-panel]")],
+    }))
+    .filter((journey) => journey.panels.length);
+  if (!journeys.length) return;
+
+  const scenarios = [...hub.querySelectorAll("[data-demo-scenario]")];
+  const steps = [...hub.querySelectorAll("[data-demo-step]")];
+  const previous = hub.querySelector("[data-demo-prev]");
+  const next = hub.querySelector("[data-demo-next]");
+  const restart = hub.querySelector("[data-demo-restart]");
+  const present = hub.querySelector("[data-demo-present]");
+  const copy = hub.querySelector("[data-demo-copy]");
+  const print = hub.querySelector("[data-demo-print]");
+  const status = hub.querySelector("[data-demo-status]");
+  const fallback = hub.querySelector("[data-demo-share-fallback]");
+  const fallbackInput = fallback?.querySelector("input");
+  const copyLabel = copy?.dataset.label || copy?.textContent;
+  let activeJourney = journeys[0];
+  let activeIndex = 0;
+  let presenting = false;
+  let copyAttempt = 0;
+
+  function findPanel(id) {
+    for (const journey of journeys) {
+      const index = journey.panels.findIndex(
+        (panel) => panel.dataset.demoPanel === id,
+      );
+      if (index !== -1) return { journey, index };
+    }
+    return { journey: journeys[0], index: 0 };
+  }
+
+  function fromHash() {
+    try {
+      return findPanel(decodeURIComponent(window.location.hash.slice(1)));
+    } catch {
+      return { journey: journeys[0], index: 0 };
+    }
+  }
+
+  function activePanel() {
+    return activeJourney.panels[activeIndex];
+  }
+
+  function focusPanel(reveal = true) {
+    const heading = activePanel().querySelector("h3");
+    if (!heading) return;
+    heading.focus({ preventScroll: true });
+    const bounds = heading.getBoundingClientRect();
+    const headerBottom = presenting
+      ? 0
+      : document.querySelector(".site-head")?.getBoundingClientRect().bottom || 0;
+    const readableTop = Math.max(24, headerBottom + 12);
+    if (
+      reveal &&
+      (bounds.top < readableTop || bounds.bottom > window.innerHeight - 24)
+    ) {
+      heading.scrollIntoView({ behavior: "instant", block: "center" });
+    }
+  }
+
+  function render() {
+    const panel = activePanel();
+    journeys.forEach((journey) => {
+      journey.element.hidden = journey !== activeJourney;
+      journey.panels.forEach((item) => {
+        item.hidden = item !== panel;
+      });
+    });
+    scenarios.forEach((anchor) => {
+      if (anchor.dataset.demoScenario === activeJourney.id) {
+        anchor.setAttribute("aria-current", "true");
+      } else {
+        anchor.removeAttribute("aria-current");
+      }
+    });
+    steps.forEach((anchor) => {
+      if (anchor.dataset.demoStep === panel.dataset.demoPanel) {
+        anchor.setAttribute("aria-current", "step");
+      } else {
+        anchor.removeAttribute("aria-current");
+      }
+    });
+    if (previous) previous.disabled = activeIndex === 0;
+    if (next) next.disabled = activeIndex === activeJourney.panels.length - 1;
+    if (status) {
+      const values = {
+        current: String(activeIndex + 1),
+        total: String(activeJourney.panels.length),
+        title: panel.dataset.title || "",
+      };
+      status.textContent = (status.dataset.template || "").replace(
+        /\{(current|total|title)\}/g,
+        (_, key) => values[key],
+      );
+    }
+    copyAttempt += 1;
+    if (copy) copy.textContent = copyLabel;
+    if (fallback) fallback.hidden = true;
+  }
+
+  function navigate(journey, index, updateHistory = true) {
+    activeJourney = journey;
+    activeIndex = Math.max(0, Math.min(index, journey.panels.length - 1));
+    const hash = `#${encodeURIComponent(activePanel().dataset.demoPanel)}`;
+    if (updateHistory && window.location.hash !== hash) {
+      // pushState avoids the browser's automatic fragment jump on every step.
+      window.history.pushState(null, "", hash);
+    }
+    render();
+    focusPanel();
+  }
+
+  function plainClick(event) {
+    return (
+      event.button === 0 &&
+      !event.metaKey &&
+      !event.ctrlKey &&
+      !event.shiftKey &&
+      !event.altKey
+    );
+  }
+
+  scenarios.forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      if (!plainClick(event)) return;
+      const journey = journeys.find(
+        (item) => item.id === anchor.dataset.demoScenario,
+      );
+      if (!journey) return;
+      event.preventDefault();
+      navigate(journey, 0);
+    });
+  });
+  steps.forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      if (!plainClick(event)) return;
+      event.preventDefault();
+      const { journey, index } = findPanel(anchor.dataset.demoStep);
+      navigate(journey, index);
+    });
+  });
+  previous?.addEventListener("click", () =>
+    navigate(activeJourney, activeIndex - 1),
+  );
+  next?.addEventListener("click", () => navigate(activeJourney, activeIndex + 1));
+  restart?.addEventListener("click", () => navigate(activeJourney, 0));
+
+  function setPresentation(enabled) {
+    presenting = enabled;
+    hub.classList.toggle("is-presenting", enabled);
+    document.body.classList.toggle("demo-presenting", enabled);
+    hub.querySelectorAll("[data-demo-hint]").forEach((hint) => {
+      hint.hidden = !enabled;
+    });
+    if (present) {
+      present.setAttribute("aria-pressed", String(enabled));
+      present.textContent = enabled
+        ? present.dataset.exitLabel
+        : present.dataset.enterLabel;
+    }
+    if (enabled) {
+      hub.scrollIntoView({ behavior: "instant", block: "start" });
+      focusPanel();
+    } else {
+      present?.focus({ preventScroll: true });
+    }
+  }
+  present?.addEventListener("click", () => setPresentation(!presenting));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && presenting) {
+      event.preventDefault();
+      setPresentation(false);
+    }
+  });
+  hub.addEventListener("keydown", (event) => {
+    if (
+      event.defaultPrevented ||
+      event.altKey ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      event.target.closest(
+        "input, textarea, select, button, a[href], summary, [contenteditable], [role='textbox'], [role='slider']",
+      )
+    ) {
+      return;
+    }
+    const indexes = {
+      ArrowLeft: activeIndex - 1,
+      ArrowRight: activeIndex + 1,
+      Home: 0,
+      End: activeJourney.panels.length - 1,
+    };
+    if (!(event.key in indexes)) return;
+    event.preventDefault();
+    const index = indexes[event.key];
+    if (index >= 0 && index < activeJourney.panels.length && index !== activeIndex) {
+      navigate(activeJourney, index);
+    }
+  });
+
+  if (copy) {
+    copy.setAttribute("aria-live", "polite");
+    copy.addEventListener("click", async () => {
+      const attempt = ++copyAttempt;
+      const url = new URL(window.location.href);
+      url.hash = activePanel().dataset.demoPanel;
+      try {
+        await navigator.clipboard.writeText(url.href);
+        if (attempt !== copyAttempt) return;
+        copy.textContent = copy.dataset.successLabel || copyLabel;
+        if (fallback) fallback.hidden = true;
+      } catch {
+        if (attempt !== copyAttempt) return;
+        copy.textContent = copyLabel;
+        if (fallback && fallbackInput) {
+          fallbackInput.value = url.href;
+          fallbackInput.readOnly = true;
+          fallback.hidden = false;
+          fallbackInput.focus({ preventScroll: true });
+          fallbackInput.select();
+          fallbackInput.scrollIntoView({ behavior: "instant", block: "nearest" });
+        }
+      }
+    });
+  }
+  print?.addEventListener("click", () => window.print());
+
+  function restoreHistory() {
+    const { journey, index } = fromHash();
+    // Traversal can fire both popstate and hashchange; render and focus once.
+    if (journey !== activeJourney || index !== activeIndex) {
+      navigate(journey, index, false);
+    }
+  }
+  window.addEventListener("popstate", restoreHistory);
+  window.addEventListener("hashchange", restoreHistory);
+
+  const initial = fromHash();
+  activeJourney = initial.journey;
+  activeIndex = initial.index;
+  status?.setAttribute("aria-live", "off");
+  render();
+  hub.classList.add("is-enhanced");
+  hub.querySelectorAll("[data-demo-controls]").forEach((controls) => {
+    controls.hidden = false;
+  });
+  requestAnimationFrame(() => status?.setAttribute("aria-live", "polite"));
+})();

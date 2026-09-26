@@ -1,0 +1,262 @@
+# EKANI demo copy changes
+
+New copy for the owner-requested presentation page. All visitor-facing words remain in `src/config.mjs`; sample records are illustrative.
+
+## Existing-page navigation additions
+
+- Footer link: “Demo”
+- Business Software hero link: “Choose a walkthrough”
+
+## Exact new demo copy
+
+- **DEMO.title**: EKANI demo — follow the work from enquiry to payment
+- **DEMO.description**: Explore three illustrative EKANI workflows: installation jobs, service requests and a team's day. See how the modules support the work, then ask for a demo for your business.
+- **DEMO.eyebrow**: Explore EKANI
+- **DEMO.heading**: Start with the work you do.
+- **DEMO.intro**: Choose a familiar situation and follow four simple steps. See where EKANI helps you keep the customer, the work and the next action together.
+- **DEMO.nav**: Demo
+- **DEMO.exploreLabel**: Choose a walkthrough
+- **DEMO.crmLabel**: Open EKANI CRM
+- **DEMO.crmNote**: Opens the EKANI sign-in page. An account is required.
+- **DEMO.pricingLabel**: View current plans
+- **DEMO.exampleLabel**: Example
+- **DEMO.exampleNote**: Illustrative walkthrough · Sample data, not the live CRM. No messages, invoices or payments are created here.
+- **DEMO.journeyLabel**: Choose your workflow
+- **DEMO.stepsLabel**: Walkthrough steps
+- **DEMO.previousLabel**: Previous
+- **DEMO.nextLabel**: Next step
+- **DEMO.restartLabel**: Start again
+- **DEMO.presentLabel**: Presenter view
+- **DEMO.exitPresentLabel**: Exit presenter view
+- **DEMO.notesLabel**: Conversation prompts
+- **DEMO.copyLabel**: Copy link
+- **DEMO.copiedLabel**: Link copied
+- **DEMO.copyFailureLabel**: Select this link to copy it manually.
+- **DEMO.progressTemplate**: {current} of {total} · {title}
+- **DEMO.presentHint**: Use ← and → to move between steps. Open conversation prompts when you need them. Press Esc to leave presenter view.
+- **DEMO.modulesEyebrow**: Find the right starting point
+- **DEMO.modulesTitle**: Choose modules around the problem.
+- **DEMO.modulesIntro**: Start with the work that needs attention. Add the modules that fit your business, from customer conversations to your team's daily plan.
+- **DEMO.modulesCta**: Explore EKANI modules
+- **DEMO.closeTitle**: See it with your kind of business.
+- **DEMO.closeBody**: Tell us what you sell or service, how enquiries reach you and where the work gets stuck. We will walk through the relevant EKANI modules with you.
+- **DEMO.closeCta**: Get an EKANI demo
+- **DEMO.printLabel**: Print guide
+- **DEMO.moduleGroups[0].title**: Win and bill work
+- **DEMO.moduleGroups[0].description**: Bring enquiries, customer conversations and billing together.
+- **DEMO.moduleGroups[0].modules[0]**: Leads & CRM
+- **DEMO.moduleGroups[0].modules[1]**: WhatsApp
+- **DEMO.moduleGroups[0].modules[2]**: Books
+- **DEMO.moduleGroups[1].title**: Deliver and support
+- **DEMO.moduleGroups[1].description**: Follow project stages, service tickets and AMC renewals.
+- **DEMO.moduleGroups[1].modules[0]**: Projects
+- **DEMO.moduleGroups[1].modules[1]**: Service & AMC
+- **DEMO.moduleGroups[2].title**: Keep operations in view
+- **DEMO.moduleGroups[2].description**: Track materials, purchasing, expenses and account records.
+- **DEMO.moduleGroups[2].modules[0]**: Inventory
+- **DEMO.moduleGroups[2].modules[1]**: Purchasing
+- **DEMO.moduleGroups[2].modules[2]**: Finance
+- **DEMO.moduleGroups[3].title**: Organise the day
+- **DEMO.moduleGroups[3].description**: Plan actions and team tasks, with AI tools for receipts, reply drafts and catalogue extraction.
+- **DEMO.moduleGroups[3].modules[0]**: Planner
+- **DEMO.moduleGroups[3].modules[1]**: Planner Team
+- **DEMO.moduleGroups[3].modules[2]**: AI Suite
+- **DEMO.scenarios[0].label**: Quote and deliver a job
+- **DEMO.scenarios[0].summary**: Connect the enquiry, quote, project and payment record.
+- **DEMO.scenarios[0].question**: Do you quote, install and then collect payment?
+- **DEMO.scenarios[0].steps[0].label**: Enquiry
+- **DEMO.scenarios[0].steps[0].module**: WhatsApp · Leads & CRM
+- **DEMO.scenarios[0].steps[0].title**: Give the enquiry a next step.
+- **DEMO.scenarios[0].steps[0].description**: Bring a WhatsApp enquiry into your shared workspace as a lead, with the customer and follow-up in view.
+- **DEMO.scenarios[0].steps[0].outcome**: Keep a promising conversation in your pipeline.
+- **DEMO.scenarios[0].steps[0].note**: Where do enquiries arrive today? Ask how the customer remembers which conversations need a follow-up, then relate the lead to that routine.
+- **DEMO.scenarios[0].steps[0].visual.eyebrow**: Sample enquiry
+- **DEMO.scenarios[0].steps[0].visual.title**: A new installation enquiry
+- **DEMO.scenarios[0].steps[0].visual.status**: New lead
+- **DEMO.scenarios[0].steps[0].visual.message**: Could you send a quote for an AC installation?
+- **DEMO.scenarios[0].steps[0].visual.rows[0][0]**: Customer
+- **DEMO.scenarios[0].steps[0].visual.rows[0][1]**: Sample customer
+- **DEMO.scenarios[0].steps[0].visual.rows[1][0]**: Source
+- **DEMO.scenarios[0].steps[0].visual.rows[1][1]**: WhatsApp
+- **DEMO.scenarios[0].steps[0].visual.rows[2][0]**: Next step
+- **DEMO.scenarios[0].steps[0].visual.rows[2][1]**: Confirm the installation scope
+- **DEMO.scenarios[0].steps[1].label**: Quote
+- **DEMO.scenarios[0].steps[1].module**: Books
+- **DEMO.scenarios[0].steps[1].title**: Put the scope into a clear quote.
+- **DEMO.scenarios[0].steps[1].description**: Prepare a GST quote for the agreed work and share it with the customer.
+- **DEMO.scenarios[0].steps[1].outcome**: Move the conversation towards a defined scope of work.
+- **DEMO.scenarios[0].steps[1].note**: How do you prepare and share quotes now? Ask what customers usually need clarified before agreeing. This sample explains the sequence; use a product demo to show the actual document.
+- **DEMO.scenarios[0].steps[1].visual.eyebrow**: Sample document
+- **DEMO.scenarios[0].steps[1].visual.title**: Installation quote
+- **DEMO.scenarios[0].steps[1].visual.status**: For customer review
+- **DEMO.scenarios[0].steps[1].visual.rows[0][0]**: Customer
+- **DEMO.scenarios[0].steps[1].visual.rows[0][1]**: Sample customer
+- **DEMO.scenarios[0].steps[1].visual.rows[1][0]**: Document
+- **DEMO.scenarios[0].steps[1].visual.rows[1][1]**: Sample GST quote
+- **DEMO.scenarios[0].steps[1].visual.rows[2][0]**: Work
+- **DEMO.scenarios[0].steps[1].visual.rows[2][1]**: AC installation
+- **DEMO.scenarios[0].steps[1].visual.rows[3][0]**: Next step
+- **DEMO.scenarios[0].steps[1].visual.rows[3][1]**: Review the proposed scope
+- **DEMO.scenarios[0].steps[2].label**: Project
+- **DEMO.scenarios[0].steps[2].module**: Projects
+- **DEMO.scenarios[0].steps[2].title**: See which stage the job has reached.
+- **DEMO.scenarios[0].steps[2].description**: Organise the agreed work into project stages and keep stage payments with the project.
+- **DEMO.scenarios[0].steps[2].outcome**: Give the job a visible path from planning to completion.
+- **DEMO.scenarios[0].steps[2].note**: Which stages do your jobs usually pass through? Use the customer's own terms, such as survey, materials and installation, to explain why stages help.
+- **DEMO.scenarios[0].steps[2].visual.eyebrow**: Sample project
+- **DEMO.scenarios[0].steps[2].visual.title**: AC installation
+- **DEMO.scenarios[0].steps[2].visual.status**: Installation planned
+- **DEMO.scenarios[0].steps[2].visual.rows[0][0]**: Scope
+- **DEMO.scenarios[0].steps[2].visual.rows[0][1]**: Agreed
+- **DEMO.scenarios[0].steps[2].visual.rows[1][0]**: Current stage
+- **DEMO.scenarios[0].steps[2].visual.rows[1][1]**: Prepare for installation
+- **DEMO.scenarios[0].steps[2].visual.rows[2][0]**: Next action
+- **DEMO.scenarios[0].steps[2].visual.rows[2][1]**: Confirm site readiness
+- **DEMO.scenarios[0].steps[2].visual.rows[3][0]**: Stage payment
+- **DEMO.scenarios[0].steps[2].visual.rows[3][1]**: Agreed milestone recorded
+- **DEMO.scenarios[0].steps[3].label**: Payment record
+- **DEMO.scenarios[0].steps[3].module**: Books
+- **DEMO.scenarios[0].steps[3].title**: Keep the payment with the job.
+- **DEMO.scenarios[0].steps[3].description**: Invoice the agreed work and record the payment, so the job has a clear billing record.
+- **DEMO.scenarios[0].steps[3].outcome**: Follow the story from the first enquiry to recorded payment.
+- **DEMO.scenarios[0].steps[3].note**: Where do you record payments today? Ask how they connect a receipt to the right job. Explain payment recording without implying automatic bank reconciliation.
+- **DEMO.scenarios[0].steps[3].visual.eyebrow**: Sample payment record
+- **DEMO.scenarios[0].steps[3].visual.title**: Installation billing
+- **DEMO.scenarios[0].steps[3].visual.status**: Payment recorded
+- **DEMO.scenarios[0].steps[3].visual.rows[0][0]**: Customer
+- **DEMO.scenarios[0].steps[3].visual.rows[0][1]**: Sample customer
+- **DEMO.scenarios[0].steps[3].visual.rows[1][0]**: Invoice
+- **DEMO.scenarios[0].steps[3].visual.rows[1][1]**: Sample installation invoice
+- **DEMO.scenarios[0].steps[3].visual.rows[2][0]**: Payment
+- **DEMO.scenarios[0].steps[3].visual.rows[2][1]**: Recorded against the job
+- **DEMO.scenarios[0].steps[3].visual.rows[3][0]**: Job
+- **DEMO.scenarios[0].steps[3].visual.rows[3][1]**: AC installation
+- **DEMO.scenarios[1].label**: Handle a service request
+- **DEMO.scenarios[1].summary**: Follow a request through assignment, progress and customer history.
+- **DEMO.scenarios[1].question**: Do customers return for repairs, maintenance or AMC service?
+- **DEMO.scenarios[1].steps[0].label**: Request
+- **DEMO.scenarios[1].steps[0].module**: WhatsApp · Service & AMC
+- **DEMO.scenarios[1].steps[0].title**: Give the service request a place to live.
+- **DEMO.scenarios[1].steps[0].description**: Keep a customer's service request in a ticket, with the issue available for the next step.
+- **DEMO.scenarios[1].steps[0].outcome**: Keep service work visible beyond the original conversation.
+- **DEMO.scenarios[1].steps[0].note**: How does a customer request service today? Ask where the issue is written down after the first call or message.
+- **DEMO.scenarios[1].steps[0].visual.eyebrow**: Sample service request
+- **DEMO.scenarios[1].steps[0].visual.title**: A customer needs help
+- **DEMO.scenarios[1].steps[0].visual.status**: Open ticket
+- **DEMO.scenarios[1].steps[0].visual.message**: The AC is not cooling. Can you arrange a service visit?
+- **DEMO.scenarios[1].steps[0].visual.rows[0][0]**: Customer
+- **DEMO.scenarios[1].steps[0].visual.rows[0][1]**: Sample customer
+- **DEMO.scenarios[1].steps[0].visual.rows[1][0]**: Issue
+- **DEMO.scenarios[1].steps[0].visual.rows[1][1]**: AC not cooling
+- **DEMO.scenarios[1].steps[0].visual.rows[2][0]**: Next step
+- **DEMO.scenarios[1].steps[0].visual.rows[2][1]**: Arrange service
+- **DEMO.scenarios[1].steps[1].label**: Assignment
+- **DEMO.scenarios[1].steps[1].module**: Service & AMC
+- **DEMO.scenarios[1].steps[1].title**: Make the next owner clear.
+- **DEMO.scenarios[1].steps[1].description**: Assign the service work to an engineer so the request has someone responsible for moving it forward.
+- **DEMO.scenarios[1].steps[1].outcome**: Connect the ticket to the person handling the visit.
+- **DEMO.scenarios[1].steps[1].note**: Who decides which engineer handles a request? Ask what information the engineer needs before visiting.
+- **DEMO.scenarios[1].steps[1].visual.eyebrow**: Sample assignment
+- **DEMO.scenarios[1].steps[1].visual.title**: Service visit
+- **DEMO.scenarios[1].steps[1].visual.status**: Assigned
+- **DEMO.scenarios[1].steps[1].visual.rows[0][0]**: Ticket
+- **DEMO.scenarios[1].steps[1].visual.rows[0][1]**: Sample cooling issue
+- **DEMO.scenarios[1].steps[1].visual.rows[1][0]**: Engineer
+- **DEMO.scenarios[1].steps[1].visual.rows[1][1]**: Sample team member
+- **DEMO.scenarios[1].steps[1].visual.rows[2][0]**: Next action
+- **DEMO.scenarios[1].steps[1].visual.rows[2][1]**: Confirm visit arrangements
+- **DEMO.scenarios[1].steps[2].label**: Progress
+- **DEMO.scenarios[1].steps[2].module**: Service & AMC
+- **DEMO.scenarios[1].steps[2].title**: Keep the current position in view.
+- **DEMO.scenarios[1].steps[2].description**: Update the service ticket as the work progresses, keeping the latest position with the request.
+- **DEMO.scenarios[1].steps[2].outcome**: Give the next conversation a useful starting point.
+- **DEMO.scenarios[1].steps[2].note**: When a customer asks for an update, where do you look? Ask which service stages would be useful for their business.
+- **DEMO.scenarios[1].steps[2].visual.eyebrow**: Sample service progress
+- **DEMO.scenarios[1].steps[2].visual.title**: Cooling issue
+- **DEMO.scenarios[1].steps[2].visual.status**: In progress
+- **DEMO.scenarios[1].steps[2].visual.rows[0][0]**: Visit
+- **DEMO.scenarios[1].steps[2].visual.rows[0][1]**: Completed
+- **DEMO.scenarios[1].steps[2].visual.rows[1][0]**: Current position
+- **DEMO.scenarios[1].steps[2].visual.rows[1][1]**: Repair in progress
+- **DEMO.scenarios[1].steps[2].visual.rows[2][0]**: Next action
+- **DEMO.scenarios[1].steps[2].visual.rows[2][1]**: Confirm work is complete
+- **DEMO.scenarios[1].steps[3].label**: Customer history
+- **DEMO.scenarios[1].steps[3].module**: Service & AMC · Leads & CRM
+- **DEMO.scenarios[1].steps[3].title**: Keep context for the next request.
+- **DEMO.scenarios[1].steps[3].description**: Keep the completed service record with customer context, ready for the next conversation about maintenance or support.
+- **DEMO.scenarios[1].steps[3].outcome**: Build on the previous visit when the customer returns.
+- **DEMO.scenarios[1].steps[3].note**: What would you want to know when this customer calls again? Ask whether previous work, warranty or AMC renewal information matters most, then focus the live demo there.
+- **DEMO.scenarios[1].steps[3].visual.eyebrow**: Sample customer history
+- **DEMO.scenarios[1].steps[3].visual.title**: The service record
+- **DEMO.scenarios[1].steps[3].visual.status**: Completed
+- **DEMO.scenarios[1].steps[3].visual.rows[0][0]**: Customer
+- **DEMO.scenarios[1].steps[3].visual.rows[0][1]**: Sample customer
+- **DEMO.scenarios[1].steps[3].visual.rows[1][0]**: Request
+- **DEMO.scenarios[1].steps[3].visual.rows[1][1]**: AC not cooling
+- **DEMO.scenarios[1].steps[3].visual.rows[2][0]**: Work
+- **DEMO.scenarios[1].steps[3].visual.rows[2][1]**: Service completed
+- **DEMO.scenarios[1].steps[3].visual.rows[3][0]**: Record
+- **DEMO.scenarios[1].steps[3].visual.rows[3][1]**: Previous service available for reference
+- **DEMO.scenarios[2].label**: Coordinate the team's day
+- **DEMO.scenarios[2].summary**: Capture an action, give it an owner and keep its progress visible.
+- **DEMO.scenarios[2].question**: Do you spend time reminding people what needs to happen next?
+- **DEMO.scenarios[2].steps[0].label**: Capture
+- **DEMO.scenarios[2].steps[0].module**: Planner Team
+- **DEMO.scenarios[2].steps[0].title**: Turn the next action into a task.
+- **DEMO.scenarios[2].steps[0].description**: Capture a task while the work is fresh, so it can become part of the day's plan.
+- **DEMO.scenarios[2].steps[0].outcome**: Keep the next action somewhere you can return to.
+- **DEMO.scenarios[2].steps[0].note**: Where do small actions get written down today? Start with one familiar task, such as confirming a visit or following up on a quote.
+- **DEMO.scenarios[2].steps[0].visual.eyebrow**: Sample task
+- **DEMO.scenarios[2].steps[0].visual.title**: Confirm an installation visit
+- **DEMO.scenarios[2].steps[0].visual.status**: Captured
+- **DEMO.scenarios[2].steps[0].visual.rows[0][0]**: Task
+- **DEMO.scenarios[2].steps[0].visual.rows[0][1]**: Confirm site readiness
+- **DEMO.scenarios[2].steps[0].visual.rows[1][0]**: Customer
+- **DEMO.scenarios[2].steps[0].visual.rows[1][1]**: Sample customer
+- **DEMO.scenarios[2].steps[0].visual.rows[2][0]**: Plan
+- **DEMO.scenarios[2].steps[0].visual.rows[2][1]**: Today
+- **DEMO.scenarios[2].steps[1].label**: Assign
+- **DEMO.scenarios[2].steps[1].module**: Planner Team
+- **DEMO.scenarios[2].steps[1].title**: Give the task a clear owner.
+- **DEMO.scenarios[2].steps[1].description**: Use team task assignment to make it clear who is handling the next action.
+- **DEMO.scenarios[2].steps[1].outcome**: Help the team understand who needs to act.
+- **DEMO.scenarios[2].steps[1].note**: How do you currently agree who will do a task? Explain team assignment in the relevant Planner plan, and confirm plan availability in the product demo.
+- **DEMO.scenarios[2].steps[1].visual.eyebrow**: Sample team assignment
+- **DEMO.scenarios[2].steps[1].visual.title**: A task with an owner
+- **DEMO.scenarios[2].steps[1].visual.status**: Assigned
+- **DEMO.scenarios[2].steps[1].visual.rows[0][0]**: Task
+- **DEMO.scenarios[2].steps[1].visual.rows[0][1]**: Confirm site readiness
+- **DEMO.scenarios[2].steps[1].visual.rows[1][0]**: Owner
+- **DEMO.scenarios[2].steps[1].visual.rows[1][1]**: Sample team member
+- **DEMO.scenarios[2].steps[1].visual.rows[2][0]**: Plan
+- **DEMO.scenarios[2].steps[1].visual.rows[2][1]**: Today
+- **DEMO.scenarios[2].steps[2].label**: Day plan
+- **DEMO.scenarios[2].steps[2].module**: Planner Team
+- **DEMO.scenarios[2].steps[2].title**: Bring today's actions into view.
+- **DEMO.scenarios[2].steps[2].description**: Use the day's plan and reminders on WhatsApp or Telegram to keep the next actions close at hand.
+- **DEMO.scenarios[2].steps[2].outcome**: Start the day with a clear list of work to follow up.
+- **DEMO.scenarios[2].steps[2].note**: How does the team decide what needs attention each morning? Ask which reminders would be useful, then show only those relevant to their day.
+- **DEMO.scenarios[2].steps[2].visual.eyebrow**: Sample day plan
+- **DEMO.scenarios[2].steps[2].visual.title**: Today's actions
+- **DEMO.scenarios[2].steps[2].visual.status**: Ready to review
+- **DEMO.scenarios[2].steps[2].visual.rows[0][0]**: Follow-up
+- **DEMO.scenarios[2].steps[2].visual.rows[0][1]**: Check the sample quote
+- **DEMO.scenarios[2].steps[2].visual.rows[1][0]**: Installation
+- **DEMO.scenarios[2].steps[2].visual.rows[1][1]**: Confirm site readiness
+- **DEMO.scenarios[2].steps[2].visual.rows[2][0]**: Service
+- **DEMO.scenarios[2].steps[2].visual.rows[2][1]**: Review the sample service ticket
+- **DEMO.scenarios[2].steps[3].label**: Update
+- **DEMO.scenarios[2].steps[3].module**: Planner Team
+- **DEMO.scenarios[2].steps[3].title**: Leave the task with a useful update.
+- **DEMO.scenarios[2].steps[3].description**: Update the task when the action is complete, so the team can see where it stands.
+- **DEMO.scenarios[2].steps[3].outcome**: Keep the shared plan useful as the day changes.
+- **DEMO.scenarios[2].steps[3].note**: How do you learn that an action is complete? Ask what the person assigning the work needs to see before moving on to the next task.
+- **DEMO.scenarios[2].steps[3].visual.eyebrow**: Sample task update
+- **DEMO.scenarios[2].steps[3].visual.title**: Site readiness confirmed
+- **DEMO.scenarios[2].steps[3].visual.status**: Completed
+- **DEMO.scenarios[2].steps[3].visual.rows[0][0]**: Task
+- **DEMO.scenarios[2].steps[3].visual.rows[0][1]**: Confirm site readiness
+- **DEMO.scenarios[2].steps[3].visual.rows[1][0]**: Owner
+- **DEMO.scenarios[2].steps[3].visual.rows[1][1]**: Sample team member
+- **DEMO.scenarios[2].steps[3].visual.rows[2][0]**: Update
+- **DEMO.scenarios[2].steps[3].visual.rows[2][1]**: Customer confirmed the site is ready
