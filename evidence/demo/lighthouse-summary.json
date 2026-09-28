@@ -1,0 +1,958 @@
+{
+  "startedAt": "2026-09-26T02:03:32.212Z",
+  "baseUrl": "http://127.0.0.1:4670",
+  "runtime": {
+    "node": "v24.19.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "methodology": "Lighthouse default mobile preset with simulated throttling, one new headless Chrome profile per route. Local static server; no custom scoring or throttling settings.",
+  "networkScope": "Only requests observed during the Lighthouse navigation audit. Lazy images below the viewport may be absent. This is not a full-page transfer audit or an estimate of CDN compression.",
+  "fullReportDirectory": "/var/folders/2z/4d5kfcz16mq8zf8q17nskh980000gn/T/thalirone-lighthouse-design-9Bwh9c",
+  "targets": {
+    "performance": 95,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 100,
+    "clsMaximumExclusive": 0.05,
+    "nonFontTransferMaximumBytes": 350000
+  },
+  "configuredRouteCount": 14,
+  "auditedRouteCount": 3,
+  "executedRouteCount": 3,
+  "reusedRoutes": [],
+  "assetSha256AtStart": "1fd15e0e62e0573e8b15c5db5bfe9dffb0356907afdd3085ee3b7cfe9fe4b01c",
+  "assetFiles": [
+    "styles.css",
+    "main.js",
+    "demo.css"
+  ],
+  "results": [
+    {
+      "path": "/",
+      "startedAt": "2026-09-26T02:03:32.216Z",
+      "fetchedAt": "2026-09-26T02:03:34.225Z",
+      "lighthouseVersion": "13.5.0",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "settings": {
+        "formFactor": "mobile",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        }
+      },
+      "htmlSha256": "c3571971aace258c9b075ebc883fdb9afbfc907a7c31c03e505e6e404db0a43f",
+      "assetSha256": "1fd15e0e62e0573e8b15c5db5bfe9dffb0356907afdd3085ee3b7cfe9fe4b01c",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "cls": 0,
+      "lcpMs": 2628.6985,
+      "fcpMs": 1203.6985,
+      "totalBlockingTimeMs": 0,
+      "network": {
+        "requestCount": 10,
+        "transferBytes": 310066,
+        "nonFontTransferBytes": 224568,
+        "nonFontResourceBytes": 223054,
+        "externalRequests": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://127.0.0.1:4670/",
+            "resourceType": "Document",
+            "statusCode": 200,
+            "transferSize": 60834,
+            "resourceSize": 60646,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/fonts/montserrat-latin.woff2",
+            "resourceType": "Font",
+            "statusCode": 200,
+            "transferSize": 35697,
+            "resourceSize": 35508,
+            "isFont": true
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/fonts/nunito-sans-latin.woff2",
+            "resourceType": "Font",
+            "statusCode": 200,
+            "transferSize": 49801,
+            "resourceSize": 49612,
+            "isFont": true
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+            "resourceType": "Stylesheet",
+            "statusCode": 200,
+            "transferSize": 60220,
+            "resourceSize": 60033,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/img/logo-344.webp",
+            "resourceType": "Image",
+            "statusCode": 200,
+            "transferSize": 29099,
+            "resourceSize": 28910,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/media/home-concept-768.avif",
+            "resourceType": "Image",
+            "statusCode": 200,
+            "transferSize": 24633,
+            "resourceSize": 24444,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/main.js?v=c47e59d5b4",
+            "resourceType": "Script",
+            "statusCode": 200,
+            "transferSize": 16029,
+            "resourceSize": 15835,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/media/cinema-concept-768.avif",
+            "resourceType": "Image",
+            "statusCode": 200,
+            "transferSize": 15922,
+            "resourceSize": 15733,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/img/favicon-48.png",
+            "resourceType": "Other",
+            "statusCode": 200,
+            "transferSize": 4088,
+            "resourceSize": 3901,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/favicon.ico",
+            "resourceType": "Other",
+            "statusCode": 200,
+            "transferSize": 13743,
+            "resourceSize": 13552,
+            "isFont": false
+          }
+        ]
+      },
+      "thresholdFailures": [],
+      "reviewAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.99,
+          "displayValue": "1.2 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.87,
+          "displayValue": "2.6 s"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.98,
+          "displayValue": "2.6 s"
+        },
+        {
+          "id": "unminified-css",
+          "title": "Minify CSS",
+          "score": 0.5,
+          "displayValue": "Est savings of 13 KiB"
+        },
+        {
+          "id": "unminified-javascript",
+          "title": "Minify JavaScript",
+          "score": 0.5,
+          "displayValue": "Est savings of 4 KiB"
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "score": 0.5,
+          "displayValue": "Est savings of 20 KiB"
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 226 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 60220,
+              "wastedBytes": 60220
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/fonts/nunito-sans-latin.woff2",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 49801,
+              "wastedBytes": 49801
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/fonts/montserrat-latin.woff2",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 35697,
+              "wastedBytes": 35697
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/img/logo-344.webp",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 29099,
+              "wastedBytes": 29099
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/media/home-concept-768.avif",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 24633,
+              "wastedBytes": 24633
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/main.js?v=c47e59d5b4",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 16029,
+              "wastedBytes": 16029
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/media/cinema-concept-768.avif",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 15922,
+              "wastedBytes": 15922
+            }
+          ]
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "score": 0.5,
+          "displayValue": "Est savings of 40 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 21 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "details": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "42119F70BA44D5173B5DDE557FF1D9A7": {
+                    "url": "http://127.0.0.1:4670/",
+                    "navStartToEndTime": 9,
+                    "transferSize": 60834,
+                    "isLongest": true,
+                    "children": {
+                      "27881.4": {
+                        "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+                        "navStartToEndTime": 11,
+                        "transferSize": 60220,
+                        "isLongest": true,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 11
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 230 ms",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "totalBytes": 60220,
+              "wastedMs": 302
+            }
+          ]
+        }
+      ],
+      "runWarnings": [],
+      "fullReport": "/var/folders/2z/4d5kfcz16mq8zf8q17nskh980000gn/T/thalirone-lighthouse-design-9Bwh9c/home.json"
+    },
+    {
+      "path": "/business-software/",
+      "startedAt": "2026-09-26T02:03:39.547Z",
+      "fetchedAt": "2026-09-26T02:03:41.212Z",
+      "lighthouseVersion": "13.5.0",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "settings": {
+        "formFactor": "mobile",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        }
+      },
+      "htmlSha256": "26f5da02441dc26f198ccff2b6006756a6f065fd5a10edda3aee4199fc0fb2d3",
+      "assetSha256": "1fd15e0e62e0573e8b15c5db5bfe9dffb0356907afdd3085ee3b7cfe9fe4b01c",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "cls": 0,
+      "lcpMs": 2255.0917,
+      "fcpMs": 1505.0917,
+      "totalBlockingTimeMs": 0,
+      "network": {
+        "requestCount": 8,
+        "transferBytes": 244710,
+        "nonFontTransferBytes": 159212,
+        "nonFontResourceBytes": 158076,
+        "externalRequests": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://127.0.0.1:4670/business-software/",
+            "resourceType": "Document",
+            "statusCode": 200,
+            "transferSize": 36033,
+            "resourceSize": 35845,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/fonts/montserrat-latin.woff2",
+            "resourceType": "Font",
+            "statusCode": 200,
+            "transferSize": 35697,
+            "resourceSize": 35508,
+            "isFont": true
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/fonts/nunito-sans-latin.woff2",
+            "resourceType": "Font",
+            "statusCode": 200,
+            "transferSize": 49801,
+            "resourceSize": 49612,
+            "isFont": true
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+            "resourceType": "Stylesheet",
+            "statusCode": 200,
+            "transferSize": 60220,
+            "resourceSize": 60033,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/img/logo-344.webp",
+            "resourceType": "Image",
+            "statusCode": 200,
+            "transferSize": 29099,
+            "resourceSize": 28910,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/main.js?v=c47e59d5b4",
+            "resourceType": "Script",
+            "statusCode": 200,
+            "transferSize": 16029,
+            "resourceSize": 15835,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/img/favicon-48.png",
+            "resourceType": "Other",
+            "statusCode": 200,
+            "transferSize": 4088,
+            "resourceSize": 3901,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/favicon.ico",
+            "resourceType": "Other",
+            "statusCode": 200,
+            "transferSize": 13743,
+            "resourceSize": 13552,
+            "isFont": false
+          }
+        ]
+      },
+      "thresholdFailures": [],
+      "reviewAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.96,
+          "displayValue": "1.5 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.94,
+          "displayValue": "2.3 s"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.99,
+          "displayValue": "2.3 s"
+        },
+        {
+          "id": "unminified-css",
+          "title": "Minify CSS",
+          "score": 0,
+          "displayValue": "Est savings of 13 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "totalBytes": 60220,
+              "wastedBytes": 13696,
+              "wastedPercent": 22.74400706325276
+            }
+          ]
+        },
+        {
+          "id": "unminified-javascript",
+          "title": "Minify JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 4 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/main.js?v=c47e59d5b4",
+              "totalBytes": 15835,
+              "wastedBytes": 4264,
+              "wastedPercent": 26.92769182191348
+            }
+          ]
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "wastedBytes": 37411,
+              "wastedPercent": 62.318212863782506,
+              "totalBytes": 60033
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 186 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 60220,
+              "wastedBytes": 60220
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/fonts/nunito-sans-latin.woff2",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 49801,
+              "wastedBytes": 49801
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/fonts/montserrat-latin.woff2",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 35697,
+              "wastedBytes": 35697
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/img/logo-344.webp",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 29099,
+              "wastedBytes": 29099
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/main.js?v=c47e59d5b4",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 16029,
+              "wastedBytes": 16029
+            }
+          ]
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "score": 0.5,
+          "displayValue": "Est savings of 23 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 21 KiB",
+          "details": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-1-IMG",
+                "path": "1,HTML,1,BODY,3,FOOTER,0,DIV,0,DIV,0,DIV,0,PICTURE,2,IMG",
+                "selector": "div.cols > div > picture > img",
+                "boundingRect": {
+                  "top": 7754,
+                  "bottom": 7818,
+                  "left": 20,
+                  "right": 192,
+                  "width": 172,
+                  "height": 64
+                },
+                "snippet": "<img src=\"http://127.0.0.1:4670/assets/img/logo-344.webp\" alt=\"Thalir Innovations\" width=\"172\" height=\"64\" loading=\"lazy\">",
+                "nodeLabel": "Thalir Innovations"
+              },
+              "url": "http://127.0.0.1:4670/assets/img/logo-344.webp",
+              "totalBytes": 28910,
+              "wastedBytes": 21571,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 21571
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "details": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "2945E538B2C31055DB754BB8C3C042EA": {
+                    "url": "http://127.0.0.1:4670/business-software/",
+                    "navStartToEndTime": 9,
+                    "transferSize": 36033,
+                    "isLongest": true,
+                    "children": {
+                      "27917.4": {
+                        "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+                        "navStartToEndTime": 13,
+                        "transferSize": 60220,
+                        "isLongest": true,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 13
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 550 ms",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "totalBytes": 60220,
+              "wastedMs": 753
+            }
+          ]
+        }
+      ],
+      "runWarnings": [],
+      "fullReport": "/var/folders/2z/4d5kfcz16mq8zf8q17nskh980000gn/T/thalirone-lighthouse-design-9Bwh9c/business-software.json"
+    },
+    {
+      "path": "/demo/",
+      "startedAt": "2026-09-26T02:03:46.206Z",
+      "fetchedAt": "2026-09-26T02:03:47.856Z",
+      "lighthouseVersion": "13.5.0",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "settings": {
+        "formFactor": "mobile",
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        }
+      },
+      "htmlSha256": "081705cc61e503e1836c6e09c4bfcdc103f857d1f214ec48218e0fc74d07d46e",
+      "assetSha256": "1fd15e0e62e0573e8b15c5db5bfe9dffb0356907afdd3085ee3b7cfe9fe4b01c",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "cls": 0,
+      "lcpMs": 2553.800880459004,
+      "fcpMs": 1653.8008804590042,
+      "totalBlockingTimeMs": 0,
+      "network": {
+        "requestCount": 9,
+        "transferBytes": 268496,
+        "nonFontTransferBytes": 182998,
+        "nonFontResourceBytes": 181675,
+        "externalRequests": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://127.0.0.1:4670/demo/",
+            "resourceType": "Document",
+            "statusCode": 200,
+            "transferSize": 45789,
+            "resourceSize": 45601,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/fonts/montserrat-latin.woff2",
+            "resourceType": "Font",
+            "statusCode": 200,
+            "transferSize": 35697,
+            "resourceSize": 35508,
+            "isFont": true
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/fonts/nunito-sans-latin.woff2",
+            "resourceType": "Font",
+            "statusCode": 200,
+            "transferSize": 49801,
+            "resourceSize": 49612,
+            "isFont": true
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+            "resourceType": "Stylesheet",
+            "statusCode": 200,
+            "transferSize": 60220,
+            "resourceSize": 60033,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/demo.css?v=c62777f27c",
+            "resourceType": "Stylesheet",
+            "statusCode": 200,
+            "transferSize": 14030,
+            "resourceSize": 13843,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/img/logo-344.webp",
+            "resourceType": "Image",
+            "statusCode": 200,
+            "transferSize": 29099,
+            "resourceSize": 28910,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/main.js?v=c47e59d5b4",
+            "resourceType": "Script",
+            "statusCode": 200,
+            "transferSize": 16029,
+            "resourceSize": 15835,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/img/favicon-48.png",
+            "resourceType": "Other",
+            "statusCode": 200,
+            "transferSize": 4088,
+            "resourceSize": 3901,
+            "isFont": false
+          },
+          {
+            "url": "http://127.0.0.1:4670/assets/favicon.ico",
+            "resourceType": "Other",
+            "statusCode": 200,
+            "transferSize": 13743,
+            "resourceSize": 13552,
+            "isFont": false
+          }
+        ]
+      },
+      "thresholdFailures": [],
+      "reviewAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.93,
+          "displayValue": "1.7 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.88,
+          "displayValue": "2.6 s"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.98,
+          "displayValue": "2.6 s"
+        },
+        {
+          "id": "unminified-css",
+          "title": "Minify CSS",
+          "score": 0.5,
+          "displayValue": "Est savings of 13 KiB"
+        },
+        {
+          "id": "unminified-javascript",
+          "title": "Minify JavaScript",
+          "score": 0.5,
+          "displayValue": "Est savings of 4 KiB"
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "score": 0,
+          "displayValue": "Est savings of 51 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "wastedBytes": 52307,
+              "wastedPercent": 87.13121991037666,
+              "totalBytes": 60033
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 200 KiB",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 60220,
+              "wastedBytes": 60220
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/fonts/nunito-sans-latin.woff2",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 49801,
+              "wastedBytes": 49801
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/fonts/montserrat-latin.woff2",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 35697,
+              "wastedBytes": 35697
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/img/logo-344.webp",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 29099,
+              "wastedBytes": 29099
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/main.js?v=c47e59d5b4",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 16029,
+              "wastedBytes": 16029
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/demo.css?v=c62777f27c",
+              "cacheLifetimeMs": 0,
+              "totalBytes": 14030,
+              "wastedBytes": 14030
+            }
+          ]
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "score": 0.5,
+          "displayValue": "Est savings of 30 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 21 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "details": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "C1D7B700AF2EA0B4976F9C84009E86EA": {
+                    "url": "http://127.0.0.1:4670/demo/",
+                    "navStartToEndTime": 9,
+                    "transferSize": 45789,
+                    "isLongest": true,
+                    "children": {
+                      "27944.4": {
+                        "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+                        "navStartToEndTime": 11,
+                        "transferSize": 60220,
+                        "isLongest": true,
+                        "children": {}
+                      },
+                      "27944.5": {
+                        "url": "http://127.0.0.1:4670/assets/demo.css?v=c62777f27c",
+                        "navStartToEndTime": 11,
+                        "transferSize": 14030,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 11
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 550 ms",
+          "details": [
+            {
+              "url": "http://127.0.0.1:4670/assets/styles.css?v=c47e59d5b4",
+              "totalBytes": 60220,
+              "wastedMs": 752
+            },
+            {
+              "url": "http://127.0.0.1:4670/assets/demo.css?v=c62777f27c",
+              "totalBytes": 14030,
+              "wastedMs": 452
+            }
+          ]
+        }
+      ],
+      "runWarnings": [],
+      "fullReport": "/var/folders/2z/4d5kfcz16mq8zf8q17nskh980000gn/T/thalirone-lighthouse-design-9Bwh9c/demo.json"
+    }
+  ],
+  "finishedAt": "2026-09-26T02:03:52.462Z",
+  "assetSha256AtEnd": "1fd15e0e62e0573e8b15c5db5bfe9dffb0356907afdd3085ee3b7cfe9fe4b01c",
+  "assetsChangedDuringAudit": false,
+  "htmlChangedDuringAudit": [],
+  "allTargetsPassed": true
+}

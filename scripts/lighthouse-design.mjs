@@ -35,6 +35,7 @@ const routes = [
   ...CATEGORIES.map((c) => `/${c.slug}/`),
   "/contact/",
   "/shop/",
+  "/demo/",
   "/privacy/",
   "/about/",
   ...POLICIES.map((p) => `/${p.slug}/`),
@@ -59,6 +60,7 @@ const assetFiles = [
   "styles.css",
   "main.js",
   ...(requestedPaths.includes("/shop/") ? ["shop.css"] : []),
+  ...(requestedPaths.includes("/demo/") ? ["demo.css"] : []),
 ];
 const assetHash = async () =>
   sha256(

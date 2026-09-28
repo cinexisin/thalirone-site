@@ -16,11 +16,13 @@ import {
   POLICIES,
   DESIGN,
   SHOP,
+  DEMO,
 } from "../src/config.mjs";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const output = join(root, "docs");
-const baselineRef = process.env.THALIR_VERIFY_BASE || "711ecd7";
+const baselineRef =
+  process.env.THALIR_VERIFY_BASE || "59aef6f68cb6bee1fc811a8c8fc5839cd018509a";
 const git = (...args) => execFileSync("git", args, { cwd: root });
 const baselineCommit = git("rev-parse", baselineRef).toString().trim();
 const baselineFiles = new Set(
@@ -40,6 +42,7 @@ const routes = [
   ...CATEGORIES.map((c) => `/${c.slug}/`),
   "/contact/",
   "/shop/",
+  "/demo/",
   "/privacy/",
   "/about/",
   ...POLICIES.map((p) => `/${p.slug}/`),
@@ -87,6 +90,32 @@ const textOnly = (html) =>
   )
     .replace(/\s+/g, " ")
     .trim();
+// Preserve each walkthrough's content boundary when checking the no-JS output.
+const blocksWithAttribute = (html, attribute) => {
+  const tokens = [
+    ...html.matchAll(/<\/?([a-z][\w:-]*)\b(?:"[^"]*"|'[^']*'|[^'">])*>/gi),
+  ];
+  return tokens.flatMap(([raw, name], index) => {
+    const attributes = attrs(raw);
+    if (raw.startsWith("</") || !Object.hasOwn(attributes, attribute))
+      return [];
+    let depth = 1;
+    for (let next = index + 1; next < tokens.length; next++) {
+      if (tokens[next][1].toLowerCase() !== name.toLowerCase()) continue;
+      depth += tokens[next][0].startsWith("</") ? -1 : 1;
+      if (depth === 0)
+        return [{
+          ...attributes,
+          raw,
+          html: html.slice(
+            tokens[index].index,
+            tokens[next].index + tokens[next][0].length,
+          ),
+        }];
+    }
+    assert.fail(`Unclosed ${name} carrying ${attribute}`);
+  });
+};
 async function files(directory) {
   const result = [];
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -282,6 +311,23 @@ for (const route of routes) {
         `${route}: category ${c.slug} missing in navigation/footer`,
       );
   }
+  assert.ok(
+    elements(html.match(/<footer\b[\s\S]*?<\/footer>/)[0]).some(
+      (tag) => tag.tag === "a" && tag.href === "/demo/",
+    ),
+    `${route}: demo missing from footer navigation`,
+  );
+  const demoStyles = tags.filter(
+    (tag) =>
+      tag.tag === "link" &&
+      tag.rel === "stylesheet" &&
+      new URL(tag.href, SITE.url + route).pathname === "/assets/demo.css",
+  );
+  assert.equal(
+    demoStyles.length,
+    route === "/demo/" ? 1 : 0,
+    `${route}: load demo.css exactly once and only on the demo route`,
+  );
   const structured = [
     ...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g),
   ]
@@ -471,6 +517,192 @@ for (const [route, page] of pages)
   }
 checks.push(
   "Business identity, hours, full route navigation, WhatsApp messages, internal links/anchors, metadata and reputation-claim regression checks",
+);
+
+const demo = pages.get("/demo/");
+const demoMain = demo.html.match(/<main\b[\s\S]*?<\/main>/)?.[0];
+assert.ok(demoMain, "/demo/: static main content required");
+assert.equal(
+  [...demoMain.matchAll(/<[a-z][^>]*\sdata-demo-hub(?=\s|=|>)/gi)].length,
+  1,
+  "/demo/: exactly one walkthrough root required",
+);
+const hasVisibleCopy = (html, copy, label) => {
+  assert.equal(typeof copy, "string", `${label}: configured text required`);
+  assert.ok(copy.trim(), `${label}: nonempty configured text required`);
+  assert.ok(
+    textOnly(html).includes(textOnly(copy)),
+    `${label}: text missing from static HTML`,
+  );
+};
+const scenarioIds = DEMO.scenarios.map((scenario) => scenario.id);
+const panelIds = DEMO.scenarios.flatMap((scenario) =>
+  scenario.steps.map((step) => `${scenario.id}-${step.id}`),
+);
+assert.ok(scenarioIds.length > 0, "DEMO must define walkthrough scenarios");
+assert.equal(
+  new Set(scenarioIds).size,
+  scenarioIds.length,
+  "DEMO contains duplicate scenario IDs",
+);
+assert.equal(
+  new Set(panelIds).size,
+  panelIds.length,
+  "DEMO contains duplicate panel IDs",
+);
+for (const id of [...scenarioIds, ...panelIds])
+  assert.match(id, /^[a-z][a-z0-9-]*$/, `Invalid demo ID: ${id}`);
+const journeys = blocksWithAttribute(demoMain, "data-demo-journey");
+const panels = blocksWithAttribute(demoMain, "data-demo-panel");
+const scenarioChoices = blocksWithAttribute(demoMain, "data-demo-scenario");
+assert.deepEqual(
+  journeys.map((journey) => journey["data-demo-journey"]),
+  scenarioIds,
+  "/demo/: render each configured scenario exactly once, in config order",
+);
+assert.deepEqual(
+  panels.map((panel) => panel["data-demo-panel"]),
+  panelIds,
+  "/demo/: render each configured panel exactly once, in config order",
+);
+for (const [index, scenario] of DEMO.scenarios.entries()) {
+  const journey = journeys[index];
+  assert.ok(scenario.steps.length > 0, `${scenario.id}: steps required`);
+  assert.ok(
+    !/\shidden(?:\s|=|>)/i.test(journey.raw) &&
+      journey["aria-hidden"] !== "true",
+    `${scenario.id}: journey must be available before JS runs`,
+  );
+  hasVisibleCopy(journey.html, scenario.question, `${scenario.id}.question`);
+  for (const key of ["label", "summary"])
+    hasVisibleCopy(
+      scenarioChoices[index]?.html || "",
+      scenario[key],
+      `${scenario.id}.${key}`,
+    );
+  for (const step of scenario.steps) {
+    const id = `${scenario.id}-${step.id}`;
+    const panel = panels.find((item) => item["data-demo-panel"] === id);
+    assert.equal(panel.id, id, `${id}: panel anchor must match config`);
+    assert.ok(
+      !/\shidden(?:\s|=|>)/i.test(panel.raw) &&
+        panel["aria-hidden"] !== "true" &&
+        !/(?:display\s*:\s*none|visibility\s*:\s*hidden)/i.test(
+          panel.style || "",
+        ),
+      `${id}: panel must be available before JS runs`,
+    );
+    for (const key of ["module", "title", "description", "outcome", "note"])
+      hasVisibleCopy(panel.html, step[key], `${id}.${key}`);
+    for (const key of ["eyebrow", "title", "status"])
+      hasVisibleCopy(panel.html, step.visual[key], `${id}.visual.${key}`);
+    if (step.visual.message)
+      hasVisibleCopy(panel.html, step.visual.message, `${id}.visual.message`);
+    for (const [label, value] of step.visual.rows) {
+      hasVisibleCopy(panel.html, label, `${id}.visual.row label`);
+      hasVisibleCopy(panel.html, value, `${id}.visual.row value`);
+    }
+    assert.ok(
+      elements(panel.html).some(
+        (tag) => tag.tag === "h3" && tag.tabindex === "-1",
+      ),
+      `${id}: focusable step heading required`,
+    );
+  }
+}
+const scenarioLinks = demo.tags.filter((tag) =>
+  Object.hasOwn(tag, "data-demo-scenario"),
+);
+const stepLinks = demo.tags.filter((tag) =>
+  Object.hasOwn(tag, "data-demo-step"),
+);
+assert.deepEqual(
+  scenarioLinks.map((tag) => tag["data-demo-scenario"]),
+  scenarioIds,
+  "/demo/: scenario controls must match all configured scenarios exactly once",
+);
+assert.deepEqual(
+  scenarioLinks.map((tag) => tag.href),
+  DEMO.scenarios.map((scenario) => `#${scenario.id}-${scenario.steps[0].id}`),
+  "/demo/: scenario links must work without JS",
+);
+assert.deepEqual(
+  stepLinks.map((tag) => tag["data-demo-step"]),
+  panelIds,
+  "/demo/: step links must match all configured panels exactly once",
+);
+for (const tag of stepLinks)
+  assert.equal(
+    tag.href,
+    `#${tag["data-demo-step"]}`,
+    "/demo/: step links must work without JS",
+  );
+for (const key of [
+  "heading",
+  "intro",
+  "crmNote",
+  "exampleLabel",
+  "exampleNote",
+  "modulesEyebrow",
+  "modulesTitle",
+  "modulesIntro",
+  "closeTitle",
+  "closeBody",
+])
+  hasVisibleCopy(demoMain, DEMO[key], `DEMO.${key}`);
+for (const group of DEMO.moduleGroups) {
+  hasVisibleCopy(demoMain, group.title, "DEMO.moduleGroups title");
+  hasVisibleCopy(demoMain, group.description, "DEMO.moduleGroups description");
+  for (const module of group.modules)
+    hasVisibleCopy(demoMain, module, "DEMO.moduleGroups module");
+}
+assert.match(
+  DEMO.exampleLabel + " " + DEMO.exampleNote,
+  /\b(?:example|sample)\b/i,
+  "/demo/: explicit example-data disclosure required",
+);
+const businessSoftware = CATEGORIES.find((c) => c.slug === "business-software");
+const approvedSoftware = baseline.CATEGORIES.find(
+  (c) => c.slug === "business-software",
+);
+for (const key of ["signInUrl", "pricingUrl"]) {
+  assert.equal(
+    businessSoftware.page[key],
+    approvedSoftware.page[key],
+    `Preserve official EKANI ${key}`,
+  );
+  assert.ok(
+    elements(demoMain).some(
+      (tag) => tag.tag === "a" && tag.href === businessSoftware.page[key],
+    ),
+    `/demo/: link to the official EKANI ${key}`,
+  );
+}
+const businessHero = pages
+  .get("/business-software/")
+  .html.match(/<section\b[^>]*class="[^"]*page-hero[^"]*"[\s\S]*?<\/section>/)?.[0];
+assert.ok(
+  businessHero &&
+    elements(businessHero).some(
+      (tag) => tag.tag === "a" && tag.href === "/demo/",
+    ),
+  "Business Software hero must link to the walkthrough",
+);
+assert.ok(
+  !/<template\b|api\.ekanicrm\.com|-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----|\b(?:sk_live_|sk-proj-|gh[pousr]_)[A-Za-z0-9_-]+|\bBearer\s+[A-Za-z0-9._~-]{12,}/i.test(
+    demo.html,
+  ),
+  "/demo/: no inert content templates, live CRM API endpoint or credential material",
+);
+assert.deepEqual(
+  demo.tags
+    .filter((tag) => tag.tag === "script" && tag.src)
+    .map((tag) => new URL(tag.src, SITE.url).pathname),
+  ["/assets/main.js"],
+  "/demo/: use only the shared local client script",
+);
+checks.push(
+  "Demo scenarios, panel anchors, static walkthrough copy, example disclosure, official CRM/pricing links and page-specific stylesheet loading",
 );
 
 let clientGzipBytes = 0,
