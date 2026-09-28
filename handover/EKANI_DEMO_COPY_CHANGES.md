@@ -233,7 +233,7 @@ New copy for the owner-requested presentation page. All visitor-facing words rem
 - **DEMO.scenarios[2].steps[2].label**: Day plan
 - **DEMO.scenarios[2].steps[2].module**: Planner Team
 - **DEMO.scenarios[2].steps[2].title**: Bring today's actions into view.
-- **DEMO.scenarios[2].steps[2].description**: Use the day's plan and reminders on WhatsApp or Telegram to keep the next actions close at hand.
+- **DEMO.scenarios[2].steps[2].description**: Use the day's plan and reminders on WhatsApp to keep the next actions close at hand.
 - **DEMO.scenarios[2].steps[2].outcome**: Start the day with a clear list of work to follow up.
 - **DEMO.scenarios[2].steps[2].note**: How does the team decide what needs attention each morning? Ask which reminders would be useful, then show only those relevant to their day.
 - **DEMO.scenarios[2].steps[2].visual.eyebrow**: Sample day plan
