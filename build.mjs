@@ -141,6 +141,10 @@ function brandsBlock(brands, id = "brands-h") {
   </div></section>`;
 }
 
+// Temporary owner-requested website publication pause. Remove this restriction only
+// when the owner confirms the channel can be advertised again. Backend is unchanged.
+const pausedChannelReference = /telegram|(?:https?:\/\/)?t\.me\//i;
+
 // ---------- EKANI pricing (live feed → fallback) ----------
 async function ekaniPricing() {
   if (process.argv.includes("--offline"))
@@ -153,7 +157,11 @@ async function ekaniPricing() {
     const j = await r.json();
     // Business modules only: the personal "Money" products are never shown as business prices.
     const mods = (j.modules || []).filter(
-      (m) => m.active !== false && !/money/i.test(m.key + " " + m.label),
+      (m) =>
+        m.active !== false &&
+        !/money/i.test(m.key + " " + m.label) &&
+        // Omit the listing; do not relabel a channel-specific service as WhatsApp.
+        !pausedChannelReference.test([m.key, m.label, m.tagline].join(" ")),
     );
     if (!mods.length) throw new Error("no modules");
     const modules = mods.map((m) => [
@@ -624,7 +632,10 @@ function notFound() {
 async function page(path, file, args) {
   const dest = join(OUT, file);
   await mkdir(dirname(dest), { recursive: true });
-  await writeFile(dest, layout({ path, ...args }).replace(/[ \t]+$/gm, ""));
+  const html = layout({ path, ...args }).replace(/[ \t]+$/gm, "");
+  if (pausedChannelReference.test(html))
+    throw new Error(`Paused channel reference in generated page: ${path}`);
+  await writeFile(dest, html);
   console.log("  " + file);
 }
 async function copyDir(src, dst) {

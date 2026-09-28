@@ -38,9 +38,9 @@ export const CATEGORIES = [
     illustration: "floorplan",
     card: {
       pitch:
-        "KNX homes you control by chatting on WhatsApp or Telegram: lights, AC, curtains, scenes, gate and camera alerts. Plus home cinemas calibrated for your room.",
+        "KNX homes you control by chatting on WhatsApp: lights, AC, curtains, scenes, gate and camera alerts. Plus home cinemas calibrated for your room.",
       bullets: [
-        "Control from WhatsApp or Telegram in plain English",
+        "Control from WhatsApp in plain English",
         "Designed and programmed in ETS6",
         "Each person gets only the devices you allow",
         "Site survey first, written quote after",
@@ -59,13 +59,13 @@ export const CATEGORIES = [
         "KNX smart home design and programming across Karnataka, Tamil Nadu, Andhra Pradesh and Telangana: lighting, air-conditioning, curtains and scenes, plus home cinemas measured and calibrated with REW. Request a site survey.",
       eyebrow: "Smart Home & Cinema",
       h1: "A home that answers to you.",
-      lede: "We design, install and program smart homes on KNX, and you run them by simply messaging your home on WhatsApp or Telegram: lighting, air-conditioning, curtains, scenes, gate and cameras. And we build home cinemas that are measured and calibrated for the room they sit in.",
+      lede: "We design, install and program smart homes on KNX, and you run them by simply messaging your home on WhatsApp: lighting, air-conditioning, curtains, scenes, gate and cameras. And we build home cinemas that are measured and calibrated for the room they sit in.",
       usp: {
         eyebrow: "What makes us different",
-        title: "Run your home from WhatsApp or Telegram",
+        title: "Run your home from WhatsApp",
         lede: "No new app to learn. Message your home the way you'd message a person: \u201cliving room lights on\u201d, \u201cac cool 22\u201d, \u201con geyser for 30m\u201d. It replies to confirm, and alerts with camera photos come back to the same chat.",
         points: [
-          "Works on WhatsApp and Telegram, the apps your family already uses",
+          "Works on WhatsApp, the app your family already uses",
           "Plain-English commands, plus quick numbered replies like \u201c2 on\u201d",
           "Each person can use only the rooms and devices you allow",
           "Runs on a controller inside your home, on Home Assistant",
@@ -271,11 +271,11 @@ export const CATEGORIES = [
         ],
         [
           "Can I control it from my phone?",
-          "Yes, by simply messaging your home on WhatsApp or Telegram, alongside the wall keypads. Chat control needs the internet; everyday switching from the keypads runs locally on KNX.",
+          "Yes, by simply messaging your home on WhatsApp, alongside the wall keypads. Chat control needs the internet; everyday switching from the keypads runs locally on KNX.",
         ],
         [
           "Do I need to install a new app?",
-          "No. You use WhatsApp or Telegram, which your family already has. The system replies to each command and sends alerts to the same chat.",
+          "No. You use WhatsApp, which your family already has. The system replies to each command and sends alerts to the same chat.",
         ],
         [
           "Can I stop family, staff or guests from using certain things?",
@@ -629,7 +629,7 @@ export const EKANI_PRICING_FALLBACK = {
     ["Inventory", "Stock, movements and low-stock alerts", 349],
     ["Purchasing", "Purchase orders, vendors and goods receipt", 249],
     ["Finance", "Expenses, accounts, ledger and statements", 349],
-    ["Planner", "Reminders and your day on WhatsApp or Telegram", 199],
+    ["Planner", "Reminders and your day on WhatsApp", 199],
     ["AI Suite", "Receipt reading, reply drafts and catalogue extraction", 599],
   ],
 };
@@ -656,7 +656,7 @@ export const UI = {
   room: "Living room",
   roomState: "3 lights on",
   roomStateOff: "Lights off",
-  demoLabel: "WhatsApp / Telegram",
+  demoLabel: "WhatsApp",
   replay: "Replay example",
   heroEyebrow: "Homes · Commercial spaces · Software",
   heroTitle: ["Intelligent spaces.", "Connected business."],
@@ -1305,7 +1305,7 @@ export const DESIGN = {
   introduction: "Technology, with purpose",
   location: "Bengaluru, India",
   homeDemoTitle: "Your home. One conversation.",
-  homeDemoIntro: "Run your home from WhatsApp or Telegram.",
+  homeDemoIntro: "Run your home from WhatsApp.",
   homeDemoNote:
     "No new app to learn. Message your home the way you'd message a person.",
   commercialEyebrow: "For organisations & institutions",
