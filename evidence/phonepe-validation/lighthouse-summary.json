@@ -1,0 +1,24 @@
+{
+  "url": "http://127.0.0.1:4672/payment-validation/",
+  "mode": "Lighthouse mobile; disabled checkout only",
+  "scores": {
+    "performance": 97,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 69,
+    "agentic-browsing": 100
+  },
+  "metrics": {
+    "first-contentful-paint": "1.5 s",
+    "largest-contentful-paint": "2.4 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms"
+  },
+  "failedAudits": [
+    {
+      "id": "is-crawlable",
+      "title": "Page is blocked from indexing"
+    }
+  ],
+  "note": "SEO noindex is intentional for this restricted validation page. No production payment API configured or called."
+}
