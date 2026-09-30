@@ -3,12 +3,15 @@
 // object to CATEGORIES (copy an existing one) and run `node build.mjs`.
 // Every claim must pass ~/ThalirInnovations/docs/CLAIMS_RULEBOOK.md.
 
-// TODO — Claude Code: supply the verified production API and exact PhonePe
-// checkout origins. Never put merchant credentials or access codes in this file.
+// Verified by Claude Code 2026-09-30: the API is EKANI's payment-validation
+// backend (deployed, production credentials in its server env), and the only
+// checkout origin is the one PhonePe's production Create Payment API actually
+// returned. Never put merchant credentials or access codes in this file.
+// Set `enabled` back to false once the validation payment is verified.
 export const PAYMENT = {
-  enabled: false,
-  apiBase: "",
-  checkoutOrigins: [],
+  enabled: true,
+  apiBase: "https://api.ekanicrm.com/v1/public/payment-validation",
+  checkoutOrigins: ["https://mercury-t2.phonepe.com"],
   amountPaise: 100000,
   currency: "INR",
   merchant: "THALIR INNOVATIONS",

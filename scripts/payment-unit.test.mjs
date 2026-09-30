@@ -6,11 +6,13 @@ import { configurationReady, validateCheckoutUrl, validateSession } from "../src
 // Synthetic origins only; these checks never contact a payment provider.
 const config = { ...PAYMENT, enabled: true, apiBase: "https://payments.thalirone.test/validation", checkoutOrigins: ["https://checkout.phonepe.com"] };
 const pending = { environment: "production", merchant: config.merchant, amountPaise: 100000, currency: "INR", state: "PENDING", orderReference: "TEST_ORDER_1" };
-test("checked-in configuration cannot accept payments", () => {
-  assert.equal(PAYMENT.enabled, false);
-  assert.equal(PAYMENT.apiBase, "");
-  assert.deepEqual(PAYMENT.checkoutOrigins, []);
-  assert.equal(configurationReady(PAYMENT), false);
+test("checked-in configuration points only at the verified production API and checkout", () => {
+  assert.equal(PAYMENT.enabled, true);
+  assert.equal(PAYMENT.apiBase, "https://api.ekanicrm.com/v1/public/payment-validation");
+  assert.deepEqual(PAYMENT.checkoutOrigins, ["https://mercury-t2.phonepe.com"]);
+  assert.equal(PAYMENT.amountPaise, 100000);
+  assert.equal(configurationReady(PAYMENT), true);
+  assert.equal(configurationReady({ ...PAYMENT, enabled: false }), false);
   assert.equal(configurationReady(config), true);
 });
 test("configuration rejects incomplete, insecure or non-production destinations", () => {
