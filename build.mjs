@@ -23,7 +23,10 @@ import {
   POLICIES,
   DESIGN,
   SHOP,
+  PAYMENT,
 } from "./src/config.mjs";
+import { paymentPage } from "./src/payment-page.mjs";
+import { configurationReady } from "./src/assets/payment.mjs";
 import {
   ILLUSTRATIONS,
   ICONS,
@@ -50,6 +53,13 @@ const SHOP_VERSION = createHash("sha256")
   .update(await readFile(join(ROOT, "src/assets/shop.css")))
   .digest("hex")
   .slice(0, 10);
+const PAYMENT_VERSION = createHash("sha256")
+  .update(await readFile(join(ROOT, "src/assets/payment.css")))
+  .update(await readFile(join(ROOT, "src/assets/payment.mjs")))
+  .digest("hex").slice(0, 10);
+if (PAYMENT.enabled && !configurationReady(PAYMENT)) {
+  throw new Error("Payment activation requires a production API and verified PhonePe checkout origins.");
+}
 
 // ---------- helpers ----------
 const esc = (s = "") =>
@@ -71,6 +81,7 @@ const logo = (lazy = false) => `<picture>
   <img src="/assets/img/logo.png" alt="${esc(SITE.name)}" width="172" height="64" ${lazy ? 'loading="lazy"' : 'fetchpriority="high"'}>
 </picture>`;
 function mobileAction(current, path) {
+  if (path === "/payment-validation/") return "";
   if (
     [
       "/terms/",
@@ -262,7 +273,7 @@ function layout({ path, title, description, body, current }) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(full)}</title>
-<meta name="description" content="${esc(description)}">
+<meta name="description" content="${esc(description)}">${path === "/payment-validation/" ? '\n<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">' : ""}
 <link rel="canonical" href="${SITE.url}${path}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(SITE.name)}">
@@ -278,7 +289,7 @@ function layout({ path, title, description, body, current }) {
 <link rel="preload" href="/assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/styles.css?v=${VERSION}">
-${path === "/shop/" ? `<link rel="stylesheet" href="/assets/shop.css?v=${SHOP_VERSION}">` : ""}
+${path === "/shop/" ? `<link rel="stylesheet" href="/assets/shop.css?v=${SHOP_VERSION}">` : ""}${path === "/payment-validation/" ? `<link rel="stylesheet" href="/assets/payment.css?v=${PAYMENT_VERSION}">` : ""}
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
 </head>
 <body class="${path === "/" ? "home-page" : current || "utility-page"}">
@@ -313,7 +324,7 @@ ${body}
   </div>
 </footer>
 ${mobileAction(current, path)}
-<script src="/assets/main.js?v=${VERSION}" defer></script>
+<script src="/assets/main.js?v=${VERSION}" defer></script>${path === "/payment-validation/" ? `\n<script type="application/json" id="payment-config">${JSON.stringify(PAYMENT).replace(/</g, "\\u003c")}</script><script type="module" src="/assets/payment.mjs?v=${PAYMENT_VERSION}"></script>` : ""}
 </body>
 </html>`;
 }
@@ -676,6 +687,12 @@ await page("/shop/", "shop/index.html", {
   title: SHOP.title,
   description: SHOP.description,
   body: shopPage(pricing),
+});
+await page("/payment-validation/", "payment-validation/index.html", {
+  title: PAYMENT.copy.eyebrow,
+  description: PAYMENT.copy.description,
+  current: "payment-utility",
+  body: paymentPage({ copy: PAYMENT.copy, business: BUSINESS_INFO, site: SITE, esc, enabled: PAYMENT.enabled }),
 });
 await page("/privacy/", "privacy/index.html", {
   title: COPY.privacy,

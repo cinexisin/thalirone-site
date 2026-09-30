@@ -3,6 +3,83 @@
 // object to CATEGORIES (copy an existing one) and run `node build.mjs`.
 // Every claim must pass ~/ThalirInnovations/docs/CLAIMS_RULEBOOK.md.
 
+// Verified by Claude Code 2026-09-30: the API is EKANI's payment-validation
+// backend (deployed, production credentials in its server env), and the only
+// checkout origin is the one PhonePe's production Create Payment API actually
+// returned. Never put merchant credentials or access codes in this file.
+// Set `enabled` back to false once the validation payment is verified.
+export const PAYMENT = {
+  enabled: true,
+  apiBase: "https://api.ekanicrm.com/v1/public/payment-validation",
+  checkoutOrigins: ["https://mercury-t2.phonepe.com"],
+  amountPaise: 100000,
+  currency: "INR",
+  merchant: "THALIR INNOVATIONS",
+  copy: {
+    eyebrow: "Payment verification",
+    title: "One payment. Clearly confirmed.",
+    description: "A restricted, one-time payment verification for THALIR INNOVATIONS.",
+    intro: "A dedicated checkout for the agreed payment gateway verification. Review the details before continuing.",
+    amountLabel: "Total payment",
+    amountDisplay: "₹1,000",
+    currencyLabel: "INR · one-time payment",
+    purposeLabel: "Payment purpose",
+    purpose: "PhonePe gateway verification",
+    purposeNote: "This is a real payment for gateway verification. It does not purchase a service, start a subscription or activate software.",
+    merchantLabel: "Paid to",
+    contactLabel: "Business contact",
+    contactName: "Jawahar E",
+    steps: [
+      ["Review", "Confirm the purpose, seller and ₹1,000 total."],
+      ["Pay", "Complete your payment on PhonePe’s checkout."],
+      ["Verify", "Return here to check the confirmed payment record."],
+    ],
+    consent: "I understand that this is a real, one-time ₹1,000 payment for gateway verification.",
+    payLabel: "Continue to pay ₹1,000",
+    refreshLabel: "Check payment status",
+    forgetLabel: "Clear this payment session",
+    privacyLabel: "Privacy",
+    termsLabel: "Terms",
+    refundsLabel: "Refund policy",
+    contactLinkLabel: "Contact us about this payment",
+    policiesLabel: "Payment policies and support",
+    processLabel: "How this payment works",
+    noscript: "JavaScript is required to verify and start this payment. No payment is taken by this page without it. You can still review the details and contact us.",
+    disabledTitle: "Payment setup in progress",
+    disabledBody: "This checkout is not accepting payments yet. Contact us for an update before making a payment.",
+    readyTitle: "Ready for your confirmation",
+    readyBody: "Your payment access has been verified. Confirm the details and continue when you are ready.",
+    accessLabel: "Payment access code",
+    accessHelp: "Enter the temporary code supplied for this verification. This is not your PhonePe password, API secret, PIN or OTP.",
+    accessButton: "Verify payment access",
+    accessTitle: "For the invited payer",
+    accessBody: "Use your temporary payment access code to open this one-time verification.",
+    accessErrorTitle: "Check your payment access",
+    accessErrorBody: "The code is invalid, expired or unavailable. Contact us for the correct payment access code.",
+    checkingTitle: "Checking with our payment server",
+    checkingBody: "Please wait while we verify this payment session.",
+    startingTitle: "Preparing your payment",
+    startingBody: "Please wait. Do not open another payment while this request is being checked.",
+    pendingTitle: "Payment is not confirmed yet",
+    pendingBody: "If money has been debited, do not pay again. Check the status here or contact us with your payment reference.",
+    completedTitle: "Payment confirmed",
+    completedBody: "Our server has verified your ₹1,000 payment with PhonePe. Keep the references below for your records.",
+    failedTitle: "Payment was not completed",
+    failedBody: "Contact us before starting another payment. If money was debited, share the payment reference so we can check it.",
+    expiredTitle: "This payment session has expired",
+    expiredBody: "No new payment can be started with this access code. If money was debited, contact us before trying again.",
+    unknownTitle: "We could not confirm the payment status",
+    unknownBody: "Do not pay again if you have already attempted payment. Check the status again or contact us; a connection error does not mean a payment failed.",
+    storageTitle: "Payment session could not be saved",
+    storageBody: "Your browser must allow temporary storage for this tab so we can check the payment when you return. No payment has been started here.",
+    consentErrorTitle: "Confirm the payment details",
+    consentErrorBody: "Select the confirmation before continuing to the real ₹1,000 payment.",
+    orderLabel: "Order reference",
+    referenceLabel: "Transaction reference",
+    privacyNote: "This page keeps a temporary payment access code in this browser tab to retrieve your payment status. Clearing the session removes this access from the tab; it does not cancel or refund a payment. Card details, UPI PINs and OTPs are entered only with the payment provider.",
+  },
+};
+
 export const SITE = {
   name: "Thalir Innovations",
   domain: "thalirone.com",
@@ -687,7 +764,7 @@ export const UI = {
   formNote: "This opens WhatsApp with your message ready to send to",
   formNoteEnd: ". Nothing is sent until you press send.",
   privacyWebsite:
-    "thalirone.com doesn't use cookies, analytics or advertising trackers. Fonts are hosted on this website; no font requests are sent to Google Fonts. The contact form doesn't send anything to us by itself. It prepares a WhatsApp message on your device, and nothing is sent unless you press send in WhatsApp.",
+    "thalirone.com doesn't use cookies, analytics or advertising trackers. Fonts are hosted on this website; no font requests are sent to Google Fonts. The contact form doesn't send anything to us by itself. It prepares a WhatsApp message on your device, and nothing is sent unless you press send in WhatsApp." + (PAYMENT.enabled ? " The restricted payment verification page uses this browser tab’s session storage for its temporary access code and request reference so you can check the payment when you return. You can clear that session on the payment page; it is not used for advertising or analytics." : ""),
   moduleEyebrow: "EKANI modules",
   moduleNote:
     "Each module includes up to 3 users. Or get every module with EKANI One.",
@@ -822,7 +899,9 @@ export const BUSINESS_INFO = {
     "For any Smart Home & Cinema, Cinema Revival, Commercial Spaces or EKANI order, contact us about cancellations, refunds, delivery or payment issues. Include your quote, invoice or transaction reference so we can identify it.",
   privacyPaymentsTitle: "Order and payment enquiries",
   privacyPaymentsBody:
-    "If you send us an invoice, transaction reference or payment issue, we use those details to identify your order and respond to your request. Please do not send full card details, CVVs, PINs, passwords or one-time passwords through the contact form, email or WhatsApp. This website has no payment form and does not collect payment credentials.",
+    PAYMENT.enabled
+      ? "If you send us an invoice, transaction reference or payment issue, we use those details to identify your order and respond to your request. The invited payment verification page contacts our server to create a payment request and retrieve its status. We use the payment amount, order and transaction references, and verified status to reconcile the payment. Card details, CVVs, PINs and one-time passwords are entered only with the payment provider, never in our enquiry form. Do not send those credentials by email or WhatsApp."
+      : "If you send us an invoice, transaction reference or payment issue, we use those details to identify your order and respond to your request. Please do not send full card details, CVVs, PINs, passwords or one-time passwords through the contact form, email or WhatsApp. This website has no payment form and does not collect payment credentials.",
   privacyExternalTitle: "Other websites and payment services",
   privacyExternalBody:
     "Links to EKANI and messaging or payment services take you to separate websites or apps. Their privacy notices explain how they handle information you provide there. This notice describes thalirone.com and the enquiries you send to Thalir Innovations.",
@@ -1023,7 +1102,9 @@ export const POLICIES = [
           "THALIR INNOVATIONS is the seller for the services covered by these terms. Our registered address and support contacts appear on this page and on Contact.",
           "Business contact: Jawahar E.",
           "These policies cover Smart Home & Cinema, Cinema Revival, Commercial Spaces (audio, PA, acoustics and building automation), equipment we supply with those services, and EKANI subscriptions and related services. They apply whether you pay by a payment link, within EKANI or through another payment method we offer.",
-          "thalirone.com is an information and enquiry website. Its contact form prepares a WhatsApp message; it has no checkout or payment-credential form. Sending an enquiry does not confirm an order or reserve a visit.",
+          PAYMENT.enabled
+            ? "thalirone.com provides service information and enquiries. Its contact form prepares a WhatsApp message. A separate, invited payment verification page starts an agreed one-time ₹1,000 PhonePe payment; it does not purchase a service, start a subscription or activate software. Payment credentials are entered on the provider’s checkout. Sending an enquiry does not confirm an order or reserve a visit."
+            : "thalirone.com is an information and enquiry website. Its contact form prepares a WhatsApp message; it has no checkout or payment-credential form. Sending an enquiry does not confirm an order or reserve a visit.",
         ],
       },
       {

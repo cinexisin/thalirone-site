@@ -1,0 +1,61 @@
+{
+  "viewportChecks": [
+    {
+      "width": 360,
+      "scrollWidth": 360
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440
+    }
+  ],
+  "accessibility": [
+    {
+      "label": "disabled-390",
+      "issues": []
+    },
+    {
+      "label": "disabled-1280",
+      "issues": []
+    },
+    {
+      "label": "mock-ready-390",
+      "issues": []
+    },
+    {
+      "label": "mock-ready-1280",
+      "issues": []
+    },
+    {
+      "label": "mock-completed",
+      "issues": []
+    }
+  ],
+  "scenarios": [
+    "Disabled build: no API calls/storage, no payment, query-string success ignored; six widths",
+    "Mock READY: consent required; double click creates one POST; provider navigation fully intercepted",
+    "Return restores tab session and shows success only after verified backend response; clear removes session",
+    "Pending/failed/expired and wrong amount/merchant/malformed reference never show success or allow new payment",
+    "Creation network failure/stale READY reload never retries; hostile redirect blocked; access/storage failures cannot create payment",
+    "JavaScript off: disabled controls and readable fallback"
+  ],
+  "errors": [],
+  "unexpectedRequests": [],
+  "result": "PASS — mocks only; no live payment API called"
+}
