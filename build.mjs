@@ -273,7 +273,7 @@ function layout({ path, title, description, body, current }) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(full)}</title>
-<meta name="description" content="${esc(description)}">${path === "/payment-validation/" ? '\n<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">' : ""}
+<meta name="description" content="${esc(description)}">${path === "/payment-validation/" ? '\n<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="strict-origin-when-cross-origin">' : ""}
 <link rel="canonical" href="${SITE.url}${path}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(SITE.name)}">
