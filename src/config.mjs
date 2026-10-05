@@ -9,7 +9,10 @@
 // returned. Never put merchant credentials or access codes in this file.
 // Set `enabled` back to false once the validation payment is verified.
 export const PAYMENT = {
-  enabled: true,
+  // Off since 5 Oct 2026: PhonePe's ₹1,000 gateway validation is complete
+  // (THALIRVAL-20261005-39MFTENE2R, txn OM2610051052475645588629W) and the
+  // backend no longer creates orders (PAYMENT_VALIDATION_CREATE_ENABLED=false).
+  enabled: false,
   apiBase: "https://api.ekanicrm.com/v1/public/payment-validation",
   checkoutOrigins: ["https://mercury-t2.phonepe.com"],
   amountPaise: 100000,
@@ -45,8 +48,8 @@ export const PAYMENT = {
     policiesLabel: "Payment policies and support",
     processLabel: "How this payment works",
     noscript: "JavaScript is required to verify and start this payment. No payment is taken by this page without it. You can still review the details and contact us.",
-    disabledTitle: "Payment setup in progress",
-    disabledBody: "This checkout is not accepting payments yet. Contact us for an update before making a payment.",
+    disabledTitle: "This checkout is closed",
+    disabledBody: "The one-time gateway verification payment has been completed, so this page no longer takes payments. Please don't pay anything here — contact us if you have a question about a payment.",
     readyTitle: "Ready for your confirmation",
     readyBody: "Your payment access has been verified. Confirm the details and continue when you are ready.",
     accessLabel: "Payment access code",
