@@ -92,9 +92,9 @@ export const SITE = {
   // Where we take projects (owner, 24 Sep 2026). Based in Bengaluru.
   states: ["Karnataka", "Tamil Nadu", "Andhra Pradesh", "Telangana"],
   serviceArea: "Karnataka, Tamil Nadu, Andhra Pradesh and Telangana",
-  whatsapp: "919513636657", // official WhatsApp API number (Gupshup) → EKANI inbox
-  whatsappDisplay: "+91 95136 36657",
-  phone: "+919513636646", // calls only (owner, 25 Sep 2026); the WhatsApp number above is chat only
+  whatsapp: "919513636646", // owner-selected public WhatsApp contact, aligned with Facebook and Instagram
+  whatsappDisplay: "+91 95136 36646",
+  phone: "+919513636646", // public calls and WhatsApp contact
   phoneDisplay: "+91 95136 36646",
   email: "hello@thalirone.com",
   hours: "Mon–Fri 9:30 am – 6:30 pm · Sat 9:30 am – 2 pm",
