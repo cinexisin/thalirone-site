@@ -35,8 +35,8 @@ Node 20+ is enough. There is no package.json and no dependencies; keep it that w
 7. **No photos pretending to be real work.** No stock photos, no AI-generated images of homes, cinemas, people or installations. Visuals are drawn (SVG/HTML/CSS) and any example data is labelled "Example".
 8. **Light theme only.** The logo's dark-green wordmark is designed for light grounds.
 9. **No trackers, analytics, cookies, chat widgets or third-party scripts.** The privacy page promises this.
-10. **Every WhatsApp call to action** must keep pointing to `https://wa.me/919513636657` with the prefilled text from `src/config.mjs`.
-11. **Calls** go to `SITE.phone` (+91 95136 36646). WhatsApp stays 95136 36657. No other phone number may appear on the site.
+10. **Every WhatsApp call to action** must point to `https://wa.me/919513636646` with the prefilled text from `src/config.mjs`. The owner's November 2026 profile setup request supersedes the older WhatsApp number in historical handover documents.
+11. **Calls and public WhatsApp enquiries** go to +91 95136 36646, as configured in `SITE`. No other phone number may appear on the site.
 
 ## Asks for Claude Code
 Anything outside the static front end is handled by Claude Code, not by you: form submissions to a server,
