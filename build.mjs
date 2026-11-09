@@ -80,6 +80,20 @@ const logo = (lazy = false) => `<picture>
   <source type="image/avif" srcset="/assets/img/logo-172.avif 172w, /assets/img/logo-344.avif 344w, /assets/img/logo-516.avif 516w" sizes="(max-width: 768px) 151px, 172px">
   <img src="/assets/img/logo.png" alt="${esc(SITE.name)}" width="172" height="64" ${lazy ? 'loading="lazy"' : 'fetchpriority="high"'}>
 </picture>`;
+// Contact details shown above the header, in the menu, footer and contact page.
+const contactLinks = () => ({
+  whatsapp: `<a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${WA_ICON}<span>${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</span></a>`,
+  call: `<a href="tel:${esc(SITE.phone)}">${ICONS.phone}<span>${esc(COPY.call)} ${esc(SITE.phoneDisplay)}</span></a>`,
+  email: `<a href="mailto:${esc(SITE.email)}">${ICONS.mail}<span>${esc(SITE.email)}</span></a>`,
+  hours: `${ICONS.clock}<span>${esc(SITE.hours)}</span>`,
+});
+function topbar() {
+  const l = contactLinks();
+  return `<div class="topbar"><div class="wrap">
+    <p class="topbar-area">${ICONS.pin}<span>${esc(SITE.city)} · ${esc(SITE.states.join(", "))}</span></p>
+    <ul aria-label="${esc(DESIGN.topbarLabel)}"><li>${l.whatsapp}</li><li>${l.call}</li><li>${l.email}</li><li class="topbar-hours">${l.hours}</li></ul>
+  </div></div>`;
+}
 function mobileAction(current, path) {
   if (path === "/payment-validation/") return "";
   if (
@@ -294,11 +308,12 @@ ${path === "/shop/" ? `<link rel="stylesheet" href="/assets/shop.css?v=${SHOP_VE
 </head>
 <body class="${path === "/" ? "home-page" : current || "utility-page"}">
 <a class="skip" href="#main">${esc(COPY.skip)}</a>
+${topbar()}
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/" aria-label="${esc(SITE.name)} home">${logo()}</a>
     <nav class="nav" aria-label="${esc(UI.mainNav)}">${nav}${waBtn(WA_GENERAL, UI.whatsapp, "sm head-cta")}</nav>
-    <details class="menu"><summary aria-controls="mobile-panel" data-open-label="${esc(UI.menu)}" data-close-label="${esc(UI.closeMenu)}"><span>${esc(UI.menu)}</span><span class="menu-icon" aria-hidden="true"></span></summary><nav id="mobile-panel" class="menu-panel" aria-label="${esc(UI.mobileNav)}">${nav}${waBtn(WA_GENERAL, UI.whatsapp)}</nav></details>
+    <details class="menu"><summary aria-controls="mobile-panel" data-open-label="${esc(UI.menu)}" data-close-label="${esc(UI.closeMenu)}"><span>${esc(UI.menu)}</span><span class="menu-icon" aria-hidden="true"></span></summary><nav id="mobile-panel" class="menu-panel" aria-label="${esc(UI.mobileNav)}">${nav}${waBtn(WA_GENERAL, UI.whatsapp)}<div class="menu-contact">${contactLinks().call}${contactLinks().email}</div></nav></details>
   </div>
 </header>
 <main id="main" tabindex="-1">
@@ -307,17 +322,18 @@ ${body}
 <footer class="site-foot">
   <div class="wrap">
     <div class="cols">
-      <div style="display:grid;gap:14px;align-content:start">
+      <div class="foot-brand">
         ${logo(true)}
         <p class="muted">${esc(SITE.tagline)} ${esc(COPY.footerBased)} ${esc(SITE.city)}, ${esc(COPY.footerServing)} ${esc(SITE.serviceArea)}.</p>
+        <ul class="social" aria-label="${esc(DESIGN.follow)}">${SITE.social.map(([n, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a></li>`).join("")}</ul>
       </div>
-      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}<li><a href="/shop/"${path === "/shop/" ? ' aria-current="page"' : ""}>${esc(SHOP.nav)}</a></li><li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
-      <div><h2>${esc(COPY.talk)}</h2><ul>
-        <li><a href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${esc(COPY.whatsapp)} ${esc(SITE.whatsappDisplay)}</a></li>
-        <li><a href="tel:${esc(SITE.phone)}">${esc(COPY.call)} ${esc(SITE.phoneDisplay)}</a></li>
-        <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
-        <li class="muted">${esc(SITE.hours)}</li>
-        ${SITE.social.map(([n, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a></li>`).join("")}
+      <div><h2>${esc(COPY.whatWeDo)}</h2><ul>${CATEGORIES.map((c) => `<li><a href="${catUrl(c)}">${esc(c.name)}</a></li>`).join("")}</ul></div>
+      <div><h2>${esc(DESIGN.company)}</h2><ul><li><a href="/shop/"${path === "/shop/" ? ' aria-current="page"' : ""}>${esc(SHOP.nav)}</a></li><li><a href="/about/">${esc(BUSINESS_INFO.about)}</a></li><li><a href="/contact/">${esc(COPY.contact)}</a></li></ul></div>
+      <div class="foot-contact"><h2>${esc(COPY.talk)}</h2><ul>
+        <li>${contactLinks().whatsapp}</li>
+        <li>${contactLinks().call}</li>
+        <li>${contactLinks().email}</li>
+        <li class="foot-hours">${contactLinks().hours}</li>
       </ul></div>
     </div>
     <div class="legal"><span>© ${YEAR} ${esc(SITE.name)} · ${esc(SITE.city)}</span><nav class="policy-links" aria-label="${esc(BUSINESS_INFO.nav)}">${policyLinks(path)}</nav></div>
@@ -410,10 +426,10 @@ function home() {
     CATEGORIES.find((c) => c.slug === "smart-home-cinema") || CATEGORIES[0];
   const commercial = CATEGORIES.find((c) => c.slug === "commercial-audio");
   const cards = CATEGORIES.map(
-    (c, i) => `<article class="service-row">
-    <div class="service-art">${serviceArt(c, { compact: true })}</div>
-    <div class="service-copy"><span class="service-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span class="eyebrow">${esc(c.label)}</span><h3><a href="${catUrl(c)}">${esc(c.name)}</a></h3>
-    <p class="lede">${esc(c.card.pitch)}</p><ul class="service-points">${c.card.bullets.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+    (c, i) => `<article class="service-card">
+    <div class="service-card-art">${serviceArt(c, { compact: true })}</div>
+    <div class="service-card-body"><div class="service-card-meta"><span class="eyebrow">${esc(c.label)}</span><span class="service-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span></div><h3><a href="${catUrl(c)}">${esc(c.name)}</a></h3>
+    <p class="service-pitch">${esc(c.card.pitch)}</p><ul class="service-points">${c.card.bullets.map((x) => `<li>${ICONS.check}<span>${esc(x)}</span></li>`).join("")}</ul>
     <div class="service-actions"><a class="link-arrow" href="${catUrl(c)}">${esc(UI.explore)} ${esc(c.name)} ${ICONS.arrow}</a>${waBtn(c.cta.wa, c.cta.label, "ghost sm")}</div></div>
   </article>`,
   ).join("");
@@ -422,8 +438,8 @@ function home() {
   </section>
   <section class="experience wrap" aria-label="${esc(DESIGN.homeDemoIntro)}">${sh.page.usp ? heroDemo(sh.page.usp) : serviceArt(sh, { eager: true })}</section>
   <nav class="service-strip" aria-label="${esc(DESIGN.services)}"><div class="wrap">${CATEGORIES.map((c, i) => `<a href="${catUrl(c)}"><span class="service-strip-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span>${esc(c.name)}</span>${ICONS.arrow}</a>`).join("")}</div></nav>
-  ${commercial ? `<section class="band commercial-feature" aria-labelledby="commercial-h"><div class="wrap"><div class="commercial-lead"><span class="eyebrow">${esc(DESIGN.commercialEyebrow)}</span><h2 id="commercial-h">${esc(DESIGN.commercialTitle)}</h2><p class="lede">${esc(DESIGN.commercialBody)}</p>${waBtn(commercial.cta.wa, commercial.cta.label)}<a class="link-arrow" href="${catUrl(commercial)}">${esc(UI.explore)} ${esc(commercial.name)} ${ICONS.arrow}</a></div><div class="commercial-visual">${commercialPlan(DESIGN.commercialPlan, { compact: true })}</div><ul class="sector-strip">${commercial.page.sectors.map(([h]) => `<li>${esc(h)}</li>`).join("")}</ul></div></section>` : ""}
-  <section class="band services-section" id="services" aria-labelledby="cats-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div><div class="services-list">${cards}</div></div></section>
+  ${commercial ? `<section class="band commercial-feature" aria-labelledby="commercial-h"><div class="wrap"><div class="commercial-lead"><span class="eyebrow">${esc(DESIGN.commercialEyebrow)}</span><h2 id="commercial-h">${esc(DESIGN.commercialTitle)}</h2><p class="lede">${esc(DESIGN.commercialBody)}</p><div class="btns">${waBtn(commercial.cta.wa, commercial.cta.label)}<a class="link-arrow" href="${catUrl(commercial)}">${esc(UI.explore)} ${esc(commercial.name)} ${ICONS.arrow}</a></div></div><div class="sector-panel"><h3 class="sector-title">${esc(DESIGN.sectors)}</h3><ul class="sector-tiles">${commercial.page.sectors.map(([h, d], i) => `<li>${ICONS[["office", "hospital", "campus", "stage", "rings", "hotel"][i]] || ICONS.plan}<div><h4>${esc(h)}</h4><p>${esc(d)}</p></div></li>`).join("")}</ul></div></div></section>` : ""}
+  <section class="band services-section" id="services" aria-labelledby="cats-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(COPY.whatWeDo)}</span><h2 id="cats-h">${esc(COPY.categoriesTitle)}</h2><p class="muted">${esc(UI.homeLede)}</p></div><div class="services-grid">${cards}</div></div></section>
   ${sh.page.usp ? uspBlock(sh.page.usp, { compact: true, link: [catUrl(sh), UI.heroDetail] }) : ""}
   <section class="band why-section" aria-labelledby="why-h"><div class="wrap"><div class="sec-head editorial-head"><span class="eyebrow">${esc(COPY.why)}</span><h2 id="why-h">${esc(COPY.whyTitle)}</h2></div><div class="why"><div>${ICONS.plan}<h3>${esc(COPY.why1)}</h3><p>${esc(COPY.why1Body)}</p></div><div>${ICONS.remote}<h3>${esc(COPY.why2)}</h3><p>${esc(COPY.why2Body)}</p></div><div>${ICONS.chat}<h3>${esc(COPY.why3)}</h3><p>${esc(COPY.why3Body)}</p></div></div></div></section>
   ${brandsBlock(sh.page.brands)}${reachBand()}`;
@@ -521,6 +537,15 @@ function contactPage() {
   return `
 <section class="hero page-hero" style="padding-bottom:24px"><div class="wrap" style="grid-template-columns:1fr">
   <div class="hero-copy"><span class="eyebrow">${esc(COPY.contact)}</span><h1>${esc(COPY.contactTitle)}</h1><p class="lede">${esc(COPY.contactIntro)}</p></div>
+</div></section>
+<section class="reach-ways" aria-labelledby="ways-h"><div class="wrap">
+  <h2 id="ways-h" class="sr-only">${esc(DESIGN.reachWays)}</h2>
+  <ul class="ways">
+    <li><a class="way way-primary" href="${esc(wa(WA_GENERAL))}" target="_blank" rel="noopener">${WA_ICON}<span class="way-label">${esc(COPY.whatsapp)}</span><strong>${esc(SITE.whatsappDisplay)}</strong><span class="way-action">${esc(DESIGN.reachActions.whatsapp)} ${ICONS.arrow}</span></a></li>
+    <li><a class="way" href="tel:${esc(SITE.phone)}">${ICONS.phone}<span class="way-label">${esc(COPY.call)}</span><strong>${esc(SITE.phoneDisplay)}</strong><span class="way-action">${esc(DESIGN.reachActions.call)} ${ICONS.arrow}</span></a></li>
+    <li><a class="way" href="mailto:${esc(SITE.email)}">${ICONS.mail}<span class="way-label">${esc(COPY.email)}</span><strong>${esc(SITE.email)}</strong><span class="way-action">${esc(DESIGN.reachActions.email)} ${ICONS.arrow}</span></a></li>
+  </ul>
+  <p class="ways-hours">${ICONS.clock}<span>${esc(SITE.hours)}</span></p>
 </div></section>
 ${reachBand()}
 <section class="band tight" aria-labelledby="payment-support"><div class="wrap prose">

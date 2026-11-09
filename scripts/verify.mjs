@@ -72,7 +72,7 @@ for (const p of paths) {
   );
   for (const [, href] of html.matchAll(/href="(https:\/\/wa\.me\/[^\"]+)"/g)) {
     const url = new URL(href.replaceAll("&amp;", "&"));
-    assert.equal(url.pathname, "/919513636657");
+    assert.equal(url.pathname, "/919513636646");
     assert.ok(allowedMessages.has(url.searchParams.get("text")));
     waCount++;
   }

@@ -7,7 +7,7 @@
     const label = summary.querySelector("span");
     let closeTimer;
     const regions = [
-      ...document.querySelectorAll("main, .site-foot, .mobile-action, .brand"),
+      ...document.querySelectorAll("main, .site-foot, .mobile-action, .brand, .topbar"),
     ];
     function state(open) {
       summary.setAttribute("aria-expanded", String(open));
