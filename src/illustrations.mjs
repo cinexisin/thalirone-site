@@ -212,6 +212,27 @@ export const ICONS = {
   shield: I(
     '<path d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/>',
   ),
+  // Contact and sector icons (design refresh, Nov 2026).
+  mail: I('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>'),
+  phone: I(
+    '<path d="M6.6 3.5h2.6l1.4 4-2 1.3a12 12 0 0 0 6.6 6.6l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/>',
+  ),
+  clock: I('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+  pin: I(
+    '<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/>',
+  ),
+  office: I(
+    '<path d="M4 21V4h11v17M15 9h5v12M2.5 21h19M7.5 8h1M11 8h1M7.5 12h1M11 12h1M7.5 16h1M11 16h1M17.5 13h.5M17.5 17h.5"/>',
+  ),
+  hospital: I(
+    '<path d="M4 21V7h16v14M2.5 21h19M12 10v6M9 13h6M9 3.5h6V7H9z"/>',
+  ),
+  campus: I('<path d="m2.5 9 9.5-5 9.5 5-9.5 5-9.5-5Z"/><path d="M6.5 11.2V16c1.6 1.6 3.4 2.4 5.5 2.4s3.9-.8 5.5-2.4v-4.8M21.5 9v6"/>'),
+  stage: I(
+    '<path d="M3 4h18M5 4v4c2.2 0 3.5 1.3 3.5 3M19 4v4c-2.2 0-3.5 1.3-3.5 3M3 15h18M5 15v5M19 15v5M9 19h1M14 19h1"/>',
+  ),
+  rings: I('<circle cx="9" cy="14" r="5.5"/><circle cx="15" cy="14" r="5.5"/><path d="m10.5 5.5 1.5-2 1.5 2-1.5 2z"/>'),
+  hotel: I('<path d="M3 19V6M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6M6.5 12.5a1.8 1.8 0 1 0 0-.1"/>'),
 };
 export const WA_ICON = `<svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6a9.4 9.4 0 0 0-8.1 14.2L2.6 21.4l4.7-1.2A9.4 9.4 0 1 0 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.7 7.7c.3-.6.6-.6.9-.6h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .5-.1.7l-.6.7c-.1.2-.1.4 0 .6.6 1.1 1.5 2 2.6 2.6.2.1.4.1.6 0l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.6c0 .3 0 .6-.6.9-.6.3-1.9.6-3.6-.2-1.6-.8-3.1-2.3-3.9-3.9-.8-1.7-.5-3-.2-3.6Z" fill="currentColor"/></svg>`;
 

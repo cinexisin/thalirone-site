@@ -96,7 +96,7 @@ export const SITE = {
   whatsappDisplay: "+91 95136 36646",
   phone: "+919513636646", // public calls and WhatsApp contact
   phoneDisplay: "+91 95136 36646",
-  email: "hello@thalirone.com",
+  email: "info@thalirone.com", // owner, 9 Nov 2026: the working Microsoft 365 mailbox
   hours: "Mon–Fri 9:30 am – 6:30 pm · Sat 9:30 am – 2 pm",
   indexNowKey: "f04e9b12d1b3443596378761fff7280a", // public by design: served at /<key>.txt for IndexNow
   description:
@@ -878,7 +878,7 @@ export const BUSINESS_INFO = {
   grievanceRole: "Grievance Officer",
   grievanceTitle: "Complaints & grievance redressal",
   grievanceBody:
-    "Send a complaint to hello@thalirone.com with the subject 'Grievance' or message our WhatsApp number. Include your order reference and the outcome you are requesting. We acknowledge complaints within 48 hours and resolve them within one month of receipt.",
+    `Send a complaint to ${SITE.email} with the subject 'Grievance' or message our WhatsApp number. Include your order reference and the outcome you are requesting. We acknowledge complaints within 48 hours and resolve them within one month of receipt.`,
   grievanceEscalation:
     "You may also use the National Consumer Helpline or other remedies available under applicable law. Contacting us does not restrict those rights.",
   grievanceLink: "National Consumer Helpline",
@@ -1176,7 +1176,7 @@ export const POLICIES = [
         id: "request",
         title: "How to make a request",
         paragraphs: [
-          "Email hello@thalirone.com or message our WhatsApp number with your name, quote or invoice reference, payment date, transaction reference and the reason for the request. Include your account email for EKANI, or the agreed date for a service visit. The time we receive your message is the request time.",
+          `Email ${SITE.email} or message our WhatsApp number with your name, quote or invoice reference, payment date, transaction reference and the reason for the request. Include your account email for EKANI, or the agreed date for a service visit. The time we receive your message is the request time.`,
           "We acknowledge requests within 48 hours and normally confirm eligibility and the refund calculation within 7 business days of receiving the information needed to assess them. If inspection is required, we explain the steps and expected date. Complaints are resolved within one month of receipt.",
           "A business day in this policy means Monday to Friday, excluding public holidays in Karnataka. The time limits for making a request are calendar days unless stated otherwise.",
         ],
@@ -1380,6 +1380,16 @@ export const ART_COPY = {
 // Presentation copy for the architectural design refresh. Claims are scoped to
 // existing services and the owner's confirmed commercial offering.
 export const DESIGN = {
+  // Design refresh, 9 Nov 2026: new labels only, no new claims (listed in the PR).
+  topbarLabel: "Contact details",
+  reachWays: "Ways to reach us",
+  reachActions: {
+    whatsapp: "Open WhatsApp",
+    call: "Call us",
+    email: "Write to us",
+  },
+  company: "Company",
+  follow: "Follow us",
   project: "Discuss your project",
   projectShort: "Project enquiry",
   projectMessage:

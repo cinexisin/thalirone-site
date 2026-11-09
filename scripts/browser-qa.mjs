@@ -217,7 +217,7 @@ const popup = await pop;
 await popup.waitForLoadState();
 const url = new URL(outgoing);
 assert.equal(url.hostname, "wa.me");
-assert.equal(url.pathname, "/919513636657");
+assert.equal(url.pathname, "/919513636646");
 assert.ok(url.searchParams.get("text").includes("Name: Example Review"));
 assert.ok(
   url.searchParams.get("text").includes("Interested in: Cinema Revival"),
@@ -301,7 +301,7 @@ for (const width of [390, 1280]) {
     await np.goto(base + "/" + path);
     assert.ok(await np.locator("h1").isVisible());
     assert.ok(
-      (await np.locator('a[href^="https://wa.me/919513636657"]').count()) > 0,
+      (await np.locator('a[href^="https://wa.me/919513636646"]').count()) > 0,
     );
     if (width === 390) {
       await np.locator(".menu summary").click();

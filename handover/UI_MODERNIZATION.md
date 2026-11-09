@@ -174,7 +174,7 @@ or changed string in the PR under **"Copy changes"**.
 - [ ] Branch `codex/ui-modernization`; PR into `main`; nothing pushed to `main`.
 - [ ] `node build.mjs --offline` and `node build.mjs` both succeed; `docs/` regenerated and committed; `docs/CNAME` = `thalirone.com`.
 - [ ] All 7 pages render with no console errors.
-- [ ] Every WhatsApp link targets `wa.me/919513636657` with the config text; the composer still requires a name and opens WhatsApp.
+- [ ] Every WhatsApp link targets `wa.me/919513636646` with the config text; the composer still requires a name and opens WhatsApp.
 - [ ] Adding a fourth category object to `CATEGORIES` still produces nav, home card, footer link, page and sitemap entry with no template edits (demonstrate with a throwaway local build, don't commit it).
 - [ ] No horizontal scroll at 360/390/768/1024/1280/1440; tap targets ≥ 44 px; keyboard-only walkthrough done; reduced-motion checked; JS-off checked.
 - [ ] Lighthouse mobile scores recorded in the PR (targets in §4).

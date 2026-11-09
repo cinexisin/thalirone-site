@@ -24,7 +24,7 @@ The original logo, green/gold palette and light backgrounds remain. Open capabil
 - [x] Branch `codex/ui-modernization`; PR into `main`; nothing pushed to `main`.
 - [x] `node build.mjs --offline` and `node build.mjs` both succeed; `docs/` regenerated and committed; `docs/CNAME` = `thalirone.com`.
 - [x] All 7 pages render with no console errors.
-- [x] Every WhatsApp link targets `wa.me/919513636657` with the config text; the composer still requires a name and opens WhatsApp.
+- [x] Every WhatsApp link targets `wa.me/919513636646` with the config text; the composer still requires a name and opens WhatsApp.
 - [x] Adding a fourth category object to `CATEGORIES` still produces nav, home card, footer link, page and sitemap entry with no template edits (demonstrated with a throwaway local build; fixture not committed).
 - [x] No horizontal scroll at 360/390/768/1024/1280/1440; tap targets ≥ 44 px; keyboard-only walkthrough done; reduced-motion checked; JS-off checked.
 - [x] Lighthouse mobile scores recorded below; all requested targets met.
